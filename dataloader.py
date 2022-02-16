@@ -1,0 +1,32 @@
+###############################
+#Data Loading Script and Class#
+#Maintainer: Christopher Chan #
+#Date: 2022-02-11             #
+#Version: 0.0.3               #
+###############################
+
+import os
+import torch
+from torch.utils.data import Dataset
+from torchvision import datasets
+from torchvision.io import read_image
+
+class BuildingDataset(Dataset):
+    def __init__(self, png_dir, lbl_dir, transform=None):
+        self.png_dir = png_dir
+        self.lbl_dir = lbl_dir
+        self.transform = transform
+
+    def __len__(self):
+        return len(self.png_dir), len(self.lbl_dir)
+
+    def __getitem__(self):
+        img_path = os.path.join(self.png_dir)
+        lbl_path = os.path.join(self.lbl_dir)
+        image = read_image(img_path)
+        label = read_image(lbl_path)
+        if self.transform: # What are these things?
+            image = self.transform(image)
+            label = self.transform(label)
+
+        return image, label
