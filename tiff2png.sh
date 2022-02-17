@@ -3,8 +3,8 @@
 ##########################################
 #This script parse tif into IMG & LBL PNG#
 #Maintainer: Christopher Chan            #
-#Date: 2022-01-24                        #
-#Version: 0.1.0                          #
+#Date: 2022-02-17                        #
+#Version: 0.1.1                          #
 ##########################################
 
 echo "This script parse .tif into IMG & LBL PNGs"
@@ -53,3 +53,9 @@ for i in *;
 do
   rename -v .tif "" $i;
 done
+
+echo "ATTENTION: PNG generated are of UInt16 formats, but the min max are 0 and 255. Therefore, the images might not show-up in normal photo editing software but only professional digital image softwarel. This is due to a technical limitation from gdal :(,
+
+... However, don't panic! The data is fine ...
+
+They will later be converted back to UInt8 when using the dataloader into pytorch and the neural network :)."
