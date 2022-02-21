@@ -30,11 +30,11 @@ class Five_UNet(nn.Module):
 
         self.bottleneck = Five_UNet.conv_block(features * 16, features * 32, name="bottleneck")
 
-        self.upconv4 = nn.ConvTranspose2d(
+        self.upconv5 = nn.ConvTranspose2d(
             features * 32, features * 16, kernel_size = 2, stride = 2
         )
-        self.decoder4 = Five_UNet.conv_block((features * 16) * 2, features * 16, name="dec5")
-        self.upconv3 = nn.ConvTranspose2d(
+        self.decoder5 = Five_UNet.conv_block((features * 16) * 2, features * 16, name="dec5")
+        self.upconv4 = nn.ConvTranspose2d(
             features * 16, features * 8, kernel_size = 2, stride = 2
         )
         self.decoder4 = Five_UNet.conv_block((features * 8) * 2, features * 8, name="dec4")
@@ -52,7 +52,7 @@ class Five_UNet(nn.Module):
         self.decoder1 = Five_UNet.conv_block(features * 2, features, name="dec1")
 
         self.conv = nn.Conv2d(
-            in_channels=features, out_channels=out_channels, kernel_size=1
+            in_channels = features, out_channels = out_channels, kernel_size = 1
         )
         
     def forward(self, x):
@@ -65,7 +65,7 @@ class Five_UNet(nn.Module):
         bottleneck = self.bottleneck(self.pool5(enc5))
 
         dec5 = self.upconv5(bottleneck)
-        dec5 = torch.cat((dec4, enc4), dim=1)
+        dec5 = torch.cat((dec5, enc5), dim=1)
         dec5 = self.decoder5(dec5)
         
         dec4 = self.upconv4(dec5)
