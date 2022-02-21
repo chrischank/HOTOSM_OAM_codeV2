@@ -12,7 +12,7 @@ device = (torch.device("cuda") if torch.cuda.is_available()
 
 class Five_UNet(nn.Module):
 
-    def __init__(self, in_channels=3, out_channels=2, init_features=32):
+    def __init__(self, in_channels = 3, out_channels = 2, init_features = 32):
         super(Five_UNet, self).__init__()
 
         features = init_features
@@ -54,7 +54,7 @@ class Five_UNet(nn.Module):
         self.conv = nn.Conv2d(
             in_channels = features, out_channels = out_channels, kernel_size = 1
         )
-        
+
     def forward(self, x):
         enc1 = self.encoder1(x)
         enc2 = self.encoder2(self.pool1(enc1))
@@ -67,7 +67,7 @@ class Five_UNet(nn.Module):
         dec5 = self.upconv5(bottleneck)
         dec5 = torch.cat((dec5, enc5), dim=1)
         dec5 = self.decoder5(dec5)
-        
+
         dec4 = self.upconv4(dec5)
         dec4 = torch.cat((dec4, enc4), dim=1)
         dec4 = self.decoder4(dec4)
