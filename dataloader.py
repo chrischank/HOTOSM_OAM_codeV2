@@ -18,7 +18,7 @@ class BuildingDataset(Dataset):
         self.transform = transform
 
     def __len__(self):
-        return len(self.png_dir) + len(self.lbl_dir)
+        return len(self.png_dir)
 
     def __getitem__(self, idx):
 
