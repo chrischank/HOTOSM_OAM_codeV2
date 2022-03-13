@@ -1,18 +1,20 @@
 ###############################
 #Data Loading Script and Class#
 #Maintainer: Christopher Chan #
-#Date: 2022-02-11             #
-#Version: 0.0.3               #
+#Date: 2022-03-13             #
+#Version: 0.2.2               #
 ###############################
 
 import os
 import torch
 import PIL
+import torchvision
 import torchvision.transforms.functional as transform
+import numpy as np
 from torch.utils.data import Dataset
 
 class BuildingDataset(Dataset):
-    def __init__(self, png_dir, lbl_dir, transform=None):
+    def __init__(self, png_dir, lbl_dir, transform = None):
         self.png_dir = png_dir
         self.lbl_dir = lbl_dir
         self.transform = transform
@@ -21,9 +23,6 @@ class BuildingDataset(Dataset):
         return len(self.png_dir)
 
     def __getitem__(self, idx):
-
-        # Since gdal can only output format to UInt16
-        # We use the dataset building to format to UInt8
         image_iter = self.png_dir[idx]
         label_iter = self.lbl_dir[idx]
 
@@ -33,8 +32,17 @@ class BuildingDataset(Dataset):
         image = transform.to_tensor(P_image)
         label = transform.to_tensor(P_label)
 
-        if self.transform: # What are these things?
-            image = self.transform(image)
-            label = self.transform(label)
+        if transform is not None:
+            if self.transform == "Hflip":
+                image = transform.hflip(image)
+                label = transform.hflip(label)
+
+            elif self.transform == "Vflip":
+                image = transform.vflip(image)
+                label = transform.vflip(label)
+
+            elif self.transform == "InRGB":
+                image = transform.invert(image)
+                label = label
 
         return image, label
