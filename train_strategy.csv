@@ -1,41 +1,42 @@
-Hardware,Nvidia GeForce 1070 Ti 8GB,,,,,,,,,,,
-Dimensions,512 * 512 * 0.1,,256 * 256 * 0.15,,,,,,,,,
-Train_data(BASE),2368,,2595,,,,,,,,,
-Train_data(AUG),9472,,11836,,,,,,,,,
-Val_data,1184,,1698,,,,,,,,,
-Test_data,,,611,,,,,,,,,
-Optimiser,Adam,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-Date,Four_Unet(Vanilla),batch_size,pixel_size,window,Dataset,lr,wd,Scheduler,mean_OA,mean_Dice,mean_IoU,Comment
-2022-03-21,11836:1698_256oc1_Four-Unet_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_085469.pth,32,0.15,256,KBY + DZK + DZKN,0.001,0.00001,ReduceLRonPlateau(min1e-8),0.999,0.00000000882,0,Best performing base run architecture so far
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-Date,EB1-Unet(ImageNet),,,,,,,,,,,
-2022-03-19,9472:1184oc1_EB1-UNet_lr1e-4_wd1e-5_b8_ep500_BCE_RLRONPLATEAU,6,0.1,512,KBY + DZK + DZKN,0.0001,0.00001,ReduceLRonPlateau,,x,0,"The train Val Test of this run were saved, however the copy result became 7348 Train and 1039 Val"
-2022-03-25,11836:1698_256oc1_EB1-UNet-IMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_115069.pth,32,0.15,256,KBY + DZK + DZKN,0.001,0.00001,ReduceLRonPlateau(min1e-8),0.999,0.00000000882,0,"First run on 32 batch_size with 256 by 256 by 0.15. This has a much larger Train Val set, picking up bad roofs in Dzaleka quite well, but not confident"
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-Date,EB1-Unet(qubvel),,,,,,,,,,,
-2022-03-28,11836:1698_256oc1_EB1-Unet-qubvel_lr1e-4_wd1e-5_b16_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_141339.pth,16,0.15,256,KBY + DZK + DZKN,0.0001,0.00001,ReduceLRonPlateau(min1e-8),0.999,0.00000000881,0,"Not really convergin, quite surprising since this is the winning network in OCC on drone images early stopped at 289 epochs"
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-,,,,,,,,,,,,
-Date,EB1-Unet(NoIMN),,,,,,,,,,,
-2022-04-02,11836:1698_256oc1_EB1-UNet-NoIMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_166869.pth,32,0.15,256,KBY + DZK + DZKN,0.001,0.00001,ReduceLRonPlateau(min1e-8),0.999,8.82E-09,0,"Val_;loss less stable, but comparable values top IMN based and vanilla based training"
+Hardware,Nvidia GeForce 1070 Ti 8GB,,,,,,,,,,,,
+Dimensions,512 * 512 * 0.1,,256 * 256 * 0.15,,,,,,,,,,
+Train_data(BASE),2368,,2595,,,,,,,,,,
+Train_data(AUG),9472,,11836,,,,,,,,,,
+Val_data,1184,,1698,,,,,,,,,,
+Test_data,,,611,,,,,,,,,,
+Optimiser,Adam,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+Date,Four_Unet(Vanilla),batch_size,pixel_size,window,Dataset,lr,wd,Scheduler,mean_OA,mean_Dice,mean_IoU,Binary_threshold,Comment
+2022-03-21,11836:1698_256oc1_Four-Unet_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_085469.pth,32,0.15,256,KBY + DZK + DZKN,0.001,0.00001,ReduceLRonPlateau(min1e-8),0.999,0.00000000882,0,0.5,Best performing base run architecture so far
+2022-04-03,KBY3969:462_256oc1_Four-Unet_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_051155.pth,32,0.15,256,KBY,0.001,0.00001,ReduceLRonPlateau(min1e-8),1,0.0000000189,0,0.5,Base KBY perfect dataset run
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+Date,EB1-Unet(ImageNet),,,,,,,,,,,,
+2022-03-19,9472:1184oc1_EB1-UNet_lr1e-4_wd1e-5_b8_ep500_BCE_RLRONPLATEAU,6,0.1,512,KBY + DZK + DZKN,0.0001,0.00001,ReduceLRonPlateau,,x,0,0.5,"The train Val Test of this run were saved, however the copy result became 7348 Train and 1039 Val"
+2022-03-25,11836:1698_256oc1_EB1-UNet-IMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_115069.pth,32,0.15,256,KBY + DZK + DZKN,-1000,0.00001,ReduceLRonPlateau(min1e-8),0.999,0.00000000882,0,0.5,"First run on 32 batch_size with 256 by 256 by 0.15. This has a much larger Train Val set, picking up bad roofs in Dzaleka quite well, but not confident"
+2022-04-05,KBY3969:462_256oc1_EB1-UNet-IMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_058115.pth,32,0.15,256,KBY,0.001,0.00001,ReduceLRonPlateau(min1e-8),1,1.89E-08,0,0.5,"Still decreasuing, comparable to 4-layer U-Net"
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+Date,EB1-Unet(qubvel),,,,,,,,,,,,
+2022-03-28,11836:1698_256oc1_EB1-Unet-qubvel_lr1e-4_wd1e-5_b16_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_141339.pth,16,0.15,256,KBY + DZK + DZKN,0.0001,0.00001,ReduceLRonPlateau(min1e-8),0.999,0.00000000881,0,0.5,"Not really convergin, quite surprising since this is the winning network in OCC on drone images early stopped at 289 epochs"
+2022-04-06,KBY3969:462_256oc1_EB1-Unet-qubvel-3_wd1e-5_b16_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_085700.pth,16,0.15,256,KBY,1.00E-03,1.00E-05,ReduceLRonPlateau(min1e-8),1,1.89E-08,0,0.5,No significance learning val loss as expected from the preliminary qubvel transfer runs in 512 sets
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+Date,EB1-Unet(NoIMN),,,,,,,,,,,,
+2022-04-02,11836:1698_256oc1_EB1-UNet-NoIMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_166869.pth,32,0.15,256,KBY + DZK + DZKN,0.001,0.00001,ReduceLRonPlateau(min1e-8),0.999,0.00000000882,0,0.5,"Val_loss less stable, but comparable values top IMN based and vanilla based training"
+2022-04-04,KBY3969:462_256oc1_EB1-UNet-NoIMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_027955.pth,32,0.15,256,KBY,0.001,0.00001,ReduceLRonPlateau(min1e-8),1,0.0000000189,0,0.5,"Similar, but stagnate at ~0.3346 while 4-Unet would still have potential to decrease"
