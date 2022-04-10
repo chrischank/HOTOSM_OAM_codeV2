@@ -9,7 +9,7 @@ import os
 import torch
 import PIL
 import torchvision
-import torchvision.transforms.functional as transform
+import torchvision.transforms.functional as f
 import numpy as np
 from torch.utils.data import Dataset
 
@@ -29,20 +29,36 @@ class BuildingDataset(Dataset):
         P_image = PIL.Image.open(image_iter)
         P_label = PIL.Image.open(label_iter)
 
-        image = transform.to_tensor(P_image)
-        label = transform.to_tensor(P_label)
+        image = f.to_tensor(P_image)
+        label = f.to_tensor(P_label)
 
-        if transform is not None:
+        if self.transform is not None:
             if self.transform == "Hflip":
-                image = transform.hflip(image)
-                label = transform.hflip(label)
+                image = f.hflip(image)
+                label = f.hflip(label)
 
             elif self.transform == "Vflip":
-                image = transform.vflip(image)
-                label = transform.vflip(label)
+                image = f.vflip(image)
+                label = f.vflip(label)
 
             elif self.transform == "InRGB":
-                image = transform.invert(image)
+                image = f.invert(image)
+                label = label
+
+            elif self.transform == "Grayscale":
+                image = f.rgb_to_grayscale(image)
+                label = label
+
+            elif self.transform == "Blur":
+                image = f.gaussian_blur(image, 25)
+                label = label
+
+            elif self.transform == "Contrast":
+                image = f.autocontrast(image)
+                label = label
+
+            elif self.transform == "Solarize":
+                image = f.solarize(image, 0)
                 label = label
 
         return image, label
