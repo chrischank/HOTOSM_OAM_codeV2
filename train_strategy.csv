@@ -5,12 +5,12 @@ Train_data(AUG),9472,,11836,,,,,,,,,,
 Val_data,1184,,1698,,,,,,,,,,
 Test_data,,,611,,,,,,,,,,
 Optimiser,Adam,,,,,,,,,,,,
-,,,,,,,,,,,,,
+Threshold,0.001,,,,,,,,,,,,
 ,,,,,,,,,,,,,
 Date,Four_Unet(Vanilla),batch_size,pixel_size,window,Dataset,lr,wd,Scheduler,mean_OA,mean_Dice,mean_IoU,Binary_threshold,Comment
-DAF2022-03-21,11836:1698_256oc1_Four-Unet_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_085469.pth,32,0.15,256,KBY + DZK + DZKN,0.001,0.00001,ReduceLRonPlateau(min1e-8),0.999,0.00000000882,0,0.5,Best performing base run architecture so far
-DAF2022-04-03,KBY3969:462_256oc1_Four-Unet_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_051155.pth,32,0.15,256,KBY,0.001,0.00001,ReduceLRonPlateau(min1e-8),1,0.0000000189,0,0.5,Base KBY perfect dataset run
-,,,,,,,,,,,,,
+DAF2022-03-21,11836:1698_256oc1_Four-Unet_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_085469.pth,32,0.15,256,KBY + DZK + DZKN,0.001,0.00001,ReduceLRonPlateau(min1e-8)[p10],0.698,0.006,0.003,0.001,Best performing base run architecture so far
+DAF2022-04-03,KBY3969:462_256oc1_Four-Unet_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_051155.pth,32,0.15,256,KBY,0.001,0.00001,ReduceLRonPlateau(min1e-8)[p10],0.903,0.007,0.003,0.001,Base KBY perfect dataset run
+2022-04-15,20713:5094_256oc1_Four-Unet_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_272807.pth,32,0.15,256,KBY + DZK + DZKN,0.001,0.00001,ReduceLRonPlateau(min1e-8)[p20],0.698,0.006,0.003,0.001,"Changed reduce learning rate on plateau with patient at 20 epochs working out much better, initial 100 epochs val_loss decreased quickly"
 ,,,,,,,,,,,,,
 ,,,,,,,,,,,,,
 ,,,,,,,,,,,,,
@@ -19,17 +19,16 @@ DAF2022-04-03,KBY3969:462_256oc1_Four-Unet_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLAT
 ,,,,,,,,,,,,,
 ,,,,,,,,,,,,,
 Date,EB1-Unet(ImageNet),,,,,,,,,,,,
-DAF2022-03-19,9472:1184oc1_EB1-UNet_lr1e-4_wd1e-5_b8_ep500_BCE_RLRONPLATEAU,6,0.1,512,KBY + DZK + DZKN,0.0001,0.00001,ReduceLRonPlateau,,x,0,0.5,"The train Val Test of this run were saved, however the copy result became 7348 Train and 1039 Val"
-DAF2022-03-25,11836:1698_256oc1_EB1-UNet-IMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_115069.pth,32,0.15,256,KBY + DZK + DZKN,0.001,0.00001,ReduceLRonPlateau(min1e-8),0.999,0.00000000882,0,0.5,"First run on 32 batch_size with 256 by 256 by 0.15. This has a much larger Train Val set, picking up bad roofs in Dzaleka quite well, but not confident"
-DAF2022-04-05,KBY3969:462_256oc1_EB1-UNet-IMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_058115.pth,32,0.15,256,KBY,0.001,0.00001,ReduceLRonPlateau(min1e-8),1,0.0000000189,0,0.5,"Still decreasuing, comparable to 4-layer U-Net"
-2022-04-13,20713:5094_256oc1_EB1-Unet-IMN1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_324647.pth,32,0.15,256,KBY + DZK + DZKN,1.00E-03,1.00E-05,ReduceLRonPlateau(min1e-8),1,8.82E-09,0,0.5,First full augmentation run. The val_loss have yet to plateau after 500 epochs
-,,,,,,,,,,,,,
+DAF2022-03-25,11836:1698_256oc1_EB1-UNet-IMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_115069.pth,32,0.15,256,KBY + DZK + DZKN,0.001,0.00001,ReduceLRonPlateau(min1e-8)[p10],0.698,0.006,0.003,0.001,"First run on 32 batch_size with 256 by 256 by 0.15. This has a much larger Train Val set, picking up bad roofs in Dzaleka quite well, but not confident"
+DAF2022-04-05,KBY3969:462_256oc1_EB1-UNet-IMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_058115.pth,32,0.15,256,KBY,0.001,0.00001,ReduceLRonPlateau(min1e-8)[p10],0.903,0.7,0.003,0.001,"Still decreasuing, comparable to 4-layer U-Net"
+2022-04-13,20713:5094_256oc1_EB1-Unet-IMNlr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_324647.pth,32,0.15,256,KBY + DZK + DZKN,0.001,0.00001,ReduceLRonPlateau(min1e-8)[p10],0.69,0.006,0.003,0.001,"First full augmentation run. The val_loss have yet to plateau after 500 epochs, could make reduce learning rate on plateau patience larger"
+2022-04-18,20713:5094_256oc1_EB1-Unet-IMNlr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)P20_iter_318167.pth,32,0.15,256,KBY + DZK + DZKN,0.001,0.00001,ReduceLRonPlateau(min1e-8)[p20],0.687,0.006,0.003,0.001,No significance increase in initial val_loss comparted to patience of 10 epochs in ReduceLRonPlateau()
 ,,,,,,,,,,,,,
 ,,,,,,,,,,,,,
 ,,,,,,,,,,,,,
 Date,EB1-Unet(qubvel),,,,,,,,,,,,
-DAF2022-03-28,11836:1698_256oc1_EB1-Unet-qubvel_lr1e-4_wd1e-5_b16_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_141339.pth,16,0.15,256,KBY + DZK + DZKN,0.0001,0.00001,ReduceLRonPlateau(min1e-8),0.999,0.00000000881,0,0.5,"Not really convergin, quite surprising since this is the winning network in OCC on drone images early stopped at 289 epochs"
-DAF2022-04-06,KBY3969:462_256oc1_EB1-Unet-qubvel1e-4_wd1e-5_b16_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_108800.pth,16,0.15,256,KBY,0.0001,0.00001,ReduceLRonPlateau(min1e-8),1,0.0000000189,0,0.5,"No significance learning val loss compared to Vanilla and ImageNet based weigths, but decreasing potential"
+DAF2022-03-28,11836:1698_256oc1_EB1-Unet-qubvel_lr1e-4_wd1e-5_b16_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_141339.pth,16,0.15,256,KBY + DZK + DZKN,0.0001,0.00001,ReduceLRonPlateau(min1e-8)[p10],0.702,0.006,0.003,0.001,"Not really convergin, quite surprising since this is the winning network in OCC on drone images early stopped at 289 epochs"
+DAF2022-04-06,KBY3969:462_256oc1_EB1-Unet-qubvel1e-4_wd1e-5_b16_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_108800.pth,16,0.15,256,KBY,0.0001,0.00001,ReduceLRonPlateau(min1e-8)[p10],0.902,0.006,0.003,0.001,"No significance learning val loss compared to Vanilla and ImageNet based weigths, but decreasing potential"
 ,,,,,,,,,,,,,
 ,,,,,,,,,,,,,
 ,,,,,,,,,,,,,
@@ -38,8 +37,8 @@ DAF2022-04-06,KBY3969:462_256oc1_EB1-Unet-qubvel1e-4_wd1e-5_b16_ep500_BCE_RLRONP
 ,,,,,,,,,,,,,
 ,,,,,,,,,,,,,
 Date,EB1-Unet(NoIMN),,,,,,,,,,,,
-DAF2022-04-02,11836:1698_256oc1_EB1-UNet-NoIMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_166869.pth,32,0.15,256,KBY + DZK + DZKN,0.001,0.00001,ReduceLRonPlateau(min1e-8),0.999,0.00000000882,0,0.5,"Val_loss less stable, but comparable values top IMN based and vanilla based training"
-DAF2022-04-04,KBY3969:462_256oc1_EB1-UNet-NoIMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_027955.pth,32,0.15,256,KBY,0.001,0.00001,ReduceLRonPlateau(min1e-8),1,0.0000000189,0,0.5,"Similar, but stagnate at ~0.3346 while 4-Unet would still have potential to decrease"
+DAF2022-04-02,11836:1698_256oc1_EB1-UNet-NoIMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_166869.pth,32,0.15,256,KBY + DZK + DZKN,0.001,0.00001,ReduceLRonPlateau(min1e-8)[p10],0.696,0.006,0.003,0.001,"Val_loss less stable, but comparable values top IMN based and vanilla based training"
+DAF2022-04-04,KBY3969:462_256oc1_EB1-UNet-NoIMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRONPLATEAU(min1e-8)_iter_027955.pth,32,0.15,256,KBY,0.001,0.00001,ReduceLRonPlateau(min1e-8)[p10],0.903,0.007,0.003,0.001,"Similar, but stagnate at ~0.3346 while 4-Unet would still have potential to decrease"
 ,,,,,,,,,,,,,
 ,,,,,,,,,,,,,
 ALL TRAINING BEFORE 2022-04-09 DATA AUGMENTATION ARE FUTILE,,,,,,,,,,,,,
