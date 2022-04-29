@@ -1,7 +1,18 @@
 # HOTOSM_OAM_codeV2
 
-![256EB1-UNet-IMNBASE](https://user-images.githubusercontent.com/36608720/162050756-4dccff63-24f4-4532-abc9-68b1d161c6a1.png)
-![256EB1-UNet-NoIMNBASE](https://user-images.githubusercontent.com/36608720/162050760-e419e323-5c88-467f-a3df-ffb15c9ec7f8.png)
-![256EB1-UNet-OCCBASE](https://user-images.githubusercontent.com/36608720/162050763-f1ed2884-f6cd-4986-9a13-a377701c9dc2.png)
-![256EB1-UNet-OCCUNTRAINED](https://user-images.githubusercontent.com/36608720/162050764-c68473a0-5278-42b1-a1dd-508f8d8c4c8e.png)
-![256Four-UnetBASE](https://user-images.githubusercontent.com/36608720/162050766-ab080b4b-64da-46a0-bd1c-96211e8675bc.png)
+## Baseline training results for Kalobeyei, Kakuma (perfect dataset)
+## Dataset: 256x256 px. 0.15 m/px.
+## Trainning data with augmentation: 5719
+## Validation data with augmentation: 1224
+## Testing data: 435
+## Optimiser: Adam
+## Learning rate: 1e-3
+## Weight decay: 1e-5
+## Batch size: 32, 16(qubvel - 5 layer EB1-Unet)
+## Scheduler: Reduce Learning Rate on Plateau(min 1e-8) [Patient: 20 epochs, factor: 0.1]
+
+![256KBYFour-UnetBASE](https://user-images.githubusercontent.com/36608720/165932776-75ecdd33-7cb9-4660-8312-e8625a52c77b.png)
+![256KBYEB1-UNet-IMNBASE](https://user-images.githubusercontent.com/36608720/165932767-15b04c02-3b3c-4d1f-8999-5408248abaab.png)
+![256KBYEB1-UNet-NoIMNBASE](https://user-images.githubusercontent.com/36608720/165932771-60871747-23b4-46ac-83d6-a34626e52699.png)
+![256KBYEB1-UNet-OCCUNTRAINEDBASE](https://user-images.githubusercontent.com/36608720/165932774-71b35a31-7b32-4026-a704-5a0f710e57f8.png)
+![256KBYEB1-UNet-OCCBASE](https://user-images.githubusercontent.com/36608720/165932763-213326de-d973-45d3-89b3-8ce3b893fa49.png)
