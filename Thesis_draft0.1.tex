@@ -1,0 +1,144 @@
+\documentclass[11pt, a4paper, twoside]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{titlesec}
+\titleformat{\chapter}{\lmodern\it\huge\bfseries\flushright}{}{1em}{}
+\titleformat{\section}{\lmodern\Large\bfseries}{}{0.5em}{}
+\titleformat{\subsection}{\lmodern\normalsize\bfseries}{}{0em}{}
+\titleformat{\subsubsection}{\lmodern\small\bfseries}{}{0em}{}
+\graphicspath{{/home/chris/Dropbox/HOTOSM/figures/}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\pagenumbering{roman}
+
+\begin{document}
+
+\begin{titlepage}
+   \begin{center}
+       \vspace*{1cm}
+
+       \huge
+       \textbf{Thesis Title}
+
+       \vspace{0.5cm}
+       \Large
+       Thesis Subtitle
+
+       \vspace{1.5cm}
+
+       \textbf{CHAN, Yan-Chak Christopher}
+
+       \vfill
+
+       Masterarbeit submitted for the degree of\\
+       Master der Naturwissenschaften\\
+       in\\
+       Applied Earth Observation and Geoanalysis of the Living Environment (EAGLE)
+
+       \vspace{0.8cm}
+
+       \includegraphics[scale = 0.25]{neuSIEGEL.png}
+
+       \normalsize
+       Philosophische Fakultät (Historische, Philologische, Kultur- und Geographische Wissenschaften)\\
+       Julius-Maximilians-Universität Würzburg\\
+
+       \author{Supervised by: \\
+       Prof. Dr. Hannes Taubenöck \thanks{Geo-Risks and Civil Society, Deutsches Zentrum für Luft- und Raumfahrt} \\
+       Emran Alchikh Alnajar \thanks{Humanitarian OpenStreetMap}
+       }
+       \date{\today}
+
+   \end{center}
+\end{titlepage}
+
+\newpage
+
+\section{Forewords and Acknowledgements}
+\pagestyle{empty}
+
+\newpage
+
+\section{Declaration of Independent Work}
+\pagestyle{empty}
+
+\newpage
+
+\section{Figure list}
+\pagestyle{empty}
+
+\newpage
+
+\section{Abbreviations}
+\pagestyle{empty}
+
+\newpage
+
+\begin{abstract}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, quam maximus posuere cursus, magna justo rutrum erat, at mattis magna magna nec risus. Duis lacus lectus, condimentum a viverra eu, fermentum molestie lorem. Sed maximus, enim eu scelerisque dictum, sem erat mollis massa, in dictum ante libero a tortor. Cras nulla nisi, sollicitudin ac suscipit cursus, maximus non dui. Sed venenatis ligula id efficitur imperdiet. Vivamus ut magna eleifend, rutrum ante facilisis, pulvinar turpis. Maecenas at interdum lorem. Duis vel varius ligula. Sed magna erat, egestas vitae varius id, cursus vitae neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus interdum lectus mi, a dapibus lorem tristique a. Phasellus molestie vestibulum metus a fringilla. Pellentesque at rhoncus nulla. Praesent posuere turpis nec leo fringilla egestas.\par
+
+
+Pellentesque auctor vel dolor eu viverra. Ut faucibus nunc orci, eu aliquam justo hendrerit vel. Proin auctor sed nisl non posuere. Vivamus orci orci, commodo eget semper nec, tempus at arcu. Nam eget leo cursus velit aliquam varius. Curabitur nisi dui, rutrum vitae elit a, mollis volutpat mauris. Suspendisse potenti. Nam convallis magna iaculis posuere aliquam. Quisque tristique rutrum placerat. Quisque ultricies molestie lacinia. Maecenas at nisi in neque dictum consequat.\par
+
+\end{abstract}
+
+\newpage
+
+\pagenumbering{arabic}
+
+\tableofcontents
+
+\newpage
+
+\chapter{Introduction}\label{Intro}
+\section{Study Area of Interest}\label{StudyAOI}
+\subsection{Research Questions}\label{RQ}
+
+\newpage
+
+\chapter{Literature Review}\label{LitReview}
+\section{Remote Sensing of Informal Settlements}\label{RSofInformalSettlement}
+\section{Deep Learning in Remote Sensing}\label{DLinRS}
+\subsection{Computer Vision and Convolutional Neural Networks}\label{CVandCNN}
+\subsection{Computer Vision in Building Segmentation}\label{CVinBS}
+
+\newpage
+
+\chapter{Data and Methodologies}\label{DataandMethods}
+\section{Data}\label{Data}
+\section{Architecture selection}\label{Archi}
+\section{Accuracy Assessment}\label{AccAss}
+
+Detail and scrutable accuracy assessments are fundamental towards any classification based analysis. This section will introduce and break down the various lower order and higher order class-based (thematic) accuracy assessment. By explaining the characteristics of each metrics, this will provide a much more granular nature of accuracy assessment in the findings of section \ref{findings}.
+
+\subsection{Precision, Recall, Sensitivity, and Specificity}\label{1storder}
+\subsection{Overall Accuracy, Dice Score, and Intersection-over-Union}\label{2ndorder}
+\section{Experimentation setup}\label{ExpSetup}
+\subsection{Project workflow}\label{ProjWorkflow}
+
+\newpage
+
+\chapter{Findings}\label{findings}
+\section{Analysis}\label{analysis}
+
+\newpage
+
+\chapter{Discussion}\label{Discuss}
+
+\newpage
+
+\chapter{Conclusion}\label{Conclude}
+
+\newpage
+
+\chapter{Bibliography}\label{Bib}
+
+\newpage
+
+\appendix
+
+\chapter{Appendix}\label{Appen}
+
+\end{document}
