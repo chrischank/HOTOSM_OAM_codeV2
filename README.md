@@ -10,7 +10,7 @@ This github repository is the code-base for the Master Thesis submitted for the 
 This work of this thesis is partnered with the Humanitarian OpenStreetMap (HOTOSM) and supported by the German Aerospace Center / Deutsches Zentrum für Luft- und Raumfahrt (DLR).
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/36608720/166689948-ce1f8815-7069-4479-8c06-abdf1a61a7dc.jpeg"
+  <img src="https://user-images.githubusercontent.com/36608720/166691521-16efc2f3-6aee-4e1b-9c89-15492dfdc7b3.png"
  />
   <img src="https://user-images.githubusercontent.com/36608720/166690232-c61e3ee2-3a7b-4452-ac55-7a6b3e1c5e2f.png"
  />
