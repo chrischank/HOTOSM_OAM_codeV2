@@ -77,10 +77,9 @@
 
 \begin{abstract}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, quam maximus posuere cursus, magna justo rutrum erat, at mattis magna magna nec risus. Duis lacus lectus, condimentum a viverra eu, fermentum molestie lorem. Sed maximus, enim eu scelerisque dictum, sem erat mollis massa, in dictum ante libero a tortor. Cras nulla nisi, sollicitudin ac suscipit cursus, maximus non dui. Sed venenatis ligula id efficitur imperdiet. Vivamus ut magna eleifend, rutrum ante facilisis, pulvinar turpis. Maecenas at interdum lorem. Duis vel varius ligula. Sed magna erat, egestas vitae varius id, cursus vitae neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus interdum lectus mi, a dapibus lorem tristique a. Phasellus molestie vestibulum metus a fringilla. Pellentesque at rhoncus nulla. Praesent posuere turpis nec leo fringilla egestas.\par
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim, quam maximus posuere cursus, magna justo rutrum erat, at mattis magna magna nec risus. Duis lacus lectus, condimentum a viverra eu, fermentum molestie lorem. Sed maximus, enim eu scelerisque dictum, sem erat mollis massa, in dictum ante libero a tortor. Cras nulla nisi, sollicitudin ac suscipit cursus, maximus non dui. Sed venenatis ligula id efficitur imperdiet. Vivamus ut magna eleifend, rutrum ante facilisis, pulvinar turpis. Maecenas at interdum lorem. Duis vel varius ligula. Sed magna erat, egestas vitae varius id, cursus vitae neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus interdum lectus mi, a dapibus lorem tristique a. Phasellus molestie vestibulum metus a fringilla. Pellentesque at rhoncus nulla. Praesent posuere turpis nec leo fringilla egestas.\\\par
 
-
-Pellentesque auctor vel dolor eu viverra. Ut faucibus nunc orci, eu aliquam justo hendrerit vel. Proin auctor sed nisl non posuere. Vivamus orci orci, commodo eget semper nec, tempus at arcu. Nam eget leo cursus velit aliquam varius. Curabitur nisi dui, rutrum vitae elit a, mollis volutpat mauris. Suspendisse potenti. Nam convallis magna iaculis posuere aliquam. Quisque tristique rutrum placerat. Quisque ultricies molestie lacinia. Maecenas at nisi in neque dictum consequat.\par
+Pellentesque auctor vel dolor eu viverra. Ut faucibus nunc orci, eu aliquam justo hendrerit vel. Proin auctor sed nisl non posuere. Vivamus orci orci, commodo eget semper nec, tempus at arcu. Nam eget leo cursus velit aliquam varius. Curabitur nisi dui, rutrum vitae elit a, mollis volutpat mauris. Suspendisse potenti. Nam convallis magna iaculis posuere aliquam. Quisque tristique rutrum placerat. Quisque ultricies molestie lacinia. Maecenas at nisi in neque dictum consequat.\\\par
 
 \end{abstract}
 
@@ -108,10 +107,46 @@ Pellentesque auctor vel dolor eu viverra. Ut faucibus nunc orci, eu aliquam just
 
 \chapter{Data and Methodologies}\label{DataandMethods}
 \section{Data}\label{Data}
+\subsection{Data Augmentation}\label{DataAug}
+
+Data augmentation is perhaps one of the most crucial task in training a robust neural-network. It is an economical way of increasing generalisability without increasing model complexity, data augmentation achieve this through, firstly increasing the quantity of training and validation data, secondly encompassing a greater range of textural, geometrical, and colour variability throught the creation of augmented pseudo-data (Shorten \& Khoshgoftaar, 2019; Kinsley \& Kukiela, 2020; Howard \& Gugger, 2020; Zoph et al., 2019).\\\par
+
+Data augmentation can generally be split into 3 categories: 1. Geometric/Affine distortion, 2. Colour distortion, and 4. Noise distortion. The application of which types of distortion to the \textit\{Train} and \textit\{Validation} dataset is highly dependent on the context of the semantic task. Therefore, care must be taken as to not introduce mislabelling (see Figure \ref{fig:MNIST5}).\\\par
+
+\textbf{Augmentation categories:}
+
+\begin{itemize}
+  \item Geometric/Affine distortion
+    \begin{itemize}
+      \item e.g. Fliping, Stretching, Rotation...
+    \end{itemize}
+\end{itemize}
+\begin{itemize}
+  \item Colour distortion
+    \begin{itemize}
+      \item e.g. Colour Inversion, Solarise Colour, Greyscale...
+    \end{itemize}
+\end{itemize}
+\begin{itemize}
+  \item Noise distortion
+    \begin{itemize}
+      \item e.g. Blurring, Contrasting, Salt \& Pepper...
+    \end{itemize}
+\end{itemize}
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale = 0.5]{MNIST5.png}
+  \caption{Perhaps geometric augmentation of horizontal flipping shall not be applied on the MNIST number of 5}
+  \label{fig:MNIST5}
+\end{figure}
+
+
 \section{Architecture selection}\label{Archi}
 \section{Accuracy Assessment}\label{AccAss}
 
-Detail and scrutable accuracy assessments are fundamental towards any classification based analysis. This section will introduce and break down the various lower order and higher order class-based (thematic) accuracy assessment. By explaining the characteristics of each metrics, this will provide a much more granular nature of accuracy assessment in the findings of section \ref{findings}. In general, accuracy assessment in remote sensing can be divided into 2 categories: 1. Positional Accuracy & 2. Thematic Accuracy. Of which, Positional Accuracy deals with the accuracy of the location while Thematic Accuracy deals with the labels or attributes accuracy (Congalton & Green, 2019 & Bolstad, 2019). The rest of this section will consider the lower order and higher order accuracy metrics, with lower order metrics being more granular while higher order metrics more triturated but generalised.\par
+Detail and scrutable accuracy assessments are fundamental towards any classification based analysis. This section will introduce and break down the various lower order and higher order class-based (thematic) accuracy assessment. By explaining the characteristics of each metrics, this will provide a much more granular nature of accuracy assessment in the findings of section \ref{findings}. In general, accuracy assessment in remote sensing can be divided into 2 categories: 1. Positional Accuracy \& 2. Thematic Accuracy. Of which, Positional Accuracy deals with the accuracy of the location while Thematic Accuracy deals with the labels or attributes accuracy (Congalton \& Green, 2019 \& Bolstad, 2019). The rest of this section will consider the lower order and higher order accuracy metrics, with lower order metrics being more granular while higher order metrics more triturated but generalised.\\\par
 
 The metrics described in this section form part of the larger family of accuracy assessment metrics that can be constructed from the confusion matrix (see Figure \ref{fig:cmatrix})
 
@@ -125,7 +160,7 @@ The metrics described in this section form part of the larger family of accuracy
 \subsection{Precision, Recall, Sensitivity, and Specificity}\label{1storder}
 \subsubsection{Precision, Recall, and Specificity}\label{PR&S}
 
-\textbf{Precision} and \textbf{Recall}, aka. Positivie-Predictive-Value and Sensitivity/True-Positive-Rate Respectively. The two metrics are often used together, another common denomination especially in remote sensing literature are User's Accuracy and Producer's Accuracy (Congalton & Green, 2019 & Wegmann et al., 2016). To avoid further confusion in nomenclature, \textbf{Precision} and \textbf{Recall} will be used from hereon.\par
+\textbf{Precision} and \textbf{Recall}, aka. Positivie-Predictive-Value and Sensitivity/True-Positive-Rate Respectively. The two metrics are often used together, another common denomination especially in remote sensing literature are User's Accuracy and Producer's Accuracy (Congalton \& Green, 2019 \& Wegmann et al., 2016). To avoid further confusion in nomenclature, \textbf{Precision} and \textbf{Recall} will be used from hereon.\\\par
 \\
 \\
 \textbf{Precision} is the measure of correctly predicted Positive class (True Positive) against all positive prediction assigned to that class (True Positive + False Positive) i.e. Given the predicted results, of those that are predicted as positive, what proportion were True. It can be expressed mathematically as:

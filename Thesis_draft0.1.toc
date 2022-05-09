@@ -2,26 +2,27 @@
 \contentsline {section}{\numberline {0.2}Declaration of Independent Work}{iii}{}%
 \contentsline {section}{\numberline {0.3}Figure list}{iv}{}%
 \contentsline {section}{\numberline {0.4}Abbreviations}{v}{}%
-\contentsline {chapter}{\numberline {1}Introduction}{2}{}%
-\contentsline {section}{\numberline {1.1}Study Area of Interest}{2}{}%
-\contentsline {subsection}{\numberline {1.1.1}Research Questions}{2}{}%
-\contentsline {chapter}{\numberline {2}Literature Review}{3}{}%
-\contentsline {section}{\numberline {2.1}Remote Sensing of Informal Settlements}{3}{}%
-\contentsline {section}{\numberline {2.2}Deep Learning in Remote Sensing}{3}{}%
-\contentsline {subsection}{\numberline {2.2.1}Computer Vision and Convolutional Neural Networks}{3}{}%
-\contentsline {subsection}{\numberline {2.2.2}Computer Vision in Building Segmentation}{3}{}%
-\contentsline {chapter}{\numberline {3}Data and Methodologies}{4}{}%
-\contentsline {section}{\numberline {3.1}Data}{4}{}%
-\contentsline {section}{\numberline {3.2}Architecture selection}{4}{}%
-\contentsline {section}{\numberline {3.3}Accuracy Assessment}{4}{}%
-\contentsline {subsection}{\numberline {3.3.1}Precision, Recall, Sensitivity, and Specificity}{4}{}%
-\contentsline {subsubsection}{Precision, Recall, and Specificity}{4}{}%
-\contentsline {subsection}{\numberline {3.3.2}Overall Accuracy, Dice Score, and Intersection-over-Union}{6}{}%
-\contentsline {section}{\numberline {3.4}Experimentation setup}{6}{}%
-\contentsline {subsection}{\numberline {3.4.1}Project workflow}{6}{}%
-\contentsline {chapter}{\numberline {4}Findings}{7}{}%
-\contentsline {section}{\numberline {4.1}Analysis}{7}{}%
-\contentsline {chapter}{\numberline {5}Discussion}{8}{}%
-\contentsline {chapter}{\numberline {6}Conclusion}{9}{}%
-\contentsline {chapter}{\numberline {7}Bibliography}{10}{}%
-\contentsline {chapter}{\numberline {A}Appendix}{11}{}%
+\contentsline {chapter}{\numberline {1}Introduction}{3}{}%
+\contentsline {section}{\numberline {1.1}Study Area of Interest}{3}{}%
+\contentsline {subsection}{\numberline {1.1.1}Research Questions}{3}{}%
+\contentsline {chapter}{\numberline {2}Literature Review}{4}{}%
+\contentsline {section}{\numberline {2.1}Remote Sensing of Informal Settlements}{4}{}%
+\contentsline {section}{\numberline {2.2}Deep Learning in Remote Sensing}{4}{}%
+\contentsline {subsection}{\numberline {2.2.1}Computer Vision and Convolutional Neural Networks}{4}{}%
+\contentsline {subsection}{\numberline {2.2.2}Computer Vision in Building Segmentation}{4}{}%
+\contentsline {chapter}{\numberline {3}Data and Methodologies}{5}{}%
+\contentsline {section}{\numberline {3.1}Data}{5}{}%
+\contentsline {subsection}{\numberline {3.1.1}Data Augmentation}{5}{}%
+\contentsline {section}{\numberline {3.2}Architecture selection}{6}{}%
+\contentsline {section}{\numberline {3.3}Accuracy Assessment}{6}{}%
+\contentsline {subsection}{\numberline {3.3.1}Precision, Recall, Sensitivity, and Specificity}{6}{}%
+\contentsline {subsubsection}{Precision, Recall, and Specificity}{6}{}%
+\contentsline {subsection}{\numberline {3.3.2}Overall Accuracy, Dice Score, and Intersection-over-Union}{8}{}%
+\contentsline {section}{\numberline {3.4}Experimentation setup}{8}{}%
+\contentsline {subsection}{\numberline {3.4.1}Project workflow}{8}{}%
+\contentsline {chapter}{\numberline {4}Findings}{9}{}%
+\contentsline {section}{\numberline {4.1}Analysis}{9}{}%
+\contentsline {chapter}{\numberline {5}Discussion}{10}{}%
+\contentsline {chapter}{\numberline {6}Conclusion}{11}{}%
+\contentsline {chapter}{\numberline {7}Bibliography}{12}{}%
+\contentsline {chapter}{\numberline {A}Appendix}{13}{}%
