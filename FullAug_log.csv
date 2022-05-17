@@ -31,7 +31,7 @@ Date,EB1-Unet(ImageNet),batch_size,pixel_size,window,Dataset,lr,wd,Scheduler[pat
 ,,,,,,,,,,,,,,,,
 Date,EB1-Unet(qubvel),batch_size,pixel_size,window,Dataset,lr,wd,Scheduler,mean_Precision,mean_Recall(TPR),mean_Specificity(TNR),mean_OA,mean_Dice,mean_IoU,Binary_threshold,Comment
 2022-04-27,KBY5719:1224_256oc_EB1-Unet-qubvel_lr1e-3_wd1e-5_b16_ep500_BCE_RLRonPlateau(min1e-8)_iter_082697.pth,16,0.15,256,KBY,0.001,0.00001,RLRonPlateau(1e-8)P20,0.842267453670502,0.894134640693665,0.990570306777954,0.989732623100281,0.892345726490021,0.799392879009247,0.001,Mean confidence score are close to Vanilla 4-layer Unet and EB1-Unet-IMN however maximum confidence are generally less
-2022-05-09,18242:3909_256oc_EB1-Unet-qubvel_lr1e-3_wd1e-5_b16_ep500_BCE_RLRonPlateau(min1e-8)_iter_548820.pth,16,0.15,256,KBY + DZK + DZKN,1.00E-03,1.00E-05,RLRonPlateau(1e-8)P20,0.760016262531281,0.897031247615814,0.901228010654449,0.928256869316101,0.828467071056366,0.714154124259949,0.001,"As expected val_loss and therefore confidence is not as strong, very stable results towards 500 epochs"
+2022-05-09,18242:3909_256oc_EB1-Unet-qubvel_lr1e-3_wd1e-5_b16_ep500_BCE_RLRonPlateau(min1e-8)_iter_548820.pth,16,0.15,256,KBY + DZK + DZKN,0.001,0.00001,RLRonPlateau(1e-8)P20,0.760016262531281,0.897031247615814,0.901228010654449,0.928256869316101,0.828467071056366,0.714154124259949,0.001,"As expected val_loss and therefore confidence is not as strong, very stable results towards 500 epochs"
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
@@ -41,4 +41,5 @@ Date,EB1-Unet(qubvel),batch_size,pixel_size,window,Dataset,lr,wd,Scheduler,mean_
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 Date,EB1-Unet(NoIMN),batch_size,pixel_size,window,Dataset,lr,wd,Scheduler,mean_Precision,mean_Recall(TPR),mean_Specificity(TNR),mean_OA,mean_Dice,mean_IoU,Binary_threshold,Comment
-2022-04-29,KBY5719:1224_256oc_EB1-Unet-NoIMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_023448.pth,32,0/15,256,KBY,0.001,0.00001,RLRonPlateau(1e-8)P20,0.844002842903137,0.878585577011108,0.990536391735077,0.988506317138672,0.887018859386444,0.78364884853363,0.001,"Although val_loss and other metrics does not indicate significantly better performance, empirical prediction are higher in confidence"
+2022-04-29,KBY5719:1224_256oc_EB1-Unet-NoIMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_023448.pth,32,0.15,256,KBY,0.001,0.00001,RLRonPlateau(1e-8)P20,0.844002842903137,0.878585577011108,0.990536391735077,0.988506317138672,0.887018859386444,0.78364884853363,0.001,"Although val_loss and other metrics does not indicate significantly better performance, empirical prediction are higher in confidence"
+2022-05-17,18242:3909_256oc_EB1-Unet-NoIMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_160450.pth,32,0.15,256,KBY + DZK + DZKN,0.001,0.00001,RLRonPlateau(1e-8)P20,0.811898231506348,0.880569875240326,0.904042959213257,0.925277650356293,0.811898231506348,0.699716567993164,0.001,"Initiate val_loss at much lower number at 0.764, non-steep val loss plateauing around 0.75 around 90k iterations"
