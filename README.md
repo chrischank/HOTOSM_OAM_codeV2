@@ -27,7 +27,7 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 - Dataset: 256x256 px. 0.15 m/px.
 - Trainning data with augmentation: 5719
 - Validation data with augmentation: 1224
-- Testing data: 435
+- Testing data: 272
 - Optimiser: Adam
 - Learning rate: 1e-3
 - Weight decay: 1e-5
@@ -39,3 +39,20 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 ![256KBYEB1-UNet-NoIMNBASE](https://user-images.githubusercontent.com/36608720/165932771-60871747-23b4-46ac-83d6-a34626e52699.png)
 ![256KBYEB1-UNet-OCCUNTRAINEDBASE](https://user-images.githubusercontent.com/36608720/165932774-71b35a31-7b32-4026-a704-5a0f710e57f8.png)
 ![256KBYEB1-UNet-OCCBASE](https://user-images.githubusercontent.com/36608720/165932763-213326de-d973-45d3-89b3-8ce3b893fa49.png)
+
+## Baseline training results for Kalobeyei + Dzaleka + Dzaleka North (full dataset)
+- Dataset: 256x256 px. 0.15 m/px.
+- Trainning data with augmentation: 18242
+- Validation data with augmentation: 3909
+- Testing data: 435
+- Optimiser: Adam
+- Learning rate: 1e-3
+- Weight decay: 1e-5
+- Batch size: 32, 16(qubvel - 5 layer EB1-Unet)
+- Scheduler: Reduce Learning Rate on Plateau(min 1e-8) [Patient: 20 epochs, factor: 0.1]
+
+![256ALLFour-UnetBASE](https://user-images.githubusercontent.com/36608720/169056447-7e3729fe-ca00-4cde-b487-d6797e150104.png)
+![256ALLEB1-UNet-IMNBASE](https://user-images.githubusercontent.com/36608720/169056430-b8d7b387-8f29-4c0e-b0bd-bbb6383f7acb.png)
+![256ALLEB1-UNet-NoIMNBASE](https://user-images.githubusercontent.com/36608720/169056436-a54ca6cd-d05d-4edd-bf66-41beff400702.png)
+![256ALLEB1-UNet-OCCUNTRAINEDBASE](https://user-images.githubusercontent.com/36608720/169056438-8695e156-5da8-4f39-a3b6-d047b6551053.png)
+![256ALLEB1-UNet-OCCBASE](https://user-images.githubusercontent.com/36608720/169056421-59664ea0-6d7c-426b-907a-8201f8ec6d76.png)
