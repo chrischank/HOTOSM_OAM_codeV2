@@ -18,7 +18,8 @@
 \contentsline {subsubsection}{Normalisation}{5}{}%
 \contentsline {subsubsection}{Cropping}{5}{}%
 \contentsline {subsection}{\numberline {3.1.2}Data Augmentation}{5}{}%
-\contentsline {section}{\numberline {3.2}Architecture selection}{6}{}%
+\contentsline {section}{\numberline {3.2}Architecture and hyperparameter selection}{6}{}%
+\contentsline {subsection}{\numberline {3.2.1}The U-Net and U-Net variants}{6}{}%
 \contentsline {section}{\numberline {3.3}Accuracy Assessment}{6}{}%
 \contentsline {subsection}{\numberline {3.3.1}Precision, Recall, Sensitivity, and Specificity}{7}{}%
 \contentsline {subsubsection}{Precision, Recall, and Specificity}{7}{}%

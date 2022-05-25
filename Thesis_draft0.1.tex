@@ -29,6 +29,11 @@
 
        \textbf{CHAN, Yan-Chak Christopher}
 
+       \vspace{0.5cm}
+       \textbf{Supervised by:} \\
+       Prof. Dr. Hannes Taubenöck \thanks{Geo-Risks and Civil Society, Deutsches Zentrum für Luft- und Raumfahrt} \\
+       Emran Alchikh Alnajar \thanks{Humanitarian OpenStreetMap}
+
        \vfill
 
        Masterarbeit submitted for the degree of\\
@@ -43,13 +48,6 @@
        \normalsize
        Philosophische Fakultät (Historische, Philologische, Kultur- und Geographische Wissenschaften)\\
        Julius-Maximilians-Universität Würzburg\\
-
-       \author{Supervised by: \\
-       Prof. Dr. Hannes Taubenöck \thanks{Geo-Risks and Civil Society, Deutsches Zentrum für Luft- und Raumfahrt} \\
-       Emran Alchikh Alnajar \thanks{Humanitarian OpenStreetMap}
-       }
-       \date{\today}
-
    \end{center}
 \end{titlepage}
 
@@ -154,7 +152,16 @@ Data augmentation can generally be split into 3 categories: 1. Geometric/Affine 
 \end{figure}
 
 
-\section{Architecture selection}\label{Archi}
+\section{Architecture and hyperparameter selection}\label{Archi}
+
+Model architecture and their associated hyperparameters selection is highly dependent on the computational resources and the task at hand (Ng A., 2018, Howard \& Gugger, 2020)
+
+\subsection{The U-Net and U-Net variants}\label{Unet}
+
+The U-Net architecture was
+
+\subsubsection{EfficientNet encoders}
+
 \section{Accuracy Assessment}\label{AccAss}
 
 Detail and scrutable accuracy assessments are fundamental towards any classification based analysis. This section will introduce and break down the various lower order and higher order class-based (thematic) accuracy assessment. By explaining the characteristics of each metrics, this will provide a much more granular nature of accuracy assessment in the findings of section \ref{findings}. In general, accuracy assessment in remote sensing can be divided into 2 categories: 1. Positional Accuracy \& 2. Thematic Accuracy. Of which, Positional Accuracy deals with the accuracy of the location while Thematic Accuracy deals with the labels or attributes accuracy (Congalton \& Green, 2019 \& Bolstad, 2019). The rest of this section will consider the lower order and higher order accuracy metrics, with lower order metrics being more granular while higher order metrics more triturated but generalised.\\\par

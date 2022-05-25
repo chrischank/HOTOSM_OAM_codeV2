@@ -43,3 +43,11 @@ Date,EB1-Unet(qubvel),batch_size,pixel_size,window,Dataset,lr,wd,Scheduler,mean_
 Date,EB1-Unet(NoIMN),batch_size,pixel_size,window,Dataset,lr,wd,Scheduler,mean_Precision,mean_Recall(TPR),mean_Specificity(TNR),mean_OA,mean_Dice,mean_IoU,Binary_threshold,Comment
 2022-04-29,KBY5719:1224_256oc_EB1-Unet-NoIMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_023448.pth,32,0.15,256,KBY,0.001,0.00001,RLRonPlateau(1e-8)P20,0.844002842903137,0.878585577011108,0.990536391735077,0.988506317138672,0.887018859386444,0.78364884853363,0.001,"Although val_loss and other metrics does not indicate significantly better performance, empirical prediction are higher in confidence"
 2022-05-17,18242:3909_256oc_EB1-Unet-NoIMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_160450.pth,32,0.15,256,KBY + DZK + DZKN,0.001,0.00001,RLRonPlateau(1e-8)P20,0.811898231506348,0.880569875240326,0.904042959213257,0.925277650356293,0.811898231506348,0.699716567993164,0.001,"Initiate val_loss at much lower number at 0.764, non-steep val loss plateauing around 0.75 around 90k iterations"
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+Date,EB2-Unet(NoIMN),batch_size,pixel_size,window,Dataset,lr,wd,Scheduler,mean_Precision,mean_Recall(TPR),mean_Specificity(TNR),mean_OA,mean_Dice,mean_IoU,Binary_threshold,Comment
+2022-05-25,18242:3909_256oc_EB2-Unet-NoIMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_286070.pth,32,0.15,256,KBY + DZK + DZKN,0.001,0.0001,RLRonPlateau(1e-8)P20,0.784133672714233,0.885944187641144,0.914927542209625,0.933564305305481,0.826885163784027,0.720951914787293,0.001,"Best performaing val loss so far, not surprising due to bigger scaling of EB2"
