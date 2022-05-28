@@ -91,9 +91,10 @@ Pellentesque auctor vel dolor eu viverra. Ut faucibus nunc orci, eu aliquam just
 
 \chapter{Introduction}\label{Intro}
 
-Refugee camps are often the common or only way for displaced people to receive shelters and assistance. They are often setup in place of proximity to displaced population, whether that be from natural disasters, human caused disasters, or other reasons. Throughout history, refugee sites have provided haven to the world's most vulnerable population (UN, 2018, Turner S., 2016, UNHCR, 2021). However as of 2020, out of the 26.4 million refugees, only around 1.4 million have access to third country solution between 2016 to 2021 (UNHCR, 2021). Additionally, as defined as temporary settlement, many refugee camps
+The world’s population is more urbanised than ever before. As of 2018, approximately 4 billion (55\%) (UN DESA., 2018, Taubenöck et al., 2009) reside in urban areas, of which 60\% reside in slums often located at the fringes of the city (Venables A., 2018). Urbanisation growth is expect to increase by 2.5 billions between 2018 to 2050, most of which will be in Asia and Africa (UN DESA., 2018).When population growth outpace development, slums became the supplier of significant housing stocks. These informal settlements are dynamic and represent a good reflection of cultural practices, access to resources, financial limitations and other socio-economic conditions. This means the informal settlement differs significantly between urban and rural settlements of roof covers, densities, and are subjected to different levels of access to resources and the types of resources.
 
-\section{Study Area of Interest}\label{StudyAOI}
+
+Refugee camps are often the common or only way for displaced people to receive shelters and assistance. They are often setup in place of proximity to displaced population, whether that be from natural disasters, human caused disasters, or other reasons. Throughout history, refugee sites have provided haven to the world's most vulnerable population (UN, 2018, Turner S., 2016, UNHCR, 2021). However as of 2020, out of the 26.4 million refugees, only around 1.4 million have access to third country solution between 2016 to 2021 (UNHCR, 2021). Additionally, as defined as temporary settlement, many refugee camps \section{Study Area of Interest}\label{StudyAOI}
 \subsection{Kalobeyei, Kakuma, Turkana, Kenya}\label{Kalobeyei}
 \subsection{Dzaleka, Dowa, Malawi}\label{Dzaleka}
 \subsection{Research Questions}\label{RQ}
@@ -102,8 +103,14 @@ Refugee camps are often the common or only way for displaced people to receive s
 
 \chapter{Literature Review}\label{LitReview}
 \section{Remote Sensing of Informal Settlements}\label{RSofInformalSettlement}
+informal settlement and slums mapping of developing countries require very high resolution (VHR) images which was unavailable until the turn of the century. The relatively new technology thus only began to gain traction within the last 2 decades. Particularly with the increase in the availability of VHR satellites. Increase in computational power had enabled novel techniques such as multi-layer machine learning, textural analysis, and novel geostatistical methods to emerge (Kuffer et al., 2016). Due to frequent repeat coverage of satellite’s orbit, they can be used to fill in between periodic census that are costly and time consuming to conduct. Census also does not do a good job in capturing larger scale units and spatial patterns, potentially overlooking others socioeconomic determinants such as cropping cycles and infrastructure access etc.Availability of VHR sensors and publications on slums and remote sensing (Kuffer et al., 2016). Remote sensing of settlements largely falls under 2 categories, rural or urban. Due to the different make-up of socioeconomic context and urban morphology, sensing rural and urban settlements require different parameters. Additionally, there’s no “one size fit all” way to generalise informaland formal settlement across the world, as physical geography, topography, cultural, and available resources often determine the distribution, development, and settlement clusters pattern
+
 \section{Deep Learning in Remote Sensing}\label{DLinRS}
+
 \subsection{Computer Vision and Convolutional Neural Networks}\label{CVandCNN}
+
+The issue with any Deep Learning Project is the high amount of data required (Tan et al., 2018, )
+
 \subsection{Computer Vision in Building Segmentation}\label{CVinBS}
 
 \newpage
@@ -154,11 +161,23 @@ Data augmentation can generally be split into 3 categories: 1. Geometric/Affine 
 
 \section{Architecture and hyperparameter selection}\label{Archi}
 
-Model architecture and their associated hyperparameters selection is highly dependent on the computational resources and the task at hand (Ng A., 2018, Howard \& Gugger, 2020)
+Model architecture and their associated hyperparameters selection is highly dependent on the computational resources and the task at hand (Ng A., 2018, Howard \& Gugger, 2020). As this study aims to output a pixel-based binary segmentation which delineates building and non-building, and given the computational resources constraint, tried and tested architectures with relatively low number of training parameters is ideal.
 
 \subsection{The U-Net and U-Net variants}\label{Unet}
 
-The U-Net architecture was
+The U-Net architecture was first developed by Ronneberger et al. (2015) for the task of cell segmentation in biomedical electronmicroscope images. The architecture feature a symmetrical Encoder-Decoder structure \textit{(see figure \ref{U-Net})} and as with many other CNN, the architecture have transferred successfully well into the remote sensing domains (Höser \& Künzer, 2020, Höser et al., 2020) (e.g. Jean et al., 2016, Xu et al., 2019)
+
+\subsection{Pre-trained weights on Deep Learning models}
+
+Another major consideration of this study is to compare the performance of the architectures on various pre-trained weights. Due to the representation learning feature of CNN, studies have shown transfer learning on pre-trained weights even across different domain dataset could result in better performance, especially on projects with less data availability (LeCun et al., 2015, Zhu et al., 2017, Tan et al., 2018). Pre-trained weights for this study are ImageNet weights and the drone-based building segmentation competition (OCC) weights. Thus, one of the objective of this study is to find out whether transfer training performance on various pretrained weights would outperform training from scratch.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale = 0.25]{U-Net.png}
+  \caption{The Encoder-Decoder U-Net architecture (Ronneberger et al., 2015)}
+  \label{fig:MNIST5}
+\end{figure}
+
 
 \subsubsection{EfficientNet encoders}
 
@@ -203,6 +222,9 @@ Therefore, higher \textbf{Recall} suggests the model is better at identifying po
 
 \subsection{Overall Accuracy, Dice Score, and Intersection-over-Union}\label{2ndorder}
 \section{Experimentation setup}\label{ExpSetup}
+
+Each network architecture and their associated weights will be trained on 2 data setup. The first setup consist of only the Kalobeyei, Kakuma camp where the labels include drone motion artefacts and rooftops are relatively homogeneous. The second setup consist of data from the Kalobeyei camp and also the rest of Dzaleka, Dowa camp. The second setup will introduce imperfection in labelling and complex hetereogeneous rooftops and morphologies. The two data setup will allow comparison between the models response of each class-based accuracy assessment metrics.
+
 \subsection{Project workflow}\label{ProjWorkflow}
 
 \newpage

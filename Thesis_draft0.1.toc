@@ -20,15 +20,17 @@
 \contentsline {subsection}{\numberline {3.1.2}Data Augmentation}{5}{}%
 \contentsline {section}{\numberline {3.2}Architecture and hyperparameter selection}{6}{}%
 \contentsline {subsection}{\numberline {3.2.1}The U-Net and U-Net variants}{6}{}%
-\contentsline {section}{\numberline {3.3}Accuracy Assessment}{6}{}%
-\contentsline {subsection}{\numberline {3.3.1}Precision, Recall, Sensitivity, and Specificity}{7}{}%
-\contentsline {subsubsection}{Precision, Recall, and Specificity}{7}{}%
-\contentsline {subsection}{\numberline {3.3.2}Overall Accuracy, Dice Score, and Intersection-over-Union}{8}{}%
-\contentsline {section}{\numberline {3.4}Experimentation setup}{8}{}%
-\contentsline {subsection}{\numberline {3.4.1}Project workflow}{8}{}%
-\contentsline {chapter}{\numberline {4}Findings}{9}{}%
-\contentsline {section}{\numberline {4.1}Analysis}{9}{}%
-\contentsline {chapter}{\numberline {5}Discussion}{10}{}%
-\contentsline {chapter}{\numberline {6}Conclusion}{11}{}%
-\contentsline {chapter}{\numberline {7}Bibliography}{12}{}%
-\contentsline {chapter}{\numberline {A}Appendix}{13}{}%
+\contentsline {subsection}{\numberline {3.2.2}Pre-trained weights on Deep Learning models}{6}{}%
+\contentsline {subsubsection}{EfficientNet encoders}{7}{}%
+\contentsline {section}{\numberline {3.3}Accuracy Assessment}{7}{}%
+\contentsline {subsection}{\numberline {3.3.1}Precision, Recall, Sensitivity, and Specificity}{8}{}%
+\contentsline {subsubsection}{Precision, Recall, and Specificity}{8}{}%
+\contentsline {subsection}{\numberline {3.3.2}Overall Accuracy, Dice Score, and Intersection-over-Union}{9}{}%
+\contentsline {section}{\numberline {3.4}Experimentation setup}{9}{}%
+\contentsline {subsection}{\numberline {3.4.1}Project workflow}{9}{}%
+\contentsline {chapter}{\numberline {4}Findings}{10}{}%
+\contentsline {section}{\numberline {4.1}Analysis}{10}{}%
+\contentsline {chapter}{\numberline {5}Discussion}{11}{}%
+\contentsline {chapter}{\numberline {6}Conclusion}{12}{}%
+\contentsline {chapter}{\numberline {7}Bibliography}{13}{}%
+\contentsline {chapter}{\numberline {A}Appendix}{14}{}%
