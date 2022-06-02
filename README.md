@@ -35,8 +35,8 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 - Scheduler: Reduce Learning Rate on Plateau(min 1e-8) [Patient: 20 epochs, factor: 0.1]
 
 ![256KBYFour-UnetBASE](https://user-images.githubusercontent.com/36608720/165932776-75ecdd33-7cb9-4660-8312-e8625a52c77b.png)
-![256KBYEB1-UNet-IMNBASE](https://user-images.githubusercontent.com/36608720/165932767-15b04c02-3b3c-4d1f-8999-5408248abaab.png)
 ![256KBYEB1-UNet-NoIMNBASE](https://user-images.githubusercontent.com/36608720/165932771-60871747-23b4-46ac-83d6-a34626e52699.png)
+![256KBYEB1-UNet-IMNBASE](https://user-images.githubusercontent.com/36608720/165932767-15b04c02-3b3c-4d1f-8999-5408248abaab.png)
 ![256KBYEB1-UNet-OCCUNTRAINEDBASE](https://user-images.githubusercontent.com/36608720/165932774-71b35a31-7b32-4026-a704-5a0f710e57f8.png)
 ![256KBYEB1-UNet-OCCBASE](https://user-images.githubusercontent.com/36608720/165932763-213326de-d973-45d3-89b3-8ce3b893fa49.png)
 
@@ -52,8 +52,8 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 - Scheduler: Reduce Learning Rate on Plateau(min 1e-8) [Patient: 20 epochs, factor: 0.1]
 
 ![256ALLFour-UnetBASE](https://user-images.githubusercontent.com/36608720/169056447-7e3729fe-ca00-4cde-b487-d6797e150104.png)
-![256ALLEB1-UNet-IMNBASE](https://user-images.githubusercontent.com/36608720/169056430-b8d7b387-8f29-4c0e-b0bd-bbb6383f7acb.png)
 ![256ALLEB1-UNet-NoIMNBASE](https://user-images.githubusercontent.com/36608720/169056436-a54ca6cd-d05d-4edd-bf66-41beff400702.png)
+![256ALLEB1-UNet-IMNBASE](https://user-images.githubusercontent.com/36608720/169056430-b8d7b387-8f29-4c0e-b0bd-bbb6383f7acb.png)
 ![256ALLEB1-UNet-OCCUNTRAINEDBASE](https://user-images.githubusercontent.com/36608720/169056438-8695e156-5da8-4f39-a3b6-d047b6551053.png)
 ![256ALLEB1-UNet-OCCBASE](https://user-images.githubusercontent.com/36608720/169056421-59664ea0-6d7c-426b-907a-8201f8ec6d76.png)
 
@@ -74,10 +74,11 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/36608720/171561584-7696bc54-fe9b-4130-bf56-98a868d2b798.png" />
-  <title="EfficientNet B2 header U-Net ImageNet vs No ImageNet (Vanilla) weights" />
-  <alt="where: red = ImageNet and blue = No ImageNet" />
+  <"EfficientNet B2 header U-Net ImageNet vs No ImageNet (Vanilla) weights" />
+  <"where: red = ImageNet and blue = No ImageNet" />
 </p>
 
-![256ALLEB2-UNet-IMN](https://user-images.githubusercontent.com/36608720/171561901-6ca0a9e5-d978-498f-900e-bb4e591cf883.png)
+
 ![256ALLEB2-UNet-NoIMN](https://user-images.githubusercontent.com/36608720/171561904-8b34b2d1-ae1e-41e0-89ad-dda7a8c2bbd0.png)
+![256ALLEB2-UNet-IMN](https://user-images.githubusercontent.com/36608720/171561901-6ca0a9e5-d978-498f-900e-bb4e591cf883.png)
 
