@@ -73,9 +73,8 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 - Scheduler: Reduce Learning Rate on Plateau(min 1e-8) [Patient: 20 epochs, factor: 0.1]
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/36608720/171561584-7696bc54-fe9b-4130-bf56-98a868d2b798.png" />
-  <"EfficientNet B2 header U-Net ImageNet vs No ImageNet (Vanilla) weights" />
-  <"where: red = ImageNet and blue = No ImageNet" />
+  EfficientNet B2 header U-Net ImageNet vs No ImageNet (Vanilla) weights, where: red = ImageNet and blue = No ImageNet
+  <img src="https://user-images.githubusercontent.com/36608720/171561584-7696bc54-fe9b-4130-bf56-98a868d2b798.png" /> 
 </p>
 
 
