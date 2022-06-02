@@ -56,3 +56,23 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 ![256ALLEB1-UNet-NoIMNBASE](https://user-images.githubusercontent.com/36608720/169056436-a54ca6cd-d05d-4edd-bf66-41beff400702.png)
 ![256ALLEB1-UNet-OCCUNTRAINEDBASE](https://user-images.githubusercontent.com/36608720/169056438-8695e156-5da8-4f39-a3b6-d047b6551053.png)
 ![256ALLEB1-UNet-OCCBASE](https://user-images.githubusercontent.com/36608720/169056421-59664ea0-6d7c-426b-907a-8201f8ec6d76.png)
+
+## Statistical metrics difference between mean of per window calculation and global calculation
+
+![Global_stripplot_fancy](https://user-images.githubusercontent.com/36608720/171561477-daf9b6cd-c989-4f61-bc54-49cdb917f058.png)
+
+## EfficientNet B2 header performance
+- Dataset: 256x256 px. 0.15 m/px.
+- Trainning data with augmentation: 18242
+- Validation data with augmentation: 3909
+- Testing data: 435
+- Optimiser: Adam
+- Learning rate: 1e-3
+- Weight decay: 1e-5
+- Batch size: 32
+- Scheduler: Reduce Learning Rate on Plateau(min 1e-8) [Patient: 20 epochs, factor: 0.1]
+
+![EB2_IMN_vs_NoIMN](https://user-images.githubusercontent.com/36608720/171561584-7696bc54-fe9b-4130-bf56-98a868d2b798.png)
+![256ALLEB2-UNet-IMN](https://user-images.githubusercontent.com/36608720/171561901-6ca0a9e5-d978-498f-900e-bb4e591cf883.png)
+![256ALLEB2-UNet-NoIMN](https://user-images.githubusercontent.com/36608720/171561904-8b34b2d1-ae1e-41e0-89ad-dda7a8c2bbd0.png)
+
