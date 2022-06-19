@@ -7,6 +7,7 @@ Date,Experiment,batch_size,pixel_size,window,Dataset,lr,wd,Scheduler,mean_Precis
 2022-06-04,KBY5719:1224_256oc_EB2-Unet-NoIMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_064618.pth,32,0.15,256,KBY,0.001,0.00001,RLRonPlateau(1e-8)P20,0.835859656333923,0.864704608917236,0.990362524986267,0.987418234348297,0.875452995300293,0.768851935863495,0.001,"Plateau at 0.93, and no significant improvement to be seen"
 2022-06-05,KBY5719:1224_256oc_EB2-Unet-IMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_086098.pth,32,0.15,256,KBY,0.001,0.00001,RLRonPlateau(1e-8)P20,0.843852341175079,0.890104234218597,0.991342425346375,0.989280462265015,0.880172729492188,0.792504370212555,0.001,"Slightly better val_loss as NoIMN, plateau early like IMN, no significant improvement ot be seen"
 2022-06-06,KBY5719:1224_256oc_Five-Unet_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_028818.pth,32,0.15,256,KBY,0.001,0.00001,RLRonPlateau(1e-8)P20,0.852940082550049,0.882152915000916,0.98885041475296,0.98657751083374,0.884039580821991,0.775592863559723,0.001,No visible improvement in val_loss compared to 4-layer Unet
+2022-06-19,KBY5719:1224_256oc_EB0-Unet-IMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_028818.pth,32,0.15,256,KBY,0.001,0.00001,RLRonPlateau(1e-8)P20,0.824119925498962,0.884670317173004,0.989911913871765,0.987952649593353,0.88250732421875,0.777735948562622,0.001,Val_loss plateau quickly and not performing differently to EB2 KBY
 ,,,,,,,,,,,,,,,,
 Global_SUM_KBY,,,,,,,,,,,,,,,,
 Date,Experiment,batch_size,pixel_size,window,Dataset,lr,wd,Scheduler,Precision,Recall(TPR),Specificity(TNR),OA,Dice,IoU,Binary_threshold,Comment
@@ -17,6 +18,7 @@ Date,Experiment,batch_size,pixel_size,window,Dataset,lr,wd,Scheduler,Precision,R
 2022-06-04,KBY5719:1224_256oc_EB2-Unet-NoIMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_064618.pth,32,0.15,256,KBY,0.001,0.00001,RLRonPlateau(1e-8)P20,0.900404947208695,0.948630819556973,0.990813896976398,0.987418230842141,0.923888978630002,0.85854429541461,0.001,
 2022-06-05,KBY5719:1224_256oc_EB2-Unet-IMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_086098.pth,32,0.15,256,KBY,0.001,0.00001,RLRonPlateau(1e-8)P20,0.909726348854154,0.962328896000268,0.991639967821063,0.989280476289637,0.935288587622051,0.878443282140799,0.001,
 2022-06-06,KBY5719:1224_256oc_Five-Unet_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_028818.pth,32,0.15,256,KBY,0.001,0.00001,RLRonPlateau(1e-8)P20,0.887337540331463,0.954440097397393,0.989391029602743,0.986577538882985,0.919666425598122,0.85128005589134,0.001,
+2022-06-19,KBY5719:1224_256oc_EB0-Unet-IMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_028818.pth,32,0.15,256,KBY,0.001,0.00001,RLRonPlateau(1e-8)P20,0.896813503585069,0.960900270811585,0.990320938894795,0.987952625050264,0.927751465633888,0.865239201452817,0.001,
 ,,,,,,,,,,,,,,,,
 meanWin_SUM_ALL,,,,,,,,,,,,,,,,
 Date,Experiment,batch_size,pixel_size,window,Dataset,lr,wd,Scheduler,mean_Precision,mean_Recall(TPR),mean_Specificity(TNR),mean_OA,mean_Dice,mean_IoU,Binary_threshold,Comment

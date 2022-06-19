@@ -1,0 +1,36 @@
+\contentsline {section}{\numberline {0.1}Forewords and Acknowledgements}{ii}{}%
+\contentsline {section}{\numberline {0.2}Declaration of Independent Work}{iii}{}%
+\contentsline {section}{\numberline {0.3}Figure list}{iv}{}%
+\contentsline {section}{\numberline {0.4}Abbreviations}{v}{}%
+\contentsline {chapter}{\numberline {1}Introduction}{3}{}%
+\contentsline {section}{\numberline {1.1}Study Area of Interest}{5}{}%
+\contentsline {subsection}{\numberline {1.1.1}Kalobeyei, Kakuma, Turkana, Kenya}{5}{}%
+\contentsline {subsection}{\numberline {1.1.2}Dzaleka, Dowa, Malawi}{6}{}%
+\contentsline {subsection}{\numberline {1.1.3}Research Questions}{6}{}%
+\contentsline {chapter}{\numberline {2}Literature Review}{9}{}%
+\contentsline {section}{\numberline {2.1}Remote Sensing of Informal Settlements}{9}{}%
+\contentsline {section}{\numberline {2.2}Deep Learning in Urban Remote Sensing}{9}{}%
+\contentsline {subsection}{\numberline {2.2.1}Computer Vision and Building Segmentation}{9}{}%
+\contentsline {subsection}{\numberline {2.2.2}Computer Vision and Convolutional Neural Networks}{10}{}%
+\contentsline {chapter}{\numberline {3}Data and Methodologies}{11}{}%
+\contentsline {section}{\numberline {3.1}Data}{11}{}%
+\contentsline {subsection}{\numberline {3.1.1}Raster pre-processing}{11}{}%
+\contentsline {subsubsection}{Normalisation}{11}{}%
+\contentsline {subsubsection}{Cropping}{11}{}%
+\contentsline {subsection}{\numberline {3.1.2}Data Augmentation}{11}{}%
+\contentsline {section}{\numberline {3.2}Architecture and hyperparameter selection}{12}{}%
+\contentsline {subsection}{\numberline {3.2.1}The U-Net and U-Net variants}{12}{}%
+\contentsline {subsection}{\numberline {3.2.2}Pre-trained weights on Deep Learning models}{12}{}%
+\contentsline {subsubsection}{EfficientNet encoders}{13}{}%
+\contentsline {section}{\numberline {3.3}Accuracy Assessment}{13}{}%
+\contentsline {subsection}{\numberline {3.3.1}Precision, Recall, Sensitivity, and Specificity}{14}{}%
+\contentsline {subsubsection}{Precision, Recall, and Specificity}{14}{}%
+\contentsline {subsection}{\numberline {3.3.2}Overall Accuracy, Dice Score, and Intersection-over-Union}{15}{}%
+\contentsline {section}{\numberline {3.4}Experimentation setup}{15}{}%
+\contentsline {subsection}{\numberline {3.4.1}Project workflow}{15}{}%
+\contentsline {chapter}{\numberline {4}Findings}{16}{}%
+\contentsline {section}{\numberline {4.1}Analysis}{16}{}%
+\contentsline {chapter}{\numberline {5}Discussion}{17}{}%
+\contentsline {chapter}{\numberline {6}Conclusion}{18}{}%
+\contentsline {chapter}{\numberline {7}Bibliography}{19}{}%
+\contentsline {chapter}{\numberline {A}Appendix}{20}{}%
