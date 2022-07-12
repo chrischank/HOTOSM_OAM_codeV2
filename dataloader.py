@@ -62,3 +62,19 @@ class BuildingDataset(Dataset):
                 label = label
 
         return image, label
+
+class PredictionDataset(Dataset):
+    def __init__(self, png_dir, transform = None):
+        self.png_dir = png_dir
+
+    def __len__(self):
+        return len(self.png_dir)
+
+    def __getitem__(self, idx):
+        image_iter = self.png_dir[idx]
+
+        P_image = PIL.Image.open(image_iter)
+
+        image = f.to_tensor(P_image)
+        
+        return image
