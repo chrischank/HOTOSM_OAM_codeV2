@@ -5,34 +5,33 @@
 \contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Study Area of Interest}{5}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Kalobeyei, Kakuma, Turkana, Kenya}{5}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Dzaleka, Dowa, Malawi}{6}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.2}Dzaleka, Dowa, Malawi}{7}{subsection.1.1.2}%
 \contentsline {chapter}{\numberline {2}Literature Review}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Remote Sensing of Informal Settlements}{9}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Deep Learning in Urban Remote Sensing}{10}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Computer Vision and a brief review of Convolutional Neural Networks}{10}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}UAV-based informal settlement segmentation}{11}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Fundamentals of Deep Learning and Convolutional Neural Networks}{12}{subsection.2.2.3}%
-\contentsline {subsubsection}{Convolution and Pooling}{13}{subsubsection*.2}%
+\contentsline {subsection}{\numberline {2.2.3}Fundamentals of Deep Learning and Convolutional Neural Networks}{11}{subsection.2.2.3}%
+\contentsline {subsubsection}{Convolution and Pooling}{12}{subsubsection*.2}%
 \contentsline {subsubsection}{Optimiser and the Binary Cross Entropy Loss function}{14}{subsubsection*.3}%
-\contentsline {subsubsection}{Backpropagation and the chain rule}{15}{subsubsection*.4}%
+\contentsline {subsubsection}{Backpropagation and the chain rule}{16}{subsubsection*.4}%
 \contentsline {chapter}{\numberline {3}Data and Methodologies}{17}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Data}{17}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Raster pre-processing}{17}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Data Augmentation}{17}{subsection.3.1.2}%
 \contentsline {section}{\numberline {3.2}Research Questions and experiment design}{18}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Architecture and hyperparameter selection}{19}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}The U-Net and U-Net variants}{19}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Pre-trained weights on Deep Learning models}{19}{subsection.3.3.2}%
-\contentsline {subsubsection}{EfficientNet encoders}{19}{subsubsection*.5}%
-\contentsline {section}{\numberline {3.4}Accuracy Assessment}{19}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Precision, Recall, Sensitivity, and Specificity}{20}{subsection.3.4.1}%
-\contentsline {subsubsection}{Precision, Recall, and Specificity}{20}{subsubsection*.6}%
-\contentsline {subsection}{\numberline {3.4.2}Overall Accuracy, Dice Score, and Intersection-over-Union}{22}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Experimentation setup}{22}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Project workflow}{22}{subsection.3.5.1}%
-\contentsline {chapter}{\numberline {4}Findings}{23}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Analysis}{23}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Discussion}{24}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Conclusion}{25}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Bibliography}{26}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Appendix}{27}{appendix.A}%
+\contentsline {section}{\numberline {3.3}Architecture and hyperparameter selection}{20}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}The U-Net and U-Net variants}{20}{subsection.3.3.1}%
+\contentsline {subsubsection}{Changing the encoder architecture and the EfficientNet family}{20}{subsubsection*.5}%
+\contentsline {section}{\numberline {3.4}Accuracy Assessment}{21}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Precision, Recall, Sensitivity, and Specificity}{21}{subsection.3.4.1}%
+\contentsline {subsubsection}{Precision, Recall, and Specificity}{21}{subsubsection*.6}%
+\contentsline {subsection}{\numberline {3.4.2}Overall Accuracy, Dice Score, and Intersection-over-Union}{24}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Experimentation setup}{24}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Project workflow}{25}{subsection.3.5.1}%
+\contentsline {chapter}{\numberline {4}Findings}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Analysis}{27}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Discussion}{28}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusion}{29}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Bibliography}{30}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Appendix}{31}{appendix.A}%
