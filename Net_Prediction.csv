@@ -1,8 +1,8 @@
 ,,Polygon,Pixel,
-,Kalobeyei building:,508,,
-,Dzaleka building:,12368,,
-,Dzaleka North building:,2912,,
-,Total:,15788,,
+,Kalobeyei building:,508,3753852,
+,Dzaleka building:,12368,22550960,
+,Dzaleka North building:,2912,2613953,
+,Total:,15788,28918765,
 ,,,,
 trained_weights,KBY,DZK,DZKN,Total
 KBY5719:1224_256oc_EB0-Unet-IMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_028818.pth,11005885,16842141,4342762,32190788
@@ -13,7 +13,6 @@ KBY5719:1224_256oc_EB2-Unet-IMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8
 KBY5719:1224_256oc_EB2-Unet-NoIMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_064618.pth,15132049,26869636,6375691,48377376
 KBY5719:1224_256oc_Four-Unet_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_057458.pth,21509061,36563686,8275135,66347882
 KBY5719:1224_256oc_Five-Unet_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_028818.pth,32021502,46718451,11752298,90492251
-,,,,
 18242:3909_256oc_EB1-Unet-IMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_223260.pth,13645351,25745934,5608030,44999315
 18242:3909_256oc_EB1-Unet-NoIMN_lr1e-3_wd1e-5_b32_ep500_BCE_RLRonPlateau(min1e-8)_iter_160450.pth,12337955,28069693,5859468,46267116
 18242:3909_256oc_EB1-Unet-qubvel_lr1e-3_wd1e-5_b16_ep500_BCE_RLRonPlateau(min1e-8)_iter_548820.pth,2815302,5163061,1377520,9355883
