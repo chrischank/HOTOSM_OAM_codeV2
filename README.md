@@ -57,9 +57,9 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 ![256ALLEB1-UNet-OCCUNTRAINEDBASE](https://user-images.githubusercontent.com/36608720/169056438-8695e156-5da8-4f39-a3b6-d047b6551053.png)
 ![256ALLEB1-UNet-OCCBASE](https://user-images.githubusercontent.com/36608720/169056421-59664ea0-6d7c-426b-907a-8201f8ec6d76.png)
 
-## Statistical metrics difference between mean of per window calculation and global calculation
+## Class-based accuracy assesments
 
-![Global_stripplot_fancy](https://user-images.githubusercontent.com/36608720/171561477-daf9b6cd-c989-4f61-bc54-49cdb917f058.png)
+![cat_CAA](https://user-images.githubusercontent.com/36608720/171561477-daf9b6cd-c989-4f61-bc54-49cdb917f058.png)
 
 ## EfficientNet B2 header performance
 - Dataset: 256x256 px. 0.15 m/px.
