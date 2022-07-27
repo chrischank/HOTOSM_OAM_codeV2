@@ -58,8 +58,8 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 ![256ALLEB1-UNet-OCCBASE](https://user-images.githubusercontent.com/36608720/169056421-59664ea0-6d7c-426b-907a-8201f8ec6d76.png)
 
 ## Class-based accuracy assesments
+![cat_CAA](https://user-images.githubusercontent.com/36608720/181202654-f6b1b607-3d33-410b-be50-318ff751b54d.png)
 
-![cat_CAA](https://user-images.githubusercontent.com/36608720/181103120-4e4c7ce3-a00d-4d0c-8793-4d08566c5be1.png)
 
 ## EfficientNet B2 header performance
 - Dataset: 256x256 px. 0.15 m/px.
