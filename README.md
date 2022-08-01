@@ -57,7 +57,7 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 ![256ALLEB1-UNet-NoIMNBASE](https://user-images.githubusercontent.com/36608720/182214150-ccd3ad7d-5d1c-4902-91ac-488cccf469d1.png)
 ![256ALLEB1-UNet-IMNBASE](https://user-images.githubusercontent.com/36608720/182218635-186d4cc6-7c0c-46db-9be6-97272446d320.png)
 ![256ALLEB1-UNet-OCCUNTRAINEDBASE](https://user-images.githubusercontent.com/36608720/182214213-469c84c8-9286-4d7f-99a4-26c651075839.png)
-![256ALLEB1-UNet-OCCUNTRAINEDBASE](https://user-images.githubusercontent.com/36608720/182214267-4eeec6f1-d807-4957-84b1-cc2cd2578819.png)
+![256ALLEB1-UNet-OCCBASE](https://user-images.githubusercontent.com/36608720/182218812-f2bcfa08-a5e7-4ea2-90e5-f622a0861fab.png)
 
 ## Class-based accuracy assesments
 ![cat_CAA](https://user-images.githubusercontent.com/36608720/181450347-a36cc55b-2882-4e0c-a7c0-02071fa70aef.png)
