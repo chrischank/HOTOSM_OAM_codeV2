@@ -52,11 +52,12 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 - Batch size: 32, 16(qubvel - 5 layer EB1-Unet)
 - Scheduler: Reduce Learning Rate on Plateau(min 1e-8) [Patient: 20 epochs, factor: 0.1]
 
-![256ALLFour-UnetBASE](https://user-images.githubusercontent.com/36608720/169056447-7e3729fe-ca00-4cde-b487-d6797e150104.png)
-![256ALLEB1-UNet-NoIMNBASE](https://user-images.githubusercontent.com/36608720/169056436-a54ca6cd-d05d-4edd-bf66-41beff400702.png)
-![256ALLEB1-UNet-IMNBASE](https://user-images.githubusercontent.com/36608720/169056430-b8d7b387-8f29-4c0e-b0bd-bbb6383f7acb.png)
-![256ALLEB1-UNet-OCCUNTRAINEDBASE](https://user-images.githubusercontent.com/36608720/169056438-8695e156-5da8-4f39-a3b6-d047b6551053.png)
-![256ALLEB1-UNet-OCCBASE](https://user-images.githubusercontent.com/36608720/169056421-59664ea0-6d7c-426b-907a-8201f8ec6d76.png)
+![256ALLFour-UnetBASE](https://user-images.githubusercontent.com/36608720/182214024-858a851c-7cd0-48cb-bcbd-44bacf714f7e.png)
+![256ALLFive-UnetBASE](https://user-images.githubusercontent.com/36608720/182214075-3caca019-e8b4-434e-b454-93ee4775292f.png)
+![256ALLEB1-UNet-NoIMNBASE](https://user-images.githubusercontent.com/36608720/182214150-ccd3ad7d-5d1c-4902-91ac-488cccf469d1.png)
+![256ALLEB1-UNet-IMNBASE](https://user-images.githubusercontent.com/36608720/182214182-254aa6b0-c04c-4ec0-a5b7-c4955a27080d.png)
+![256ALLEB1-UNet-OCCUNTRAINEDBASE](https://user-images.githubusercontent.com/36608720/182214213-469c84c8-9286-4d7f-99a4-26c651075839.png)
+![256ALLEB1-UNet-OCCUNTRAINEDBASE](https://user-images.githubusercontent.com/36608720/182214267-4eeec6f1-d807-4957-84b1-cc2cd2578819.png)
 
 ## Class-based accuracy assesments
 ![cat_CAA](https://user-images.githubusercontent.com/36608720/181450347-a36cc55b-2882-4e0c-a7c0-02071fa70aef.png)
