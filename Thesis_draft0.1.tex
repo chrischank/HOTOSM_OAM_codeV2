@@ -4,6 +4,8 @@
 \usepackage{amsmath}
 \usepackage{titlesec}
 \usepackage{hyperref}
+\usepackage{float}
+\restylefloat{table}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -104,7 +106,7 @@ The world’s population is more urbanised than ever before. As of 2018, approxi
 
 Refugee camps are often the common or only way for displaced people to receive shelters and assistance. They are often setup in place of proximity to displaced population, whether that be from natural disasters, human caused disasters, or other reasons. Throughout history, refugee sites have provided haven to the world's most vulnerable population (UN, 2018, Turner S., 2016, UNHCR, 2021). However as of 2020, out of the 26.4 million refugees, only around 1.4 million have access to third country solution between 2016 to 2021 (UNHCR, 2021). Additionally, although officially defined as temporary settlement, many refugee camps have had longer than expected life cycle, some of them have even became "Secondary Cities" and therefore suffers similar problems of poor governance and rapid urbanisation which consequentially makes them unattractive as investment (Cities Alliance \& AfDB., 2022). For the many refuggee camps and informal settlements that have lasted well beyond their expected temporary role, there are in generally 3 ways of solving the issue: 1. Voluntary repatriation, 2. Reolcation to third country, 3. Local integration as outlined by the Global Compact on Refugees (UN, 2018), although actual implementations are often subjected to the wills of the host soverign-state. Recent studies have suggested that local integration often have a net positive economical impact on the surrounding region (Alix-Garcia et al., 2018, Rummery A., 2019, IFC., 2018). \\\par
 
-The United Nations Department of Economic and SOcial Affairs have set out a set of 17 Sustainable Development Goals (herein SDG) to be achieved as of 2030 (UN, 2015). Special attention are drawn to Goals 1 and 10 that are particularly relevant, of which this study hope to contribute to.\\\par
+The United Nations Department of Economic and Social Affairs have set out a set of 17 Sustainable Development Goals (herein SDG) to be achieved as of 2030 (UN, 2015). Special attention are drawn to Goals 1 and 10 that are particularly relevant, of which this study hope to contribute to.\\\par
 
 \begin{itemize}
   \item \textit{Goal 1: End poverty in all its forms everywhere}
@@ -121,12 +123,12 @@ The United Nations Department of Economic and SOcial Affairs have set out a set 
 \end{itemize}
 \newline
 
-Thus, the overarching theme of this thesis is about reducing the geospatial data inequality of informal settlements (Herfort et al., 2021), thereby to improve future decision making in both humanitarian and non-humanitian context. As the topic and data provider of this project, the Humanitarian OpenStreetMap (herein HOTOSM) have been at the forefront of using open and crowd sourced mapping data to support humanitarian causes from shorter term disaster response to longer epidemiology and microfinance campaigns (HOTOSM, 2021). Having up-to-date map is therefore paramount for short and long term humanitarian projects, and with the advent of Deep Learning in the last decade, AI-assisted mapping have became a major topic for innovation (e.g. Herfort et al., 2019, Kuffer et al., 2016, Wurm et al., 2021, Quinn et al., 2018).
+Thus, the overarching theme of this thesis is about reducing the geospatial data inequality of informal settlements (Herfort et al., 2021), thereby to improve future decision making in both humanitarian and non-humanitian context. As the topic and data provider of this project, the Humanitarian OpenStreetMap (herein HOTOSM) have been at the forefront of using open and crowd sourced mapping data to support humanitarian causes from shorter term disaster response to longer epidemiology and microfinance campaigns (HOTOSM, 2021). Having up-to-date map is therefore paramount for short and long term humanitarian projects, and with the advent of Deep Learning in the last decade, AI-assisted mapping have became a major topic for innovation (e.g. Herfort et al., 2019, Kuffer et al., 2016, Wurm et al., 2021, Quinn et al., 2018).\\\par
 
 \section{Study Area of Interest}\label{StudyAOI}
 \subsection{Kalobeyei, Kakuma, Turkana, Kenya}\label{Kalobeyei}
 
-The Kakuma camp was first established in 1992, located in the North-West of Kenya in Turkana County. The camp was initially estbalished to provide accomdation to the refugees fleeing the Second Sudanese Civil War as a temporary solution. However, as the conflict became drag out and followed by subsequent conflicts in the nearby region, the Kakuma camp have therefore been running for the past 30 years. As of 2020, Kakuma is home to 157,718 refugees with increasing number coming from the more recent Somalian and Ethiopian-Eritrean conflict (IFC., 2018, UN-HABITAT, 2021). The Kalobeyei Integrated Settlement established in 2015 benefited from a much better spatial planning in order to facilitate inclusive socio-economic development (UN-HABITAT, 2021, UNHCR \& DANIDA, 2019) (\textit{see figure \ref{fig:KU_KALO_LU}}).\\\par
+The Kakuma camp was first established in 1992, located in the North-West of Kenya in Turkana County. The camp was initially established to provide accomdation to the refugees fleeing the Second Sudanese Civil War as a temporary solution. However, as the conflict became drag out and followed by subsequent conflicts in the nearby region, the Kakuma camp have therefore been running for the past 30 years. As of 2020, Kakuma is home to 157,718 refugees with increasing number coming from the more recent Somalian and Ethiopian-Eritrean conflict (IFC., 2018, UN-HABITAT, 2021). The Kalobeyei Integrated Settlement established in 2015 benefited from a much better spatial planning in order to facilitate inclusive socio-economic development (UN-HABITAT, 2021, UNHCR \& DANIDA, 2019) (\textit{see figure \ref{fig:KU_KALO_LU}}).\\\par
 
 The Kakuma refugee camp have fluctuated in population as a response to demand, however, a dramatic increase in population in 2013 to 2014 has culminated into the development of Kakuma 4 Camp and the Kalobeyei Settlement and the Kalobeyei Integrated Socio-Economic Development Plan (KISEDP) which is the local integration strategies. Both the Kakuma and Kalobeyei refugee camps have local integration as the targeted solution (UN-HABITAT, 2021, UNHCR \& DANIDA, 2019). A comprehensive study of the formal and informal economy of Kakuma refugee camp conducted by the International Financial Corporation (IFC, 2018) suggests that that market catering for the refugees and surrounding towns is estimated at KES 1.7 billion (USD \$16.4 million). The economical vibrancy of local integration have improve significantly the improverished Turkana county. However, challenges remain in integration into the wider Kenyan economy.\\\par
 
@@ -179,7 +181,7 @@ In the field of Computer Vision, there is generally 4 types of application: 1. S
 \label{fig:CV_tasks}
 \end{figure}
 
-The purpose of semantic segmentation is to assign a specific named (semantic) classification to each and every single of the input image. This is commonly applied in remote sensing of Land Use Land Cover classification where every single pixel will be assigned and Land Cover or Land Use type. Another application is binary segmentation where the model will only be trained to assign a named classification to a particular clusters of associated pixels. This is more common in single class segmentation. The difference between mere classication and segmentation is that the semantic segmentation output a mask over the pixel will be created, where each pixel within the mask belongs to the same semantic task; meanwhile, classification only gives a confidence of semantic of the whole scene without assigning the classification to each pixel.
+The purpose of semantic segmentation is to assign a named (semantic) classification to each and every single pixel of the input image. This is commonly applied in remote sensing of Land Use Land Cover classification where every single pixel will be assigned and Land Cover or Land Use type. Another application is binary segmentation where the model will only be trained to assign a named classification to a particular clusters of associated pixels. This is more common in single class segmentation. The difference between mere classication and segmentation is that the semantic segmentation output a mask over the pixel will be created, where each pixel within the mask belongs to the same semantic task; meanwhile, classification only gives a confidence of semantic of the whole scene without assigning the classification to each pixel.
 
 
 \subsection{UAV-based informal settlement segmentation}\label{CVandCNN}
@@ -311,14 +313,16 @@ In order for a neural network to improve, the weights and bias are changed accor
 
 \end{equation}
 
-Which when \textit{equation: \ref{cost_derivative}} is summed over all parameters of layer $i$ becomes \textit{\ref{Sum_cost_derivative}}
+Which when \textit{equation: \ref{cost_derivative}} is summed over all parameters of layer $i$ becomes \textit{\ref{Sum_cost_derivative}}\\\par
 
 \begin{equation}
   \label{Sum_cost_derivative}
   \nabla C = \frac{\delta C}{\delta P^{i}} = \sum^{n_{i}-1} \frac{\delta(w^{L}x^{i-1} + b^{i})}{\delta P^{i}} \frac{\sigma[\delta(w^{i}x^{i-1} + b^{i})]}{\delta (w^{i}x^{i-1} + b^{i})} \frac{\delta C}{\sigma[\delta(w^{i}x^{i-1} + b^{i})]}
 \end{equation}
 
-Thus, taking the negative gradient $-\nabla C$ will provide us gradient descent step hopefully towards the global minimum.
+Thus, taking the negative gradient $-\nabla C$ will provide us gradient descent step hopefully towards the global minimum.\\\par
+
+Essentially, using CNN and DL methods to perform semantic segmentation throguh repeated iterations of the above processes have proven to generalise well to complex dataset. Althought the aim of this study is not to produce a deployable model necessarily, the study will lay the foundational groundwork for a data-drive evaluation of different CNNs elaborated in section \ref{Arch&Hyperparam}.\\\par
 
 \newpage
 
@@ -327,6 +331,40 @@ Thus, taking the negative gradient $-\nabla C$ will provide us gradient descent 
 \section{Data}\label{Data}
 
 \subsection{Raster pre-processing}
+
+All imagery were cubic-spline resampled to 15 cm resolution and subsequently reprojected to EPSG:3857. Normalisation of per-band raster data is perhaps one of the most important pre-processing step. 2-step normalisation were performed on each band for each drone images.\\\par
+
+First, the z-score normalisation noramlises the images according to the retrieved standard deviation \textit{see equation:\ref{z-score}}. This scales the every pixel to the global statistics for each colour band, keeping proportional ratio while reducing the effects of outlier. The z-score normalised result is then linearly scaled to range of 0 to 255 to be converted to 8-bit .png file type \textit{see equation:\ref{png_norm}}.
+
+\begin{equation}
+  \label{z-score}
+  p_{z} = \frac{(p - \mu)}{\sigma}
+\end{equation}
+
+\begin{itemize}
+  \item Where:
+    \begin{itemize}
+      \item $p_{z} =$ z-score normalised pixel value
+      \item $p =$ Original pixel value
+      \item $\mu =$ Mean value of global pixel
+      \item $\sigma =$ Standard Deviation of global pixel
+    \end{itemize}
+\end{itemize}
+
+\begin{equation}
+  \label{png_norm}
+  p_{8 bit} = \frac{[p_{z} - min(p_{z})] * 255}{[max(p_{z}) - min(p_{z})]}
+\end{equation}
+
+\begin{itemize}
+  \item Where:
+    \begin{itemize}
+      \item $p_{8_bit} =$ Pixel output normalised between 0 to 255
+      \item $p_{z} =$ z-score normalised pixel value from \ref{z-score}
+    \end{itemize}
+\end{itemize}
+
+After per-band normalisation,the imagery bands were stacked with the associated labels. In order to increase the data quantity, $\frac{2}{3}$ overlapping steps cropping was performed. This resulted in the image label pair count of Train n = 2606, Validation, n = 1303, and Test n = 435 respectively where each sets were split at a ratio of 60, 30, and 10 \% respectively. With augemntation applied, this increased the available data to Train n = 18242, Validation n = 3909, and Test n = 435. (\textit{see figure. \ref{fig:InRGB}})
 
 \subsection{Data Augmentation}\label{DataAug}
 
@@ -370,8 +408,6 @@ Thus, the following augmentation were applied to the Train, Validation, and Test
   \item Test - None
 \end{itemize}
 
-Initially, the $\frac{2}{3}$ overlapping ratio cropping has resulted in the image label pair count of Train n = 2606, Validation, n = 1303, and Test n = 435 respectively. With augemntation applied, this increased the available data to Train n = 18242, Validation n = 3909, and Test n = 435. (\textit{see figure. \ref{fig: InRGB}})
-
 \begin{figure}[H]
   \centering
   \includegraphics[scale = 0.75]{InRGB.png}
@@ -382,7 +418,7 @@ Initially, the $\frac{2}{3}$ overlapping ratio cropping has resulted in the imag
 
 \section{Research Questions and experiment design}\label{RQ}
 
-In order to train a model which performs well on drone imagery, the motion artefact will be a signficant feature for the model to learn.he combination of data availability have allow a unique set of research questions concerning the input data quality and experiment setup to surface.\\\par
+In order to train a model which performs well on drone imagery, the motion artefact will be a signficant feature for the model to learn. The combination of data availability have allow a unique set of research questions concerning the input data quality and experiment setup to surface.\\\par
 
 \begin{enumerate}
   \item RQ1: What is the optimal mixture of accurate and less-accurate labels and how does that affect the segmentation output result?
@@ -404,46 +440,7 @@ Model architecture and their associated hyperparameters selection is highly depe
 
 \subsection{The U-Net and U-Net variants}\label{Unet}
 
-The U-Net architecture was first developed by Ronneberger et al. (2015) for the task of cell segmentation in biomedical electronmicroscope images. The architecture feature a symmetrical Encoder-Decoder structure \textit{(see figure \ref{fig:U-Net})} and as with many other CNN, the architecture have transferred successfully well into the remote sensing domains (Höser \& Künzer, 2020, Höser et al., 2020, Xu et al., 2019). This symmetrical encoder-decoder type architecture is able to extract deeper features in the encoder layers but recover and interpolate spatial features in the connected unsampling decoder layers (Wurm et al., 2019).\\\par
-
-\subsubsection{Changing the encoder architecture and the EfficientNet family}\label{EffNet}
-
-The ability to switch out the encoder structure allows the DL practioner to experiment with more up-to-date architectures without changing the output shape. This drastically increases the combination of experiment and test out the best combination of encoder-decoder structure suitable for this particular dataset. All of the experiments in this study were carried out using the high-level PyTorch API \href{https://segmentation-models-pytorch.readthedocs.io/en/latest/quickstart.html}{Segmentation-Model-PyTorch} created by Pavel Lukabovskii. Whom was also the winner of the OCC challenge for drone building segmentation which this study will transfer, and compare against.\\\par
-
-In this study, the experiments with changed encoder will be from the EfficientNet family. There are three reasons for this decision. Firstly, at one of the last stage of the OCC compeition winning network, EfficeintNet B1 was used as an encoder. Secondly, the EfficientNet family are a set of network architectures that are structured and easy to scale up when computational resources become more available. Thirdly, they are perhaps the best represntation of generalised state-of-the-art architectures that have been tested and performed phenomenally well in classical CV datasets (\textit{see figure \ref{fig:Eff_perform}}) (Tan \& Lee, 2020). In essence, these are sets of experiments that mix and match old and new architectural design.\\\par
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale = 0.5]{Eff_perform.png}
-  \caption{EfficientNet family Top 1\% Accuracy Assessment in ImageNet (Tan \& Lee, 2020).}
-  \label{fig:Eff_perform}
-\end{figure}
-
-The EfficientNet family uses compound scaling which increases the height, width, and depth. The baseline architecture was generated using AutoML Neural Architecture Search (Elsken et al., 2019) which optimised for computational efficiency and accuracy.
-
-Therefore, the unweighted Four-layer U-Net, Five-layer U-Net, and the OCC winner weighted EfficientNet B1 U-Net are the key architectures the rest will compare against.
-
-\begin{table}[H]
-  \centering
-  \resizebox{0.65\textwidth}{!}{\begin{minipage}{\textwidth}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
-      \hline
-      \multicolumn{5}{|c|}{Architecture Specification Table} \\
-      \hline
-      Encoder & Decoder & Initalised weights & Trainable parameters & Batch-size (8GB GeForce GTX 1070Ti) \\
-      \hline
-      4-layer U-Net Encoder & 4-layer U-Net Decoder & None & 69 &\\
-      5-layer U-Net Encoder & 5-layer U-Net Decoder & None  & ... & \\
-      EfficientNet-B1 & 4-layer U-Net Decoder & None & ...& \\
-      EfficientNet-B1 & 4-layer U-Net Decoder & ImageNet & ...& \\
-      EfficientNet-B1 & 5-layer U-Net Decoder & OCC & ...& \\
-      American Samoa & AS & ASM & \\
-      Andorra & AD & AND & &  \\
-      Angola & AO & AGO & & \\
-      \hline
-    \end{tabular}
-  \end{minipage}}
-\end{table}
+The U-Net architecture was first developed by Ronneberger et al. (2015) for the task of cell segmentation in biomedical electronmicroscope images. The architecture feature a symmetrical Encoder-Decoder structure \textit{(see figure \ref{fig:U-Net})} and as with many other CNN, the architecture have transferred successfully well into the remote sensing domains (Höser \& Künzer, 2020, Höser et al., 2020, Xu et al., 2019). This symmetrical encoder-decoder type architecture is able to extract deeper features in the encoder layers and recover and interpolate spatial features in the connected unsampling decoder layers (Wurm et al., 2019).\\\par
 
 \begin{figure}[H]
   \centering
@@ -452,7 +449,47 @@ Therefore, the unweighted Four-layer U-Net, Five-layer U-Net, and the OCC winner
   \label{fig:U-Net}
 \end{figure}
 
+\subsubsection{Changing the encoder architecture and the EfficientNet family}\label{EffNet}
+
+The ability to switch out the encoder structure allows the DL practioner to experiment with more up-to-date architectures without changing the output shape. This drastically increases the combination of experiments that allow testing the best combinations of encoder-decoder structure suitable for the dataset. All of the experiments in this study were carried out using the high-level PyTorch API \href{https://segmentation-models-pytorch.readthedocs.io/en/latest/quickstart.html}{Segmentation-Model-PyTorch} created by Yakubovyskiyl P. (2021). Whom was also the winner of the OCC challenge for drone building segmentation which this study will transfer, and compare against.\\\par
+
+In this study, the experiments with changed encoder will be from the EfficientNet family. There are three reasons for this decision. Firstly, at one of the last stage of the OCC compeition winning network, EfficeintNet B1 was used as an encoder. Secondly, the EfficientNet family are a set of network architectures that are structured and easy to scale up when computational resources become available. Thirdly, they are perhaps the best represntation of generalised state-of-the-art architectures that have been tested and performed phenomenally well in classical CV datasets (\textit{see figure \ref{fig:Eff_perform}}) (Tan \& Le, 2020). In essence, these are sets of experiments that mix and match old and new architectural design.\\\par
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.5]{Eff_perform.png}
+  \caption{EfficientNet family Top 1\% Accuracy Assessment in ImageNet (Tan \& Le, 2020).}
+  \label{fig:Eff_perform}
+\end{figure}
+
+The EfficientNet family uses compound scaling which increases the height, width, and depth. The baseline architecture was generated using AutoML Neural Architecture Search (Elsken et al., 2019) which optimised for computational efficiency and accuracy.\\\par
+
+Therefore, the unweighted Four-layer U-Net, Five-layer U-Net, and the OCC winner weighted EfficientNet B1 U-Net are the key architectures the rest will compare against.
+
+
+\begin{table}[H]
+  \centering
+  \resizebox{0.65\textwidth}{!}{\begin{minipage}{\textwidth}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+      \hline
+      \multicolumn{5}{|c|}{Trained Architecture Specification Table} \\
+      \hline
+      Encoder & Decoder & Initalised weights & Trainable parameters & Batch-size (8GB GeForce GTX 1070Ti) \\
+      \hline
+      4-layer U-Net Encoder & 4-layer U-Net Decoder & None & 776,3041& 32\\
+      5-layer U-Net Encoder & 5-layer U-Net Decoder & None  & 3110,0513 & 32\\
+      EfficientNet-B1 & 4-layer U-Net Decoder & None & 700,5041& 32\\
+      EfficientNet-B1 & 4-layer U-Net Decoder & ImageNet & 700,5041& 32\\
+      EfficientNet-B1 & 5-layer U-Net Decoder & OCC & 875,7105& 16\\
+      EfficientNet-B2 & 4-layer U-Net Decoder & None & 821,1283& 32\\
+      EfficientNet-B2 & 4-layer U-Net Decoder & ImageNet & 821,1283& 32\\
+      \hline
+    \end{tabular}
+  \end{minipage}}
+\end{table}
+
 \section{Accuracy Assessment}\label{AccAss}
+
 
 Detail and scrutable accuracy assessments are fundamental towards any classification based analysis. This section will introduce and break down the various lower order and higher order class-based (thematic) accuracy assessment. By explaining the characteristics of each metrics, this will provide a much more granular nature of accuracy assessment in the findings of section \ref{findings}. In general, accuracy assessment in remote sensing can be divided into 2 categories: 1. Positional Accuracy \& 2. Thematic Accuracy. Of which, Positional Accuracy deals with the accuracy of the location while Thematic Accuracy deals with the labels or attributes accuracy (Congalton \& Green, 2019 \& Bolstad, 2019). The rest of this section will consider the lower order and higher order accuracy metrics, with lower order metrics being more granular while higher order metrics more triturated but generalised.\\\par
 
@@ -489,9 +526,45 @@ Meanwhile, \textbf{Recall} measures the correctly predicted Positive class (True
   Specificity = \frac{True\ Negative} {(False\ Positive + True\ Negative)}
 \end{equation}
 
-Therefore, higher \textbf{Recall} suggests the model is better at identifying positives and vice-versa higher \textbf{Specificity} suggests the model is better at identifying negatives. Since this is an exercise that aim to maximise the positive prediction as a binary building segmentation classifier, emphasise will be placed on maximising \textbf{Precision} and \textbf{Recall}.
+Therefore, higher \textbf{Recall} suggests the model is better at identifying positives and vice-versa higher \textbf{Specificity} suggests the model is better at identifying negatives. Since this is an exercise that aim to maximise the positive prediction as a binary building segmentation classifier, emphasise will be placed on maximising \textbf{Precision} and \textbf{Recall}.\\\par
 
 \subsection{Overall Accuracy, Dice Score, and Intersection-over-Union}\label{2ndorder}
+
+The following are higher-order accuracy assessment metrics, where they often encompass the lower-order accuracy assessment metrics mentioned in the above section, Thus, although higher-order metrics provide a more generalised assessments, they often suffer from granularity.Hence such metrics are often employed as a means to evaluate and rank DL based CV challenges and competitions.
+
+\subsubsection{Overall Accuracy}\label{OA}
+
+\begin{equation}
+  Overall\ Accuracy = \frac{True\ Positive + True\ Negative}{True\ Positive + True\ Negative + False\ Positive + False\ Negative}
+\end{equation}
+
+The Overall Accuracy (herein OA) could give an easy to implement, general but incomplete image of how well classification is doing. The metrics suffers when inbalance count of multiple-classes are involved.
+
+\subsubsection{Dice Score}\label{F1}
+
+\begin{equation}
+  Dice\ Score = 2 * \frac{Precision - Recall}{Precision + Recall}
+\end{equation}
+
+The Dice Score aka. the F1 score calculates the harmonic mean of \textbf{Precision} and \textbf{Recall},with contribution for both to be of balanced weightings, the Dice Score could be skewed by classification results with higher performance in either Precision or Recall. Additionally, the metrics does not take True Negative values into account if such statistics might be of interest.
+
+\subsubsection{Intersection-over-Union}\label{IoU}
+
+\begin{equation}
+  IoU = \frac{A \cap B}{A \cup B} = \frac{True\ Positive}{True\ Positive + False\ Positive + False\ Negative}
+\end{equation}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.75]{IoU.png}
+  \caption(Schematic diagram of Intersection-over-Union}
+  \label{fig:IoU}
+\end{figure}
+
+
+One of the most commonly used metrics as an assessment in Deep Learning Computer Vision competiton. The Intersection-over-Union (IoU) aka. Jaccard Index is a geometric based accuraccy assessment
+
+
 \section{Experimentation setup}\label{ExpSetup}
 
 Each network architecture and their associated weights will be trained on 2 data setup. The first setup consist of only the Kalobeyei, Kakuma camp where the labels include drone motion artefacts and rooftops are relatively homogeneous. The second setup consist of data from the Kalobeyei camp and also the rest of Dzaleka, Dowa camp. The second setup will introduce imperfection in labelling and complex hetereogeneous rooftops and morphologies. The two data setup will allow comparison between the models response of each class-based accuracy assessment metrics.\\\par
@@ -511,6 +584,81 @@ To truly assess the performance of the architecture output, a combination of the
 \newpage
 
 \chapter{Findings}\label{findings}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.3]{Cat_CAA.png}
+  \caption{Class-based Accuracy Assesment metrics for respective CNN architectures and experiment input dataset.}
+  \label{fig:Cat_CAA}
+\end{figure}
+
+\section{Depth-wise Precision and Recall change}
+
+\begin{table}[H]
+  \centering
+  \resizebox{0.65\textwidth}{!}{\begin{minipage}{\textwidth}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+      \hline
+      \multicolumn{5}{|c|}{Depth-wise Precision and Recall change} \\
+      \hline
+      Architecture & Initialised weights & Input dataset & Precision change & Recall change \\
+      \hline
+      4 to 5 layer U-Net & None & KBY & +0.011 & -0.003\\
+      4 to 5 layer U-Net & None & KBY + DZK + DZKN  & +0.007 & -0.002\\
+      EfficientNet B1 to B2 U-Net & None & KBY & -0.003 & -0.012\\
+      EfficientNet B1 to B2 U-Net & ImageNet & KBY & +0.003 & -0.006\\
+      EfficientNet B1 to B2 U-Net & None & KBY + DZK + DZKN & +0.023 & +0.006\\
+      EfficientNet B1 to B2 U-Net & ImageNet & KBY + DZK + DZKN & -0.006 & -0.002\\
+      \hline
+    \end{tabular}
+  \end{minipage}}
+\end{table}
+
+\section{Dataset-wise Precision and Recall change}
+
+\begin{table}[H]
+  \centering
+  \resizebox{0.65\textwidth}{!}{\begin{minipage}{\textwidth}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+      \hline
+      \multicolumn{4}{|c|}{Dataset-wise (KBY to KBY + DZK + DZKN) Precision and Recall change} \\
+      \hline
+      Architecture & Initialised weights & Precision change & Recall change \\
+      \hline
+      4-layer U-Net & None & -0.065 & -0.016\\
+      5 layer U-Net & None &  -0.07 & -0.153\\
+      EfficientNet B1 U-Net & None & -1.24 & -0.044\\
+      EfficientNet B1 U-Net & ImageNet & -0.119 & -0.032\\
+      EfficientNet B1 U-Net (OCC) & OCC & -0.002 &-0.387 \\
+      EfficientNet B1 U-Ne (OCC) & OCC transfer-trained & -0.125&-0.043 \\
+      EfficientNet B2 U-Net & None & -0.99 & -0.026\\
+      EfficientNet B2 U-Net & ImageNet & -0.128 & -0.028\\
+      \hline
+    \end{tabular}
+  \end{minipage}}
+\end{table}
+
+\section{Initialised weight Precision and Recall change}
+
+\begin{table}[H]
+  \centering
+  \resizebox{0.65\textwidth}{!}{\begin{minipage}{\textwidth}
+    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
+      \hline
+      \multicolumn{5}{|c|}{Pre-initalised weights Precision and Recall change} \\
+      \hline
+      Architecture & Weights changed & Dataset input & Precision change & Recall change \\
+      \hline
+      EfficientNet B1 U-Net & None to ImageNet & KBY & 0.003 & 0.008\\
+      EfficientNet B1 U-Net & None to ImageNet & KBY + DZK + DZKN & 0.009 & -0.0197\\
+      EfficientNet B2 U-Net & None to ImageNet & KBY & 0.009 & 0.014\\
+      EfficientNet B2 U-Net & None to ImmageNet & KBY + DZK + DZKN & -0.02 & 0.012\\
+      \hline
+    \end{tabular}
+  \end{minipage}}
+\end{table}
+
+
 \section{Analysis}\label{analysis}
 
 \newpage
