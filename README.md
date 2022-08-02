@@ -35,11 +35,12 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 - Batch size: 32, 16(qubvel - 5 layer EB1-Unet)
 - Scheduler: Reduce Learning Rate on Plateau(min 1e-8) [Patient: 20 epochs, factor: 0.1]
 
-![256KBYFour-UnetBASE](https://user-images.githubusercontent.com/36608720/165932776-75ecdd33-7cb9-4660-8312-e8625a52c77b.png)
-![256KBYEB1-UNet-NoIMNBASE](https://user-images.githubusercontent.com/36608720/165932771-60871747-23b4-46ac-83d6-a34626e52699.png)
-![256KBYEB1-UNet-IMNBASE](https://user-images.githubusercontent.com/36608720/165932767-15b04c02-3b3c-4d1f-8999-5408248abaab.png)
-![256KBYEB1-UNet-OCCUNTRAINEDBASE](https://user-images.githubusercontent.com/36608720/165932774-71b35a31-7b32-4026-a704-5a0f710e57f8.png)
-![256KBYEB1-UNet-OCCBASE](https://user-images.githubusercontent.com/36608720/165932763-213326de-d973-45d3-89b3-8ce3b893fa49.png)
+![256KBYFour-UnetBASE](https://user-images.githubusercontent.com/36608720/182344718-42d07704-9fbe-4f47-8bc4-985d87a5ad49.png)
+![256KBYFive-UnetBASE](https://user-images.githubusercontent.com/36608720/182344738-71dc0c72-5cb0-42a1-8c92-003fe7214638.png)
+![256KBYEB1-UNet-NoIMNBASE](https://user-images.githubusercontent.com/36608720/182344864-51a2154f-5120-49ad-b367-20e8811cd517.png)
+![256KBYEB1-UNet-IMNBASE](https://user-images.githubusercontent.com/36608720/182344824-4700ce1c-f3cc-43e1-b115-285e48231f92.png)
+![256KBYEB1-UNet-OCCUNTRAINEDBASE](https://user-images.githubusercontent.com/36608720/182344912-1e15da1d-3f11-48a2-964f-245423f72420.png)
+![256KBYEB1-UNet-OCCBASE](https://user-images.githubusercontent.com/36608720/182344944-49babf87-27e4-401a-bc0b-0d4a9e46e05c.png)
 
 ## Baseline training results for Kalobeyei + Dzaleka + Dzaleka North (full dataset)
 - Dataset: 256x256 px. 0.15 m/px.
@@ -79,5 +80,7 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
   <img src="https://user-images.githubusercontent.com/36608720/171561584-7696bc54-fe9b-4130-bf56-98a868d2b798.png" /> 
 </p>
 
+![256KBYEB2-UNet-NoIMNBASE](https://user-images.githubusercontent.com/36608720/182345044-bef97ab2-a1b7-41d8-b37d-bf11ff7721ca.png)
+![256KBYEB1-UNet-IMNBASE](https://user-images.githubusercontent.com/36608720/182345085-e8f10abc-c4fe-4635-93bb-394f77e32293.png)
 ![256ALLEB2-UNet-NoIMN](https://user-images.githubusercontent.com/36608720/171693413-a62c39f0-24c7-4ece-9932-89b329ca50c6.png)
 ![256ALLEB2-UNet-IMN](https://user-images.githubusercontent.com/36608720/171693400-c64623e9-472c-48d6-8d5b-15039f855d1d.png)
