@@ -431,8 +431,14 @@ In order to train a model which performs well on drone imagery, the motion artef
     \end{enumerate}
 \end{enumerate}
 
-Therefore, to test out U-Net and a few variation of the U-Net performance, an additional set of label data was created in order to supplement the imperfection in the labelled data of the Dzaleka camps. Initially, the models will be trained on the pixel-perfect and less complex Kalobeyei dataset, this will be then be followed by introducing the Dzaleka datasets of higher complexity. A comparison of baseline performance between the U-Net variations (Ronneberger et al., 2015) and the \href{https://github.com/drivendataorg/open-cities-ai-challenge/tree/master/1st\%20Place}{Open-Cities-AI-Challenge (OCC) winning model} is conducted. The baseline experiement aims to keep the hyperparameters (e.g. optimiser, learning rate, weight decay etc.) constant to obtain an objective view of the architectual responses on the same dataset setup. This will provide a clear picture of the feasibility and how to take this project further, so that further resources could be justified to scale future experiments.\\\par
+Therefore, to test out U-Net and a few variation of the U-Net performance, an additional set of label data was created in order to supplement the imperfection in the labelled data of the Dzaleka camps. Initially, the models will be trained on the pixel-perfect and less complex Kalobeyei dataset, this will be then be followed by introducing the Dzaleka datasets of higher complexity. \textit{Figure \ref{fig:rooftops}} show a snapshot of the diverse rooftops to be segmented in the available datasets. A comparison of baseline performance between the U-Net variations (Ronneberger et al., 2015) and the \href{https://github.com/drivendataorg/open-cities-ai-challenge/tree/master/1st\%20Place}{Open-Cities-AI-Challenge (OCC) winning model} is conducted. The baseline experiement aims to keep the hyperparameters (e.g. optimiser, learning rate, weight decay etc.) constant to obtain an objective view of the architectual responses on the same dataset setup. This will provide a clear picture of the feasibility and how to take this project further, so that further resources could be justified to scale future experiments.\\\par
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.2]{rooftops.png}
+  \caption{Collections of diverse and heterogeneous rooftops from the Kalobeyei, Dzaleka, and Dzaleka North datasets.}
+  \label{fig:rooftops}
+\end{figure}
 
 \section{Architecture and hyperparameter selection}\label{Arch&Hyperparam}
 
@@ -486,6 +492,7 @@ Therefore, the unweighted Four-layer U-Net, Five-layer U-Net, and the OCC winner
       \hline
     \end{tabular}
   \end{minipage}}
+  \label{table:setup}
 \end{table}
 
 \section{Accuracy Assessment}\label{AccAss}
@@ -530,7 +537,7 @@ Therefore, higher \textbf{Recall} suggests the model is better at identifying po
 
 \subsection{Overall Accuracy, Dice Score, and Intersection-over-Union}\label{2ndorder}
 
-The following are higher-order accuracy assessment metrics, where they often encompass the lower-order accuracy assessment metrics mentioned in the above section, Thus, although higher-order metrics provide a more generalised assessments, they often suffer from granularity.Hence such metrics are often employed as a means to evaluate and rank DL based CV challenges and competitions.
+The following are higher-order accuracy assessment metrics, where they often encompass the lower-order accuracy assessment metrics mentioned in the above section, Thus, although higher-order metrics provide a more generalised assessments, they often suffer from granularity.Hence such metrics are often employed as a means to evaluate and rank DL based CV challenges and competitions.\\\par
 
 \subsubsection{Overall Accuracy}\label{OA}
 
@@ -538,7 +545,7 @@ The following are higher-order accuracy assessment metrics, where they often enc
   Overall\ Accuracy = \frac{True\ Positive + True\ Negative}{True\ Positive + True\ Negative + False\ Positive + False\ Negative}
 \end{equation}
 
-The Overall Accuracy (herein OA) could give an easy to implement, general but incomplete image of how well classification is doing. The metrics suffers when inbalance count of multiple-classes are involved.
+The Overall Accuracy (herein OA) could give an easy to implement, general but incomplete image of how well classification is doing. The metrics suffers when inbalance count of multiple-classes are involved.\\\par
 
 \subsubsection{Dice Score}\label{F1}
 
@@ -546,7 +553,7 @@ The Overall Accuracy (herein OA) could give an easy to implement, general but in
   Dice\ Score = 2 * \frac{Precision - Recall}{Precision + Recall}
 \end{equation}
 
-The Dice Score aka. the F1 score calculates the harmonic mean of \textbf{Precision} and \textbf{Recall},with contribution for both to be of balanced weightings, the Dice Score could be skewed by classification results with higher performance in either Precision or Recall. Additionally, the metrics does not take True Negative values into account if such statistics might be of interest.
+The Dice Score aka. the F1 score calculates the harmonic mean of \textbf{Precision} and \textbf{Recall},with contribution for both to be of balanced weightings, the Dice Score could be skewed by classification results with higher performance in either Precision or Recall. Additionally, the metrics does not take True Negative values into account if such statistics might be of interest.\\\par
 
 \subsubsection{Intersection-over-Union}\label{IoU}
 
@@ -557,19 +564,18 @@ The Dice Score aka. the F1 score calculates the harmonic mean of \textbf{Precisi
 \begin{figure}[H]
   \centering
   \includegraphics[scale = 0.75]{IoU.png}
-  \caption(Schematic diagram of Intersection-over-Union}
+  \caption{Schematic diagram of Intersection-over-Union}
   \label{fig:IoU}
 \end{figure}
 
 
-One of the most commonly used metrics as an assessment in Deep Learning Computer Vision competiton. The Intersection-over-Union (IoU) aka. Jaccard Index is a geometric based accuraccy assessment
-
+One of the most commonly used metrics as an assessment in Deep Learning Computer Vision competiton. The Intersection-over-Union (IoU) aka. Jaccard Index is a geometric based accuraccy assessment\\\par
 
 \section{Experimentation setup}\label{ExpSetup}
 
 Each network architecture and their associated weights will be trained on 2 data setup. The first setup consist of only the Kalobeyei, Kakuma camp where the labels include drone motion artefacts and rooftops are relatively homogeneous. The second setup consist of data from the Kalobeyei camp and also the rest of Dzaleka, Dowa camp. The second setup will introduce imperfection in labelling and complex hetereogeneous rooftops and morphologies. The two data setup will allow comparison between the models response of each class-based accuracy assessment metrics.\\\par
 
-To truly assess the performance of the architecture output, a combination of the validation loss, class-based accuracy assessments, and
+To assess the performance of the architectures and experiment setup, a combination of the validation loss, class-based accuracy assessments, and empirical output were considered....
 
 \subsection{Project workflow}\label{ProjWorkflow}
 
@@ -580,10 +586,30 @@ To truly assess the performance of the architecture output, a combination of the
   \label{fig:ETL_flow}
 \end{figure}
 
+The workflow for this study consist of 5 main stages: 1. Download and Extraction, 2. Data pre-processing, 3. Data processing for loading, 4. Iterative Model training, 5. Inference and Evaluation \textit{see figures \ref{fig:ETL_flow} \& \ref{fig:simp_ETL}}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.3]{simp_ETL.png}
+  \caption{Simplified project workflow in reference to \ref{fig:ETL_flow}}
+  \label{fig:simp_ETL}
+\end{figure}
 
 \newpage
 
 \chapter{Findings}\label{findings}
+
+This study have tested on 5 different architectures with no initalised weights or initalised weights from ImageNet or OCC building segmentation results. For each experimental setup, there were 2 sets of dataset input (KBY and KBY + DZK + DZKN), for details \textit{see table \ref{table:setup}}. Producing 16 sets of trained CNN and associated class-based accuracy assessments \textit{see appendix \ref{app:}}. On the whole, there were both expected and unexpected results. A reduction in every metrics were observed in every single experiment setup when the more complex Dzaleka camp datasets were introduced. This was expected as it is more difficult to train the CNNs on the highly heterogeneous rooftops with similar texture
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.4]{256KBYEB1-UNet-OCCUNTRAINEDBASE.png}
+  \includegraphics[scale = 0.4]{256KBYFive-UnetBASE.png}
+  \includegraphics[scale = 0.4]{256ALLEB1-UNet-OCCBASE.png}
+  \includegraphics[scale = 0.4]{256ALLEB2-UNet-NoIMN.png}
+  \caption{Sample of binary segmentation output of various combinations of tested architecture and experiment setup.}
+  \label{fig:output}
+\end{figure}
 
 \begin{figure}[H]
   \centering
@@ -612,6 +638,7 @@ To truly assess the performance of the architecture output, a combination of the
       \hline
     \end{tabular}
   \end{minipage}}
+  \label{table:depth-wise_change}
 \end{table}
 
 \section{Dataset-wise Precision and Recall change}
@@ -636,6 +663,7 @@ To truly assess the performance of the architecture output, a combination of the
       \hline
     \end{tabular}
   \end{minipage}}
+  \label{table:Data-wise_change}
 \end{table}
 
 \section{Initialised weight Precision and Recall change}
@@ -656,10 +684,8 @@ To truly assess the performance of the architecture output, a combination of the
       \hline
     \end{tabular}
   \end{minipage}}
+  \label{table:Initalised_weights_change}
 \end{table}
-
-
-\section{Analysis}\label{analysis}
 
 \newpage
 

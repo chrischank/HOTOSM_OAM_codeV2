@@ -20,24 +20,23 @@
 \contentsline {subsection}{\numberline {3.1.1}Raster pre-processing}{17}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Data Augmentation}{18}{subsection.3.1.2}%
 \contentsline {section}{\numberline {3.2}Research Questions and experiment design}{20}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Architecture and hyperparameter selection}{20}{section.3.3}%
+\contentsline {section}{\numberline {3.3}Architecture and hyperparameter selection}{21}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}The U-Net and U-Net variants}{21}{subsection.3.3.1}%
-\contentsline {subsubsection}{Changing the encoder architecture and the EfficientNet family}{21}{subsubsection*.5}%
-\contentsline {section}{\numberline {3.4}Accuracy Assessment}{23}{section.3.4}%
+\contentsline {subsubsection}{Changing the encoder architecture and the EfficientNet family}{22}{subsubsection*.5}%
+\contentsline {section}{\numberline {3.4}Accuracy Assessment}{24}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Precision, Recall, Sensitivity, and Specificity}{24}{subsection.3.4.1}%
 \contentsline {subsubsection}{Precision, Recall, and Specificity}{24}{subsubsection*.6}%
 \contentsline {subsection}{\numberline {3.4.2}Overall Accuracy, Dice Score, and Intersection-over-Union}{25}{subsection.3.4.2}%
-\contentsline {subsubsection}{Overall Accuracy}{25}{subsubsection*.7}%
-\contentsline {subsubsection}{Dice Score}{25}{subsubsection*.8}%
-\contentsline {subsubsection}{Intersection-over-Union}{25}{subsubsection*.9}%
-\contentsline {section}{\numberline {3.5}Experimentation setup}{26}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Project workflow}{27}{subsection.3.5.1}%
-\contentsline {chapter}{\numberline {4}Findings}{28}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Depth-wise Precision and Recall change}{29}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Dataset-wise Precision and Recall change}{29}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Initialised weight Precision and Recall change}{29}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Analysis}{29}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Discussion}{30}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Conclusion}{31}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Bibliography}{32}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Appendix}{33}{appendix.A}%
+\contentsline {subsubsection}{Overall Accuracy}{26}{subsubsection*.7}%
+\contentsline {subsubsection}{Dice Score}{26}{subsubsection*.8}%
+\contentsline {subsubsection}{Intersection-over-Union}{26}{subsubsection*.9}%
+\contentsline {section}{\numberline {3.5}Experimentation setup}{27}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Project workflow}{28}{subsection.3.5.1}%
+\contentsline {chapter}{\numberline {4}Findings}{30}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Depth-wise Precision and Recall change}{32}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Dataset-wise Precision and Recall change}{33}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Initialised weight Precision and Recall change}{33}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Discussion}{34}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusion}{35}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Bibliography}{36}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Appendix}{37}{appendix.A}%
