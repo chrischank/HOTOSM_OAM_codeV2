@@ -21,6 +21,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \pagenumbering{roman}
+\linespread{1.5}
 
 \begin{document}
 
@@ -573,9 +574,7 @@ One of the most commonly used metrics as an assessment in Deep Learning Computer
 
 \section{Experimentation setup}\label{ExpSetup}
 
-Each network architecture and their associated weights will be trained on 2 data setup. The first setup consist of only the Kalobeyei, Kakuma camp where the labels include drone motion artefacts and rooftops are relatively homogeneous. The second setup consist of data from the Kalobeyei camp and also the rest of Dzaleka, Dowa camp. The second setup will introduce imperfection in labelling and complex hetereogeneous rooftops and morphologies. The two data setup will allow comparison between the models response of each class-based accuracy assessment metrics.\\\par
-
-To assess the performance of the architectures and experiment setup, a combination of the validation loss, class-based accuracy assessments, and empirical output were considered....
+Each network architecture and their associated weights will be trained on 2 data setup. The first setup consist of only the Kalobeyei, Kakuma camp where the labels include drone motion artefacts and rooftops are relatively homogeneous. The second setup consist of data from the Kalobeyei camp and also the rest of Dzaleka, Dowa camp. The second setup will introduce imperfection in labelling and complex hetereogeneous rooftops and morphologies. The two data setup will allow comparison between the models response of each class-based accuracy assessment metrics. To assess the performance of the architectures and experiment setup, a combination of the validation loss, class-based accuracy assessments, and empirical output were considered.\\\par
 
 \subsection{Project workflow}\label{ProjWorkflow}
 
@@ -599,7 +598,9 @@ The workflow for this study consist of 5 main stages: 1. Download and Extraction
 
 \chapter{Findings}\label{findings}
 
-This study have tested on 5 different architectures with no initalised weights or initalised weights from ImageNet or OCC building segmentation results. For each experimental setup, there were 2 sets of dataset input (KBY and KBY + DZK + DZKN), for details \textit{see table \ref{table:setup}}. Producing 16 sets of trained CNN and associated class-based accuracy assessments \textit{see appendix \ref{app:}}. On the whole, there were both expected and unexpected results. A reduction in every metrics were observed in every single experiment setup when the more complex Dzaleka camp datasets were introduced. This was expected as it is more difficult to train the CNNs on the highly heterogeneous rooftops with similar texture
+This study have tested on 5 different architectures with either no initalised weights or initalised weights from ImageNet or OCC building segmentation models. For each experimental setup, there were 2 sets of dataset input (KBY and KBY + DZK + DZKN), for details \textit{see table \ref{table:setup}}. Producing 16 sets of trained CNN and associated class-based accuracy assessments \textit{see appendix \ref{app:}}. On the whole, there were both expected and unexpected results. A reduction in every metrics were observed in every single experiment setup when the more complex Dzaleka camp datasets were introduced \textit{see table \ref{table:data-wise_change}}. This was expected as it is more difficult to train the CNNs on the highly heterogeneous rooftops with similar texture to the surrounding environments. The \textit{Precision} and \textit{Recall} metrics did not deviate between the architectures with training only on the Kalobeyei dataset. In contrast the performance in differences is a lot more visible with the introduction of Dzaleka and Dzaleka North datasets.\\\par
+
+An interesting point is that with the \textit{EfficientNet B1 U-Net}, both \textit{Precision} and \textit{Recall} increased when initialised on ImageNet pretrained weights. However, this was the reverse for the \textit{EfficientNet B2 U-Net} where if the network was initalised on ImageNet pretrained weights, saw a decrease in \textit{Precision} but a increase in \textit{Recall} when compared to the network with non-initalised weights. This suggests that the increase in depth does not necessarily correspond to either an increase or decrease in performance in any particular direction.For the non-weight initialised \textit{4-layer to 5-layer U-Net}, there is an consistent but slight increase in \textit{Precision} but not \textit{Recall}. This mirrors the changes in \textit{EfficientNet B1 to B2 U-Net}. Which might suggests that complications are originating from the initalised weights of ImageNet \textit{see fiigure \ref{fig:Cat_CAA}}.\\\par
 
 \begin{figure}[H]
   \centering
@@ -618,6 +619,8 @@ This study have tested on 5 different architectures with no initalised weights o
   \label{fig:Cat_CAA}
 \end{figure}
 
+The following sections compare the mean changes of \textit{Precision} and \textit{Recall} in the test dataset at paired CNNs' depth-wise, dataset-wise, and weight-wise change.\\\par
+
 \section{Depth-wise Precision and Recall change}
 
 \begin{table}[H]
@@ -633,13 +636,22 @@ This study have tested on 5 different architectures with no initalised weights o
       4 to 5 layer U-Net & None & KBY + DZK + DZKN  & +0.007 & -0.002\\
       EfficientNet B1 to B2 U-Net & None & KBY & -0.003 & -0.012\\
       EfficientNet B1 to B2 U-Net & ImageNet & KBY & +0.003 & -0.006\\
-      EfficientNet B1 to B2 U-Net & None & KBY + DZK + DZKN & +0.023 & +0.006\\
+      \textbf{EfficientNet B1 to B2 U-Net} & \textbf{None} & \textbf{KBY + DZK + DZKN} & \textbf{+0.023} & \textbf{+0.006}\\
       EfficientNet B1 to B2 U-Net & ImageNet & KBY + DZK + DZKN & -0.006 & -0.002\\
       \hline
     \end{tabular}
   \end{minipage}}
   \label{table:depth-wise_change}
 \end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.6]{depth_wise_regplot.png}
+  \caption{Regression plot for \textit{Precision} and \textit{Recall} change in relation to architectural depth-wise change.}
+  \label{fig:depth_regplot}
+\end{figure}
+
+There is a common misconception in the DL realm that deeper networks would always perform better. The comparison in \textit{table \ref{table:depth-wise_change}} in a limited scope tries to address this question, the result suggests that improvements in both \textit{Precision} and \textit{Recall} only happened in non-weight initialised depth-increase from EfficientNet B1 to B2 U-Net trained on all datasets, achieving both the highest rate of increase in both metrics. In comparison to the same architecture change and datset input with initalised weights from ImageNet, both metrics experienced a decrease. Meanwhile in other experiment setup,no significant trends can be drawn and thus the assumption does not hold, although results might drastically differ with increase of dataset, increase in batch size, and when experimenting with much deeper architectures not available to this study due to computation constraint.\\\par
 
 \section{Dataset-wise Precision and Recall change}
 
@@ -652,19 +664,29 @@ This study have tested on 5 different architectures with no initalised weights o
       \hline
       Architecture & Initialised weights & Precision change & Recall change \\
       \hline
-      4-layer U-Net & None & -0.065 & -0.016\\
+      \textbf{4-layer U-Net} & \textbf{None} & \textbf{-0.065} & \textbf{-0.016}\\
       5 layer U-Net & None &  -0.07 & -0.153\\
-      EfficientNet B1 U-Net & None & -1.24 & -0.044\\
+      EfficientNet B1 U-Net & None & -0.124 & -0.044\\
       EfficientNet B1 U-Net & ImageNet & -0.119 & -0.032\\
-      EfficientNet B1 U-Net (OCC) & OCC & -0.002 &-0.387 \\
-      EfficientNet B1 U-Ne (OCC) & OCC transfer-trained & -0.125&-0.043 \\
-      EfficientNet B2 U-Net & None & -0.99 & -0.026\\
+      EfficientNet B1 U-Net (OCC) & OCC & \textbf{-0.002} & -0.387 \\
+      EfficientNet B1 U-Ne (OCC) & OCC transfer-trained & -0.125 & -0.043 \\
+      EfficientNet B2 U-Net & None & -0.099 & -0.026\\
       EfficientNet B2 U-Net & ImageNet & -0.128 & -0.028\\
       \hline
     \end{tabular}
   \end{minipage}}
-  \label{table:Data-wise_change}
+  \label{table:data-wise_change}
 \end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.6]{dataset_wise_regplot.png}
+  \caption{Regression plot for \textit{Precision} and \textit{Recall} change in relation to dataset input change.}
+  \label{fig:dataset_regplot}
+\end{figure}
+
+
+With the Kalobeyei dataset as baseline, the introduction of the Dzaleka and the Dzaleka North dataset have resulted in the reduction in \textit{Precision} and \textit{Recall} for all architectures with any or none initalised weights. Table \ref{table:data-wise_change} might suggest that the least reduction in \textit{Precision} came from the \textit{EfficientNet B1 U-Net} initalised on OCC building segmentation weights. However Figures \ref{fig:output} and \ref{fig:Cat_CAA} informs that with such poor Dice and IoU score, it reflects the OCC competition winning network being either very confident at the segmentation or completing missing the other buildings. Thus the \textit{Precision} diverge from the \textit{Recall} results and the statistics therefore does not reflect overall performance.
 
 \section{Initialised weight Precision and Recall change}
 
@@ -677,15 +699,23 @@ This study have tested on 5 different architectures with no initalised weights o
       \hline
       Architecture & Weights changed & Dataset input & Precision change & Recall change \\
       \hline
-      EfficientNet B1 U-Net & None to ImageNet & KBY & 0.003 & 0.008\\
-      EfficientNet B1 U-Net & None to ImageNet & KBY + DZK + DZKN & 0.009 & -0.0197\\
-      EfficientNet B2 U-Net & None to ImageNet & KBY & 0.009 & 0.014\\
-      EfficientNet B2 U-Net & None to ImmageNet & KBY + DZK + DZKN & -0.02 & 0.012\\
+      EfficientNet B1 U-Net & None to ImageNet & KBY & +0.003 & +0.008\\
+      EfficientNet B1 U-Net & None to ImageNet & KBY + DZK + DZKN & +0.009 & +0.0197\\
+      EfficientNet B2 U-Net & None to ImageNet & KBY & +0.009 & +0.014\\
+      EfficientNet B2 U-Net & None to ImmageNet & KBY + DZK + DZKN & -0.02 & +0.012\\
       \hline
     \end{tabular}
   \end{minipage}}
-  \label{table:Initalised_weights_change}
+  \label{table:weight-wise_change}
 \end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.6]{weight_wise_regplot.png}
+  \caption{Regression plot for \textit{Precision} and \textit{Recall} change in relation to architectures' initalised weight change.}
+  \label{fig:weight_regplot}
+\end{figure}
+
 
 \newpage
 
