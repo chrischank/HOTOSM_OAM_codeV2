@@ -1,7 +1,7 @@
-\contentsline {section}{\numberline {0.1}Forewords and Acknowledgements}{iii}{section.0.1}%
-\contentsline {section}{\numberline {0.2}Declaration of Independent Work}{iv}{section.0.2}%
-\contentsline {section}{\numberline {0.3}Figure list}{v}{section.0.3}%
-\contentsline {section}{\numberline {0.4}Abbreviations}{vi}{section.0.4}%
+\contentsline {section}{\numberline {0.1}Forewords and Acknowledgements}{ii}{section.0.1}%
+\contentsline {section}{\numberline {0.2}Declaration of Independent Work}{iii}{section.0.2}%
+\contentsline {section}{\numberline {0.3}Figure list}{iv}{section.0.3}%
+\contentsline {section}{\numberline {0.4}Abbreviations}{v}{section.0.4}%
 \contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Study Area of Interest}{6}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Kalobeyei, Kakuma, Turkana, Kenya}{6}{subsection.1.1.1}%
@@ -23,20 +23,22 @@
 \contentsline {section}{\numberline {3.3}Architecture and hyperparameter selection}{26}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}The U-Net and U-Net variants}{26}{subsection.3.3.1}%
 \contentsline {subsubsection}{Changing the encoder architecture and the EfficientNet family}{27}{subsubsection*.5}%
-\contentsline {section}{\numberline {3.4}Accuracy Assessment}{29}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Precision, Recall, Sensitivity, and Specificity}{30}{subsection.3.4.1}%
-\contentsline {subsubsection}{Precision, Recall, and Specificity}{30}{subsubsection*.6}%
-\contentsline {subsection}{\numberline {3.4.2}Overall Accuracy, Dice Score, and Intersection-over-Union}{32}{subsection.3.4.2}%
-\contentsline {subsubsection}{Overall Accuracy}{32}{subsubsection*.7}%
-\contentsline {subsubsection}{Dice Score}{32}{subsubsection*.8}%
-\contentsline {subsubsection}{Intersection-over-Union}{32}{subsubsection*.9}%
-\contentsline {section}{\numberline {3.5}Experimentation setup}{33}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Project workflow}{35}{subsection.3.5.1}%
-\contentsline {chapter}{\numberline {4}Findings}{37}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Depth-wise Precision and Recall change}{41}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Dataset-wise Precision and Recall change}{42}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Initialised weight Precision and Recall change}{44}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Discussion}{45}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Conclusion}{46}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Bibliography}{47}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Appendix}{48}{appendix.A}%
+\contentsline {section}{\numberline {3.4}Hyperparameters and baseline model perforamce}{29}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Accuracy Assessment}{32}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Precision, Recall, Sensitivity, and Specificity}{33}{subsection.3.5.1}%
+\contentsline {subsubsection}{Precision, Recall, and Specificity}{33}{subsubsection*.6}%
+\contentsline {subsection}{\numberline {3.5.2}Overall Accuracy, Dice Score, and Intersection-over-Union}{34}{subsection.3.5.2}%
+\contentsline {subsubsection}{Overall Accuracy}{34}{subsubsection*.7}%
+\contentsline {subsubsection}{Dice Score}{34}{subsubsection*.8}%
+\contentsline {subsubsection}{Intersection-over-Union}{35}{subsubsection*.9}%
+\contentsline {section}{\numberline {3.6}Experimentation setup}{36}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Project workflow}{37}{subsection.3.6.1}%
+\contentsline {chapter}{\numberline {4}Findings}{39}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Depth-wise Precision and Recall change}{43}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Dataset-wise Precision and Recall change}{44}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Initialised weight Precision and Recall change}{46}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Discussion}{48}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusion}{49}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Bibliography}{50}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Appendix}{51}{section.7.1}%
+\contentsline {subsubsection}{Adam optimiser}{51}{subsubsection*.10}%

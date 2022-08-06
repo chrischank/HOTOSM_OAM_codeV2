@@ -5,6 +5,7 @@
 \usepackage{titlesec}
 \usepackage{hyperref}
 \usepackage{float}
+\usepackage{lscape}
 \restylefloat{table}
 \hypersetup{
     colorlinks=true,
@@ -27,33 +28,31 @@
 
 \begin{titlepage}
    \begin{center}
-       \vspace*{1cm}
+       \vspace{0.25cm}
 
-       \huge
-       \textbf{Thesis Title}
+       \large
+       \textbf{Investigating the capability of UAV imagery for AI-assisted mapping of Refugee Camps in East Africa}
 
-       \vspace{0.5cm}
-       \Large
-       Thesis Subtitle
+       \vspace{0.75cm}
 
-       \vspace{1.5cm}
-
+       \normalsize
        \textbf{CHAN, Yan-Chak Christopher}
 
-       \vspace{0.5cm}
+       \vfill
+
        \textbf{Supervised by:} \\
        Prof. Dr. Hannes Taubenöck \thanks{Geo-Risks and Civil Society, Deutsches Zentrum für Luft- und Raumfahrt} \\
        Matthias Weigand \thanks{Geo-Risks and Civil Society, Deutsches Zentrum für Luft- und Raumfahrt}\\
        Emran Alchikh Alnajar \thanks{Humanitarian OpenStreetMap}
 
-       \vfill
+       \vspace{0.25cm}
 
        Masterarbeit submitted for the degree of\\
-       Master der Naturwissenschaften\\
+       \textbf{Master der Naturwissenschaften (MSc.)}\\
        in\\
        Applied Earth Observation and Geoanalysis of the Living Environment (EAGLE)
 
-       \vspace{0.8cm}
+       \vspace{0.5cm}
 
        \includegraphics[scale = 0.25]{neuSIEGEL.png}
 
@@ -262,7 +261,7 @@ The convolutional layer is essentially treats every image pixel as vector in a 3
 
 \end{equation}
 
-The pooling layer reduces the dimension by downsampling by applying conventionally, a smaller kernel which extract the desirable value when applied. Maximum Pooling, which only retains the largest value in the downsampling kernel is common and is used for the network architecture of this experiment (Stevens et al., 2020). The pooling layer should scale down the image while retaining the most crucial information \textit{see figure: \ref{fig:maxpool}}.
+The pooling layer reduces the dimension by downsampling by applying conventionally, a smaller kernel which extract the desirable value when applied. Maximum Pooling, which only retains the largest value in the downsampling kernel is common and is used for the network architecture of this experiment (Stevens et al., 2020). The pooling layer should scale down the image while retaining the most crucial information (\textit{see figure: \ref{fig:maxpool}}).
 
 \begin{figure}[H]
 \centering
@@ -292,11 +291,11 @@ With each complete pass through the neural network, the ouput is then compared a
 
 \end{equation}
 
-The optimiser controls the gradient descent, a suitable optimiser prevents gradient descent to be trapped at a local minimum in the cost landscape. The optimiser of choice for the experiement is the Adam optimiser, the specific and technical aspects will be further discussed in section \ref{Arch&Hyperparam}.
+The optimiser controls the gradient descent, it is the hyperparameter which controls the size of step being taken down the negative gradient of $- \nabla C$ in the cost function landscape. A suitable optimiser can prevents gradient descent to be trapped at a local minimum through iterations. The optimiser of choice for the experiement is the Adam optimiser, The Adam (Adaptive Momentum Estimator) developed by Kingma \& Ba (2017) extends the Stochastic Gradient Descent (herein SGD) by introducing concepts of momentum and second moments of gradient (\textit{see appendix \ref{app:Adam}}).Adam maintains a separate learning rate for each parameter and have became the standard pick of optimiser since.\\\par
 
 \subsubsection{Backpropagation and the chain rule}\label{Backprop&Chain}
 
-In order for a neural network to improve, the weights and bias are changed accordingly to minimisation of the cost function. This is computed as a step-wise function as a negative vector against the cost landscape. Which each parameter of the weights and biases of each neuron within the neural network is defined as a chained function against the cost in \textit{equation: \ref{cost_derivative}}. In other words, what is the derivate of the cost function with respect to the chain of weights and biases derivatives.
+In order for a neural network to improve, the weights and bias are changed accordingly to minimisation of the cost. This is computed as a step-wise function as a negative vector against the cost landscape. Which each parameter of the weights and biases of each neuron within the neural network is defined as a chained function against the cost in \textit{equation: \ref{cost_derivative}}. In other words, what is the derivate of the cost function with respect to the chain of weights and biases derivatives.\\\par
 
 \begin{equation}
   \label{cost_derivative}
@@ -335,7 +334,7 @@ Essentially, using CNN and DL methods to perform semantic segmentation throguh r
 
 All imagery were cubic-spline resampled to 15 cm resolution and subsequently reprojected to EPSG:3857. Normalisation of per-band raster data is perhaps one of the most important pre-processing step. 2-step normalisation were performed on each band for each drone images.\\\par
 
-First, the z-score normalisation noramlises the images according to the retrieved standard deviation \textit{see equation:\ref{z-score}}. This scales the every pixel to the global statistics for each colour band, keeping proportional ratio while reducing the effects of outlier. The z-score normalised result is then linearly scaled to range of 0 to 255 to be converted to 8-bit .png file type \textit{see equation:\ref{png_norm}}.
+First, the z-score normalisation noramlises the images according to the retrieved standard deviation (\textit{see equation:\ref{z-score}}). This scales the every pixel to the global statistics for each colour band, keeping proportional ratio while reducing the effects of outlier. The z-score normalised result is then linearly scaled to range of 0 to 255 to be converted to 8-bit .png file type (\textit{see equation:\ref{png_norm}}).
 
 \begin{equation}
   \label{z-score}
@@ -371,7 +370,7 @@ After per-band normalisation,the imagery bands were stacked with the associated 
 
 Data augmentation is perhaps one of the most crucial task in training a robust neural-network. It is an economical way of increasing generalisability without increasing model complexity, data augmentation achieve this through, firstly increasing the quantity of training and validation data, secondly encompassing a greater range of textural, geometrical, and colour variability throught the creation of augmented pseudo-data (Shorten \& Khoshgoftaar, 2019; Kinsley \& Kukiela, 2020; Howard \& Gugger, 2020; Zoph et al., 2019).\\\par
 
-Data augmentation can generally be split into 3 categories: 1. Geometric/Affine distortion, 2. Colour distortion, and 4. Noise distortion. The application of which types of distortion to the \textit{Train} and \textit{Validation} dataset is highly dependent on the context of the semantic task. Therefore, care must be taken as to not introduce mislabelling \textit{(see Figure \ref{fig:MNIST5})} (Ng A., 2018).\\\par
+Data augmentation can generally be split into 3 categories: 1. Geometric/Affine distortion, 2. Colour distortion, and 4. Noise distortion. The application of which types of distortion to the \textit{Train} and \textit{Validation} dataset is highly dependent on the context of the semantic task. Therefore, care must be taken as to not introduce mislabelling (\textit{see figure \ref{fig:MNIST5}}) (Ng A., 2018).\\\par
 \textbf{Augmentation categories:}
 
 \begin{itemize}
@@ -432,7 +431,7 @@ In order to train a model which performs well on drone imagery, the motion artef
     \end{enumerate}
 \end{enumerate}
 
-Therefore, to test out U-Net and a few variation of the U-Net performance, an additional set of label data was created in order to supplement the imperfection in the labelled data of the Dzaleka camps. Initially, the models will be trained on the pixel-perfect and less complex Kalobeyei dataset, this will be then be followed by introducing the Dzaleka datasets of higher complexity. \textit{Figure \ref{fig:rooftops}} show a snapshot of the diverse rooftops to be segmented in the available datasets. A comparison of baseline performance between the U-Net variations (Ronneberger et al., 2015) and the \href{https://github.com/drivendataorg/open-cities-ai-challenge/tree/master/1st\%20Place}{Open-Cities-AI-Challenge (OCC) winning model} is conducted. The baseline experiement aims to keep the hyperparameters (e.g. optimiser, learning rate, weight decay etc.) constant to obtain an objective view of the architectual responses on the same dataset setup. This will provide a clear picture of the feasibility and how to take this project further, so that further resources could be justified to scale future experiments.\\\par
+Therefore, to test out U-Net and a few variation of the U-Net performance, an additional set of label data was created in order to supplement the imperfection in the labelled data of the Dzaleka camps. Initially, the models will be trained on the pixel-perfect and less complex Kalobeyei dataset, this will be then be followed by introducing the Dzaleka datasets of higher complexity. \textit{Figure \ref{fig:rooftops}} show a snapshot of the diverse rooftops to be segmented in the available datasets. A comparison of performance between the U-Net variations (Ronneberger et al., 2015) and the \href{https://github.com/drivendataorg/open-cities-ai-challenge/tree/master/1st\%20Place}{Open-Cities-AI-Challenge (OCC) winning model} is conducted.\\\par
 
 \begin{figure}[H]
   \centering
@@ -447,7 +446,7 @@ Model architecture and their associated hyperparameters selection is highly depe
 
 \subsection{The U-Net and U-Net variants}\label{Unet}
 
-The U-Net architecture was first developed by Ronneberger et al. (2015) for the task of cell segmentation in biomedical electronmicroscope images. The architecture feature a symmetrical Encoder-Decoder structure \textit{(see figure \ref{fig:U-Net})} and as with many other CNN, the architecture have transferred successfully well into the remote sensing domains (Höser \& Künzer, 2020, Höser et al., 2020, Xu et al., 2019). This symmetrical encoder-decoder type architecture is able to extract deeper features in the encoder layers and recover and interpolate spatial features in the connected unsampling decoder layers (Wurm et al., 2019).\\\par
+The U-Net architecture was first developed by Ronneberger et al. (2015) for the task of cell segmentation in biomedical electronmicroscope images. The architecture feature a symmetrical Encoder-Decoder structure (\textit{see figure \ref{fig:U-Net}}) and as with many other CNN, the architecture have transferred successfully well into the remote sensing domains (Höser \& Künzer, 2020, Höser et al., 2020, Xu et al., 2019). This symmetrical encoder-decoder type architecture is able to extract deeper features in the encoder layers and recover and interpolate spatial features in the connected unsampling decoder layers (Wurm et al., 2019).\\\par
 
 \begin{figure}[H]
   \centering
@@ -471,8 +470,7 @@ In this study, the experiments with changed encoder will be from the EfficientNe
 
 The EfficientNet family uses compound scaling which increases the height, width, and depth. The baseline architecture was generated using AutoML Neural Architecture Search (Elsken et al., 2019) which optimised for computational efficiency and accuracy.\\\par
 
-Therefore, the unweighted Four-layer U-Net, Five-layer U-Net, and the OCC winner weighted EfficientNet B1 U-Net are the key architectures the rest will compare against.
-
+Therefore, the unweighted Four-layer U-Net, Five-layer U-Net, and the OCC winner weighted EfficientNet B1 U-Net are the key architectures the rest will compare against.\\\par
 
 \begin{table}[H]
   \centering
@@ -496,12 +494,49 @@ Therefore, the unweighted Four-layer U-Net, Five-layer U-Net, and the OCC winner
   \label{table:setup}
 \end{table}
 
+\section{Hyperparameters and baseline model perforamce}
+
+The hyperparameters of a neural network are changable parameters which control the training process (Bengio et al., 2017, Stevens et al., 2020, Howard \& Gugger, 2020). They include the batch size, optimiser, learning rate, weight decay, loss function, and learning rate scheduler etc. (\textit{see table \ref{table:hyperparameters}}). One of the most difficult process in DL is finding the correct hyperparameters value that cause the model to neither overfit or underfit the dataset. Thus, the strategies and options are often overwhelming, therefore this study does not concern itself with tuning the hyperparameters to all of the models but rather withholding them from changing so that a comprehensive \textbf{baseline} performance could be identified. This will provide a clear picture of the feasibility and how to take this project further, so that further resources could be justified to scale future experiments.
+
+\begin{landscape}
+\begin{table}[H]
+  \centering
+  \resizebox{0.65\textwidth}{!}{\begin{minipage}{\textwidth}
+    \begin{tabular}{ |p{8cm}|p{8cm}|p{8cm}| }
+      \hline
+      \multicolumn{3}{|c|}{Unchanged hyperparameters for the study experiments} \\
+      \hline
+      Hyperparameter & Value to be held constant & Description\\
+      \hline
+      Batch size & 32 (16) & Amount of image and label pair shown to the CNN per iteration until the dataset is exhausted, standardised to batch size of 32 other than for the architecture of \textit{EfficientNet B1 U-Net OCC} with a 5-layer U-Net decoder \\
+      \hline
+      Optimiser & Adam \textit{see appendix \ref{app:Adam}} & Adaptive Momentum Estimator developed by Kingma \& Ba. (2017) \\
+      \hline
+      Loss function & Binary Cross Entropy & ... \textit{see equation \ref{BCELoss}}\\
+      \hline
+      Learning rate & 1e-3 & Size of step to be taken down the negative gradient of the cost function landscape\\
+      \hline
+      Weight decay & 1e-5 & aka. L2 regularisation, is the sum of all weight squared added to the Loss function. This limits the weights from growing too much, making the loss function easier to fit\\
+      \hline
+      Training epochs & 500 & Number of complete cycles through either the training or validation dataset at designated batch size\\
+      \hline
+      Validation rate & 10 epochs & Validation data are loaded every 10 epochs to monitor performance\\
+      \hline
+      Learning rate scheduler & Reduce Learning Rate on Plateau [factor (0.1), minimum (1e-8), epoch (20)] & A learning rate reduction when learning stagnates and stop improving for 20 epochs\\
+      \hline
+    \end{tabular}
+  \end{minipage}}
+  \label{table:hyperparameters}
+  \caption{The hyperparameters and respective values to be held constant for every experiments in this study.}
+\end{table}
+\end{landscape}
+
 \section{Accuracy Assessment}\label{AccAss}
 
 
 Detail and scrutable accuracy assessments are fundamental towards any classification based analysis. This section will introduce and break down the various lower order and higher order class-based (thematic) accuracy assessment. By explaining the characteristics of each metrics, this will provide a much more granular nature of accuracy assessment in the findings of section \ref{findings}. In general, accuracy assessment in remote sensing can be divided into 2 categories: 1. Positional Accuracy \& 2. Thematic Accuracy. Of which, Positional Accuracy deals with the accuracy of the location while Thematic Accuracy deals with the labels or attributes accuracy (Congalton \& Green, 2019 \& Bolstad, 2019). The rest of this section will consider the lower order and higher order accuracy metrics, with lower order metrics being more granular while higher order metrics more triturated but generalised.\\\par
 
-The metrics described in this section form part of the larger family of accuracy assessment metrics that can be constructed from the confusion matrix \textit{(see Figure \ref{fig:cmatrix})}
+The metrics described in this section form part of the larger family of accuracy assessment metrics that can be constructed from the confusion matrix (\textit{see figure \ref{fig:cmatrix}})\\\par
 
 \begin{figure}[H]
   \centering
@@ -514,8 +549,7 @@ The metrics described in this section form part of the larger family of accuracy
 \subsubsection{Precision, Recall, and Specificity}\label{PR&S}
 
 \textbf{Precision} and \textbf{Recall}, aka. Positivie-Predictive-Value and Sensitivity/True-Positive-Rate Respectively. The two metrics are often used together, another common denomination especially in remote sensing literature are User's Accuracy and Producer's Accuracy (Congalton \& Green, 2019 \& Wegmann et al., 2016). To avoid further confusion in nomenclature, \textbf{Precision} and \textbf{Recall} will be used from hereon.\\\par
-\\
-\\
+
 \textbf{Precision} is the measure of correctly predicted Positive class (True Positive) against all positive prediction assigned to that class (True Positive + False Positive) i.e. Given the predicted results, of those that are predicted as positive, what proportion were True. It can be expressed mathematically as:
 
 \begin{equation}
@@ -574,7 +608,7 @@ One of the most commonly used metrics as an assessment in Deep Learning Computer
 
 \section{Experimentation setup}\label{ExpSetup}
 
-Each network architecture and their associated weights will be trained on 2 data setup. The first setup consist of only the Kalobeyei, Kakuma camp where the labels include drone motion artefacts and rooftops are relatively homogeneous. The second setup consist of data from the Kalobeyei camp and also the rest of Dzaleka, Dowa camp. The second setup will introduce imperfection in labelling and complex hetereogeneous rooftops and morphologies. The two data setup will allow comparison between the models response of each class-based accuracy assessment metrics. To assess the performance of the architectures and experiment setup, a combination of the validation loss, class-based accuracy assessments, and empirical output were considered.\\\par
+Each network architecture and their associated weights will be trained on 2 data setup. The first setup consist of only the Kalobeyei, Kakuma camp where the labels include drone motion artefacts and rooftops are relatively homogeneous. The second setup consist of data from the Kalobeyei camp and also the rest of Dzaleka camps. The second setup will introduce imperfection in labelling and complex hetereogeneous rooftops and morphologies. The two data setup will allow comparison between the models response of each class-based accuracy assessment metrics. To assess the performance of the architectures and experiment setup, a combination of the validation loss, class-based accuracy assessments, and empirical output were considered.\\\par
 
 \subsection{Project workflow}\label{ProjWorkflow}
 
@@ -585,7 +619,7 @@ Each network architecture and their associated weights will be trained on 2 data
   \label{fig:ETL_flow}
 \end{figure}
 
-The workflow for this study consist of 5 main stages: 1. Download and Extraction, 2. Data pre-processing, 3. Data processing for loading, 4. Iterative Model training, 5. Inference and Evaluation \textit{see figures \ref{fig:ETL_flow} \& \ref{fig:simp_ETL}}.
+The workflow for this study consist of 5 main stages: 1. Download and Extraction, 2. Data pre-processing, 3. Data processing for loading, 4. Iterative Model training, 5. Inference and Evaluation (\textit{see figures \ref{fig:ETL_flow} \& \ref{fig:simp_ETL}}).
 
 \begin{figure}[H]
   \centering
@@ -598,9 +632,9 @@ The workflow for this study consist of 5 main stages: 1. Download and Extraction
 
 \chapter{Findings}\label{findings}
 
-This study have tested on 5 different architectures with either no initalised weights or initalised weights from ImageNet or OCC building segmentation models. For each experimental setup, there were 2 sets of dataset input (KBY and KBY + DZK + DZKN), for details \textit{see table \ref{table:setup}}. Producing 16 sets of trained CNN and associated class-based accuracy assessments \textit{see appendix \ref{app:}}. On the whole, there were both expected and unexpected results. A reduction in every metrics were observed in every single experiment setup when the more complex Dzaleka camp datasets were introduced \textit{see table \ref{table:data-wise_change}}. This was expected as it is more difficult to train the CNNs on the highly heterogeneous rooftops with similar texture to the surrounding environments. The \textit{Precision} and \textit{Recall} metrics did not deviate between the architectures with training only on the Kalobeyei dataset. In contrast the performance in differences is a lot more visible with the introduction of Dzaleka and Dzaleka North datasets.\\\par
+This study have tested on 5 different architectures with either no initalised weights or initalised weights from ImageNet or OCC building segmentation models. For each experimental setup, there were 2 sets of dataset input (KBY and KBY + DZK + DZKN), for details (\textit{see table \ref{table:setup}}). Producing 16 sets of trained CNN and associated class-based accuracy assessments (\textit{see figure \ref{fig:Cat_CAA}}). On the whole, there were both expected and unexpected results. A reduction in every metrics were observed in every single experiment setup when the more complex Dzaleka camp datasets were introduced (\textit{see table \ref{table:data-wise_change}}). This was expected as it is more difficult to train the CNNs on the highly heterogeneous rooftops with similar texture to the surrounding environments. The \textit{Precision} and \textit{Recall} metrics did not vary too much between the architectures with training only on the Kalobeyei datase with the exception to the transfered-untrained \textit{EfficientNet B1 U-Net OCC} model. In contrast, the performance in differences is a lot more visible with the introduction of Dzaleka and Dzaleka North datasets.\\\par
 
-An interesting point is that with the \textit{EfficientNet B1 U-Net}, both \textit{Precision} and \textit{Recall} increased when initialised on ImageNet pretrained weights. However, this was the reverse for the \textit{EfficientNet B2 U-Net} where if the network was initalised on ImageNet pretrained weights, saw a decrease in \textit{Precision} but a increase in \textit{Recall} when compared to the network with non-initalised weights. This suggests that the increase in depth does not necessarily correspond to either an increase or decrease in performance in any particular direction.For the non-weight initialised \textit{4-layer to 5-layer U-Net}, there is an consistent but slight increase in \textit{Precision} but not \textit{Recall}. This mirrors the changes in \textit{EfficientNet B1 to B2 U-Net}. Which might suggests that complications are originating from the initalised weights of ImageNet \textit{see fiigure \ref{fig:Cat_CAA}}.\\\par
+An interesting point is that with the \textit{EfficientNet B1 U-Net} and the symmetrical \textit{4-layer \& 5-layer U-Net}, both \textit{Precision} and \textit{Recall} increased when initialised on pretrained ImageNet weights (\textit{see table \ref{table:weight-wise_change}}). However, this was the reverse for the \textit{EfficientNet B2 U-Net} where if the network was initalised on ImageNet pretrained weights, saw a decrease in \textit{Precision} but a increase in \textit{Recall} when compared to the network with non-initalised weights. This suggests that the increase in depth does not necessarily correspond to either an increase or decrease in performance in any particular direction.For the non-weight initialised \textit{4-layer to 5-layer U-Net}, there is an consistent but slight increase in \textit{Precision} but not \textit{Recall}. This mirrors the changes in \textit{EfficientNet B1 to B2 U-Net}. Which might suggests that complications are originating from the initalised weights of ImageNet (\textit{see figure \ref{fig:Cat_CAA}}).\\\par
 
 \begin{figure}[H]
   \centering
@@ -642,6 +676,7 @@ The following sections compare the mean changes of \textit{Precision} and \texti
     \end{tabular}
   \end{minipage}}
   \label{table:depth-wise_change}
+  \caption{Changes with architectures that had a depth-wise increased for each setup..}
 \end{table}
 
 \begin{figure}[H]
@@ -669,24 +704,25 @@ There is a common misconception in the DL realm that deeper networks would alway
       EfficientNet B1 U-Net & None & -0.124 & -0.044\\
       EfficientNet B1 U-Net & ImageNet & -0.119 & -0.032\\
       EfficientNet B1 U-Net (OCC) & OCC & \textbf{-0.002} & -0.387 \\
-      EfficientNet B1 U-Ne (OCC) & OCC transfer-trained & -0.125 & -0.043 \\
+      EfficientNet B1 U-Net (OCC) & OCC transfer-trained & -0.125 & -0.043 \\
       EfficientNet B2 U-Net & None & -0.099 & -0.026\\
       EfficientNet B2 U-Net & ImageNet & -0.128 & -0.028\\
       \hline
     \end{tabular}
   \end{minipage}}
   \label{table:data-wise_change}
+  \caption{Changes when the Dzaleka and Dzaleka North datasets were introduced to each setup.}
 \end{table}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale = 0.6]{dataset_wise_regplot.png}
-  \caption{Regression plot for \textit{Precision} and \textit{Recall} change in relation to dataset input change.}
-  \label{fig:dataset_regplot}
+  \includegraphics[scale = 0.5]{dataset_wise_stripplot.png}
+  \caption{Detailed strip plot for \textit{Precision} and \textit{Recall} change in relation to dataset input change.}
+  \label{fig:data_stripplot}
 \end{figure}
 
 
-With the Kalobeyei dataset as baseline, the introduction of the Dzaleka and the Dzaleka North dataset have resulted in the reduction in \textit{Precision} and \textit{Recall} for all architectures with any or none initalised weights. Table \ref{table:data-wise_change} might suggest that the least reduction in \textit{Precision} came from the \textit{EfficientNet B1 U-Net} initalised on OCC building segmentation weights. However Figures \ref{fig:output} and \ref{fig:Cat_CAA} informs that with such poor Dice and IoU score, it reflects the OCC competition winning network being either very confident at the segmentation or completing missing the other buildings. Thus the \textit{Precision} diverge from the \textit{Recall} results and the statistics therefore does not reflect overall performance.
+With the Kalobeyei dataset as constant, the introduction of the Dzaleka and the Dzaleka North dataset have resulted in the reduction in \textit{Precision} and \textit{Recall} for all architectures with any or none initalised weights. Table \ref{table:data-wise_change} might suggest that the least reduction in \textit{Precision} came from the \textit{EfficientNet B1 U-Net} initalised on OCC building segmentation weights. However figures \ref{fig:output} and \ref{fig:Cat_CAA} informs that with such poor Dice and IoU score, it reflects the OCC competition winning network being either very confident at the segmentation or completing missing the other buildings. Thus the \textit{Precision} diverge from the \textit{Recall} results and the statistics therefore does not reflect overall performance. The runner-up \textit{4-layer U-Net} had a much more corresponding \textit{Precision} and \textit{Recall}.
 
 \section{Initialised weight Precision and Recall change}
 
@@ -697,10 +733,12 @@ With the Kalobeyei dataset as baseline, the introduction of the Dzaleka and the 
       \hline
       \multicolumn{5}{|c|}{Pre-initalised weights Precision and Recall change} \\
       \hline
-      Architecture & Weights changed & Dataset input & Precision change & Recall change \\
+      Architecture & \textbf{Weights changed} & Dataset input & Precision change & Recall change \\
       \hline
       EfficientNet B1 U-Net & None to ImageNet & KBY & +0.003 & +0.008\\
-      EfficientNet B1 U-Net & None to ImageNet & KBY + DZK + DZKN & +0.009 & +0.0197\\
+      \textbf{EfficientNet B1 U-Net} & \textbf{None to ImageNet} & \textbf{KBY + DZK + DZKN} & \textbf{+0.009} & \textbf{+0.0197}\\
+      EfficientNet B1 U-Net (5-layer) & OCC to OCC transfer-trained & KBY & 0 & +0.306\\
+      EfficientNet B1 U-Net (5-layer) & OCC to OCC transfer-trained & KBY + DZK + DZKN & -0.122 & \textbf{+0.649}\\
       EfficientNet B2 U-Net & None to ImageNet & KBY & +0.009 & +0.014\\
       EfficientNet B2 U-Net & None to ImmageNet & KBY + DZK + DZKN & -0.02 & +0.012\\
       \hline
@@ -716,6 +754,7 @@ With the Kalobeyei dataset as baseline, the introduction of the Dzaleka and the 
   \label{fig:weight_regplot}
 \end{figure}
 
+Using pre-trained weights as a strategy is well-documented in literature to improve performance across many domains (Stevens et al., 2020, )
 
 \newpage
 
@@ -731,9 +770,15 @@ With the Kalobeyei dataset as baseline, the introduction of the Dzaleka and the 
 
 \newpage
 
-\appendix
+\section{Appendix}\label{Appen}
 
-\chapter{Appendix}\label{Appen}
-\newpage
+\subsubsection{Adam optimiser}\label{Adam}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.4]{Adam.png}
+  \caption{The algorithm of Adam (Kingma \& Ba., 2017).}
+  \label{app:Adam}
+\end{figure}
 
 \end{document}
