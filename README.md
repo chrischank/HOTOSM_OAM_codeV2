@@ -1,32 +1,27 @@
 # HOTOSM_OAM_codeV2
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/36608720/183308388-a041ceea-fdee-4895-8655-4853b3dbb9d8.png"
- />
+  <img src="https://user-images.githubusercontent.com/36608720/183308388-a041ceea-fdee-4895-8655-4853b3dbb9d8.png"/>
 </p>
 
 This github repository is the code-base for the Master Thesis submitted for the Master der Naturwissenschaften in Applied Earth Observation and Geoanalysis of the Living Environment (EAGLE) at the Julius-Maximilians-Universität Würzburg.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/36608720/166689718-e570c0f4-e09d-49da-80c3-58f062d04896.png"
- />
+  <img src="https://user-images.githubusercontent.com/36608720/166689718-e570c0f4-e09d-49da-80c3-58f062d04896.png"/>
 </p>
 
 This work of this thesis is partnered with the Humanitarian OpenStreetMap (HOTOSM) and supported by the German Aerospace Center / Deutsches Zentrum für Luft- und Raumfahrt (DLR).
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/36608720/166691521-16efc2f3-6aee-4e1b-9c89-15492dfdc7b3.png"
- />
-  <img src="https://user-images.githubusercontent.com/36608720/166690232-c61e3ee2-3a7b-4452-ac55-7a6b3e1c5e2f.png"
- />
+  <img src="https://user-images.githubusercontent.com/36608720/166691521-16efc2f3-6aee-4e1b-9c89-15492dfdc7b3.png"/>
+  <img src="https://user-images.githubusercontent.com/36608720/166690232-c61e3ee2-3a7b-4452-ac55-7a6b3e1c5e2f.png"/>
 </p>
 
 ## Introduction
 HOTOSM would like to develop a solution for assisted mapping which can predict buildings in refugee camps on the drone imagery provided by associated organisation OpenAerialMap. Refugee camps and informal settlements reside some of the most vulnerable population, the  majority of which are located in Sub-Saharan East Africa (UNHCR, 2016). Many of these  settlements often lack up-to-date maps of which we take for granted in developed cities. Having up-to-date maps are important for assisting administration (e.g. population estimates,  infrastructure development) in data impoverished environments and thereby encourages  economic productivity (Herfort et al., 2021). The data inequality between developed and  developing areas can be reduced using assisted mapping technology. To extract geospatial and imagery characteristics of dense urban enviornments, a combination of VHR satellite imagery and Machine Learning (ML) are commonly used. Recent advances in CV based Deep Learning might be able to address these issues. Convolutional Neural Networks (CNN) are a subtype of the Deep Learning (DL) family used in  CV tasks. Past studies using CNN have shown high accuracy and transferability in small  geographical setting (Kuffer et al., 2022). The datasets provided for this project consist of both highly structured, zoned newer refugee camps and chaotic, highly complex older camps. In  addition, roofing materials are highly heterogeneous, especially in older sites where thatched  roofs are often mixed with litter. This coupled with the complex spatial autocorrelation and  relation due to the lack of zoning in older sites hinder rule-based and conventional ML based  approach. Therefore, a CNN based approach might be able to simplify the task of selecting and  testing parameters, taking advantage of VHR textural information but also learning contextual  relations (Lang et al., 2022; Lehner & Blaschke, 2022). This study will be connected to a pilot project on testing the capabilities of building segmentation.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/36608720/181209381-93c4d351-f530-4625-a497-246676a12848.png"
- />
+  <img src="https://user-images.githubusercontent.com/36608720/181209381-93c4d351-f530-4625-a497-246676a12848.png"/>
 </p>
   
 ## Baseline training results for Kalobeyei, Kakuma (perfect dataset)
@@ -81,7 +76,7 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 
 <p align="center">
   EfficientNet B2 header U-Net ImageNet vs No ImageNet (Vanilla) weights, where: red = ImageNet and blue = No ImageNet
-  <img src="https://user-images.githubusercontent.com/36608720/171561584-7696bc54-fe9b-4130-bf56-98a868d2b798.png" /> 
+  <img src="https://user-images.githubusercontent.com/36608720/171561584-7696bc54-fe9b-4130-bf56-98a868d2b798.png"/> 
 </p>
 
 ![256KBYEB2-UNet-NoIMNBASE](https://user-images.githubusercontent.com/36608720/182345044-bef97ab2-a1b7-41d8-b37d-bf11ff7721ca.png)
@@ -91,15 +86,21 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 
 ## Depth-wise Precision and Recall change
 
-![depth_wise_table](https://user-images.githubusercontent.com/36608720/183278101-7625f461-cde6-4ed0-8a23-66590d49e765.png)
-![depth_wise_regplot](https://user-images.githubusercontent.com/36608720/183278107-d14482ed-3db2-420a-be82-194db095dcf1.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/36608720/183278101-7625f461-cde6-4ed0-8a23-66590d49e765.png"/>
+  <img src="https://user-images.githubusercontent.com/36608720/183278107-d14482ed-3db2-420a-be82-194db095dcf1.png"/>
+</p>
 
 ## Dataset-wise Precision and Recall change
 
-![dataset_wise_table](https://user-images.githubusercontent.com/36608720/183278116-94b0f921-069e-4c3d-a44d-0ae345c5dfe5.png)
-![dataset_wise_stripplot](https://user-images.githubusercontent.com/36608720/183278134-300a8ab7-2a91-4204-8285-454d8de27e53.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/36608720/183278116-94b0f921-069e-4c3d-a44d-0ae345c5dfe5.png"/>
+  <img src="https://user-images.githubusercontent.com/36608720/183278134-300a8ab7-2a91-4204-8285-454d8de27e53.png"/>
+</p>
 
 ## Weight-wise Precision and Recall change
-![weight_wise_table](https://user-images.githubusercontent.com/36608720/183278158-e56bd9fb-09f8-4388-94ac-b3b4b72c14ad.png)
-![weight_wise_regplot](https://user-images.githubusercontent.com/36608720/183278203-f4e945a0-6e94-4b4c-a541-0b9d739c9223.png)
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/36608720/183278158-e56bd9fb-09f8-4388-94ac-b3b4b72c14ad.png"/>
+  <img src="https://user-images.githubusercontent.com/36608720/183278203-f4e945a0-6e94-4b4c-a541-0b9d739c9223.png"/>
+</p>
