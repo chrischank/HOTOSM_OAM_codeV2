@@ -83,3 +83,18 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 ![256KBYEB2-UNet-IMNBASE](https://user-images.githubusercontent.com/36608720/182345337-89d379b5-e59a-423a-80cb-c7d0b13ddcb0.png)
 ![256ALLEB2-UNet-NoIMN](https://user-images.githubusercontent.com/36608720/171693413-a62c39f0-24c7-4ece-9932-89b329ca50c6.png)
 ![256ALLEB2-UNet-IMN](https://user-images.githubusercontent.com/36608720/171693400-c64623e9-472c-48d6-8d5b-15039f855d1d.png)
+
+## Depth-wise Precision and Recall change
+
+![depth_wise_table](https://user-images.githubusercontent.com/36608720/183278101-7625f461-cde6-4ed0-8a23-66590d49e765.png)
+![depth_wise_regplot](https://user-images.githubusercontent.com/36608720/183278107-d14482ed-3db2-420a-be82-194db095dcf1.png)
+
+## Dataset-wise Precision and Recall change
+
+![dataset_wise_table](https://user-images.githubusercontent.com/36608720/183278116-94b0f921-069e-4c3d-a44d-0ae345c5dfe5.png)
+![dataset_wise_stripplot](https://user-images.githubusercontent.com/36608720/183278134-300a8ab7-2a91-4204-8285-454d8de27e53.png)
+
+## Weight-wise Precision and Recall change
+![weight_wise_table](https://user-images.githubusercontent.com/36608720/183278158-e56bd9fb-09f8-4388-94ac-b3b4b72c14ad.png)
+![weight_wise_regplot](https://user-images.githubusercontent.com/36608720/183278203-f4e945a0-6e94-4b4c-a541-0b9d739c9223.png)
+
