@@ -86,14 +86,15 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 
 ## Depth-wise Precision and Recall change
 
-| Depth-wise Precision and Recall change|
-|---------------------------------------|
-|Architecture | Initialised weights | Input dataset | Precision change | Recall change|
-|-------------------------------------------------------------------------------------|
-|4 to 5 layer U-Net | None | KBY | +0.011 | -0.003|
-|-------------------------------------------------|
-      4 to 5 layer U-Net & None & KBY + DZK + DZKN  & +0.007 & -0.002\\
-      EfficientNet B1 to B2 U-Net & None & KBY & -0.003 & -0.012\\
-      EfficientNet B1 to B2 U-Net & ImageNet & KBY & +0.003 & -0.006\\
-      "EfficientNet B1 to B2 U-Net" & "None" & "KBY + DZK + DZKN" & "+0.023" & "+0.006"\\
-      EfficientNet B1 to B2 U-Net & ImageNet & KBY + DZK + DZKN & -0.006 & -0.002\\
+![depth_wise_table](https://user-images.githubusercontent.com/36608720/183278101-7625f461-cde6-4ed0-8a23-66590d49e765.png)
+![depth_wise_regplot](https://user-images.githubusercontent.com/36608720/183278107-d14482ed-3db2-420a-be82-194db095dcf1.png)
+
+## Dataset-wise Precision and Recall change
+
+![dataset_wise_table](https://user-images.githubusercontent.com/36608720/183278116-94b0f921-069e-4c3d-a44d-0ae345c5dfe5.png)
+![dataset_wise_stripplot](https://user-images.githubusercontent.com/36608720/183278134-300a8ab7-2a91-4204-8285-454d8de27e53.png)
+
+## Weight-wise Precision and Recall change
+![weight_wise_table](https://user-images.githubusercontent.com/36608720/183278158-e56bd9fb-09f8-4388-94ac-b3b4b72c14ad.png)
+![weight_wise_regplot](https://user-images.githubusercontent.com/36608720/183278164-8668f3f0-0f50-4920-9965-2bbaec7e9d9e.png)
+
