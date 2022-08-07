@@ -86,12 +86,12 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 
 ## Depth-wise Precision and Recall change
 
-Depth-wise Precision and Recall change
------------------------------------------
-Architecture | Initialised weights | Input dataset | Precision change | Recall change
--------------------------------------------------------------------------------------
-4 to 5 layer U-Net | None | KBY | +0.011 | -0.003
---------------------------------------------------
+| Depth-wise Precision and Recall change|
+|---------------------------------------|
+|Architecture | Initialised weights | Input dataset | Precision change | Recall change|
+|-------------------------------------------------------------------------------------|
+|4 to 5 layer U-Net | None | KBY | +0.011 | -0.003|
+|-------------------------------------------------|
       4 to 5 layer U-Net & None & KBY + DZK + DZKN  & +0.007 & -0.002\\
       EfficientNet B1 to B2 U-Net & None & KBY & -0.003 & -0.012\\
       EfficientNet B1 to B2 U-Net & ImageNet & KBY & +0.003 & -0.006\\
