@@ -5,40 +5,39 @@
 \contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Study Area of Interest}{6}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Kalobeyei, Kakuma, Turkana, Kenya}{6}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Dzaleka, Dowa, Malawi}{8}{subsection.1.1.2}%
-\contentsline {chapter}{\numberline {2}Literature Review}{10}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Remote Sensing of Informal Settlements}{10}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Deep Learning in Urban Remote Sensing}{11}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Computer Vision and a brief review of Convolutional Neural Networks}{12}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}UAV-based informal settlement segmentation}{13}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Fundamentals of Deep Learning and Convolutional Neural Networks}{14}{subsection.2.2.3}%
-\contentsline {subsubsection}{Convolution and Pooling}{16}{subsubsection*.2}%
-\contentsline {subsubsection}{Optimiser and the Binary Cross Entropy Loss function}{18}{subsubsection*.3}%
-\contentsline {subsubsection}{Backpropagation and the chain rule}{19}{subsubsection*.4}%
-\contentsline {chapter}{\numberline {3}Data and Methodologies}{21}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Data}{21}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Raster pre-processing}{21}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Data Augmentation}{22}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Research Questions and experiment design}{24}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Architecture and hyperparameter selection}{26}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}The U-Net and U-Net variants}{26}{subsection.3.3.1}%
-\contentsline {subsubsection}{Changing the encoder architecture and the EfficientNet family}{27}{subsubsection*.5}%
-\contentsline {section}{\numberline {3.4}Hyperparameters and baseline model perforamce}{29}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Accuracy Assessment}{32}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Precision, Recall, Sensitivity, and Specificity}{33}{subsection.3.5.1}%
-\contentsline {subsubsection}{Precision, Recall, and Specificity}{33}{subsubsection*.6}%
-\contentsline {subsection}{\numberline {3.5.2}Overall Accuracy, Dice Score, and Intersection-over-Union}{34}{subsection.3.5.2}%
-\contentsline {subsubsection}{Overall Accuracy}{34}{subsubsection*.7}%
-\contentsline {subsubsection}{Dice Score}{34}{subsubsection*.8}%
-\contentsline {subsubsection}{Intersection-over-Union}{35}{subsubsection*.9}%
-\contentsline {section}{\numberline {3.6}Experimentation setup}{36}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Project workflow}{37}{subsection.3.6.1}%
-\contentsline {chapter}{\numberline {4}Findings}{39}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Depth-wise Precision and Recall change}{43}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Dataset-wise Precision and Recall change}{44}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Initialised weight Precision and Recall change}{46}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Discussion}{48}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Conclusion}{49}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Bibliography}{50}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Appendix}{51}{section.7.1}%
-\contentsline {subsubsection}{Adam optimiser}{51}{subsubsection*.10}%
+\contentsline {subsection}{\numberline {1.1.2}Dzaleka, Dowa, Malawi}{9}{subsection.1.1.2}%
+\contentsline {chapter}{\numberline {2}Literature Review}{12}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Remote Sensing of Informal Settlements}{12}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Deep Learning in Urban Remote Sensing}{13}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Computer Vision and a brief review of Convolutional Neural Networks}{14}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}UAV-based informal settlement segmentation}{16}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Fundamentals of Deep Learning and Convolutional Neural Networks}{16}{subsection.2.2.3}%
+\contentsline {subsubsection}{Convolution and Pooling}{18}{subsubsection*.2}%
+\contentsline {subsubsection}{Optimiser and the Binary Cross Entropy Loss function}{20}{subsubsection*.3}%
+\contentsline {subsubsection}{Backpropagation and the chain rule}{21}{subsubsection*.4}%
+\contentsline {chapter}{\numberline {3}Data and Methodologies}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Data}{23}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Raster pre-processing}{23}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Data Augmentation}{24}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Research Questions and experiment design}{26}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Architecture and hyperparameter selection}{28}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}The U-Net and U-Net variants}{28}{subsection.3.3.1}%
+\contentsline {subsubsection}{Changing the encoder architecture and the EfficientNet family}{29}{subsubsection*.5}%
+\contentsline {section}{\numberline {3.4}Hyperparameters and baseline model perforamce}{32}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Accuracy Assessment}{34}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Precision, Recall, Sensitivity, and Specificity}{35}{subsection.3.5.1}%
+\contentsline {subsubsection}{Precision, Recall, and Specificity}{35}{subsubsection*.6}%
+\contentsline {subsection}{\numberline {3.5.2}Overall Accuracy, Dice Score, and Intersection-over-Union}{36}{subsection.3.5.2}%
+\contentsline {subsubsection}{Overall Accuracy}{36}{subsubsection*.7}%
+\contentsline {subsubsection}{Dice Score}{36}{subsubsection*.8}%
+\contentsline {subsubsection}{Intersection-over-Union}{37}{subsubsection*.9}%
+\contentsline {section}{\numberline {3.6}Experimentation setup}{38}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Project workflow}{39}{subsection.3.6.1}%
+\contentsline {chapter}{\numberline {4}Findings and Discussion}{41}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Depth-wise Precision and Recall change}{45}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Dataset-wise Precision and Recall change}{46}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Initialised weight Precision and Recall change}{48}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Conclusion}{50}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Bibliography}{51}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Appendix}{52}{section.6.1}%
+\contentsline {subsubsection}{Adam optimiser}{52}{subsubsection*.10}%

@@ -139,6 +139,13 @@ The Kakuma refugee camp have fluctuated in population as a response to demand, h
   \label{fig:KU_KALO_LU}
 \end{figure}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.4]{Kalobeyei_map.png}
+  \caption{RGB drone imagery of the Kalobeyei settlements from OpenAerialMap}
+  \label{fig:KBY_overview}
+\end{figure}
+
 
 \newpage
 
@@ -147,10 +154,17 @@ The Kakuma refugee camp have fluctuated in population as a response to demand, h
 Originally an infamous prison camp under the Banda's Malawi Congree Party regime, the area was converted to become the Dzaleka Refugee Camp in 1994. Unlike the Kakuman and Kalobeyei camp, the Dzaleka Refugee Camp is located in the heart of Malawi, 45 km away from the capital Lilongwe, where it is home to around 52,000 refugees and receive on average 300 new residents every month. Most coming from the Great Lakes area, in particular, the Democratic Republic of Congo and Burundi. However, resurgence of past conflicts between the Republic of Congo and D.R. Congo have caused an increased of influx in recent years (UNHCR, 2014, Kavalo E., 2016). Much of the infrastructure in the Dzaleka camp infrastructures remain in rudimentary at best, and very little resources and statistics were available via the UNHCR and UNDP portals. The Northern extension to the Dzaleka main camp is known as the Katubza extension (\textit{referred to as Dzaleka North by the rest of this thesis}), it is a well-planned plot of land consisting of 423 shelter shelters and were still inconstruction as of March 2021 (Gross G., 2021 \& UNHCR, 2021) (\textit{see figure \ref{fig:DZ_KA_PLAN}}).\\\par
 
 \begin{figure}[H]
-\centering
-\includegraphics[scale = 0.4]{dzaleka_topo_malawi.jpg}
+  \centering
+  \includegraphics[scale = 0.4]{dzaleka_topo_malawi.jpg}
   \caption{The main Dzaleka Refugee Camp and the Katubza extension plan (Dzaleka North) designed by Urban Design Advisor to the UNHCR Werner Schnellenberg (Gerhard G., 2021).}
 \label{fig:DZ_KA_PLAN}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.4]{Dzaleka_map.png}
+  \caption{Digitised rooftop of the Dzaleka and Dzaleka North camps by HOT volunteers}
+\label{fig:Overview_DZK}
 \end{figure}
 
 Although hosting of refugee camps are often seen as a burden on the surface level, in reality, many refugees are often more educated than the local population, which brings with them entrepreneurial ability and provide the local-area with extra labour force (Alix-Garcia et al., 2018). )With constant stakeholder pressure for relocation and closure, showcasing of the refugee camps local economic impact and the potentialof stimulating previously improverished area could make the case for their remain (Cities Alliance, 2022).
@@ -160,6 +174,7 @@ Although hosting of refugee camps are often seen as a burden on the surface leve
 \chapter{Literature Review}\label{LitReview}
 
 \section{Remote Sensing of Informal Settlements}\label{RSofInformalSettlement}
+
 Remote sensing of the urban environments have always been the unothordox in remote sensing, but simultaneously, it is the topic that essentially funded many long-standing satellite programs due to its proximity to reconissance and surveliiance applications (e.g. the Landsat and SPOT programs). The complexity of human built environments often consist of using very different materials in conjunction to each other in a dense environment. From power-lines, factories, car-park, to leisure-parks, imaging of urban enviornments therefore requires data high in both spatial and temporal resolution and often employs techniques that extracts geometry, textural, and other physical features as oppose to the more common spectral based index approach used in ecological or enviornmental remote sensing (Jensen J., 2007, NRC., 1998). Higher granularity urban remote sensing have until very recently remained in the monopoly of defense and reconnaissance services.\\\par
 
 Informal settlement and slums mapping of developing countries require very high resolution (VHR) images which was unavailable until the turn of the century. The relatively new technology thus only began to gain traction within the last 2 decades. Particularly with the increase in the availability of VHR satellites. Increase in computational power had enabled novel techniques such as multi-layer machine learning, textural analysis, and novel geostatistical methods to emerge (Kuffer et al., 2016). Due to frequent repeat coverage of satellite’s orbit, they can be used to fill in between periodic census that are costly and time consuming to conduct. Census also does not do a good job in capturing larger scale units and spatial patterns, potentially overlooking others socioeconomic determinants such as cropping cycles and infrastructure access etc.Availability of VHR sensors and publications on slums and remote sensing (Kuffer et al., 2016). Remote sensing of settlements largely falls under 2 categories, rural or urban. Due to the different make-up of socioeconomic context and urban morphology, sensing rural and urban settlements require different parameters. Additionally, there’s no “one size fit all” way to generalise informaland formal settlement across the world, as physical geography, topography, cultural, and available resources often dictate the distribution, development, and settlement clusters pattern. These unique requirements have thus made deep learning techniques particularly useuful, and many application of deep learning in remote sensing have therefore been in the urban domain (Ma et al., 2019).
@@ -181,12 +196,17 @@ In the field of Computer Vision, there is generally 4 types of application: 1. S
 \label{fig:CV_tasks}
 \end{figure}
 
-The purpose of semantic segmentation is to assign a named (semantic) classification to each and every single pixel of the input image. This is commonly applied in remote sensing of Land Use Land Cover classification where every single pixel will be assigned and Land Cover or Land Use type. Another application is binary segmentation where the model will only be trained to assign a named classification to a particular clusters of associated pixels. This is more common in single class segmentation. The difference between mere classication and segmentation is that the semantic segmentation output a mask over the pixel will be created, where each pixel within the mask belongs to the same semantic task; meanwhile, classification only gives a confidence of semantic of the whole scene without assigning the classification to each pixel.
+The purpose of semantic segmentation is to assign a named (semantic) classification to each and every single pixel of the input image. This is commonly applied in remote sensing of Land Use Land Cover classification where every single pixel will be assigned and Land Cover or Land Use type. Another application is binary segmentation where the model will only be trained to assign a named classification to a particular clusters of associated pixels. This is more common in single class segmentation. The difference between mere classication and segmentation is that the semantic segmentation output a mask over the pixel will be created, where each pixel within the mask belongs to the same semantic task; meanwhile, classification only gives a confidence of semantic of the whole scene without assigning the classification to each pixel.\\\par
 
 
 \subsection{UAV-based informal settlement segmentation}\label{CVandCNN}
 
 The advent of orthorectified photos from Surface-from-Motion have drastically democratised the collection of VHR imagery. Not only are UAV images extremely economical to procure, the spatial resolution for informal settlement application could only be rivaled by perhaps the best reconassance or commercial satellite which is either difficult or very expensive to obtain. ,
+
+
+...
+
+
 
 The issue with any Deep Learning Project is the high amount of data required (Tan et al., 2018, )
 
@@ -420,6 +440,8 @@ Thus, the following augmentation were applied to the Train, Validation, and Test
 
 In order to train a model which performs well on drone imagery, the motion artefact will be a signficant feature for the model to learn. The combination of data availability have allow a unique set of research questions concerning the input data quality and experiment setup to surface.\\\par
 
+Additionally, using pre-trained weights as a strategy is well-documented in literature to improve performance across many domains (Stevens et al., 2020 , Howard \& Gugger, 2020), with numerous studies showcasing the sucess of cross-domain transfer training from classical CV datasets to remote sensing tasks (e.g. Audebert et al., 2017, Marmanis et al., 2015), One would expect the transfer training of CNN pretrained on any dataset would provide it with an advantage. Therefore, it is important that this study also test the effects of the CNNs response to the initialised weights from ImageNet and the OCC building segmentation model.
+
 \begin{enumerate}
   \item RQ1: What is the optimal mixture of accurate and less-accurate labels and how does that affect the segmentation output result?
     \begin{enumerate}
@@ -427,7 +449,7 @@ In order to train a model which performs well on drone imagery, the motion artef
     \end{enumerate}
   \item RQ2: Which is the best lightweight model given the limited data and computational resources for binary semantic segmentation?
     \begin{enumerate}
-      \item How does transfer learning from various initalised weights affect result?
+      \item How does transfer training from various initalised weights affect result?
     \end{enumerate}
 \end{enumerate}
 
@@ -435,7 +457,7 @@ Therefore, to test out U-Net and a few variation of the U-Net performance, an ad
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale = 0.2]{rooftops.png}
+  \includegraphics[scale = 0.35]{batch_32.png}
   \caption{Collections of diverse and heterogeneous rooftops from the Kalobeyei, Dzaleka, and Dzaleka North datasets.}
   \label{fig:rooftops}
 \end{figure}
@@ -630,11 +652,11 @@ The workflow for this study consist of 5 main stages: 1. Download and Extraction
 
 \newpage
 
-\chapter{Findings}\label{findings}
+\chapter{Findings and Discussion}\label{findings}
 
-This study have tested on 5 different architectures with either no initalised weights or initalised weights from ImageNet or OCC building segmentation models. For each experimental setup, there were 2 sets of dataset input (KBY and KBY + DZK + DZKN), for details (\textit{see table \ref{table:setup}}). Producing 16 sets of trained CNN and associated class-based accuracy assessments (\textit{see figure \ref{fig:Cat_CAA}}). On the whole, there were both expected and unexpected results. A reduction in every metrics were observed in every single experiment setup when the more complex Dzaleka camp datasets were introduced (\textit{see table \ref{table:data-wise_change}}). This was expected as it is more difficult to train the CNNs on the highly heterogeneous rooftops with similar texture to the surrounding environments. The \textit{Precision} and \textit{Recall} metrics did not vary too much between the architectures with training only on the Kalobeyei datase with the exception to the transfered-untrained \textit{EfficientNet B1 U-Net OCC} model. In contrast, the performance in differences is a lot more visible with the introduction of Dzaleka and Dzaleka North datasets.\\\par
+This study have tested on 5 different architectures with either no initalised weights or initalised weights from ImageNet or OCC building segmentation models. For each experimental setup, there were 2 sets of dataset input (KBY and KBY + DZK + DZKN), for details (\textit{see table \ref{table:setup}}). Producing 16 sets of trained CNN and associated class-based accuracy assessments (\textit{see figure \ref{fig:Cat_CAA}}). On the whole, there were both expected and unexpected results. A reduction in every metrics were observed in every single experiment setup when the more complex Dzaleka camp datasets were introduced (\textit{see table \ref{table:data-wise_change}}). This was expected as it is more difficult to train the CNNs on the highly heterogeneous rooftops with similar texture to the surrounding environments. The \textit{Precision} and \textit{Recall} metrics did not vary too much between the architectures when trained only on the Kalobeyei dataset, with the exception to the transfered-untrained \textit{EfficientNet B1 U-Net OCC} model. In contrast, the performance in differences is a lot more visible with the introduction of Dzaleka and Dzaleka North datasets.\\\par
 
-An interesting point is that with the \textit{EfficientNet B1 U-Net} and the symmetrical \textit{4-layer \& 5-layer U-Net}, both \textit{Precision} and \textit{Recall} increased when initialised on pretrained ImageNet weights (\textit{see table \ref{table:weight-wise_change}}). However, this was the reverse for the \textit{EfficientNet B2 U-Net} where if the network was initalised on ImageNet pretrained weights, saw a decrease in \textit{Precision} but a increase in \textit{Recall} when compared to the network with non-initalised weights. This suggests that the increase in depth does not necessarily correspond to either an increase or decrease in performance in any particular direction.For the non-weight initialised \textit{4-layer to 5-layer U-Net}, there is an consistent but slight increase in \textit{Precision} but not \textit{Recall}. This mirrors the changes in \textit{EfficientNet B1 to B2 U-Net}. Which might suggests that complications are originating from the initalised weights of ImageNet (\textit{see figure \ref{fig:Cat_CAA}}).\\\par
+An interesting point is that with the \textit{EfficientNet B1 U-Net} and the symmetrical \textit{4-layer \& 5-layer U-Net}, both \textit{Precision} and \textit{Recall} increased when initialised on pretrained ImageNet weights (\textit{see table \ref{table:weight-wise_change}}). However, this was not the case for the \textit{EfficientNet B2 U-Net} where if the network was initalised on ImageNet pretrained weights, saw a decrease in \textit{Precision} but a increase in \textit{Recall} when compared to the network with non-initalised weights. This suggests that the increase in depth does not necessarily correspond to either an increase or decrease in performance in any particular direction. For the non-weight initialised \textit{4-layer to 5-layer U-Net}, there is an consistent but slight increase in \textit{Precision} but not \textit{Recall}. This mirrors the changes in \textit{EfficientNet B1 to B2 U-Net}. Which might suggests that complications are originating from the initalised weights of ImageNet (\textit{see figure \ref{fig:Cat_CAA}}).\\\par
 
 \begin{figure}[H]
   \centering
@@ -686,7 +708,7 @@ The following sections compare the mean changes of \textit{Precision} and \texti
   \label{fig:depth_regplot}
 \end{figure}
 
-There is a common misconception in the DL realm that deeper networks would always perform better. The comparison in \textit{table \ref{table:depth-wise_change}} in a limited scope tries to address this question, the result suggests that improvements in both \textit{Precision} and \textit{Recall} only happened in non-weight initialised depth-increase from EfficientNet B1 to B2 U-Net trained on all datasets, achieving both the highest rate of increase in both metrics. In comparison to the same architecture change and datset input with initalised weights from ImageNet, both metrics experienced a decrease. Meanwhile in other experiment setup,no significant trends can be drawn and thus the assumption does not hold, although results might drastically differ with increase of dataset, increase in batch size, and when experimenting with much deeper architectures not available to this study due to computation constraint.\\\par
+There is a common misconception in the DL realm that deeper networks would always perform better. The comparison in \textit{table \ref{table:depth-wise_change}} in a limited scope tries to address this question, the result suggests that improvements in both \textit{Precision} and \textit{Recall} only happened in non-weight initialised depth-increase from \textit{EfficientNet B1 to B2 U-Net} trained on all datasets, achieving both the highest rate of increase in both metrics. In comparison to the same architecture change and datset input with initalised weights from ImageNet, both metrics experienced a decrease. Meanwhile in other experiment setup, no significant trends can be drawn and thus the assumption does not hold, although results might drastically differ with increase of dataset, increase in batch size, and when experimenting with much deeper architectures not available to this study due to computation constraint.\\\par
 
 \section{Dataset-wise Precision and Recall change}
 
@@ -722,7 +744,7 @@ There is a common misconception in the DL realm that deeper networks would alway
 \end{figure}
 
 
-With the Kalobeyei dataset as constant, the introduction of the Dzaleka and the Dzaleka North dataset have resulted in the reduction in \textit{Precision} and \textit{Recall} for all architectures with any or none initalised weights. Table \ref{table:data-wise_change} might suggest that the least reduction in \textit{Precision} came from the \textit{EfficientNet B1 U-Net} initalised on OCC building segmentation weights. However figures \ref{fig:output} and \ref{fig:Cat_CAA} informs that with such poor Dice and IoU score, it reflects the OCC competition winning network being either very confident at the segmentation or completing missing the other buildings. Thus the \textit{Precision} diverge from the \textit{Recall} results and the statistics therefore does not reflect overall performance. The runner-up \textit{4-layer U-Net} had a much more corresponding \textit{Precision} and \textit{Recall}.
+With the Kalobeyei dataset as constant, the introduction of the Dzaleka and the Dzaleka North dataset have resulted in the reduction in \textit{Precision} and \textit{Recall} for all architectures with any or no initalised weights. Table \ref{table:data-wise_change} might suggest that the least reduction in \textit{Precision} came from the \textit{EfficientNet B1 U-Net} initalised on OCC building segmentation weights. However figures \ref{fig:output} and \ref{fig:Cat_CAA} informs that with such poor Dice and IoU score, it reflects that the OCC competition winning network being either very confident at the the segmentation or completing missing the other buildings. Thus the \textit{Precision} diverge from the \textit{Recall} results and the statistics (\textit{see figure \ref{fig:data_stripplot}}) suggests prediction results with high $False\ Negative$ and therefore does not reflect overall performance. The runner-up \textit{4-layer U-Net} had a much more corresponding \textit{Precision} and \textit{Recall}.
 
 \section{Initialised weight Precision and Recall change}
 
@@ -733,7 +755,7 @@ With the Kalobeyei dataset as constant, the introduction of the Dzaleka and the 
       \hline
       \multicolumn{5}{|c|}{Pre-initalised weights Precision and Recall change} \\
       \hline
-      Architecture & \textbf{Weights changed} & Dataset input & Precision change & Recall change \\
+      Architecture & Weights changed & Dataset input & Precision change & Recall change \\
       \hline
       EfficientNet B1 U-Net & None to ImageNet & KBY & +0.003 & +0.008\\
       \textbf{EfficientNet B1 U-Net} & \textbf{None to ImageNet} & \textbf{KBY + DZK + DZKN} & \textbf{+0.009} & \textbf{+0.0197}\\
@@ -745,6 +767,7 @@ With the Kalobeyei dataset as constant, the introduction of the Dzaleka and the 
     \end{tabular}
   \end{minipage}}
   \label{table:weight-wise_change}
+  \caption{Initalised weight change in available CNNs and their effects on the metrics}
 \end{table}
 
 \begin{figure}[H]
@@ -754,15 +777,24 @@ With the Kalobeyei dataset as constant, the introduction of the Dzaleka and the 
   \label{fig:weight_regplot}
 \end{figure}
 
-Using pre-trained weights as a strategy is well-documented in literature to improve performance across many domains (Stevens et al., 2020, )
+As mentioned perviously in section \ref{RQ} that CNNs trained on pre-initalised weights might have significant advantages in performance. Therefore, one might expect that although the OCC model suffers from low \textit{Recall} and high $False\ Negativity$ in it's segmentation output, perhaps further training on the weighted network would result in drastic improvement. Table \ref{table:weight-wise_change} indicates that this was indeed the result, with \textit{EfficientNet B1 U-Net OCC to OCC transfer-trained} achieving the highest \textit{Recall} change, it however also caused the highest decrease in \textit{Precision}, this trend is less sigificant in the version only trained in the Kalobeyei dataset, but the result reflects the assumption.. This suggest that transfer training from the OCC model compensated for the \textit{False Negative} issue, the improvement in \textit{True Positive} segmentation is not as significant. Meanwhile, the \textit{EfficientNet B1 U-Net} initalised from ImageNet weights saw both improvement in the metrics but not the \textit{EfficientNet B2 U-Net}. It is therefore difficult to draw any conclusion here.
 
-\newpage
 
-\chapter{Discussion}\label{Discuss}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.4]{Adam.png}
+  \caption{The algorithm of Adam (Kingma \& Ba., 2017).}
+  \label{app:Adam}
+\end{figure}
+
+
+
 
 \newpage
 
 \chapter{Conclusion}\label{Conclude}
+
+The beginning of a DL initiative is a momentous task. Errors from the data pre-processing to architecture selection could be costly in both time and resources, especially in the setting of humanitarian NGOs (Private Communication, 2022). It is important for a pilot project to therefore discover the possibilities and challenges with small-scale yet rigourous evaluations. This study presented a series of experiments
 
 \newpage
 
