@@ -96,5 +96,5 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 
 ## Weight-wise Precision and Recall change
 ![weight_wise_table](https://user-images.githubusercontent.com/36608720/183278158-e56bd9fb-09f8-4388-94ac-b3b4b72c14ad.png)
-![weight_wise_regplot](https://user-images.githubusercontent.com/36608720/183278164-8668f3f0-0f50-4920-9965-2bbaec7e9d9e.png)
+![weight_wise_regplot](https://user-images.githubusercontent.com/36608720/183278203-f4e945a0-6e94-4b4c-a541-0b9d739c9223.png)
 
