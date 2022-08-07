@@ -83,3 +83,17 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 ![256KBYEB2-UNet-IMNBASE](https://user-images.githubusercontent.com/36608720/182345337-89d379b5-e59a-423a-80cb-c7d0b13ddcb0.png)
 ![256ALLEB2-UNet-NoIMN](https://user-images.githubusercontent.com/36608720/171693413-a62c39f0-24c7-4ece-9932-89b329ca50c6.png)
 ![256ALLEB2-UNet-IMN](https://user-images.githubusercontent.com/36608720/171693400-c64623e9-472c-48d6-8d5b-15039f855d1d.png)
+
+## Depth-wise Precision and Recall change
+
+Depth-wise Precision and Recall change
+-----------------------------------------
+Architecture | Initialised weights | Input dataset | Precision change | Recall change
+-------------------------------------------------------------------------------------
+4 to 5 layer U-Net | None | KBY | +0.011 | -0.003
+--------------------------------------------------
+      4 to 5 layer U-Net & None & KBY + DZK + DZKN  & +0.007 & -0.002\\
+      EfficientNet B1 to B2 U-Net & None & KBY & -0.003 & -0.012\\
+      EfficientNet B1 to B2 U-Net & ImageNet & KBY & +0.003 & -0.006\\
+      "EfficientNet B1 to B2 U-Net" & "None" & "KBY + DZK + DZKN" & "+0.023" & "+0.006"\\
+      EfficientNet B1 to B2 U-Net & ImageNet & KBY + DZK + DZKN & -0.006 & -0.002\\
