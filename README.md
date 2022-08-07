@@ -1,5 +1,11 @@
 # HOTOSM_OAM_codeV2
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/36608720/183308388-a041ceea-fdee-4895-8655-4853b3dbb9d8.png"
+
+ />
+</p>
+
 This github repository is the code-base for the Master Thesis submitted for the Master der Naturwissenschaften in Applied Earth Observation and Geoanalysis of the Living Environment (EAGLE) at the Julius-Maximilians-Universität Würzburg.
 
 <p align="center">
