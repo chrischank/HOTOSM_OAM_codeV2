@@ -607,19 +607,19 @@ The metrics described in this section form part of the larger family of accuracy
 
 \textbf{Precision} and \textbf{Recall}, aka. Positivie-Predictive-Value and Sensitivity/True-Positive-Rate respectively. The two metrics are often used together, another common denomination especially in remote sensing literature are User's Accuracy and Producer's Accuracy (Congalton \& Green, 2019 \& Wegmann et al., 2016). To avoid further confusion in nomenclature, \textbf{Precision} and \textbf{Recall} will be used from hereon.\\\par
 
-\textbf{Precision} is the measure of correctly predicted Positive class $True\ Positive$ against all positive prediction assigned to that class $True\ Positive + False\ Positive$ i.e. Given the predicted results, of those that are predicted as positive, what proportion were True. It can be expressed mathematically as:
+\textbf{Precision} is the measure of correctly predicted Positive class (True Positive) against all positive prediction assigned to that class (True Positive + False Positive) i.e. Given the predicted results, of those that are predicted as positive, what proportion were True. It can be expressed mathematically as:
 
 \begin{equation}
   Precision = \frac{True\ Positive} {(True\ Positive + False\ Positive)}
 \end{equation}
 
-Meanwhile, \textbf{Recall} measures the correctly predicted Positive class $True\ Positive$ against both the correct and incorrect predicton on the Positive reference class $True\ Positive + False\ Negative$ i.e. Given the predicted results, of those that are referenced as positive, what proportion of those were True. It can be expressed mathematically as:
+Meanwhile, \textbf{Recall} measures the correctly predicted Positive class (True Positive) against both the correct and incorrect predicton on the Positive reference class (True Positive + False Negative) i.e. Given the predicted results, of those that are referenced as positive, what proportion of those were True. It can be expressed mathematically as:
 
 \begin{equation}
   Recall = \frac{True\ Positive} {(True\ Positive + False\ Negative)}
 \end{equation}
 
-\textbf{Specificity}, aka. True-Negative-Rate measures correctly predicted Negative class $True\ Negative$ against the correct and incorrect prediction on the Negative reference class $False\ Positive + True\ Negative$ i.e. Given the predicted results, of those that are referenced as negative, what proportion of those were True. It can be expressed mathematically as:
+\textbf{Specificity}, aka. True-Negative-Rate measures correctly predicted Negative class (True Negative) against the correct and incorrect prediction on the Negative reference class (False Positive + True Negative) i.e. Given the predicted results, of those that are referenced as negative, what proportion of those were True. It can be expressed mathematically as:
 
 \begin{equation}
   Specificity = \frac{True\ Negative} {(False\ Positive + True\ Negative)}
@@ -629,17 +629,15 @@ Therefore, higher \textbf{Recall} suggests the model is better at identifying po
 
 \subsection{Higher-order metrics}\label{2ndorder}
 
-The following are higher-order accuracy assessment metrics, where they often encompass the lower-order accuracy assessment metrics mentioned in the above section, Thus, although higher-order metrics provide a more generalised assessments, they often suffer from granularity. Hence such metrics are often employed as a means to evaluate and rank DL based CV challenges and competitions (e.g. Kaggle Challenges), but they are less so effective in the detailed assessment of segmentation results.\\\par
+The following are higher-order accuracy assessment metrics, where they often encompass the lower-order accuracy assessment metrics mentioned in the above section, Thus, although higher-order metrics provide a more generalised assessments, they often suffer from granularity.Hence such metrics are often employed as a means to evaluate and rank DL based CV challenges and competitions.\\\par
 
 \subsubsection{Overall Accuracy}\label{OA}
 
-\tiny
 \begin{equation}
   Overall\ Accuracy = \frac{True\ Positive + True\ Negative}{True\ Positive + True\ Negative + False\ Positive + False\ Negative}
 \end{equation}
-\normalsize
 
-The Overall Accuracy (herein OA) gives an easy to implement, general but incomplete answer of how well classification is doing. The metrics suffers when inbalance count of multiple-classes are involved.\\\par
+The Overall Accuracy (herein OA) could give an easy to implement, general but incomplete image of how well classification is doing. The metrics suffers when inbalance count of multiple-classes are involved.\\\par
 
 \subsubsection{Dice Score}\label{F1}
 
@@ -647,7 +645,7 @@ The Overall Accuracy (herein OA) gives an easy to implement, general but incompl
   Dice\ Score = 2 * \frac{Precision - Recall}{Precision + Recall}
 \end{equation}
 
-The Dice Score aka. the F1 score calculates the harmonic mean of \textbf{Precision} and \textbf{Recall}, with contribution for both to be of balanced weightings, the Dice Score could be skewed by classification results with higher performance in either Precision or Recall. Additionally, the metrics does not take $True\ Negative$ values into account if such statistics might be of interest.\\\par
+The Dice Score aka. the F1 score calculates the harmonic mean of \textbf{Precision} and \textbf{Recall},with contribution for both to be of balanced weightings, the Dice Score could be skewed by classification results with higher performance in either Precision or Recall. Additionally, the metrics does not take True Negative values into account if such statistics might be of interest.\\\par
 
 \subsubsection{Intersection-over-Union}\label{IoU}
 
@@ -665,6 +663,10 @@ The Dice Score aka. the F1 score calculates the harmonic mean of \textbf{Precisi
 
 One of the most commonly used metrics as an assessment in Deep Learning Computer Vision competiton. The Intersection-over-Union (IoU) aka. Jaccard Index is a geometric based accuraccy assessment\\\par
 
+\section{Experimentation setup}\label{ExpSetup}
+
+Each network architecture and their associated weights will be trained on 2 data setup. The first setup consist of only the Kalobeyei, Kakuma camp where the labels include UAV motion artefacts and rooftops are relatively homogeneous. The second setup consist of data from the Kalobeyei camp and also the rest of Dzaleka camps. The second setup will introduce imperfection in labelling and complex hetereogeneous rooftops and morphologies. The two data setup will allow comparison between the models response of each class-based accuracy assessment metrics. To assess the performance of the architectures and experiment setup, a combination of the validation loss, class-based accuracy assessments, and empirical output were considered.\\\par
+
 \subsection{Project workflow}\label{ProjWorkflow}
 
 \begin{figure}[H]
@@ -679,7 +681,7 @@ The workflow for this study consist of 5 main stages: 1. Download and Extraction
 \begin{figure}[H]
   \centering
   \includegraphics[scale = 0.3]{simp_ETL.png}
-  \caption{Simplified 5 steps project workflow with reference to \ref{fig:ETL_flow}}
+  \caption{Simplified project workflow in reference to \ref{fig:ETL_flow}}
   \label{fig:simp_ETL}
 \end{figure}
 
@@ -687,16 +689,16 @@ The workflow for this study consist of 5 main stages: 1. Download and Extraction
 
 \chapter{Findings and Discussion}\label{findings}
 
-The study have trained and tested on 5 different architectures with either no initalised weights or initalised weights from ImageNet or OCC building segmentation models. For each experiment setup, there were 2 sets of dataset input (KBY and KBY + DZK + DZKN), for details (\textit{see table \ref{table:setup}}). Producing 16 sets of trained CNN and associated class-based accuracy assessments (\textit{see figure \ref{fig:Cat_CAA}}). On the whole, there were both expected and unexpected results. A reduction in every metrics were observed in every single experiment setup when the more complex Dzaleka camps datasets were introduced (\textit{see table \ref{table:data-wise_change}}). This was expected as it is more difficult to train the CNNs on the highly heterogeneous rooftops with similar texture to the surrounding environments. The \textit{Precision} and \textit{Recall} metrics did not vary too much between the architectures when trained only on the Kalobeyei dataset, with the exception to the transfered-untrained \textit{EfficientNet B1 U-Net OCC} model. In contrast, the performance in differences is a lot more visible with the introduction of Dzaleka and Dzaleka North datasets.\\\par
+This study have tested on 5 different architectures with either no initalised weights or initalised weights from ImageNet or OCC building segmentation models. For each experimental setup, there were 2 sets of dataset input (KBY and KBY + DZK + DZKN), for details (\textit{see table \ref{table:setup}}). Producing 16 sets of trained CNN and associated class-based accuracy assessments (\textit{see figure \ref{fig:Cat_CAA}}). On the whole, there were both expected and unexpected results. A reduction in every metrics were observed in every single experiment setup when the more complex Dzaleka camp datasets were introduced (\textit{see table \ref{table:data-wise_change}}). This was expected as it is more difficult to train the CNNs on the highly heterogeneous rooftops with similar texture to the surrounding environments. The \textit{Precision} and \textit{Recall} metrics did not vary too much between the architectures when trained only on the Kalobeyei dataset, with the exception to the transfered-untrained \textit{EfficientNet B1 U-Net OCC} model. In contrast, the performance in differences is a lot more visible with the introduction of Dzaleka and Dzaleka North datasets.\\\par
 
 An interesting point is that with the \textit{EfficientNet B1 U-Net} and the symmetrical \textit{4-layer \& 5-layer U-Net}, both \textit{Precision} and \textit{Recall} increased when initialised on pretrained ImageNet weights (\textit{see table \ref{table:weight-wise_change}}). However, this was not the case for the \textit{EfficientNet B2 U-Net} where if the network was initalised on ImageNet pretrained weights, saw a decrease in \textit{Precision} but a increase in \textit{Recall} when compared to the network with non-initalised weights. This suggests that the increase in depth does not necessarily correspond to either an increase or decrease in performance in any particular direction. For the non-weight initialised \textit{4-layer to 5-layer U-Net}, there is an consistent but slight increase in \textit{Precision} but not \textit{Recall}. This mirrors the changes in \textit{EfficientNet B1 to B2 U-Net}. Which might suggests that complications are originating from the initalised weights of ImageNet (\textit{see figure \ref{fig:Cat_CAA}}).\\\par
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale = 0.35]{256KBYEB1-UNet-OCCUNTRAINEDBASE.png}
-  \includegraphics[scale = 0.35]{256KBYFive-UnetBASE.png}
-  \includegraphics[scale = 0.35]{256ALLEB1-UNet-OCCBASE.png}
-  \includegraphics[scale = 0.35]{256ALLEB2-UNet-NoIMN.png}
+  \includegraphics[scale = 0.4]{256KBYEB1-UNet-OCCUNTRAINEDBASE.png}
+  \includegraphics[scale = 0.4]{256KBYFive-UnetBASE.png}
+  \includegraphics[scale = 0.4]{256ALLEB1-UNet-OCCBASE.png}
+  \includegraphics[scale = 0.4]{256ALLEB2-UNet-NoIMN.png}
   \caption{Sample of binary segmentation output of various combinations of tested architecture and experiment setup.}
   \label{fig:output}
 \end{figure}
@@ -779,7 +781,6 @@ There is a common misconception in the DL realm that deeper networks would alway
 
 With the Kalobeyei dataset as constant, the introduction of the Dzaleka and the Dzaleka North dataset have resulted in the reduction in \textit{Precision} and \textit{Recall} for all architectures with any or no initalised weights. Table \ref{table:data-wise_change} might suggest that the least reduction in \textit{Precision} came from the \textit{EfficientNet B1 U-Net} initalised on OCC building segmentation weights. However figures \ref{fig:output} and \ref{fig:Cat_CAA} informs that with such poor Dice and IoU score, it reflects that the OCC competition winning network being either very confident at the the segmentation or completing missing the other buildings. Thus the \textit{Precision} diverge from the \textit{Recall} results and the statistics (\textit{see figure \ref{fig:data_stripplot}}) suggests prediction results with high $False\ Negative$ and therefore does not reflect overall performance. The runner-up \textit{4-layer U-Net} had a much more corresponding \textit{Precision} and \textit{Recall}.
 
-
 \section{Initialised weight Precision and Recall change}
 
 \begin{table}[H]
@@ -817,13 +818,7 @@ As mentioned perviously in section \ref{RQ} that CNNs trained on pre-initalised 
 
 \chapter{Conclusion}\label{Conclude}
 
-The beginning of a DL project is a momentous task. Errors from the data pre-processing to architecture selection could be costly in both time and resources, especially in the setting of humanitarian NGOs (Private Communication, 2022). It is important for a pilot project to therefore uncover the possibilities and challenges with well-designed, small-scale yet rigourous experiments. This study presented a series of experiments which tested many variations of U-Nets on the shallow-end of the spectrum and the possibility of transfer-training from a previous competition winning neural network were explored. Initially, there was an assumption that transfer-training from pre-trained networks and deeper architectures would perform better. However, results shows that  the overall picture is a lot more complicated, where they may experienced drastic improvement in some metrics, but not others. Furthermore, focusing on $True\ Positive$ focused class-based accuracy assessment metrics have shown that even performance in \textit{Precision \& Recall} does not necessarily correlate with each other and that there's nuance relationship between their improvement and the pre-trained weights.\\\par
-
-Albeit many ambiguitiy and questions remain, there are several key takeaways that have surfaced as a result. First, transferring a competition winning network which scored very well in IoU metrics does not necessarily guarantee easy transfer with good performance. This study hinted that the OCC model may have became too customised for its original dataset.. Secondly, it is important to carefully and critically evaluate the segmentation output by examining more granular low-level metrics. Thirdly, there are no linear relationship yet to be drawn with the depth increase and performance, although it is speculated that this might scale differently and at a more predictable way when higher batch-size, much deeper network, and significantly more data can be provided.\\\par
-
-To narrow down the choices, further investigation will be needed. Scaling from the experimental framework defined for this study could be a good strategy for succession. This will allow for a well-constrainted extension of this study. Additionally, baseline experiment at different hyperparameters, where the parameters of isolation are the initialised weights and architectures would  be very interesting. Nevertheless, scaling will only be possible with significantly more computational and data resources.\\\par
-
-In conclusion, this study provided a pilot baseline understanding of how HOT could begin their open-sourced AI-assisted mapping initiative. The study defined a rigourous experiment and assessment methods which is scalable. With increasing data availability from the OpenAerialMap initiative, this study hope to have made a foundational contribution to a beginning of a much larger study. Perhaps a prequel to which will culminate into a truly open-sourced AI-assited mapping tool that could help reduce the geospatial data-inequality in the HOT and OpenStreetMap ecosystem.\\\par
+The beginning of a DL initiative is a momentous task. Errors from the data pre-processing to architecture selection could be costly in both time and resources, especially in the setting of humanitarian NGOs (Private Communication, 2022). It is important for a pilot project to therefore discover the possibilities and challenges with small-scale yet rigourous evaluations. This study presented a series of experiments
 
 \newpage
 
