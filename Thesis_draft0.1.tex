@@ -8,6 +8,7 @@
 \usepackage{lscape}
 \usepackage{csvsimple}
 \usepackage{longtable}
+\usepackage{geometry}
 \restylefloat{table}
 \hypersetup{
     colorlinks=true,
@@ -21,7 +22,11 @@
 \titleformat{\subsection}{\lmodern\normalsize\bfseries}{}{0cm}{}
 \titleformat{\subsubsection}{\lmodern\small\bfseries}{}{0cm}{}
 \graphicspath{{/home/chris/Dropbox/HOTOSM/figures/}}
-\usepackage{fancyhdr}
+\usepackage{fancyhdr,ragged2e}
+\fancyhead{}
+\lhead{\parbox[t]{0.4\textwidth}{\RaggedRight\rightmark\strut}}
+\rhead{\parbox[t]{0.4\textwidth}{\RaggedLeft\leftmark\strut}}
+\setlength{\headheight}{5\baselineskip}
 \pagestyle{fancy}
 \pagenumbering{roman}
 \linespread{1.5}
@@ -30,6 +35,7 @@
 
 \begin{document}
 
+\newgeometry{margin=1in}
 \begin{titlepage}
    \begin{center}
        \vspace{0.25cm}
@@ -42,35 +48,40 @@
        \normalsize
        \textbf{CHAN, Yan-Chak Christopher}
 
-       \vfill
+       \vspace{2cm}
 
-       \textbf{Supervised by:} \\
-       Prof. Dr. Hannes Taubenöck \thanks{Geo-Risks and Civil Society, Deutsches Zentrum für Luft- und Raumfahrt} \\
-       Matthias Weigand \thanks{Geo-Risks and Civil Society, Deutsches Zentrum für Luft- und Raumfahrt}\\
-       Emran Alchikh Alnajar \thanks{Humanitarian OpenStreetMap Team}
+       \textbf{Under the supervision of} \\
+       Prof. Dr. Hannes Taubenöck \textsuperscript{\hyperlink{DLR}{1}} \textsuperscript{\hyperlink{JMWU}{2}} \\
+       Matthias Weigand \textsuperscript{\hyperlink{DLR}{1}} \\
+       Emran Alchikh Alnajar \textsuperscript{\hyperlink{HOT}{3}}
 
-       \vspace{0.25cm}
+       \vspace{1cm}
 
        Masterarbeit submitted for the degree of\\
        \textbf{Master der Naturwissenschaften (MSc.)}\\
+       \vspace{0.25cm}
        in\\
+       \vspace{0.25cm}
        Applied Earth Observation and Geoanalysis of the Living Environment (EAGLE)
 
        \vspace{0.5cm}
 
-       \includegraphics[scale = 0.25]{neuSIEGEL.png}
+       \includegraphics[scale = 0.3]{neuSIEGEL.png}
+
+       \vspace{0.5cm}
 
        \normalsize
        Philosophische Fakultät (Historische, Philologische, Kultur- und Geographische Wissenschaften)\\
        Julius-Maximilians-Universität Würzburg\\
+
+       \footnotetext[1]{\hypertarget{DLR}{Department of Geo-Risks and Civil Security, German Remote Sensing Data Center (DFD), German Aerospace Center (DLR)}}
+       \footnotetext[2]{\hypertarget{JMWU}{Department of Remote Sensing, Institute of Geography and Geology, Julius-Maximilians-Universität Würzburg}}
+       \footnotetext[3]{\hypertarget{HOT}{Humanitarian OpenStreetMap Team}}
+
    \end{center}
 \end{titlepage}
 
-\newpage
-
-\section{Forewords and Acknowledgements}
-
-Service to the less-advantaged! This is the value taught by my parents since I was small, and have since became the main motivator for the completion of this Masterarbeit. I have been extremely fortunate to have been able to carry out such an important work in partnership with the Humanitarian OpenStreetMap Team and the German Aerospace Center (DLR). This project came about as a hope to do something scientifically rigour, yet practically impactful. Through providing a technical, careful study, I, the supervisors, and partners hope that this work can provide direction and minimise future mishaps of the open-sourced AI-assited mapping solution. Working on this project have been a journey of surprises, long nights, new friendships, and adventures, of which I gained bountiful from. Ultimately culminating into the work being accepted by the Proceedings of the Academic Track at State of the Map 2022 (\textit{Chan et al., 2022}). All of this could not have been possible without the generous facilitation from Emran Alchikh Alnajar and the passionate yet pedantic Matthias Weigand who maintained high standards and scientific rigour while motivating me to focus on the light at the end of the tunnel. I would also like to thank my past classmates, collagues, and lecturers, whom tolerated and kept patience with me at times of desparation and frustration. Lastly, I must extend my appreciation to my parents Lucia Leung and Savio Chan. Without their support, I would have never had the resources and opportunities to get to where I am now and complete this work.
+\restoregeometry
 
 \newpage
 
@@ -81,22 +92,22 @@ most vulnerable populations, with many of them located in Sub-Saharan Africa. Ma
 these settlements lack up-to-date geoinformation that we take for granted in developed
 settlements. Having up-to-date maps on the dimension, spatial layout are important for
 assisting administration tasks such as crisis intervention, infrastructure development, and
-population estimates which encourage economic productivity [1]. The data inequality
+population estimates which encourage economic productivity. The data inequality
 between the developed and developing countries are results of multiple reasons ranging
-from a lack of commercial interest to knowledge gaps in data contributors [2–4]. Such
+from a lack of commercial interest to knowledge gaps in data contributors. Such
 disparity can be reduced using assisted mapping technology. A combination of Very High
-Resolution (VHR) satellite imagery and Machine Learning (ML) based methods that exploit
+Resolution satellite imagery and Machine Learning based methods that exploit
 the textural, spectral, and morphological characteristics of VHR imagery are commonly used
-to extract geospatial and imagery of these complex environments [5]. Although many have
+to extract geospatial and imagery of these complex environments. Although many have
 shown promising results in satellite VHR scenarios (e.g. differentiating slum and non-slum
-[6,7]), in drone imagery, however, results might suffer from noise caused by environment and
-drone-based specific motion problems. Recent advances in Deep Learning (DL) based
-Computer Vision (CV), however, might be able to address these issues [8].\\\oar
+), in drone imagery, however, results might suffer from noise caused by environment and
+drone-based specific motion problems. Recent advances in Deep Learning based
+Computer Vision, however, might be able to address these issues.\\\oar
 
-This study investigated the capabilities of applying DL semantic
+This study investigated the capabilities of applying Deep Learning semantic
 segmentation methods for delineating building footprints in refugee camps from open-data
 drone imagery. This study is connected to a larger initiative to open-source the AI assisted
-mapping platform in the current Humanitarian OpenStreetMap Team’s (HOT) ecosystem.
+mapping platform in the current Humanitarian OpenStreetMap Team’s ecosystem.
 The objective of this study is to test the U-Net and several variations of the
 architectures’ performance for building footprint mapping, initially on the pixel-aligned and
 simple Kalobeyei dataset. Subsequently, the models were introduced to the less-aligned
@@ -105,19 +116,26 @@ experiments, which kept the settings of hyperparameters to be consistent, were c
 between the architectures. Class-based accuracy assessments metrics were used to
 evaluate performances between the baseline experiments setup. This allows evaluation into
 which level of data quality is required to achieve acceptable classification results when
-scaling DL assisted mapping efforts in the context of humanitarian mapping.\\\par
+scaling Deep Learning assisted mapping efforts in the context of humanitarian mapping.\\\par
 
-This study demonstrated the ability to use DL semantic segmentation to perform
+This study demonstrated the ability to use Deep Learning semantic segmentation to perform
 building segmentation in complex humanitarian applications. Having increased access to
-open-data VHR drone imagery such as the OpenAerialMap initiative is an advantage to
+open-data Very High Resolution drone imagery such as the OpenAerialMap initiative is an advantage to
 building AI-assisted humanitarian mapping. The study evaluated various U-Net based
 architectures and data input setup. Yet, the variation of the results not only emphasised the
-complexity of DL based methods, but also indicate that further efforts will be needed to
+complexity of Deep Learning based methods, but also indicate that further efforts will be needed to
 focus on the selection of suitable network architectures as they show varying resilience
 towards imperfect reference samples.\\\par
 
 \end{abstract}
 
+\newpage
+
+\section{Forewords and Acknowledgements}
+
+Service to the less-advantaged! This is the value taught by my parents since I was small, and have since became the main motivator for the completion of this Masterarbeit. I have been extremely fortunate to have been able to carry out such an important work in partnership with the Humanitarian OpenStreetMap Team and the German Aerospace Center (DLR). This project came about as a hope to do something scientifically rigour, yet practically impactful. Through providing a technical, careful study, I, the supervisors, and partners hope that this work can provide direction and minimise future mishaps of the open-sourced AI-assited mapping solution. Working on this project have been a journey of surprises, long nights, new friendships, and adventures, of which I gained bountiful from. Ultimately culminating into the work being accepted by the Proceedings of the Academic Track at State of the Map 2022 (\textit{Chan et al., 2022}). All of this could not have been possible without the generous facilitation from Emran Alchikh Alnajar and the passionate yet pedantic Matthias Weigand who maintained high standards and scientific rigour while motivating me to focus on the light at the end of the tunnel. I would also like to thank my past classmates, collagues, and lecturers, whom tolerated and kept patience with me at times of desparation and frustration. Lastly, I must extend my appreciation to my parents Lucia Leung and Savio Chan. Without their support, I would have never had the resources and opportunities to get to where I am now and complete this work.
+
+\newpage
 \section{Declaration of Independent Work}
 
 I confirm that all this work is my own except where indicated.
@@ -133,7 +151,7 @@ I confirm that all this work is my own except where indicated.
 
 \newpage
 
-\subsection{Abbreviations}
+\section{Abbreviations}
 
 \begin{itemize}
   \item SDG: Sustainable Development Goals
@@ -187,7 +205,7 @@ Having up-to-date map is therefore paramount for short and long term humanitaria
 
 Part of the reason for this could be traced to both the knowledge of volunteer contributors and commercial interest, but further discussion will be beyond the scope of this study (Anderson et a;., 2019, Veselovsky et al., 2021, Yang et al., 2016). Henceforth,, the overarching theme of this study is how can technology help reduce the geospatial data inequality in informal settlements. As the topic and data provider of this project, the Humanitarian OpenStreetMap Team (herein HOT) have been at the forefront of using open and crowd sourced mapping data to support humanitarian causes from shorter term disaster response to longer epidemiology and microfinance campaigns (HOT, 2021).  and with the advancement of Deep Learning in the last decades, AI-assisted mapping have became a major topic for innovation (e.g. Herfort et al., 2019, Kuffer et al., 2016, Wurm et al., 2021, Quinn et al., 2018).\\\par
 
-\section{Study Area of Interest}\label{StudyAOI}
+\section{Study Areas of Interest}\label{StudyAOI}
 \subsection{Kalobeyei, Kakuma, Turkana, Kenya}\label{Kalobeyei}
 
 The Kakuma camp was first established in 1992, located in the rural North-West county of Turkana, Kenya. The camp was initially established to provide accomdation to the refugees fleeing the Second Sudanese Civil War as a temporary solution. However, as the conflict dragged out and followed by subsequent conflicts in the nearby region, the Kakuma camp have therefore been running for the past 30 years. As of 2020, Kakuma is home to 157,718 refugees with increasing number coming from the more recent Somalian and Ethiopian-Eritrean conflict (IFC., 2018, UN-HABITAT, 2021).\\\par
@@ -207,9 +225,6 @@ The Kakuma refugee camp have fluctuated in population as a response to demand, h
   \caption{RGB UAV imagery of the Kalobeyei settlements in rural Turkana from OpenAerialMap}
   \label{fig:KBY_overview}
 \end{figure}
-
-
-\newpage
 
 \subsection{Dzaleka, Dowa, Malawi}\label{Dzaleka}
 
@@ -253,7 +268,7 @@ In the field of CV, there is generally 4 types of application: 1. Semantic segme
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale = 0.25]{CV_tasks.png}
+\includegraphics[scale = 0.2]{CV_tasks.png}
   \caption{The four main types of Computer Vision tasks (Stanford University, 2022)}
 \label{fig:CV_tasks}
 \end{figure}
@@ -450,7 +465,7 @@ With the Kalobeyei camp unlabelled, this study created albeit in less quanitity,
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale = 0.25]{UAV_motion.png}
+  \includegraphics[scale = 0.3]{UAV_motion.png}
   \caption{Motion artefacts unique to UAV imagery}
   \label{fig:UAV_motion}
 \end{figure}
@@ -486,7 +501,7 @@ Data augmentation can generally be split into 3 categories: 1. Geometric/Affine 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale = 0.5]{MNIST5.png}
+  \includegraphics[scale = 0.4]{MNIST5.png}
   \caption{Perhaps geometric augmentation of horizontal flipping shall not be applied on the MNIST number of 5}
   \label{fig:MNIST5}
 \end{figure}
@@ -501,7 +516,7 @@ Thus, the following augmentation were applied to the Train, Validation, and Test
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale = 0.75]{InRGB.png}
+  \includegraphics[scale = 0.8]{InRGB.png}
   \caption{An example of Inverse RGB augmentation applied to the Train dataset.}
   \label{fig:InRGB}
 \end{figure}
@@ -511,7 +526,7 @@ Thus, the following augmentation were applied to the Train, Validation, and Test
   \resizebox{0.65\textwidth}{!}{\begin{minipage}{\textwidth}
     \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
       \hline
-      \multicolumn{}{|c|}{Dataset input with augmentation} \\
+      \multicolumn{4}{|c|}{Dataset input with augmentation} \\
       \hline
       Datasets & Train & Validation & Test \\
       \hline
@@ -584,7 +599,7 @@ Therefore, the unweighted Four-layer U-Net, Five-layer U-Net, and the OCC winner
 
 \begin{table}[H]
   \centering
-  \resizebox{0.65\textwidth}{!}{\begin{minipage}{\textwidth}
+  \resizebox{0.5\textwidth}{!}{\begin{minipage}{\textwidth}
     \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
       \hline
       \multicolumn{5}{|c|}{Trained Architecture Specification Table} \\
@@ -610,11 +625,10 @@ Therefore, the unweighted Four-layer U-Net, Five-layer U-Net, and the OCC winner
 The hyperparameters of a neural network are changable parameters which control the training process (Bengio et al., 2017, Stevens et al., 2020, Howard \& Gugger, 2020). They include the batch size, optimiser, learning rate, weight decay, loss function, and learning rate scheduler etc. (\textit{see table \ref{table:hyperparameters}}). One of the most difficult process in DL is finding the correct hyperparameters value that cause the model to neither overfit or underfit the dataset. The strategies and options are often overwhelming, therefore this study does not concern itself with tuning the hyperparameters for all of the models but rather withholding them from changes so that a comprehensive \textbf{baseline} performance could be identified. This will provide a clear picture of the feasibility, uncover challenges and potentials. The result will provide insight on how to take this project further, so that further resources could be justified to scale future experiments.\\\par
 
 \begin{landscape}
-\vspace*{\fill}
-\centering
 \begin{table}[H]
+  \hspace*{-5cm}
   \centering
-  \resizebox{0.8\textwidth}{!}{\begin{minipage}{\textwidth}
+  \resizebox{0.7\textwidth}{!}{\begin{minipage}{\textwidth}
     \begin{tabular}{ |p{5cm}|p{5cm}|p{10cm}| }
       \hline
       \multicolumn{3}{|c|}{Unchanged hyperparameters for the study experiments} \\
@@ -653,7 +667,7 @@ The metrics described in this section form part of the larger family of accuracy
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale = 0.25]{cmatrix.png}
+  \includegraphics[scale = 0.2]{cmatrix.png}
   \caption{The Confusion Matrix}
   \label{fig:cmatrix}
 \end{figure}
@@ -734,7 +748,7 @@ The workflow for this study consist of 5 main stages: 1. Download and Extraction
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale = 0.3]{simp_ETL.png}
+  \includegraphics[scale = 0.25]{simp_ETL.png}
   \caption{Simplified 5 steps project workflow with reference to \ref{fig:ETL_flow}}
   \label{fig:simp_ETL}
 \end{figure}
@@ -749,17 +763,17 @@ An interesting observation is that with the \textit{EfficientNet B1 U-Net} and t
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale = 0.35]{256KBYEB1-UNet-OCCUNTRAINEDBASE.png}
-  \includegraphics[scale = 0.35]{256KBYFive-UnetBASE.png}
-  \includegraphics[scale = 0.35]{256ALLEB1-UNet-OCCBASE.png}
-  \includegraphics[scale = 0.35]{256ALLEB2-UNet-NoIMN.png}
+  \includegraphics[scale = 0.3]{256KBYEB1-UNet-OCCUNTRAINEDBASE.png}
+  \includegraphics[scale = 0.3]{256KBYFive-UnetBASE.png}
+  \includegraphics[scale = 0.3]{256ALLEB1-UNet-OCCBASE.png}
+  \includegraphics[scale = 0.3]{256ALLEB2-UNet-NoIMN.png}
   \caption{Sample of binary segmentation output of various combinations of tested architecture and experiment setup.}
   \label{fig:output}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale = 0.3]{Cat_CAA.png}
+  \includegraphics[scale = 0.25]{Cat_CAA.png}
   \caption{Class-based Accuracy Assesment metrics for respective CNN architectures and experiment input dataset.}
   \label{fig:Cat_CAA}
 \end{figure}
@@ -770,7 +784,7 @@ The following sections compare the mean changes of \textit{Precision} and \texti
 
 \begin{table}[H]
   \centering
-  \resizebox{0.65\textwidth}{!}{\begin{minipage}{\textwidth}
+  \resizebox{0.55\textwidth}{!}{\begin{minipage}{\textwidth}
     \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
       \hline
       \multicolumn{5}{|c|}{Depth-wise Precision and Recall change} \\
@@ -827,7 +841,7 @@ There is a common misconception in the DL realm that deeper networks would alway
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale = 0.5]{dataset_wise_stripplot.png}
+  \includegraphics[scale = 0.45]{dataset_wise_stripplot.png}
   \caption{Detailed strip plot for \textit{Precision} and \textit{Recall} change in relation to dataset input change.}
   \label{fig:data_stripplot}
 \end{figure}
@@ -839,7 +853,7 @@ With the Kalobeyei dataset as constant, the introduction of the Dzaleka and the 
 
 \begin{table}[H]
   \centering
-  \resizebox{0.65\textwidth}{!}{\begin{minipage}{\textwidth}
+  \resizebox{0.55\textwidth}{!}{\begin{minipage}{\textwidth}
     \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}| }
       \hline
       \multicolumn{5}{|c|}{Pre-initalised weights Precision and Recall change} \\
@@ -861,7 +875,7 @@ With the Kalobeyei dataset as constant, the introduction of the Dzaleka and the 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale = 0.6]{weight_wise_regplot.png}
+  \includegraphics[scale = 0.5]{weight_wise_regplot.png}
   \caption{Regression plot for \textit{Precision} and \textit{Recall} change in relation to architectures' initalised weight change.}
   \label{fig:weight_regplot}
 \end{figure}
@@ -872,7 +886,7 @@ Few assumptions could be drawn from the above results. Firstly, depth increase i
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale = 0.4]{FP_clothingline.png}
+  \includegraphics[scale = 0.45]{FP_clothingline.png}
   \caption{Ambiguity which arise from labelling could cause a $True\ Positive$ prediction to be classified as $False\ Positive$.}
   \label{fig:ambiguity}
 \end{figure}
@@ -892,6 +906,104 @@ In conclusion, this study provided a pilot baseline understanding of how HOT cou
 \newpage
 
 \chapter{Bibliography}\label{Bib}
+
+Ahmed, N., Mahbub, R.B., Rahman, R.M., 2020. Learning to extract buildings from ultra-high-resolution drone images and noisy labels. International Journal of Remote Sensing 41, 8216–8237. https://doi.org/10.1080/01431161.2020.1763496\\
+Alix-Garcia, J., Walker, S., Bartlett, A., Onder, H., Sanghi, A., 2018. Do refugee camps help or hurt hosts? The case of Kakuma, Kenya. Journal of Development Economics 130, 66–83. https://doi.org/10.1016/j.jdeveco.2017.09.005\\
+Anderson, J., Sarkar, D., Palen, L., 2019. Corporate Editors in the Evolving Landscape of OpenStreetMap. ISPRS International Journal of Geo-Information 8, 232. https://doi.org/10.3390/ijgi8050232\\
+Audebert, N., Boulch, A., Randrianarivo, H., Le Saux, B., Ferecatu, M., Lefèvre, S., Marlet, R., 2017. Deep learning for urban remote sensing, in: 2017 Joint Urban Remote Sensing Event (JURSE). Presented at the 2017 Joint Urban Remote Sensing Event (JURSE), pp. 1–4. https://doi.org/10.1109/JURSE.2017.7924536\\
+Azimi, S.M., Kiefl, R., Gstaiger, V., Bahmanyar, R., Merkle, N., Henry, C., Rosenbaum, D., Kurz, F., 2021. AUTOMATIC OBJECT SEGMENTATION TO SUPPORT CRISIS MANAGEMENT OF LARGE-SCALE EVENTS, in: The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences. Presented at the XXIV ISPRS Congress <q>Imaging today, foreseeing tomorrow</q>, Commission II - 2021 edition, 5&ndash;9 July 2021, Copernicus GmbH, pp. 433–440. https://doi.org/10.5194/isprs-archives-XLIII-B2-2021-433-2021\\
+Bengio, Y., 2012. Practical recommendations for gradient-based training of deep architectures. https://doi.org/10.48550/arXiv.1206.5533\\
+Bengio, Y., Goodfellow, I., Courville, A., 2017. Deep learning. MIT press Cambridge, MA, USA.\\
+Bischl, B., Binder, M., Lang, M., Pielok, T., Richter, J., Coors, S., Thomas, J., Ullmann, T., Becker, M., Boulesteix, A.-L., Deng, D., Lindauer, M., 2021. Hyperparameter Optimization: Foundations, Algorithms, Best Practices and Open Challenges. arXiv:2107.05847 [cs, stat].\\
+Blaschke, T., 2010. Object based image analysis for remote sensing. ISPRS Journal of Photogrammetry and Remote Sensing 65, 2–16. https://doi.org/10.1016/j.isprsjprs.2009.06.004\\
+Blaschke, T., Hay, G.J., Kelly, M., Lang, S., Hofmann, P., Addink, E., Queiroz Feitosa, R., van der Meer, F., van der Werff, H., van Coillie, F., Tiede, D., 2014. Geographic Object-Based Image Analysis – Towards a new paradigm. ISPRS Journal of Photogrammetry and Remote Sensing 87, 180–191. https://doi.org/10.1016/j.isprsjprs.2013.09.014\\
+Bolstad, P., 2019. GIS fundamentals: A first text on geographic information systems. Eider (PressMinnesota).\\
+Bruno, G., Antonelli, D., Stadnicka, D., 2021. Evaluating the effect of learning rate, batch size and assignment strategies on the production performance. Journal of Industrial and Production Engineering 38, 137–147. https://doi.org/10.1080/21681015.2021.1883133\\
+Carrivick, J.L., Smith, M.W., Quincey, D.J., 2016. Structure from Motion in the Geosciences. John Wiley & Sons.\\
+Chen, Z., Scott, T.R., Bearman, S., Anand, H., Keating, D., Scott, C., Arrowsmith, J.R., Das, J., 2020. Geomorphological Analysis Using Unpiloted Aircraft Systems, Structure from Motion, and Deep Learning, in: 2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS). Presented at the 2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 1276–1283. https://doi.org/10.1109/IROS45743.2020.9341354\\
+Cities Alliance, AfDB, 2022. Dynamics of Systems of Secondary Cities in Africa. Brussels.\\
+Congalton, R.G., Green, K., 2019. Assessing the accuracy of remotely sensed data: principles and practices, 3rd ed. CRC press.\\
+CS231n Convolutional Neural Networks for Visual Recognition [WWW Document], n.d. URL https://cs231n.github.io/convolutional-networks/ (accessed 7.4.22).\\
+DrivenData, n.d. Open Cities AI Challenge: Segmenting Buildings for Disaster Resilience [WWW Document]. DrivenData. URL https://www.drivendata.org/competitions/60/building-segmentation-disaster-resilience/page/218/ (accessed 5.11.22).\\
+Elsken, T., Metzen, J.H., Hutter, F., 2019. Neural architecture search: A survey. The Journal of Machine Learning Research 20, 1997–2017.\\
+Gevaert, C.M., Sliuzas, R., Persello, C., Vosselman, G., 2018. Evaluating the Societal Impact of Using Drones to Support Urban Upgrading Projects. ISPRS International Journal of Geo-Information 7, 91. https://doi.org/10.3390/ijgi7030091\\
+Gross, G., n.d. Dzaleka Refugee Camp Extension – Werner Schellenberg. URL http://werner-schellenberg.de/dzaleka-refugee-camp-extension (accessed 6.17.22).\\
+He, F., Liu, T., Tao, D., 2019. Control Batch Size and Learning Rate to Generalize Well: Theoretical and Empirical Evidence, in: Advances in Neural Information Processing Systems. Curran Associates, Inc.\\
+He, K., Gkioxari, G., Dollár, P., Girshick, R., 2018. Mask R-CNN. arXiv:1703.06870 [cs].\\
+Herfort, B., Lautenbach, S., de Albuquerque, J.P., Anderson, J., Zipf, A., 2021. The evolution of humanitarian mapping within the OpenStreetMap community. Scientific reports 11, 1–15.\\
+Herfort, B., Li, H., Fendrich, S., Lautenbach, S., Zipf, A., 2019. Mapping Human Settlements with Higher Accuracy and Less Volunteer Efforts by Combining Crowdsourcing and Deep Learning. Remote Sensing 11, 1799. https://doi.org/10.3390/rs11151799\\
+Hoeser, T., Bachofer, F., Kuenzer, C., 2020. Object detection and image segmentation with deep learning on Earth observation data: A review—Part II: Applications. Remote Sensing 12, 3053.\\
+Hoeser, T., Kuenzer, C., 2020. Object detection and image segmentation with deep learning on earth observation data: A review-part i: Evolution and recent trends. Remote Sensing 12, 1667.\\
+Hofmann, P., Taubenböck, H., Werthmann, C., 2015. Monitoring and modelling of informal settlements - A review on recent developments and challenges, in: 2015 Joint Urban Remote Sensing Event (JURSE). Presented at the 2015 Joint Urban Remote Sensing Event (JURSE), pp. 1–4. https://doi.org/10.1109/JURSE.2015.7120513\\
+Hopfield, J.J., 1982. Neural networks and physical systems with emergent collective computational abilities. PNAS 79, 2554–2558. https://doi.org/10.1073/pnas.79.8.2554\\
+HOTOSM, 2021. Annual Report. HOTOSM, Washington D. C.\\
+Hovil, L., Maple, N., 2022. Local Integration: A Durable Solution in need of Restoration? Refugee Survey Quarterly 41, 238–266. https://doi.org/10.1093/rsq/hdac008\\
+Howard, J., Gugger, S., 2020. Deep Learning for Coders with fastai and PyTorch. O’Reilly Media.\\
+IFC, 2018. Kakuma as a marketplace: a consumer and market study of a refugee camp and town in northwest Kenya (No. 125918). World Bank, Washington D. C.\\
+Jean, N., Burke, M., Xie, M., Davis, W.M., Lobell, D.B., Ermon, S., 2016. Combining satellite imagery and machine learning to predict poverty. Science 353, 790–794. https://doi.org/10.1126/science.aaf7894\\
+Kavalo, E.B., 2016. Environmental and socio-economic impact of hosting refugees : a case study of villages around the Dzaleka refugee camp in Dowa district, Malawi (Master of Science). University of South Africa, Pretoria.\\
+Kingma, D.P., Ba, J., 2017. Adam: A Method for Stochastic Optimization. arXiv:1412.6980 [cs].\\
+Kinsley, H., Kukieła, D., 2020. Neural Networks from Scratch in Python. Harrison Kinsley.\\
+Krizhevsky, A., Sutskever, I., Hinton, G.E., 2012. ImageNet Classification with Deep Convolutional Neural Networks, in: Advances in Neural Information Processing Systems. Curran Associates, Inc.\\
+Kuffer, M., Barros, J., Sliuzas, R.V., 2014. The development of a morphological unplanned settlement index using very-high-resolution (VHR) imagery. Computers, Environment and Urban Systems 48, 138–152. https://doi.org/10.1016/j.compenvurbsys.2014.07.012\\
+Kuffer, M., Grippa, T., Persello, C., Taubenböck, H., Pfeffer, K., Sliuzas, R., 2021. Mapping the Morphology of Urban Deprivation, in: Urban Remote Sensing. John Wiley & Sons, Ltd, pp. 305–323. https://doi.org/10.1002/9781119625865.ch14\\
+Kuffer, M., Pfeffer, K., Sliuzas, R., 2016a. Slums from Space—15 Years of Slum Mapping Using Remote Sensing. Remote Sensing 8, 455. https://doi.org/10.3390/rs8060455\\
+Kuffer, M., Pfeffer, K., Sliuzas, R., Baud, I., 2016b. Extraction of Slum Areas From VHR Imagery Using GLCM Variance. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing 9, 1830–1840. https://doi.org/10.1109/JSTARS.2016.2538563\\
+Kuhn, T.S., 1962. The Structure of Scientific Revolutions, 2nd ed, International International Encyclopedia of Unified Science. The University of Chicago Press, London.\\
+Lai, F., Sharma, A., Liu, X., Yang, X., 2021. Deep Learning for Urban and Landscape Mapping from Remotely Sensed Imagery, in: Urban Remote Sensing. John Wiley & Sons, Ltd, pp. 153–174. https://doi.org/10.1002/9781119625865.ch8\\
+Lang, S., Füreder, P., Riedler, B., Wendt, L., Braun, A., Tiede, D., Schoepfer, E., Zeil, P., Spröhnle, K., Kulessa, K., Rogenhofer, E., Bäuerl, M., Öze, A., Schwendemann, G., Hochschild, V., 2020. Earth observation tools and services to increase the effectiveness of humanitarian assistance. European Journal of Remote Sensing 53, 67–85. https://doi.org/10.1080/22797254.2019.1684208\\
+Lang, S., Hay, G.J., Baraldi, A., Tiede, D., Blaschke, T., 2019. GEOBIA Achievements and Spatial Opportunities in the Era of Big Earth Observation Data. ISPRS International Journal of Geo-Information 8, 474. https://doi.org/10.3390/ijgi8110474\\
+Lang, S., Wendt, L., Tiede, D., Gao, Y., Streifender, V., Zafar, H., Adebayo, A., Schwendemann, G., Jeremias, P., n.d. Multi-Feature Sample Database for Enhancing Deep Learning Tasks in Operational Humanitarian Applications. GI\_Forum 2021, 9, 209–219.\\
+LeCun, Y., Bengio, Y., Hinton, G., 2015. Deep learning. Nature 521, 436–444. https://doi.org/10.1038/nature14539\\
+Leonita, G., Kuffer, M., Sliuzas, R., Persello, C., 2018. Machine Learning-Based Slum Mapping in Support of Slum Upgrading Programs: The Case of Bandung City, Indonesia. Remote Sensing 10, 1522. https://doi.org/10.3390/rs10101522\\
+Ma, L., Liu, Y., Zhang, X., Ye, Y., Yin, G., Johnson, B.A., 2019. Deep learning in remote sensing applications: A meta-analysis and review. ISPRS journal of photogrammetry and remote sensing 152, 166–177.\\
+Marmanis, D., Datcu, M., Esch, T., Stilla, U., 2016. Deep Learning Earth Observation Classification Using ImageNet Pretrained Networks. IEEE Geoscience and Remote Sensing Letters 13, 105–109. https://doi.org/10.1109/LGRS.2015.2499239\\
+Minghini, M., Ludwig, C., Anderson, J., Mooney, P., Grinberger, A.Y., 2021. Proceedings of the Academic Track at State of the Map 2021. Zenodo, online. https://doi.org/10.5281/zenodo.5116434\\
+National Research Council, 1998. People and pixels: Linking remote sensing and social science. National Academies Press.\\
+Ng, A., 2018. Machine Learning Yearning.\\
+Nielsen, M.A., 2015. Neural Networks and Deep Learning. Determination Press.\\
+Pal, N.R., Pal, S.K., 1993. A review on image segmentation techniques. Pattern Recognition 26, 1277–1294. https://doi.org/10.1016/0031-3203(93)90135-J\\
+Perez, L., Wang, J., 2017. The Effectiveness of Data Augmentation in Image Classification using Deep Learning. arXiv:1712.04621 [cs].\\
+Quinn, J.A., Nyhan, M.M., Navarro, C., Coluccia, D., Bromley, L., Luengo-Oroz, M., 2018. Humanitarian applications of machine learning with remote-sensing data: review and case study in refugee settlement mapping. Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences 376, 20170363. https://doi.org/10.1098/rsta.2017.0363\\
+Ren, S., He, K., Girshick, R., Sun, J., 2016. Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks. arXiv:1506.01497 [cs].\\
+Ronneberger, O., Fischer, P., Brox, T., 2015. U-Net: Convolutional Networks for Biomedical Image Segmentation (No. arXiv:1505.04597). arXiv. https://doi.org/10.48550/arXiv.1505.04597\\
+Rosenblatt, F., 1958. The perceptron: A probabilistic model for information storage and organization in the brain. Psychological Review 65, 386–408. https://doi.org/10.1037/h0042519\\
+Rumelhart, D.E., Hinton, G.E., Williams, R.J., 1986. Learning representations by back-propagating errors. Nature 323, 533–536. https://doi.org/10.1038/323533a0\\
+Rummery, A., n.d. Why including refugees makes economic sense [WWW Document]. UNHCR. URL https://www.unhcr.org/news/stories/2019/4/5c9caee84/including-refugees-makes-economic-sense.html (accessed 6.4.22).\\
+Shorten, C., Khoshgoftaar, T.M., 2019. A survey on Image Data Augmentation for Deep Learning. J Big Data 6, 60. https://doi.org/10.1186/s40537-019-0197-0\\
+Simonyan, K., Vedaldi, A., Zisserman, A., 2014. Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps. arXiv:1312.6034 [cs].\\
+Sirko, W., Kashubin, S., Ritter, M., Annkah, A., Bouchareb, Y.S.E., Dauphin, Y., Keysers, D., Neumann, M., Cisse, M., Quinn, J., 2021. Continental-Scale Building Detection from High Resolution Satellite Imagery. arXiv:2107.12283 [cs].\\
+Sliuzas, R., Kuffer, M., Gevaert, C., Persello, C., Pfeffer, K., 2017. Slum mapping, in: 2017 Joint Urban Remote Sensing Event (JURSE). Presented at the 2017 Joint Urban Remote Sensing Event (JURSE), pp. 1–4. https://doi.org/10.1109/JURSE.2017.7924589\\
+Smith, L.N., 2018. A disciplined approach to neural network hyper-parameters: Part 1 -- learning rate, batch size, momentum, and weight decay. arXiv:1803.09820 [cs, stat].\\
+Smith, M.W., Carrivick, J.L., Quincey, D.J., 2016. Structure from motion photogrammetry in physical geography. Progress in Physical Geography: Earth and Environment 40, 247–275. https://doi.org/10.1177/0309133315615805\\
+Stevens, E., Antiga, L., Viehmann, T., 2020. Deep learning with PyTorch. Manning Publications.\\
+Tan, C., Sun, F., Kong, T., Zhang, W., Yang, C., Liu, C., 2018. A Survey on Deep Transfer Learning, in: Kůrková, V., Manolopoulos, Y., Hammer, B., Iliadis, L., Maglogiannis, I. (Eds.), Artificial Neural Networks and Machine Learning – ICANN 2018, Lecture Notes in Computer Science. Springer International Publishing, Cham, pp. 270–279. https://doi.org/10.1007/978-3-030-01424-7\_27\\
+Tan, M., Le, Q.V., 2020. EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks. arXiv:1905.11946 [cs, stat].\\
+Taubenböck, H., Kraff, N.J., Wurm, M., 2018. The morphology of the Arrival City - A global categorization based on literature surveys and remotely sensed data. Applied Geography 92, 150–167. https://doi.org/10.1016/j.apgeog.2018.02.002\\
+Taubenbock, H., Wurm, M., Setiadi, N., Gebert, N., Roth, A., Strunz, G., Birkmann, J., Dech, S., 2009. Integrating remote sensing and social science, in: 2009 Joint Urban Remote Sensing Event. Presented at the 2009 Joint Urban Remote Sensing Event, pp. 1–7. https://doi.org/10.1109/URS.2009.5137506\\
+Turner, S., 2016. What Is a Refugee Camp? Explorations of the Limits and Effects of the Camp. Journal of Refugee Studies 29, 139–148. https://doi.org/10.1093/jrs/fev024\\
+UN, 2015. Transforming Our World: THe 2030 Agenda for Sustainable Development (No. A/RES/70/1). United Nations.\\
+UN DESA, 2019. World Urbanization Prospect: The 2018 Revision (No. ST/ESA/SER.A/420). UN DESA, New York.\\
+UNDS, 2021. The Africa Regional UN Development System Report 2020. The Africa Regional United Nations Development System.\\
+UN-HABITAT, 2021. Kakuma and Kalobeyei Spatial Profile. UN-HABITAT, Nairobi.\\
+UNHCR, 2021. Global Compact on Refugees Indicator Report 2021.\\
+UNHCR, 2014. Malawi: Joint Assessment Mission Report. Dzaleka Refugee Camp (November 2014) (No. WFP/UNHCR/GOM/PRDO/JRS/PLAN). UNHCR, Lilongwe, Malawi.\\
+UNHCR, DANIDA, 2019. The Integrated Solutions Model in and Around Kalobeyei, Turkana, Kenya (No. 978-87-93760-22–6). UNHCR, DANIDA, Copenhagen.\\
+United Nations, 2018. Global Compact on Refugees.\\
+Vakalopoulou, M., Karantzalos, K., Komodakis, N., Paragios, N., 2015. Building detection in very high resolution multispectral data with deep learning features, in: 2015 IEEE International Geoscience and Remote Sensing Symposium (IGARSS). Presented at the 2015 IEEE International Geoscience and Remote Sensing Symposium (IGARSS), pp. 1873–1876. https://doi.org/10.1109/IGARSS.2015.7326158\\
+Venables, A.J., 2018. Urbanisation in Developing Economies: building cities that work. 1 5, 91–100. https://doi.org/10.18335/region.v5i1.245\\
+Wegmann, M., Leutner, B., Dech, S., 2016. Remote sensing and GIS for ecologists: using open source software. Pelagic Publishing Ltd.\\
+Wurm, M., Stark, T., Zhu, X.X., Weigand, M., Taubenböck, H., 2019. Semantic segmentation of slums in satellite images using transfer learning on fully convolutional neural networks. ISPRS Journal of Photogrammetry and Remote Sensing 150, 59–69. https://doi.org/10.1016/j.isprsjprs.2019.02.006\\
+Wurm, M., Weigand, M., Schmitt, A., Geiß, C., Taubenböck, H., 2017. Exploitation of textural and morphological image features in Sentinel-2A data for slum mapping, in: 2017 Joint Urban Remote Sensing Event (JURSE). Presented at the 2017 Joint Urban Remote Sensing Event (JURSE), pp. 1–4. https://doi.org/10.1109/JURSE.2017.7924586\\
+Xu, Y., Wu, L., Xie, Z., Chen, Z., 2018. Building Extraction in Very High Resolution Remote Sensing Imagery Using Deep Learning and Guided Filters. Remote Sensing 10, 144. https://doi.org/10.3390/rs10010144\\
+Yakubovyskiy, P., 2021. Welcome to Segmentation Models’s documentation! — Segmentation Models documentation [WWW Document]. URL https://segmentation-models-pytorch.readthedocs.io/en/latest/index.html (accessed 7.26.22).\\
+Yan-Chak Chan, C., Weigand, M., Alnajar, E.A., Taubenböck, H., 2022. Investigating the capability of UAV imagery for AI-assisted mapping of Refugee Camps in East Africa, in: Proceedings of the Academic Track at State of the Map 2022. Presented at the State of the Map 2022 (SotM 2022), Zenodo, Florence, Italy, p. 45. https://doi.org/10.5281/zenodo.7004576\\
+Yang, A., Fan, H., Jing, N., Sun, Y., Zipf, A., 2016. Temporal Analysis on Contribution Inequality in OpenStreetMap: A Comparative Study for Four Countries. ISPRS International Journal of Geo-Information 5, 5. https://doi.org/10.3390/ijgi5010005\\
+Yu, T., Zhu, H., 2020. Hyper-Parameter Optimization: A Review of Algorithms and Applications. arXiv:2003.05689 [cs, stat].\\
+Zhang, Liangpei, Zhang, Lefei, Du, B., 2016. Deep learning for remote sensing data: A technical tutorial on the state of the art. IEEE Geoscience and remote sensing magazine 4, 22–40.\\
+Zhao, W., Ivanov, I., Persello, C., Stein, A., 2020. Building Outline Delineation: From Very High Resolution Remote Sensing Imagery to Polygons with an Improved End-to-End Learning Framework. The International Archives of Photogrammetry, Remote Sensing and Spatial Information Sciences 43, 731–735.\\
+Zhu, X.X., Tuia, D., Mou, L., Xia, G.-S., Zhang, L., Xu, F., Fraundorfer, F., 2017. Deep Learning in Remote Sensing: A Comprehensive Review and List of Resources. IEEE Geoscience and Remote Sensing Magazine 5, 8–36. https://doi.org/10.1109/MGRS.2017.2762307\\
+Zoph, B., Cubuk, E.D., Ghiasi, G., Lin, T.-Y., Shlens, J., Le, Q.V., 2020. Learning Data Augmentation Strategies for Object Detection, in: Vedaldi, A., Bischof, H., Brox, T., Frahm, J.-M. (Eds.), Computer Vision – ECCV 2020, Lecture Notes in Computer Science. Springer International Publishing, Cham, pp. 566–583. https://doi.org/10.1007/978-3-030-58583-9\_34\\
 
 \newpage
 
