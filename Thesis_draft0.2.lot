@@ -1,0 +1,13 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Resulted image and label pair for each dataset input configuration}}{32}{table.3.1}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces The U-Nets and the variations thereof selected for this study}}{37}{table.3.2}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces The hyperparameters and respective values to be held constant for every experiments in this study.}}{38}{table.3.3}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Changes with architectures that had a depth-wise increased for each setup..}}{47}{table.4.1}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Changes when the Dzaleka and Dzaleka North datasets were introduced to each setup.}}{49}{table.4.2}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Initalised weight change in available CNNs and their effects on the metrics}}{50}{table.4.3}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
