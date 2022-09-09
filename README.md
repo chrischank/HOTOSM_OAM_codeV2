@@ -47,6 +47,10 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 ## Exploratory Data Analysis
 1. See example https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/EDA_BASEruns.ipynb
 2. https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/PR_delta.ipynb
+
+## Testing and Predicion
+1. For single image testing on various networks see https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/ALLtest_model.ipynb
+2. For custom function to parse each camp and predict using a trained network, see https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/PredSeg_Camp.ipynb
   
 ## Baseline training results for Kalobeyei, Kakuma (perfect dataset)
 - Dataset: 256x256 px. 0.15 m/px.
