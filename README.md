@@ -87,20 +87,20 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 ## Depth-wise Precision and Recall change
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/36608720/183278101-7625f461-cde6-4ed0-8a23-66590d49e765.png"/>
-  <img src="https://user-images.githubusercontent.com/36608720/183278107-d14482ed-3db2-420a-be82-194db095dcf1.png"/>
+  ![depth_wise_table](https://user-images.githubusercontent.com/36608720/189317817-3848096a-20ae-498c-8eda-2abb8b391fd6.png)
+  ![depth_wise_regplot](https://user-images.githubusercontent.com/36608720/189317885-1e32ab85-d6a3-4aa9-8a56-5056c3598d00.png)
 </p>
 
 ## Dataset-wise Precision and Recall change
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/36608720/183278116-94b0f921-069e-4c3d-a44d-0ae345c5dfe5.png"/>
-  <img src="https://user-images.githubusercontent.com/36608720/183278134-300a8ab7-2a91-4204-8285-454d8de27e53.png"/>
+  ![dataset_wise_table](https://user-images.githubusercontent.com/36608720/189317946-148ddab8-bde3-4371-b358-adecc3627170.png)
+  ![dataset_wise_stripplot](https://user-images.githubusercontent.com/36608720/189318013-03466f2d-be3e-488d-b8e9-b50efcea3ea0.png)
 </p>
 
 ## Weight-wise Precision and Recall change
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/36608720/183278158-e56bd9fb-09f8-4388-94ac-b3b4b72c14ad.png"/>
-  <img src="https://user-images.githubusercontent.com/36608720/183278203-f4e945a0-6e94-4b4c-a541-0b9d739c9223.png"/>
+  ![weight_wise_table](https://user-images.githubusercontent.com/36608720/189318135-dca2eb36-1fe3-497a-ab32-b7757b874950.png)
+  ![weight_wise_regplot](https://user-images.githubusercontent.com/36608720/189318179-ea5819e6-2270-4cc4-9c75-feeebd880ed8.png)
 </p>
