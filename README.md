@@ -24,7 +24,29 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
   <img src="https://user-images.githubusercontent.com/36608720/181209381-93c4d351-f530-4625-a497-246676a12848.png"/>
 </p>
 
+## Experimental setup
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/36608720/189320108-f0251dea-bec8-4f5b-b476-4c409edb4148.png"/>
+</p>
+
+## Pre-processing pipeline
+1. Download, extract and reproject OpenAerialMap WMS raster using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/curl_warp.sh
+3. Rasterise available vector labels using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/rasterise_LBL.sh
+4. Split the RGB into separate tif using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/RGB_split.sh
+5. Create virtual raster with 4 bands (R, G, B, Labels) using https://gdal.org/programs/gdalbuildvrt.html
+6. From VRT make permenant raster tif using https://gdal.org/programs/gdal_translate.html
+7. Crop the stacked raster using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/labelmaker.ipynb
+8. Clean the stacked and cropped raster for no labels and non conformity using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/KBY_clean.ipynb
+9. Change the tiff to png, and delete the tiff using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/tiff2png.sh
+
+## Training pipeline
+1. Dataloader https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/dataloader.py
+2. Training loop https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/Train_loop.ipynb
+
+## Exploratory Data Analysis
+1. See example https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/EDA_BASEruns.ipynb
+2. https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/PR_delta.ipynb
   
 ## Baseline training results for Kalobeyei, Kakuma (perfect dataset)
 - Dataset: 256x256 px. 0.15 m/px.
