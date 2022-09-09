@@ -6,8 +6,7 @@
 \contentsline {section}{\numberline {2.1}Remote Sensing of Informal Settlements}{12}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Deep Learning in Urban Remote Sensing}{13}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Computer Vision and a brief review of Convolutional Neural Networks}{13}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}UAV-based informal settlement segmentation}{15}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Fundamentals of Deep Learning and Convolutional Neural Networks}{15}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.2}Fundamentals of Deep Learning and Convolutional Neural Networks}{15}{subsection.2.2.2}%
 \contentsline {subsubsection}{Convolution and Pooling}{17}{subsubsection*.4}%
 \contentsline {subsubsection}{Optimiser and the Binary Cross Entropy Loss function}{19}{subsubsection*.5}%
 \contentsline {subsubsection}{Backpropagation and the chain rule}{20}{subsubsection*.6}%
