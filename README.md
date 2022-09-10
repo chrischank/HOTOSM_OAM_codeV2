@@ -32,11 +32,12 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 
 ## Pre-processing pipeline
 1. Download, extract and reproject OpenAerialMap WMS raster using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/curl_warp.sh
-3. Rasterise available vector labels using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/rasterise_LBL.sh
+2. Rasterise available vector labels using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/rasterise_LBL.sh
+3. 2-step normalisation (z-score --> linear scale) using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/labelmaker.ipynb
 4. Split the RGB into separate tif using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/RGB_split.sh
 5. Create virtual raster with 4 bands (R, G, B, Labels) using https://gdal.org/programs/gdalbuildvrt.html
 6. From VRT make permenant raster tif using https://gdal.org/programs/gdal_translate.html
-7. Crop the stacked raster using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/labelmaker.ipynb
+7. Return to labelmaker.ipynb and crop the stacked raster using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/labelmaker.ipynb
 8. Clean the stacked and cropped raster for no labels and non conformity using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/KBY_clean.ipynb
 9. Change the tiff to png, and delete the tiff using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/tiff2png.sh
 
