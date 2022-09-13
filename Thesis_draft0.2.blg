@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'Thesis_draft0.2.blg'
-[77] biber:340> INFO - === 二 9月 13, 2022, 15:18:12
+[76] biber:340> INFO - === 二 9月 13, 2022, 18:31:31
 [91] Biber.pm:418> INFO - Reading 'Thesis_draft0.2.bcf'
-[157] Biber.pm:969> INFO - Using all citekeys in bib section 0
+[156] Biber.pm:969> INFO - Using all citekeys in bib section 0
 [170] Biber.pm:4383> INFO - Processing section 0
-[181] Biber.pm:4574> INFO - Looking for bibtex file 'HOTOSM.bib' for section 0
-[197] bibtex.pm:1713> INFO - LaTeX decoding ...
-[421] bibtex.pm:1518> INFO - Found BibTeX data source 'HOTOSM.bib'
-[1243] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1243] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1243] Biber.pm:4203> INFO - Sorting list 'ynt/global//global/global' of type 'entry' with template 'ynt' and locale 'en-GB'
-[1243] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-GB'
-[1357] bbl.pm:654> INFO - Writing 'Thesis_draft0.2.bbl' with encoding 'UTF-8'
-[1465] bbl.pm:757> INFO - Output to Thesis_draft0.2.bbl
+[182] Biber.pm:4574> INFO - Looking for bibtex file 'HOTOSM.bib' for section 0
+[199] bibtex.pm:1713> INFO - LaTeX decoding ...
+[416] bibtex.pm:1518> INFO - Found BibTeX data source 'HOTOSM.bib'
+[1220] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1220] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1220] Biber.pm:4203> INFO - Sorting list 'ynt/global//global/global' of type 'entry' with template 'ynt' and locale 'en-GB'
+[1220] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-GB'
+[1328] bbl.pm:654> INFO - Writing 'Thesis_draft0.2.bbl' with encoding 'UTF-8'
+[1437] bbl.pm:757> INFO - Output to Thesis_draft0.2.bbl

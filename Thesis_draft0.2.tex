@@ -1,8 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Master thesis draft         %
 %Maintainer: Christopher Chan%
-%Version: 0.0.2              %
-%Date: 2022-09-11            %
+%Version: 0.2.1              %
+%Date: 2022-09-13            %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[11pt, a4paper, twoside]{report}
@@ -38,10 +38,10 @@
     urlcolor=cyan,
     pdfpagemode=FullScreen,
     }
-\titleformat{\chapter}[hang]{\lmodern\it\huge\bfseries\flushright}{}{1cm}{}
-\titleformat{\section}[hang]{\lmodern\Large\bfseries}{}{0.5cm}{}
-\titleformat{\subsection}[hang]{\lmodern\normalsize\bfseries}{}{0cm}{}
-\titleformat{\subsubsection}[hang]{\lmodern\small\bfseries}{}{0cm}{}
+\titleformat{\chapter}[hang]{\lmodern\it\huge\bfseries\flushright}{\thechapter}{1cm}{}
+\titleformat{\section}[hang]{\lmodern\Large\bfseries}{\thesection}{0.5cm}{}
+\titleformat{\subsection}[hang]{\lmodern\normalsize\bfseries}{\thesubsection}{0.5cm}{}
+\titleformat{\subsubsection}[hang]{\lmodern\small\bfseries}{\thesubsubsection}{0.5cm}{}
 \graphicspath{{/home/chris/Dropbox/HOTOSM/figures/}}
 \lhead{\parbox[t]{0.4\textwidth}{\RaggedRight\rightmark\strut}}
 \rhead{\parbox[t]{0.4\textwidth}{\RaggedLeft\leftmark\strut}}
@@ -160,6 +160,7 @@ I confirm that all this work is my own except where indicated.
 \end{itemize}
 
 \newpage
+
 
 \chapter{Introduction}\label{Intro}
 
@@ -768,8 +769,6 @@ An interesting observation is that with the \textit{EfficientNet B1 U-Net} and t
 
 \section{Discission}\label{Discussion}
 
-The following sections discuss in detail the mean changes of \textit{Precision} and \textit{Recall} in the test dataset at paired CNNs' depth-wise, dataset-wise, and weight-wise changes.\\\par
-
 \section{Depth-wise Precision and Recall change}\label{depth_change}
 
 \begin{table}[H]
@@ -895,9 +894,10 @@ In conclusion, this study provided a pilot diagnostic understanding of how HOT c
 
 \newpage
 
-\chapter{Bibliography}\label{Bib}
-
-\printbibliography
+\printbibliography[
+  heading=bibintoc,
+  title={Bibliography}
+]
 
 \newpage
 
@@ -927,10 +927,6 @@ In conclusion, this study provided a pilot diagnostic understanding of how HOT c
 
 \subsubsection{[Kalobeyei] 4-layer U-Net}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{longtable}
-% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
 \begin{longtable}[c]{@{}lllllllllllll@{}}
 \tiny
 \toprule

@@ -34,26 +34,26 @@
 \contentsline {section}{\numberline {4.1}Findings}{46}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Discission}{50}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Depth-wise Precision and Recall change}{50}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Dataset-wise Precision and Recall change}{52}{section.4.4}%
+\contentsline {section}{\numberline {4.4}Dataset-wise Precision and Recall change}{51}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Initialised weight Precision and Recall change}{53}{section.4.5}%
 \contentsline {chapter}{\numberline {5}Conclusion}{56}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Bibliography}{58}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Appendix}{74}{chapter.7}%
-\contentsline {subsection}{\numberline {7.0.1}Adam optimiser}{74}{subsection.7.0.1}%
-\contentsline {subsection}{\numberline {7.0.2}EfficientNet}{75}{subsection.7.0.2}%
-\contentsline {subsection}{\numberline {7.0.3}Experiment data}{76}{subsection.7.0.3}%
-\contentsline {subsubsection}{[Kalobeyei] 4-layer U-Net}{76}{subsubsection*.12}%
-\contentsline {subsubsection}{[Kalobeyei] 5-layer U-Net}{81}{subsubsection*.13}%
-\contentsline {subsubsection}{[Kalobeyei] EfficientNet B1 U-Net (ImageNet)}{86}{subsubsection*.14}%
-\contentsline {subsubsection}{[Kalobeyei] EfficientNet B1 U-Net (No ImageNet)}{91}{subsubsection*.15}%
-\contentsline {subsubsection}{[Kalobeyei] EfficientNet B1 U-Net (OCC transfered-untrained)}{95}{subsubsection*.16}%
-\contentsline {subsubsection}{[Kalobeyei] EfficientNet B1 U-Net (OCC transfered-trained)}{101}{subsubsection*.17}%
-\contentsline {subsubsection}{[Kalobeyei] EfficientNet B2 U-Net (No ImageNet)}{111}{subsubsection*.18}%
-\contentsline {subsubsection}{[All dataset] 4-layer U-Net}{116}{subsubsection*.19}%
-\contentsline {subsubsection}{[All dataset] 5-layer U-Net}{132}{subsubsection*.20}%
-\contentsline {subsubsection}{[All dataset] EfficientNet B1 U-Net (ImageNet)}{148}{subsubsection*.21}%
-\contentsline {subsubsection}{[All dataset] EfficientNet B1 U-Net (No ImageNet)}{164}{subsubsection*.22}%
-\contentsline {subsubsection}{[All dataset] EfficientNet B1 U-Net (OCC transfered-untrained)}{180}{subsubsection*.23}%
-\contentsline {subsubsection}{[All dataset] EfficientNet B1 U-Net (OCC transfered-trained)}{196}{subsubsection*.24}%
-\contentsline {subsubsection}{[All dataset] EfficientNet U-Net B2 (ImageNet)}{212}{subsubsection*.25}%
-\contentsline {subsubsection}{[All dataset] EfficientNet B2 U-Net (No ImageNet)}{228}{subsubsection*.26}%
+\contentsline {chapter}{Bibliography}{58}{chapter*.11}%
+\contentsline {chapter}{\numberline {6}Appendix}{73}{chapter.6}%
+\contentsline {subsection}{\numberline {6.0.1}Adam optimiser}{73}{subsection.6.0.1}%
+\contentsline {subsection}{\numberline {6.0.2}EfficientNet}{74}{subsection.6.0.2}%
+\contentsline {subsection}{\numberline {6.0.3}Experiment data}{75}{subsection.6.0.3}%
+\contentsline {subsubsection}{[Kalobeyei] 4-layer U-Net}{75}{subsubsection*.12}%
+\contentsline {subsubsection}{[Kalobeyei] 5-layer U-Net}{80}{subsubsection*.13}%
+\contentsline {subsubsection}{[Kalobeyei] EfficientNet B1 U-Net (ImageNet)}{85}{subsubsection*.14}%
+\contentsline {subsubsection}{[Kalobeyei] EfficientNet B1 U-Net (No ImageNet)}{90}{subsubsection*.15}%
+\contentsline {subsubsection}{[Kalobeyei] EfficientNet B1 U-Net (OCC transfered-untrained)}{94}{subsubsection*.16}%
+\contentsline {subsubsection}{[Kalobeyei] EfficientNet B1 U-Net (OCC transfered-trained)}{100}{subsubsection*.17}%
+\contentsline {subsubsection}{[Kalobeyei] EfficientNet B2 U-Net (No ImageNet)}{110}{subsubsection*.18}%
+\contentsline {subsubsection}{[All dataset] 4-layer U-Net}{115}{subsubsection*.19}%
+\contentsline {subsubsection}{[All dataset] 5-layer U-Net}{131}{subsubsection*.20}%
+\contentsline {subsubsection}{[All dataset] EfficientNet B1 U-Net (ImageNet)}{147}{subsubsection*.21}%
+\contentsline {subsubsection}{[All dataset] EfficientNet B1 U-Net (No ImageNet)}{163}{subsubsection*.22}%
+\contentsline {subsubsection}{[All dataset] EfficientNet B1 U-Net (OCC transfered-untrained)}{179}{subsubsection*.23}%
+\contentsline {subsubsection}{[All dataset] EfficientNet B1 U-Net (OCC transfered-trained)}{195}{subsubsection*.24}%
+\contentsline {subsubsection}{[All dataset] EfficientNet U-Net B2 (ImageNet)}{211}{subsubsection*.25}%
+\contentsline {subsubsection}{[All dataset] EfficientNet B2 U-Net (No ImageNet)}{227}{subsubsection*.26}%

@@ -25,12 +25,11 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Sample of binary segmentation output of various combinations of tested architecture and experiment setup.}}{47}{figure.4.1}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Class-based Accuracy Assesment metrics for respective CNN architectures and experiment input dataset.}}{48}{figure.4.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Regression plot for \textit {Precision} and \textit {Recall} change in relation to architectural depth-wise change.}}{51}{figure.4.3}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Regression plot for \textit {Precision} and \textit {Recall} change in relation to architectural depth-wise change.}}{50}{figure.4.3}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Detailed strip plot for \textit {Precision} and \textit {Recall} change in relation to dataset input change.}}{52}{figure.4.4}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Regression plot for \textit {Precision} and \textit {Recall} change in relation to architectures' initalised weight change.}}{54}{figure.4.5}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Regression plot for \textit {Precision} and \textit {Recall} change in relation to architectures' initalised weight change.}}{53}{figure.4.5}%
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Ambiguity which arise from labelling could cause a $True\ Positive$ prediction to be classified as $False\ Positive$.}}{55}{figure.4.6}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces The algorithm of Adam (Kingma \& Ba., 2017).}}{74}{figure.7.1}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Compound scaling of the EfficientNet (Tan \& Le, 2020)}}{75}{figure.7.2}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces The algorithm of Adam (Kingma \& Ba., 2017).}}{73}{figure.6.1}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Compound scaling of the EfficientNet (Tan \& Le, 2020)}}{74}{figure.6.2}%
