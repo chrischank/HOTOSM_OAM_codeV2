@@ -1,3 +1,4 @@
+\babel@toc {british}{}\relax 
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Data contribution of buildings and highway in all and humanitarian settings within OSM (Herfort et al., 2021)}}{10}{figure.1.1}%
 \addvspace {10\p@ }
@@ -11,25 +12,25 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces RGB UAV imagery of the Kalobeyei settlements in rural Turkana from OpenAerialMap}}{25}{figure.3.2}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces The main Dzaleka Refugee Camp and the Katubza extension plan (Dzaleka North) designed by Urban Design Advisor to the UNHCR Werner Schnellenberg (Gross G., 2021).}}{26}{figure.3.3}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Digitised rooftop of the Dzaleka and Dzaleka North camps by HOT volunteers}}{27}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Motion artefacts unique to UAV imagery}}{30}{figure.3.5}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Motion artefacts unique to UAV imagery}}{28}{figure.3.5}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Perhaps geometric augmentation of horizontal flipping shall not be applied on the MNIST number of 5}}{31}{figure.3.6}%
 \contentsline {figure}{\numberline {3.7}{\ignorespaces An example of Inverse RGB augmentation applied to the Train dataset.}}{32}{figure.3.7}%
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Collections of diverse and heterogeneous rooftops from the Kalobeyei, Dzaleka, and Dzaleka North datasets.}}{34}{figure.3.8}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces The Encoder-Decoder U-Net architecture (Ronneberger et al., 2015)}}{35}{figure.3.9}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces The Encoder-Decoder U-Net architecture (Ronneberger et al., 2015, Seale et al., 2022)}}{35}{figure.3.9}%
 \contentsline {figure}{\numberline {3.10}{\ignorespaces EfficientNet family Top 1\% Accuracy Assessment in ImageNet (Tan \& Le, 2020).}}{36}{figure.3.10}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces The Confusion Matrix}}{39}{figure.3.11}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Schematic diagram of Intersection-over-Union}}{42}{figure.3.12}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Project workflow}}{43}{figure.3.13}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Simplified 5 steps project workflow with reference to \ref {fig:ETL_flow}}}{44}{figure.3.14}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces The Confusion Matrix}}{40}{figure.3.11}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Schematic diagram of Intersection-over-Union}}{43}{figure.3.12}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Project workflow}}{44}{figure.3.13}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Simplified 5 steps project workflow with reference to \ref {fig:ETL_flow}}}{45}{figure.3.14}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Sample of binary segmentation output of various combinations of tested architecture and experiment setup.}}{46}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Class-based Accuracy Assesment metrics for respective CNN architectures and experiment input dataset.}}{47}{figure.4.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Regression plot for \textit {Precision} and \textit {Recall} change in relation to architectural depth-wise change.}}{48}{figure.4.3}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Detailed strip plot for \textit {Precision} and \textit {Recall} change in relation to dataset input change.}}{49}{figure.4.4}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Regression plot for \textit {Precision} and \textit {Recall} change in relation to architectures' initalised weight change.}}{51}{figure.4.5}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Ambiguity which arise from labelling could cause a $True\ Positive$ prediction to be classified as $False\ Positive$.}}{52}{figure.4.6}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Sample of binary segmentation output of various combinations of tested architecture and experiment setup.}}{47}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Class-based Accuracy Assesment metrics for respective CNN architectures and experiment input dataset.}}{48}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Regression plot for \textit {Precision} and \textit {Recall} change in relation to architectural depth-wise change.}}{51}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Detailed strip plot for \textit {Precision} and \textit {Recall} change in relation to dataset input change.}}{52}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Regression plot for \textit {Precision} and \textit {Recall} change in relation to architectures' initalised weight change.}}{54}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Ambiguity which arise from labelling could cause a $True\ Positive$ prediction to be classified as $False\ Positive$.}}{55}{figure.4.6}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces The algorithm of Adam (Kingma \& Ba., 2017).}}{65}{figure.7.1}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Compound scaling of the EfficientNet (Tan \& Le, 2020)}}{66}{figure.7.2}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces The algorithm of Adam (Kingma \& Ba., 2017).}}{74}{figure.7.1}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Compound scaling of the EfficientNet (Tan \& Le, 2020)}}{75}{figure.7.2}%

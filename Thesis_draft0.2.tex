@@ -2,11 +2,12 @@
 %Master thesis draft         %
 %Maintainer: Christopher Chan%
 %Version: 0.0.2              %
-%Date: 2022-09-07            %
+%Date: 2022-09-11            %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[11pt, a4paper, twoside]{report}
 \usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
 \usepackage{graphicx}
 \usepackage{blindtext}
 \usepackage{amsmath}
@@ -17,7 +18,19 @@
 \usepackage{csvsimple}
 \usepackage{longtable}
 \usepackage{geometry}
+\usepackage{fancyhdr, ragged2e}
+\fancyhead{}
 \restylefloat{table}
+%in the preamble
+%--------------------------------
+  \usepackage[
+    backend=biber,
+    style=numeric,
+    sorting=ynt
+  ]{biblatex}
+
+ \addbibresource{HOTOSM.bib}
+%--------------------------------
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -33,13 +46,15 @@
 \lhead{\parbox[t]{0.4\textwidth}{\RaggedRight\rightmark\strut}}
 \rhead{\parbox[t]{0.4\textwidth}{\RaggedLeft\leftmark\strut}}
 \setlength{\headheight}{5\baselineskip}
-\pagestyle{plain}
+\pagestyle{fancy}
 \pagenumbering{roman}
 \linespread{1.5}
-\renewcommand{\listfigurename}{Figures}
-\renewcommand{\listtablename}{Tables}
+\renewcommand{\listfigurename}{List of figures}
+\renewcommand{\listtablename}{List of tables}
+\nocite{*}
 
 \begin{document}
+
 
 \newgeometry{margin=1in}
 \begin{titlepage}
@@ -94,37 +109,13 @@
 \begin{abstract}
 
 Refugee camps and informal settlements provide accommodation to some of the
-most vulnerable populations, with many of them located in Sub-Saharan Africa. Many of
-these settlements lack up-to-date geoinformation that we take for granted in developed
-settlements. Having up-to-date maps on their dimension, spatial layout is important. They are essnetial tools for
-assisting administration tasks such as crisis intervention, infrastructure development, and
-population estimates which encourage economic productivity. In the OSM ecosystem, there is a disparity between built-up being digitised in the developed and the developing areas. This data inequality are results of multiple reasons ranging
-from a lack of commercial interest to knowledge gaps in data contributors. Such
-disparity can be reduced using assisted mapping technology. Very High
-Resolution satellite imagery and Machine Learning based methods can exploit
-the textural, spectral, and morphological characteristics of VHR imagery are commonly used
-to extract geospatial and imagery of these complex environments. Recent advances in Deep Learning based
-Computer Vision, however, might be able to address these issues. This study is connected to a larger initiative to open-source the AI assisted
-mapping platform in the current Humanitarian OpenStreetMap Team’s ecosystem.
-\\\par
+most vulnerable populations, with many of them located in Sub-Saharan Africa. Many of these settlements lack up-to-date geoinformation that we take for granted in developed world. Having up-to-date maps on their dimension, spatial layout is important. They are essential tools for assisting administration tasks such as crisis intervention, infrastructure development, and population estimates which encourage economic productivity. In the OpenStreetMap ecosystem, there is a disparity between built-up being digitised in the developed and the developing areas. This data inequality are results of multiple reasons ranging from a lack of commercial interest to knowledge gaps in data contributors and such disparity can be reduced with the help of assisted mapping technology. Very High Resolution remote sensing imagery and Machine Learning based methods can exploit the textural, spectral, and morphological characteristics and are commonly used to extract information from these complex environments. In particular recent advances in Deep Learning based Computer Vision have achieved significant results. This study is connected to a larger initiative to open-source the AI assisted mapping platform in the current Humanitarian OpenStreetMap Team’s ecosystem, to investigate the capabilities of applying Deep Learning for building footprint delineation in refugee camps based on open-data Unmaned Aerial Vehicle (UAV) imagery from partner organisation OpeAerialMap.\\\par
 
-To investigated the capabilities of applying Deep Learning semantic
-segmentation methods for delineating building footprints in refugee camps from open-data
-drone imagery. The objective of this study is to test the U-Net and several variations of the
-architectures’ performance for building footprint mapping, The performance of the different Deep Learning models on datasets of different complexity were collected. A comparison of the models responses using class-based accuracy assessments metrics allows evaluation into
-which level of data quality is required to achieve acceptable classification results when
-scaling Deep Learning assisted mapping efforts in the context of humanitarian mapping.\\\par
+The objective of this study is to test the U-Net and several variations of the architectures’ performance for building footprint segmentation, The performance of the different Deep Learning models on datasets of various complexity were collected. A comparison of the models' responses using class-based accuracy assessments metrics allows detail evaluation into how the different architectures and experiment setup respond to data quality.\\\par
 
-result...\\\par
+Given the computation and resources constraint of this project, the result suggests that increase in architectural depths corresponds with increase in precision. Models that were initialised on pre-trained weights from ImageNet could reduce recall. Lastly, to our surprise, the transferability of a competition winning network trained on similar resolution but on formal building performs worse than many models trained from scratch.\\\par
 
-This study demonstrats the ability to use Deep Learning semantic segmentation to perform
-building segmentation in complex humanitarian applications. Having increased access to
-open-data Very High Resolution drone imagery such as the OpenAerialMap initiative is an advantage to
-building AI-assisted humanitarian mapping. The study evaluated various U-Net based
-architectures and data input setup. Yet, the variation of the results not only emphasised the
-complexity of Deep Learning based methods, but also indicate that further efforts will be needed to
-focus on the selection of suitable network architectures as they show varying resilience
-towards imperfect reference samples.\\\par
+This study showcased the ability to use Deep Learning semantic segmentation to perform building footprint delineation in complex humanitarian applications. Having increased access to open-data Very High Resolution UAV imagery from the OpenAerialMap initiative is an advantage to building AI-assisted humanitarian mapping. The study demonstrated a careful and rigourous approach to model evaluation. Yet, the variation of the study results not only emphasised the complexity of Deep Learning based methods, but also indicate the direction for further investigation that would be justifiable when further resources becomes available.\\\par
 
 \end{abstract}
 
@@ -132,7 +123,7 @@ towards imperfect reference samples.\\\par
 
 \section{Forewords and Acknowledgements}
 
-Service to the less-advantaged! This is the value taught by my parents since I was small, and have since became the main motivator for the completion of this Masterarbeit. I have been extremely fortunate to have been able to carry out such an important work in partnership with the Humanitarian OpenStreetMap Team and the German Aerospace Center (DLR). This project came about as a hope to do something scientifically rigour, yet practically impactful. Through providing a technical, careful study, I, the supervisors, and partners hope that this work can provide direction and minimise future mishaps of the open-sourced AI-assited mapping solution. Working on this project have been a journey of surprises, long nights, new friendships, and adventures, of which I gained bountiful from. Ultimately culminating into the work being accepted by the Proceedings of the Academic Track at State of the Map 2022 (\textit{Chan et al., 2022}). All of this could not have been possible without the generous facilitation from Emran Alchikh Alnajar and the passionate yet pedantic Matthias Weigand who maintained high standards and scientific rigour while motivating me to focus on the light at the end of the tunnel. I would also like to thank my past classmates, collagues, and lecturers, whom tolerated and kept patience with me at times of desparation and frustration. Lastly, I must extend my appreciation to my parents Lucia Leung and Savio Chan. Without their support, I would have never had the resources and opportunities to get to where I am now and complete this work.
+Service to the less-advantaged! This is the value taught by my parents since I was small, and have since became the main motivator for the completion of this Masterarbeit. I have been extremely fortunate to have been able to carry out such an important work in partnership with the Humanitarian OpenStreetMap Team and the German Aerospace Center (DLR). This project came about as a hope to do something scientifically rigour, yet practically impactful. Through providing a technical, careful study, I, the supervisors, and partners hope that this work can provide direction and minimise future mishaps of the open-sourced AI-assited mapping solution. Working on this project have been a journey of surprises, long nights, new friendships, and adventures, of which I gained bountiful from. Ultimately culminating into the work being accepted by the Proceedings of the Academic Track at State of the Map 2022 (\textit{Chan et al., 2022}). All of this could not have been possible without the generous facilitation from Emran Alchikh Alnajar and the passionate yet pedantic Matthias Weigand who maintained high standards and scientific rigour while motivating me to focus on the light at the end of the tunnel. I would also like to thank my past classmates, collagues, and lecturers, who tolerated and kept patience with me at times of desparation and frustration. Lastly, I must extend my appreciation to my parents Lucia Leung and Savio Chan. Without their support, I would have never had the resources and opportunities to get to where I am now and complete this work.
 
 \newpage
 \section{Declaration of Independent Work}
@@ -172,9 +163,9 @@ I confirm that all this work is my own except where indicated.
 
 \chapter{Introduction}\label{Intro}
 
-The world’s population is more urbanised than ever before. As of 2018, approximately 4 billion (55\%) (UN DESA., 2018, Taubenöck et al., 2009) reside in urban areas, of which 60\% reside in slums often located at the fringes of the city (Venables A., 2018). Urbanisation growth is expected to increase by 2.5 billions between 2018 to 2050, most of which will be in Asia and Africa (UN DESA., 2018). When population growth outpace development, informal settlemnt become the supplier of significant housing stocks. These informal settlements are dynamic and represent a good reflection of cultural practices, access to resources, financial limitations and other socio-economic conditions. This means the informal settlement differs significantly between urban and rural settlements from roof covers, densities, and are subjected to different levels of access to resources and the types of resources. In particular, refugee camps and their development are often dependent on international aid and humanitarian efforts, resuting in unique urban morhopology where parts of older refugee camps resembles the chaotic characteristics of informal settlement while newer extension received careful planning.\\\par
+The world’s population is more urbanised than ever before. As of 2018, approximately 4 billion (55\%) (UN DESA., 2018, Taubenöck et al., 2009) reside in urban areas, of which 60\% reside in slums often located at the fringes of the city (Venables A., 2018). Urbanisation growth is expected to increase by 2.5 billions between 2018 and 2050, most of which will be in Asia and Africa (UN DESA., 2018). When population growth outpace development, informal settlemnt become the supplier of significant housing stocks. These informal settlements are dynamic and represent a good reflection of cultural practices, access to resources, financial limitations and other socio-economic conditions. This means the informal settlement differs significantly between urban and rural settlements from roof covers, densities, and are subjected to different levels of access to resources and the types of resources. In particular, refugee camps and their development are often dependent on international aid and humanitarian efforts, resuting in unique urban morhopology where parts of older refugee camps resembles the chaotic characteristics of informal settlement while newer extension received careful planning.\\\par
 
-Refugee camps are often the common or only way for displaced people to receive shelters and assistance. They are often setup in place of proximity to displaced population, whether that be from natural disasters, human caused disasters, or other reasons. Throughout history, refugee sites have provided haven to the world's most vulnerable population (UN, 2018, Turner S., 2016, UNHCR, 2021). However as of 2020, only around 1.4 million out of 26.4 million refugees have access to third country solution between 2016 to 2021 (UNHCR, 2021). Additionally, although officially defined as temporary settlement, many refugee camps have had longer than expected life cycle, some of them have even became "Secondary Cities" and therefore suffer similar problems of poor governance and rapid urbanisation which consequentially makes them unattractive as investment (Cities Alliance \& AfDB., 2022). For the many refugee camps and informal settlements that have lasted well beyond their expected temporary role, there are  generally 3 ways of solving the issue: 1. Voluntary repatriation, 2. Reolcation to third country, 3. Local integration as outlined by the Global Compact on Refugees (UN, 2018), although actual implementations are often subjected to the wills of the host soverign-state. Recent studies have suggested that local integration often have a net positive economical impact on the surrounding region (Alix-Garcia et al., 2018, Rummery A., 2019, IFC., 2018). \\\par
+Refugee camps are often the common or only way for displaced people to receive shelters and assistance. They are often setup in place of proximity to displaced population, whether that be from natural disasters, human caused disasters, or other reasons. Throughout history, refugee sites have provided haven to the world's most vulnerable population (UN, 2018, Turner S., 2016, UNHCR, 2021). However, as of 2020, only around 1.4 million out of 26.4 million refugees have access to third country solution between 2016 and 2021 (UNHCR, 2021). Additionally, although officially defined as temporary settlement, many refugee camps have had longer than expected life cycle, some of them have even become "Secondary Cities" and therefore suffer similar problems of poor governance and rapid urbanisation which consequentially makes them unattractive as investment (Cities Alliance \& AfDB., 2022). For the many refugee camps and informal settlements that have lasted well beyond their expected temporary role, there are  generally 3 ways of solving the issue: 1. Voluntary repatriation, 2. Reolcation to third country, 3. Local integration as outlined by the Global Compact on Refugees (UN, 2018), although actual implementations are often subjected to the wills of the host soverign-state. Recent studies have suggested that local integration often have a net positive economic impact on the surrounding region (Alix-Garcia et al., 2018, Rummery A., 2019, IFC., 2018). \\\par
 
 Since the 2000, the United Nations have codified a set of global development goals which the member states commited to, development projects are therefore encouraged to align their goals to achieve such global development goals. The United Nations Department of Economic and Social Affairs have published a set of 17 Sustainable Development Goals (herein SDG) to be achieved by 2030 as a successor to the 2015 Millenium Development Goals (herein MDG) (UN, 2015). Special attention are drawn to Goals 1 and 10 that are particularly relevant to this study.\\\par
 
@@ -202,15 +193,16 @@ Having up-to-date map is therefore paramount for short and long term humanitaria
 \end{figure}
 
 Part of the reason for this could be traced to both the knowledge of volunteer contributors and commercial interest, for detailed discussion, see Anderson et al., 2019, Veselovsky et al., 2021 and Yang et al., 2016. As the topic and data provider of this project, the Humanitarian OpenStreetMap Team (herein HOT) have been at the forefront of using open and crowd sourced mapping data to support humanitarian causes from shorter term disaster response to longer epidemiology and microfinance campaigns (HOT, 2021). HOT would like to make use of the recent advancement of Deep Learning in the geospatial field (e.g. Herfort et al., 2019, Kuffer et al., 2016, Wurm et al., 2021, Quinn et al., 2018) to develop an open-sourced, open-data AI-assisted mapping solution to reduce the geospatial data inequality in the OSM ecosystem. The result of this work will form part of the pilot study to trial the use of Unmaned Aerial Vehicle (herein UAV) imagery and existing labelled data in the segmentation of two major refugee camps of East Africa.\\\par
+
 \newpage
 
 \chapter{Literature Review}\label{LitReview}
 
 \section{Remote Sensing of Informal Settlements}\label{RSofInformalSettlement}
 
-The complexity of human built environments often consist of using very different materials in conjunction to each other in a dense environment. From power-lines, factories, car-park, to leisure-parks, imaging of urban enviornments therefore requires imagery high in both spatial and temporal resolution. Urban remote sensing calls for techniques that extracts geometry, textural, and other physical features as oppose to the more common spectral based index approach used in ecological or enviornmental remote sensing (Jensen J., 2007, NRC., 1998). Higher granularity urban remote sensing have until very recently remained in the monopoly of defense and reconnaissance services.\\\par
+The complexity of human built environments often consist of using very different materials in conjunction to each other in a dense environment. From power-lines, factories, car-park, to leisure-parks, imaging of urban enviornments therefore requires imagery high in both spatial and temporal resolution. Urban remote sensing calls for techniques that extracts geometry, textural, and other physical features as opposed to the more common spectral based index approach used in ecological or enviornmental remote sensing (Jensen J., 2007, NRC., 1998). Higher granularity urban remote sensing have until very recently remained in the monopoly of defense and reconnaissance services.\\\par
 
-Informal settlement and slums mapping of developing countries require very high resolution (VHR) images which was unavailable until the turn of the century. The relatively new technology thus only began to gain traction within the last 2 decades. Particularly with the increase in the availability of civilian commercial VHR satellites. Increase in computational power had enabled novel techniques such as multi-layer machine learning, textural analysis, and novel geostatistical methods to emerge (Kuffer et al., 2016). The use of remote sensing derived data for socio-economic proxies have been able to compensate for traditional sources such as temporally infrequent census (e.g. Watmough et al., 2012, Watmough et al., 2015, Watmough et al., 2019) Census especially conducted in developing areas also falls short in capturing socio-spatial patterns, potentially overlooking others socio-economic determinants such as access to amenities and infrastrcture, adequate pro-poor policy development hinges on the availablity of up-to-date and good quality analysis (Kuffer et al., 2016, Sliuzas et al., 2017). Remote sensing of settlements largely falls under 2 categories, rural or urban. Due to the different make-up of socioeconomic context and urban morphology, ssensing of rural and urban settlements require different parameters. Additionally, there’s no “one size fit all” way to generalise informal and formal settlement across the world, as physical geography, topography, cultural, and available resources often dictate the distribution, development, and settlement clusters pattern. These unique requirements have thus made deep learning techniques particularly useuful, and many application of deep learning in remote sensing have therefore been in the urban domain (Ma et al., 2019).
+Informal settlement and slums mapping of developing countries require very high resolution (VHR) images which was unavailable until the turn of the century. The relatively new technology thus only began to gain traction within the last 2 decades. Particularly with the increase in the availability of civilian commercial VHR satellites. Increase in computational power had enabled novel techniques such as multi-layer machine learning, textural analysis, and novel geostatistical methods to emerge (Kuffer et al., 2016). The use of remote sensing derived data for socio-economic proxies have been able to compensate for traditional sources such as temporally infrequent census (e.g. Watmough et al., 2012, Watmough et al., 2015, Watmough et al., 2019) Census especially conducted in developing areas also falls short in capturing socio-spatial patterns, potentially overlooking others socio-economic determinants such as access to amenities and infrastrcture, adequate pro-poor policy development hinges on the availablity of up-to-date and good quality analysis (Kuffer et al., 2016, Sliuzas et al., 2017). Remote sensing of settlements largely falls under 2 categories, rural or urban. Due to the different make-up of socio-economic context and urban morphology, ssensing of rural and urban settlements require different parameters. Additionally, there’s no “one size fit all” way to generalise informal and formal settlement across the world, as physical geography, topography, cultural, and available resources often dictate the distribution, development, and settlement clusters pattern. These unique requirements have thus made deep learning techniques particularly useuful, and many applications of deep learning in remote sensing have therefore been in the urban domain (Ma et al., 2019).
 
 \section{Deep Learning in Urban Remote Sensing}\label{DLinRS}
 
@@ -218,9 +210,9 @@ The following section will be divided into 3 parts. The first part reviews the c
 
 \subsection{Computer Vision and a brief review of Convolutional Neural Networks}\label{CVinBS}
 
-Computer Vision is a practice of extracting information from digitised imagery, first applied in robotics, it has became an interdisciplinary field of study utilised by medicine, biologist, and remote sensing scientists alike (Rosenfeld A., 1988, Szeliski R., 2010).\\\par
+Computer Vision is a practice of extracting information from digitised imagery, first applied in robotics, it has become an interdisciplinary field of study utilised by medicine, biologist, and remote sensing scientists alike (Rosenfeld A., 1988, Szeliski R., 2010).\\\par
 
-The field of CV traditionally used mathematical operations that are applied on the imagery represented as multi-dimensional arrays. These include point-and-local operations, statistical computation, geometric operations, transformations, and extraction of geometric entities, for detail discussion see Rosenfeld A. (1988). The following decades saw CV operations developed into more specialised applications. For example, edge detectors (e.g. Sobel, Prewitt, Marr-Hildreth) or Grey-Level Co-occurence Matrix kernel (e.g. Haralich Texture) (e.g. Kuffer et al., 2014, Kuffer et al., 2016, Wurm et al., 2017) (Pal \& Pal, 1993, Blaschke T., 2010, Blaschke et al., 2014). CV based segmentation experienced an akin to a Kuhnian paradigm shift (Kuhn T., 1962) when AlexNet,a Convolutional Neural Network trained on a GPU (Krizhevsky et al., 2012) won the preeminent large-scale ImageNet CV challenge (Deng et al., 2009), it reinvigorated the use of multi-layered neural network in CV tasks (LeCun et al., 2015). The timing of the paradigm shift coincided with the increase in computation power provided by Graphical Processing Unit (GPU) have enabled CNNs to be successfully applicated across domains ranging from biomedical imaging to remote sensing (Ma et al., 2018, Zhu et al., 2017, Zhang et al., 2016, Wurm et al., 2019).\\\par
+The field of CV traditionally used mathematical operations that are applied on the imagery represented as multi-dimensional arrays. These include point-and-local operations, statistical computation, geometric operations, transformations, and extraction of geometric entities, for detail discussion see Rosenfeld A. (1988). The following decades saw CV operations developed into more specialised applications. For example, edge detectors (e.g. Sobel, Prewitt, Marr-Hildreth) or Grey-Level Co-occurence Matrix kernel (e.g. Haralich Texture) (e.g. Kuffer et al., 2014, Kuffer et al., 2016, Wurm et al., 2017) (Pal \& Pal, 1993, Blaschke T., 2010, Blaschke et al., 2014). CV based segmentation experienced an akin to a Kuhnian paradigm shift (Kuhn T., 1962) when AlexNet, a Convolutional Neural Network trained on a GPU (Krizhevsky et al., 2012) won the preeminent large-scale ImageNet CV challenge (Deng et al., 2009), it reinvigorated the use of multi-layered neural network in CV tasks (LeCun et al., 2015, Bengio et al., 2017). The timing of the paradigm shift coincided with the increase in computation power provided by Graphical Processing Unit (GPU) have enabled CNNs to be successfully applicated across domains ranging from biomedical imaging to remote sensing (Ma et al., 2018, Zhu et al., 2017, Zhang et al., 2016, Wurm et al., 2019).\\\par
 
 In the field of CV, there is generally 4 types of application: 1. Semantic segmentation, 2. Classification and localisation, 3. Object detection, and 4. Instance segmentation (\textit{see figure {\ref{fig:CV_tasks}}}) (Stevens et al., 2020). This study will conduct semantic segmentation of binary classification between built-up and no built-up.\\\par
 
@@ -235,15 +227,7 @@ The purpose of semantic segmentation is to assign a named (semantic) classificat
 
 \subsection{Deep Learning and Convolutional Neural Networks}
 
-Prior to the resurgence of popularity in DL, the set of methodology associated was known as a multi-layered perceptron. Initially inspired by a mathematical analogy to codify the function of a single neuron by the seminal Psychological review paper published by Rosenblatt F. (1958). Like a human neuron, The properties of a perceptron on the most fundamental level takes an information/numerical input, stores and apply transformation, and create an output. Through stacking of basic perceptrons, a multi-layered perceptrons structure can be created. In order for such structure to be computationally useful, it must satisfy the following criteria:\\\par
-
-\begin{enumerate}
-  \item Collections of connected perceptrons are capable of plasticity (i.e. changing values) through training.
-  \item Perceptrons will form dominant pathways that "fire" (activate) together.
-  \item Through training, perceptrons will learn to apply positive or negative reinforcement to facilitate minimising error (e.g. assigning and changing "weights").
-\end{enumerate}
-
-The particular group of such perceptron structures used in CVs are known as Convolutional Neural Network (herein CNN) The most basics of CNN consist of 3 parts: 1. A hidden layer, 2. Multiple hidden convolution and pool layers, 3. An output layer which provides with the segmentation result and the associated confidence level (\textit{see figure: \ref{fig:NeuronPerceptron} & \ref{fig:ConvNet}}). Therefore, a Deep-Learning Neural Network system is string together by an series of inter-connected layer of which its parameters are adjustable to adapt to the data provided. Through careful iterative training and adjustment, the system can generalise well not only to the training and validation data, but to future datasets as well.\\\par
+The closest resemblance to modern methods first appeared around the 1960s, with the first CNNs appearing around 1980s. However DL based methodologies went in and out of popularity driven partly by lack of computaional resources and partly the non-linearity of the field's progression (i.e. the parts did not come together at the right time.). Causing the "AI winter" between 1970s to 1990s (Schmidhuber J., 2014). Prior to the resurgence of popularity in DL, the set of methodology now associated with neural networks was known as a multi-layered perceptron. Initially inspired by a mathematical analogy to codify the function of a single neuron by the seminal Psychological review paper published by Rosenblatt F. (1958). Like a human neuron, The properties of a perceptron on the most fundamental level takes an information/numerical input, stores and apply transformation, and create an output (\textit{see equation \ref{weights&bias}}). Through stacking of basic perceptrons, a multi-layered perceptrons structure can be created. In order for such structure to be computationally useful, it must satisfy the following criteria:\\\par
 
 \begin{figure}[H]
 \centering
@@ -267,6 +251,14 @@ The particular group of such perceptron structures used in CVs are known as Conv
     \end{itemize}
 \end{itemize}
 
+\begin{enumerate}
+  \item Collections of connected perceptrons are capable of plasticity (i.e. changing values) through training.
+  \item Perceptrons will form dominant pathways that "fire" (activate) together.
+  \item Through training, perceptrons will learn to apply positive or negative reinforcement to facilitate minimising error (e.g. assigning and changing "weights").
+\end{enumerate}
+
+The particular group of such perceptron structures used in CVs are known as Convolutional Neural Network (herein CNN) The most basics of CNN consist of 3 parts: 1. A hidden layer, 2. Multiple hidden convolution and pool layers, 3. An output layer which provides with the segmentation result and the associated confidence level (\textit{see figure \ref{fig:NeuronPerceptron} & \ref{fig:ConvNet}}). Therefore, a Deep-Learning Neural Network system is string together by a series of inter-connected layer of which its parameters are adjustable to adapt to the data provided. Through careful iterative training and adjustment, the system can generalise well not only to the training and validation data, but to future datasets as well.\\\par
+
 \begin{figure}[H]
 \centering
 \includegraphics[scale = 0.5]{ConvNet.png}
@@ -276,9 +268,9 @@ The particular group of such perceptron structures used in CVs are known as Conv
 
 \subsubsection{Convolution and Pooling}\label{Conv&Pool}
 
-The hidden layers of the CNN is where the network performs representation learning, where with each layer in depth learns more abstract features of the input training image. While not often the case, it is conventional practice to interleave the convolutional and the pooling layers (Stevens et al., 2020). The convolutional layer employs a sliding kernel which applies the weighted filter as displayed in \ref{weights&bias}.\\\par
+The hidden layers of the CNN is where the network performs representation learning, where with each layer in depth learns more abstract features of the input training image. While not often the case, it is conventional practice to interleave the convolutional and the pooling layers (Stevens et al., 2020).\\\par
 
-The convolutional layer essentially treats every image pixel as vector in a 3-Dimensional layout with input of $(Batch\ Size, Channel_{in}, Height, Width)$, the convolutional kernel slides and apply the weighting and bias terms to extract deeper features (\textit{see figure: \ref{fig:Conv}}) (Stevens et al., 2020), thus, learning more deeper features which creates the output of $(Batch Size, Channel_{out}, Height, Width)$. The full transformation per convolutional layer transform \textit{equation: \ref{weights&bias}} of each pixel into \textit{equation: \texitit{\ref{nn.Conv2d}}}.\\\par
+The convolutional layer essentially treats every image pixel as vector in a 3-Dimensional layout with input of $(Batch\ Size, Channel_{in}, Height, Width)$, the convolutional kernel slides and apply the weighting and bias terms to extract deeper features (\textit{see figure \ref{fig:Conv}}) (Stevens et al., 2020), thus, learning deeper features which creates the output of $(Batch Size, Channel_{out}, Height, Width)$. The full transformation per convolutional layer transform \textit{equation: \ref{weights&bias}} of each pixel into \textit{equation: \texitit{\ref{nn.Conv2d}}}.\\\par
 
 \begin{figure}[H]
 \centering
@@ -297,13 +289,12 @@ The convolutional layer essentially treats every image pixel as vector in a 3-Di
       \item $N =$ Batch Size
       \item $C =$ Channels
       \item $k =$ Kernel Size
-      \item *Further details can be found in \href{https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html?highlight=conv2s}{PyTorch documentation for nn.Conv2d}
     \end{itemize}
 \end{itemize}
 
 \end{equation}
 
-The pooling layer reduces the dimension by downsampling by applying conventionally, a smaller kernel which extract the desirable value when applied. Maximum Pooling, which only return the largest value in the downsampling kernel is common and is used for the network architecture of this experiment (Stevens et al., 2020). The pooling layer scale down the image while retaining the most crucial information (\textit{see figure: \ref{fig:maxpool}}).\\\par
+The pooling layer reduces the dimension by downsampling by applying conventionally, a smaller kernel which extract the desirable value when applied. Maximum Pooling, which only return the largest value in the downsampling kernel is common and is used for the network architecture of this experiment (Stevens et al., 2020). The pooling layer scale down the image while retaining the most crucial information (\textit{see figure \ref{fig:maxpool}}).\\\par
 
 \begin{figure}[H]
 \centering
@@ -315,7 +306,7 @@ The pooling layer reduces the dimension by downsampling by applying conventional
 
 \subsubsection{Optimiser and the Binary Cross Entropy Loss function}\label{Optim&BCE}
 
-With each complete pass through the neural network, the ouput is then compared against the validation result for error calculation. The summed average of loss thus defines the cost function landscape from which the error value is calculated against, penalising when prediction is incorrect and rewarding if otherwise. This enables backpropagation and the adjustments of the weights and biases in the proceeding pass. Due to the binary segmentation task for this study, the Binary Cross Entropy loss function was used to measure error \textit{equation: \ref{BCELoss}}.
+With each batch of data (aka. a complete pass) is ingested through the neural network, the ouput is then compared against the validation result for error calculation. The summed average of loss defines the cost function landscape from which the error value is calculated against. From which the score is penalised when prediction is incorrect and rewaedd if otherwise. The backpropagation finds the sensitivity of the cost function to each weights and biases through the chain rule. This enables the adjustments of the weights and biases in the proceeding pass. Due to the binary segmentation task for this study, the Binary Cross Entropy loss function was used to measure error \textit{equation: \ref{BCELoss}}.
 
 \begin{equation}
   \label{BCELoss}
@@ -333,11 +324,11 @@ With each complete pass through the neural network, the ouput is then compared a
 
 \end{equation}
 
-The optimiser controls the gradient descent, it is the hyperparameter which controls the size of step being taken down the negative gradient of $- \nabla C$ in the cost function landscape. A suitable optimiser can prevents gradient descent to be trapped at a local minimum through iterations. The optimiser of choice for the experiement is the Adam optimiser, The Adam (Adaptive Momentum Estimator) developed by Kingma \& Ba (2017) extends the Stochastic Gradient Descent (herein SGD) by introducing concepts of momentum and second moments of gradient (\textit{see appendix \ref{app:Adam}}).Adam maintains a separate learning rate for each parameter and have became the standard pick of optimiser since.\\\par
+The optimiser controls the gradient descent, it is the hyperparameter which controls the size of step being taken down the negative gradient of $- \nabla C$ in the cost function landscape. A suitable optimiser can prevent gradient descent to be trapped at a local minimum through iterations. The optimiser of choice for the experiement is the Adam optimiser, The Adam (Adaptive Momentum Estimator) developed by Kingma \& Ba (2017) extends the Stochastic Gradient Descent (herein SGD) by introducing concepts of momentum and second moments of gradient (\textit{see appendix \ref{app:Adam}}). Adam maintains a separate learning rate for each parameter and have become the standard pick of optimiser since.\\\par
 
 \subsubsection{Backpropagation and the chain rule}\label{Backprop&Chain}
 
-In order for a neural network to improve, the weights and bias are changed accordingly to minimisation of the cost. This is computed as a step-wise function as a negative vector against the cost landscape. For which each parameter of the weights and biases of each neuron within the neural network is defined as a chained function against the cost in \textit{equation \ref{cost_derivative}}. In other words, what is the derivate of the cost function with respect to the chain of weights and biases derivatives.\\\par
+In order for a neural network to improve, the weights and biases are changed accordingly to minimise the cost. This is computed as a step-wise function as a negative vector against the cost landscape. For which each parameter of the weights and biases of each neuron within the neural network is defined as a chained function against the cost in \textit{equation \ref{cost_derivative}}. In other words, what is the derivate of the cost function with respect to the chain of weights and biases derivatives.\\\par
 
 \begin{equation}
   \label{cost_derivative}
@@ -355,7 +346,7 @@ In order for a neural network to improve, the weights and bias are changed accor
 \end{itemize}
 
 
-Which when \textit{equation \ref{cost_derivative}} is summed over all parameters of layer $i$ becomes \textit{equation \ref{Sum_cost_derivative}}\\\par
+Where \textit{equation \ref{cost_derivative}} is summed over all parameters of layer $i$ becomes \textit{equation \ref{Sum_cost_derivative}}\\\par
 
 \begin{equation}
   \label{Sum_cost_derivative}
@@ -374,7 +365,7 @@ Essentially, using CNN and DL methods to perform semantic segmentation through r
 
 \subsection{Kalobeyei, Kakuma, Turkana, Kenya}\label{Kalobeyei}
 
-The Kakuma camp was first established in 1992, located in the rural North-West county of Turkana, Kenya. The camp was initially established to provide accomdation to the refugees fleeing the Second Sudanese Civil War as a temporary solution. However, as the conflict dragged out and followed by subsequent conflicts in the nearby region, the Kakuma camp have therefore been running for the past 30 years. As of 2020, Kakuma is home to 157,718 refugees with increasing number coming from the more recent Somalian and Ethiopian-Eritrean conflict (IFC., 2018, UN-HABITAT, 2021).\\\par
+The Kakuma camp was first established in 1992, located in the rural North-West county of Turkana, Kenya. The camp was initially established to provide accomdation to the refugees fleeing the Second Sudanese Civil War as a temporary solution. However, as the conflict dragged out and followed by subsequent conflicts in the nearby region, the Kakuma camp have therefore been running for the past 30 years. As of 2020, Kakuma is home to 157,718 refugees with increasing number coming from the more recent Somali and Ethiopian-Eritrean conflict (IFC., 2018, UN-HABITAT, 2021).\\\par
 
 The Kakuma refugee camp have fluctuated in population as a response to demand, however, a dramatic increase in population between 2013 and 2014 has culminated into the development of Kakuma 4 Camp and the Kalobeyei Settlement and the Kalobeyei Integrated Socio-Economic Development Plan (KISEDP). The settlements benefited from a much better spatial planning in order to facilitate inclusive socio-economic development (UN-HABITAT, 2021, UNHCR \& DANIDA, 2019) (\textit{see figure \ref{fig:KU_KALO_LU}}). Both the Kakuma and Kalobeyei refugee camps have local integration as the targeted solution (UN-HABITAT, 2021, UNHCR \& DANIDA, 2019). A comprehensive study of the formal and informal economy of Kakuma refugee camp conducted by the International Financial Corporation (IFC, 2018) suggests that that market catering for the refugees and surrounding towns is estimated at KES 1.7 billion (USD \$16.4 million). The economical vibrancy of local integration have improved the economy of improverished Turkana county significantly. However, challenges remain in integration into the wider Kenyan economy.\\\par
 
@@ -394,7 +385,7 @@ The Kakuma refugee camp have fluctuated in population as a response to demand, h
 
 \section{Dzaleka, Dowa, Malawi}\label{Dzaleka}
 
-Originally an infamous prison camp under the Banda's Malawi Congree Party regime, the area was converted to become the Dzaleka Refugee Camp in 1994. Unlike the Kakuma and Kalobeyei camps, the Dzaleka Refugee Camp is located in the heart of Malawi, 45 km away from the capital Lilongwe, where it is home to around 52,000 refugees and receive on average 300 new residents every month. Most coming from the Great Lakes area, in particular, the Democratic Republic of Congo and Burundi. However, resurgence of past conflicts between the Republic of Congo and D.R. Congo have caused an increased of influx in recent years (UNHCR, 2014, Kavalo E., 2016). Much of the infrastructure in the Dzaleka camp remain rudimentary at best, and very little resources and statistics were available via the UNHCR and UNDP portals. The Northern extension to the Dzaleka main camp is known as the Katubza extension (\textit{referred to as Dzaleka North by the rest of this study}), it is a well-planned plot of land consisting of 423 shelter shelters and were still inconstruction as of March 2021 (Gross G., 2021 \& UNHCR, 2021) (\textit{see figure \ref{fig:DZ_KA_PLAN}}).\\\par
+Originally an infamous prison camp under the Banda's Malawi Congree Party regime, the area was converted to become the Dzaleka Refugee Camp in 1994. Unlike the Kakuma and Kalobeyei camps, the Dzaleka Refugee Camp is located in the heart of Malawi, 45 km away from the capital Lilongwe, where it is home to around 52,000 refugees and receive on average 300 new residents every month. Most coming from the Great Lakes area, in particular, the Democratic Republic of Congo and Burundi. However, resurgence of past conflicts between the Republic of Congo and D.R. Congo have caused an increased of influx in recent years (UNHCR, 2014, Kavalo E., 2016). Much of the infrastructure in the Dzaleka camp remain rudimentary at best, and very little resources and statistics were available via the UNHCR and UNDP portals. The Northern extension to the Dzaleka main camp is known as the Katubza extension (\textit{referred to as Dzaleka North by the rest of this study}), it is a well-planned plot of land consisting of 423 shelter shelters and were still inconstruction as of March 2021 (Gross G., 2021 \& UNHCR, 2021) (\textit{see figure \ref{fig:DZ_KA_PLAN}}). For the rest of this report, reference to the datasets of Kalobeyei, Dzaleka, and Dzaleka North will be denoted as KBY, DZK, and DZKN respectively.\\\par
 
 \begin{figure}[H]
   \centering
@@ -414,9 +405,25 @@ Although hosting of refugee camps are often seen as a burden on the surface leve
 
 \section{Data}\label{Data}
 
+\subsubsection{Vector pre-processing}
+
+Semantic segmentation tasks require very high quality and quantity of data input in order to successfully perform. The reference dataset must therefore be highly accurate, otherwise this could cause the model to misclassify. There were two significant issues, firstly, due to the centermeter level resolution of the UAV raster data, the abundance of building polygons from OpenStreetMap and \href{https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_Research_open-buildings_v1_polygons}{Google Open Buildings V1 Polygon} did not spatially align well even after reprojection. Secondly, there were a temporal mismatch between such vector labels and the UAV in collection, causing some labels without building and buildings without labels.\\\par
+
+Fortunately, prior to this study, the HOT team and volunteers have begun collecting labels specifically digitised on the UAV imagery of Dzaleka and Dzaleka North camps \textit{see figure \ref{fig:Overview_DZK}}. Although spatially and temporally aligned, these vector labels still did not have a DL CV tasks in mind, hence, labelling around edges of buildings and UAV motion artefacts (Smith et al., 2016, Caravick et al., 2016) \textit{see figure \ref{fig:UAV_motion}} may have been missed.\\\par
+
+With the Kalobeyei camp unlabelled, this study created albeit in less quanitity, a carefully digitised, pixel-aligned dataset which is suitable for DL tasks. The combination of datasets provided gave this study a unique opportunitiy to investigate how the different datasets could influence segmentation results.\\\par
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.3]{UAV_motion.png}
+  \caption{Motion artefacts unique to UAV imagery}
+  \label{fig:UAV_motion}
+\end{figure}
+
+
 \subsection{Raster pre-processing}
 
-All imagery were first downloaded from OpenAerialMap and resampled to 15 cm resolution using cubic-spline interpolation, subsequently reprojected to EPSG:3857. Normalisation of raster data per colour band (RGB) to adequately re-scale the raster value to be converted to the PNG file format. This is perhaps one of the most important pre-processing step. A 2-step normalisation were performed on each band for each UAV imagery.\\\par
+The UAV imagery from OpenAerialMap were first downloaded from OpenAerialMap and resampled to 15 cm resolution using cubic-spline interpolation, subsequently reprojected to EPSG:3857. Normalisation of raster data per colour band (RGB) to adequately re-scale the raster value to be converted to the PNG file format. This is perhaps one of the most important pre-processing step, as normalised images enable easier training and prevents weight explosion (Harrison K., 2020). 2-step normalisation were performed on each band for each UAV imagery to ensure the distribution of value is preserved (Gonzalez \& Woods., 2002).\\\par
 
 First, the z-score normalisation noramlises the images according to the retrieved standard deviation (\textit{see equation \ref{z-score}}). This scales the every pixel to the global statistics for each colour band, keeping proportional ratio while reducing the effects of outlier. The z-score normalised result is then linearly scaled to range of 0 to 255 to be converted to 8-bit .png type file (\textit{see equation \ref{png_norm}}).
 
@@ -430,8 +437,8 @@ First, the z-score normalisation noramlises the images according to the retrieve
     \begin{itemize}
       \item $p_{z} =$ z-score normalised pixel value
       \item $p =$ Original pixel value
-      \item $\mu =$ Mean value of global pixel
-      \item $\sigma =$ Standard Deviation of global pixel
+      \item $\mu =$ Mean value of pixel
+      \item $\sigma =$ Standard Deviation of pixel
     \end{itemize}
 \end{itemize}
 
@@ -443,32 +450,15 @@ First, the z-score normalisation noramlises the images according to the retrieve
 \begin{itemize}
   \item Where:
     \begin{itemize}
-      \item $p_{8_bit} =$ Pixel output normalised between 0 to 255
+      \item $p_{8_bit} =$ Pixel output normalised between 0 and 255
       \item $p_{z} =$ z-score normalised pixel value from \ref{z-score}
     \end{itemize}
 \end{itemize}
 
-After per-band normalisation, the imagery bands were stacked with the associated labels. In order to increase the data quantity, $\frac{2}{3}$ overlapping steps cropping was performed. This resulted in the image label pair count of Train n = 2606, Validation, n = 1303, and Test n = 435 respectively where each sets were split at a ratio of 60, 30, and 10 \% respectively. With augemntation applied, this increased the available data to Train n = 18242, Validation n = 3909, and Test n = 435. (\textit{see figure. \ref{fig:InRGB} \& see table \ref{table:data_count}})\\\par
-
-\subsubsection{Vector pre-processing}
-
-Semantic segmentation tasks require very high quality and quantity of data input in order to successfully perform. The reference dataset must therefore be highly accurate, otherwise this could cause the model to misclassify. There were two significant issues, firstly, due to the centermeter level resolution of the UAV raster data, the abundance of building polygons from OpenStreetMap and \href{https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_Research_open-buildings_v1_polygons}{Google Open Buildings V1 Polygon} did not spatially align well even after reprojection. Secondly, there were a temporal mismatch between such vector labels and the UAV in collection, causing some labels without building and buildings without labels.\\\par
-
-Fortunately, prior to this study, the HOT team and volunteers have began collecting labels specifically digitised on the UAV imagery of Dzaleka and Dzaleka North camps \textit{see figure \ref{fig:Overview_DZK}}. Although spatially and temporally aligned, these vector labels still did not have a DL CV tasks in mind, hence, labelling around edges of buildings and UAV motion artefacts (Smith et al., 2016, Caravick et al., 2016) \textit{see figure \ref{fig:UAV_motion}} may have been missed.\\\par
-
-With the Kalobeyei camp unlabelled, this study created albeit in less quanitity, a carefully digitised, pixel-aligned dataset which is suitable for DL tasks. The combination of datasets provided gave this study an unique opportunitiy to investigate how the different datasets could influence segmentation results.\\\par
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale = 0.3]{UAV_motion.png}
-  \caption{Motion artefacts unique to UAV imagery}
-  \label{fig:UAV_motion}
-\end{figure}
-
-
+After per-band normalisation, the imagery bands were stacked with the associated labels. In order to increase the data quantity, $\frac{2}{3}$ overlapping steps cropping was performed. This resulted in the image label pair count of Train n = 2606, Validation, n = 1303, and Test n = 435 respectively where each set were split at a ratio of 60, 30, and 10 \% respectively. With augemntation applied, this increased the available data to Train n = 18242, Validation n = 3909, and Test n = 435. (\textit{see figure \ref{fig:InRGB} \& see table \ref{table:data_count}})\\\par
 \subsection{Data Augmentation}\label{DataAug}
 
-Data augmentation is perhaps one of the most crucial task in training a robust neural-network. It is an economical way of increasing generalisability without increasing model complexity, data augmentation achieve this through, firstly increasing the quantity of training and validation data, secondly encompassing a greater range of textural, geometrical, and colour variability throught the creation of augmented pseudo-data (Shorten \& Khoshgoftaar, 2019; Kinsley \& Kukiela, 2020; Howard \& Gugger, 2020; Zoph et al., 2019).\\\par
+Data augmentation one of the most crucial step in training a robust neural-network and reduce generalisation error (Bengio et al., 2017, Stevens et al., 2020). It is an economical way of increasing generalisability without increasing model complexity, data augmentation achieve this through, firstly increasing the quantity of training and validation data, secondly encompassing a greater range of textural, geometrical, and colour variability throught the creation of augmented pseudo-data (Shorten \& Khoshgoftaar, 2019; Kinsley \& Kukiela, 2020; Howard \& Gugger, 2020; Zoph et al., 2019).\\\par
 
 Data augmentation can generally be split into 3 categories: 1. Geometric/Affine distortion, 2. Colour distortion, and 3. Noise distortion. The application of which types of distortion to the \textit{Train} and \textit{Validation} dataset is highly dependent on the context of the semantic task. Therefore, care must be taken as to not introduce mislabelling (\textit{see figure \ref{fig:MNIST5}}) (Ng A., 2018).\\\par
 
@@ -534,24 +524,29 @@ Thus, the following augmentation were applied to the Train, Validation, and Test
   \caption{Resulted image and label pair for each dataset input configuration}
 \end{table}
 
+\subsubsection{Pre-trained weights and transfer-learning}\label{pretrained_weights}
+
+Pre-trained networks are neural networks that were already trained and optimised for a particular dataset. Therefore, the models' adjustable parameters have already learnt the basic features such as edges and shades etc. Training built upon a pre-trained network therefore could potentially reduce variation in the training results (Bengio et al., 2017), this process is known as transfer-learning. By comparing architectures initialised randomly and on pre-trained weights, this study investigates the affect of weight-initialised, transfer-training of different datasets.\\\par
+
+Fortunately for recent DL pracitioner, many of the classical and sometimes novel architectures have already been trained on the large-scale CV datasets (e.g. ImageNet, CIFAR) and have been made available to the community. This has made such models which often require large computational resources available to resources constrained projects.\\\par
+
 \section{Research Questions and experiment design}\label{RQ}
 
-In order to train a model which performs well on UAV imagery, the motion artefact will be a signficant feature for the model to learn. The combination of data availability have allowed a unique set of research questions concerning the input data quality and experiment setup to surface.\\\par
+To provide HOT with objective, clear results that could provide evidence-based direction for future research, clear guiding research questions and careful experiment desgins were required.
+In order to train a model which performs well on UAV imagery, the motion artefact was a signficant feature for the models to learn. The combination of data availability have allowed a unique set of research questions concerning the input data quality and experiment setup to surface.\\\par
 
-Additionally, using pre-trained weights as a strategy is well-documented in literature to improve performance across many domains (Stevens et al., 2020 , Howard \& Gugger, 2020), with numerous studies showcasing the sucess of cross-domain transfer training from classical CV datasets to remote sensing tasks (e.g. Audebert et al., 2017, Marmanis et al., 2016), One would expect the transfer training of CNN pre-trained on any dataset would provide it with an advantage. Therefore, it is important that this study also test the effects of the CNNs response to the initialised weights from ImageNet and the OCC building segmentation model.\\\par
+Additionally, using pre-trained weights as a strategy is well-documented in literature to improve performance across many domains (Stevens et al., 2020, Howard \& Gugger, 2020). Numerous studies have showcased the success of cross-domain transfer training from classical CV datasets to remote sensing tasks (e.g. Audebert et al., 2017, Marmanis et al., 2016), therefore one would expect the transfer training of CNN pre-trained on any dataset would provide it with an advantage. Thus, it is important that this study also test the effects of the CNNs response when initialised with weights from ImageNet and the OCC building segmentation model.\\\par
 
 \begin{enumerate}
-  \item RQ1: What is the optimal mixture of accurate and less-accurate labels and how does that affect the segmentation output result?
-    \begin{enumerate}
-      \item How does the introduction of complex roofing materials affect result?
+  \item RQ1: Do state-of-the-art models allow for accurate detection of buildings from UAV data in refugee camps?
+  \item RQ2: What is the optimal mixture of accurate and less-accurate labels and how does that affect the segmentation output result?
+  \begin{enumerate}
+      \item How does the introduction of complex environment such as heterogeneous urban morphologies, roofing materials, and UAV drone artefacts affect result?
     \end{enumerate}
-  \item RQ2: Which is the best lightweight model given the limited data and computational resources for binary semantic segmentation?
-    \begin{enumerate}
-      \item How does transfer training from various initalised weights affect results at different setup?
-    \end{enumerate}
-\end{enumerate}
+  \item RQ3: How do existing models pre-trained on classical CV datasets' and/or building datasets' response when applied to the setting of refugee camps?
+  \end{enumerate}
 
-To test out U-Net and a few variations of the U-Net performance, The models will initially be trained on the pixel-perfect and less complex Kalobeyei dataset, this will be then be followed by introducing the Dzaleka datasets of higher complexity. \textit{Figure \ref{fig:rooftops}} show a snapshot of the diverse rooftops to be segmented in the available datasets. A comparison of performance between the U-Net variations (Ronneberger et al., 2015) and the \href{https://github.com/drivendataorg/open-cities-ai-challenge/tree/master/1st\%20Place}{Open-Cities-AI-Challenge (herein OCC) winning model} is conducted (\textit{see table \ref{table:setup}}).\\\par
+The selection of models will initially be trained on the pixel-perfect and less complex Kalobeyei dataset, this will be then be followed by introducing the Dzaleka datasets of higher complexity. \textit{Figure \ref{fig:rooftops}} show a snapshot of the diverse rooftops to be segmented in the available datasets. A comparison of performance between the U-Net variations (Ronneberger et al., 2015) and the \href{https://github.com/drivendataorg/open-cities-ai-challenge/tree/master/1st\%20Place}{Open-Cities-AI-Challenge (herein OCC) winning model} is conducted (\textit{see table \ref{table:setup}}).\\\par
 
 \begin{figure}[H]
   \centering
@@ -562,24 +557,22 @@ To test out U-Net and a few variations of the U-Net performance, The models will
 
 \section{Architecture and hyperparameter selection}\label{Arch&Hyperparam}
 
-Model architecture and their associated hyperparameters selection is highly dependent on the computational resources and the task at hand (Ng A., 2018, Howard \& Gugger, 2020). As this study aims to output a pixel-based binary segmentation which delineates building and non-building, and given the computational resources constraint, model selection were based on tried and tested architectures with relatively low number of training parameters.\\\par
+Model architecture and their associated hyperparameters selection is highly dependent on the computational resources and the task at hand (Ng A., 2018, Howard \& Gugger, 2020). As this study aims to output a pixel-based binary segmentation which delineates building and non-building, and given the computational resources' constraint, model selection were based on tried and tested architectures with relatively low number of training parameters.\\\par
 
 \subsection{The U-Net and U-Net variants}\label{Unet}
 
-The U-Net architecture was first developed by Ronneberger et al. (2015) for the task of cell segmentation in biomedical electronmicroscope images. The architecture feature a symmetrical Encoder-Decoder structure (\textit{see figure \ref{fig:U-Net}}) and as with many other CNN, the architecture have transferred successfully well into the remote sensing domains (Höser \& Künzer, 2020, Höser et al., 2020, Xu et al., 2019). This symmetrical encoder-decoder type architecture is able to extract deeper features in the encoder layers, then recover and interpolate spatial features in the connected unsampling decoder layers (Wurm et al., 2019).\\\par
+The U-Net architecture was first developed by Ronneberger et al. (2015) for the task of cell segmentation in biomedical electronmicroscope images. The architecture feature a symmetrical Encoder-Decoder structure (\textit{see figure \ref{fig:U-Net}}) and as with many other CNN, the architecture have transferred successfully well into the remote sensing domains (Höser \& Künzer, 2020, Höser et al., 2020, Xu et al., 2019). This symmetrical encoder-decoder type architecture with concatenated skipped-connections is able to extract deeper features in the encoder layers, then recover and interpolate spatial features in the connected unsampling decoder layers (Wurm et al., 2019).\\\par
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale = 0.25]{U-Net.png}
-  \caption{The Encoder-Decoder U-Net architecture (Ronneberger et al., 2015)}
+  \includegraphics[scale = 0.75]{Seale_U-Net.jpg}
+  \caption{The Encoder-Decoder U-Net architecture (Ronneberger et al., 2015, Seale et al., 2022)}
   \label{fig:U-Net}
 \end{figure}
 
 \subsubsection{Changing the encoder architecture and the EfficientNet family}\label{EffNet}
 
-The ability to switch out the encoder structure allows the DL practioner to experiment with more up-to-date architectures without changing the output shape. This drastically increases the combination of experiments that allow testing the best combinations of encoder-decoder structure suitable for the dataset. All of the experiments in this study were carried out using the high-level PyTorch API \href{https://segmentation-models-pytorch.readthedocs.io/en/latest/quickstart.html}{Segmentation-Model-PyTorch} created by Yakubovyskiyl P. (2021). Whom was also the winner of the OCC challenge for UAV building segmentation which this study will transfer-train, and compare against.\\\par
-
-In this study, the experiments with changed encoder were based on the EfficientNet family. There are three reasons for this decision. Firstly, at one of the last stage of the OCC compeition winning network, the EfficeintNet B1 was used as an encoder. Secondly, the EfficientNet family are a set of network architectures that are structured and easy to scale up when computational resources become available. Thirdly, they are perhaps the best represntation of generalised state-of-the-art architectures that have been tested and performed phenomenally well in classical CV datasets (\textit{see figure \ref{fig:Eff_perform}}) (Tan \& Le, 2020). In essence, these are sets of experiments that mix and match old and new architectural design.\\\par
+The ability to switch out the encoder structure allows the DL practioner to experiment with more up-to-date architectures without changing the output shape. This drastically increases the combination of experiments that allow testing the best combinations of encoder-decoder structure suitable for the dataset. All experiments in this study were carried out using the high-level PyTorch API \href{https://segmentation-models-pytorch.readthedocs.io/en/latest/quickstart.html}{Segmentation-Model-PyTorch} created by Yakubovyskiyl P. (2021). Who was also the winner of the OCC challenge for UAV building segmentation. This study will compare and contrast the unchanged 4-layer and 5-layer U-Nets architectures with the U-Nets with changed encoders. The changed encoders were based on the EfficientNet family. There are three reasons for this decision. Firstly, at one of the last stage of the OCC compeition winning network, the EfficeintNet B1 was used as an encoder. Secondly, the EfficientNet family are a set of network architectures that are structured and easy to scale up when computational resources become available. Thirdly, they are perhaps the best represntation of generalised state-of-the-art architectures that have been tested and performed well in classical CV datasets (\textit{see figure \ref{fig:Eff_perform}}) (Tan \& Le, 2020). In essence, these are sets of experiments that mix and match old and new architectural design.\\\par
 
 \begin{figure}[H]
   \centering
@@ -588,9 +581,7 @@ In this study, the experiments with changed encoder were based on the EfficientN
   \label{fig:Eff_perform}
 \end{figure}
 
-The EfficientNet family uses compound scaling which increases the height, width, and depth. The baseline architecture was generated using AutoML Neural Architecture Search (Elsken et al., 2019) which optimised for computational efficiency and accuracy (\textit{see appendix \ref{app:EfficientNet}}).\\\par
-
-Therefore, the unweighted Four-layer U-Net, Five-layer U-Net, and the OCC winner weighted EfficientNet B1 U-Net are the key architectures the rest will compare against.\\\par
+The EfficientNet family uses compound scaling which increases the height, width, and depth. The baseline architecture was generated using AutoML Neural Architecture Search (Elsken et al., 2019) which optimised for computational efficiency and accuracy (\textit{see appendix \ref{app:EfficientNet}}). Therefore, the unweighted Four-layer U-Net, Five-layer U-Net, and the OCC winner weighted EfficientNet B1 U-Net are the key architectures the rest will compare against.\\\par
 
 \begin{table}[H]
   \centering
@@ -599,7 +590,7 @@ Therefore, the unweighted Four-layer U-Net, Five-layer U-Net, and the OCC winner
       \hline
       \multicolumn{5}{|c|}{Trained Architecture Specification Table} \\
       \hline
-      Encoder & Decoder & Initalised weights & Trainable parameters & Batch-size (8GB GeForce GTX 1070Ti) \\
+      Encoder & Decoder & Initalised weights & Trainable parameters & Batch-size (8 GB GeForce GTX 1070Ti) \\
       \hline
       4-layer U-Net Encoder & 4-layer U-Net Decoder & None & 776,3041& 32\\
       5-layer U-Net Encoder & 5-layer U-Net Decoder & None  & 3110,0513 & 32\\
@@ -617,7 +608,7 @@ Therefore, the unweighted Four-layer U-Net, Five-layer U-Net, and the OCC winner
 
 \section{Hyperparameters and baseline model perforamce}
 
-The hyperparameters of a neural network are changable parameters which control the training process (Bengio et al., 2017, Stevens et al., 2020, Howard \& Gugger, 2020). They include the batch size, optimiser, learning rate, weight decay, loss function, and learning rate scheduler etc. (\textit{see table \ref{table:hyperparameters}}). One of the most difficult process in DL is finding the correct hyperparameters value that cause the model to neither overfit or underfit the dataset. The strategies and options are often overwhelming, therefore this study does not concern itself with tuning the hyperparameters for all of the models but rather withholding them from changes so that a comprehensive \textbf{baseline} performance could be identified. This will provide a clear picture of the feasibility, uncover challenges and potentials. The result will provide insight on how to take this project further, so that further resources could be justified to scale future experiments.\\\par
+The hyperparameters of a neural network are changable parameters which control the training process (Bengio et al., 2017, Stevens et al., 2020, Howard \& Gugger, 2020). They include the batch size, optimiser, learning rate, weight decay, loss function, and learning rate scheduler etc. (\textit{see table \ref{table:hyperparameters}}). One of the most difficult processes in DL is finding the correct hyperparameters value that cause the model to neither overfit nor underfit the dataset. The strategies and options are often overwhelming, therefore this study does not concern itself with changing or tuning the hyperparameters for all the models but rather withholding them from changes so that a comprehensive controlled experiment can be performed. This allows for the \textbf{baseline} performance of each architecture setup (\textit{see table \ref{table:setup}}) to be identified. This will provide a clear picture of eachs' feasibility, uncover challenges and potentials, and insight into where further resources could be justified to scale future experiments.\\\par
 
 \begin{landscape}
 \begin{table}[H]
@@ -649,26 +640,24 @@ The hyperparameters of a neural network are changable parameters which control t
     \end{tabular}
   \end{minipage}}
   \label{table:hyperparameters}
-  \caption{The hyperparameters and respective values to be held constant for every experiments in this study.}
+  \caption{The hyperparameters and respective values to be held constant for every experiment in this study.}
 \end{table}
 \end{landscape}
 
 \section{Accuracy Assessment}\label{AccAss}
 
-
-Detail and scrutable accuracy assessments are fundamental towards any classification based analysis. This section will introduce and break down the various lower order and higher order class-based (thematic) accuracy assessment. By explaining the characteristics of each metrics, this will provide a much more granular nature of accuracy assessment in the findings of section \ref{findings}. In general, accuracy assessment in remote sensing can be divided into 2 categories: 1. Positional Accuracy \& 2. Thematic Accuracy. Of which, Positional Accuracy deals with the accuracy of the location while Thematic Accuracy deals with the labels or attributes accuracy (Congalton \& Green, 2019 \& Bolstad P., 2019). With lower order metrics being more granular while higher order metrics more triturated but generalised.\\\par
+Detail and scrutable accuracy assessments are fundamental towards any ML based analysis. This section will introduce and break down the various lower order and higher order class-based (thematic) accuracy assessment. By explaining the characteristics of each metric, this will provide a much more granular nature of accuracy assessment in the findings of section \ref{findings}. In general, accuracy assessment in remote sensing can be divided into 2 categories: 1. Positional Accuracy \& 2. Thematic Accuracy. Of which, Thematic Accuracy deals with the labels or attributes accuracy (Congalton \& Green, 2019 \& Bolstad P., 2019) which will be the focus of assessment. Here the study differentiate between 2 groups of class-based accuracy assessments. With binary classification metrics being more granular, they focus on assessing relevant or irrelevant classifications. Meanwhile, the statistical metrics are more triturated but generalised, they are often a statistical combination of the binary classification metrics.\\\par
 
 The metrics described in this section form part of the larger family of accuracy assessment metrics that can be constructed from the confusion matrix (\textit{see figure \ref{fig:cmatrix}})\\\par
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale = 0.2]{cmatrix.png}
+  \includegraphics[scale = 0.6]{Confusion_matrix.png}
   \caption{The Confusion Matrix}
   \label{fig:cmatrix}
 \end{figure}
 
-\subsection{Lower-order metrics}\label{1storder}
-\subsubsection{Precision, Recall, and Specificity}\label{PR&S}
+\subsection{Binary classification metrics}\label{1storder}
 
 \textbf{Precision} and \textbf{Recall}, aka. Positivie-Predictive-Value and Sensitivity/True-Positive-Rate respectively. The two metrics are often used together, another common denomination especially in remote sensing literature are User's Accuracy and Producer's Accuracy (Congalton \& Green, 2019 \& Wegmann et al., 2016). To avoid further confusion in nomenclature, \textbf{Precision} and \textbf{Recall} will be used from hereon.\\\par
 
@@ -692,27 +681,21 @@ Meanwhile, \textbf{Recall} measures the correctly predicted Positive class $True
 
 Therefore, higher \textbf{Recall} suggests the model is better at identifying positives and vice-versa higher \textbf{Specificity} suggests the model is better at identifying negatives. Since this is an exercise that aim to maximise the positive prediction as a binary building segmentation classifier, emphasise will be placed on maximising \textbf{Precision} and \textbf{Recall}.\\\par
 
-\subsection{Higher-order metrics}\label{2ndorder}
+\subsection{Statistical analysis metrics}\label{2ndorder}
 
-The following are higher-order accuracy assessment metrics, where they often encompass the lower-order accuracy assessment metrics mentioned in the above section, Thus, although higher-order metrics provide a more generalised assessments, they often suffer from granularity. Hence such metrics are often employed as a means to evaluate and rank DL based CV challenges and competitions (e.g. Kaggle Challenges), but they are less so effective in the detailed assessment of segmentation results.\\\par
-
-\subsubsection{Overall Accuracy}\label{OA}
-
-\tiny
-\begin{equation}
-  Overall\ Accuracy = \frac{True\ Positive + True\ Negative}{True\ Positive + True\ Negative + False\ Positive + False\ Negative}
-\end{equation}
-\normalsize
-
-The Overall Accuracy (herein OA) gives an easy to implement, general but incomplete answer of how well classification is doing. The metrics suffers when inbalance count of multiple-classes are involved.\\\par
-
-\subsubsection{Dice Score}\label{F1}
+The following are statistical accuracy assessment metrics, where they often encompass the binary classification accuracy assessment metrics of the above section, Thus, although the statistical analysis metrics provide a more generalised overview, they often omit detail responses only available with simpler metrics. Hence, such metrics are often employed as a means to evaluate and rank DL based CV challenges and competitions (e.g. Kaggle Challenges), but they are less so effective in the detailed assessment of segmentation results.\\\par
 
 \begin{equation}
-  Dice\ Score = 2 * \frac{Precision - Recall}{Precision + Recall}
+  Overall\ Accuracy = \frac{TP + TN}{TP + TN + FP + FN}
 \end{equation}
 
-The Dice Score aka. the F1 score calculates the harmonic mean of \textbf{Precision} and \textbf{Recall}, with contribution for both to be of balanced weightings, the Dice Score could be skewed by classification results with higher performance in either Precision or Recall. Additionally, the metrics does not take $True\ Negative$ values into account if such statistics might be of interest.\\\par
+The \textbf{Overall Accuracy} (herein OA) gives an easy to implement, general but an aggregated answer of how well classification is doing which omit the details. The metrics suffers when inbalance count of multiple-classes are involved.\\\par
+
+\begin{equation}
+  Dice\ Score = 2 * \frac{Precision * Recall}{(Precision + Recall)}
+\end{equation}
+
+The \textbf{Dice Score} aka. the F1 score calculates the harmonic mean of \textbf{Precision} and \textbf{Recall}, with contribution for both to be of balanced weightings, the Dice Score could be skewed by classification results with higher performance in either Precision or Recall. Additionally, the metrics does not take $True\ Negative$ values into account if such statistics might be of interest.\\\par
 
 \subsubsection{Intersection-over-Union}\label{IoU}
 
@@ -728,7 +711,7 @@ The Dice Score aka. the F1 score calculates the harmonic mean of \textbf{Precisi
 \end{figure}
 
 
-One of the most commonly used metrics as an assessment in Deep Learning Computer Vision competiton. The Intersection-over-Union (IoU) aka. Jaccard Index is a geometric based accuraccy assessment\\\par
+One of the most commonly used metrics as an assessment in Deep Learning Computer Vision competiton. The Intersection-over-Union (IoU) aka. Jaccard Index is a geometric based accuraccy assessment. The metrics calculate geometrically the area in common between the prediced and actual labels, quantifying the similarities between the two sets. It is mathematically very similar and positively correlates with the \textbf{Dice Score} but places emphasis to the false classification. The IoU is a metrics easy to conceptualise and compare against other ML results due to its established prevalence, a good metrics for comparison against the OCC competition results.\\\par
 
 \subsection{Project workflow}\label{ProjWorkflow}
 
@@ -750,32 +733,44 @@ The workflow for this study consist of 5 main stages: 1. Download and Extraction
 
 \newpage
 
-\chapter{Findings and Discussion}\label{findings}
+\chapter{Findings and Discussion}\label{find&discuss}
 
-The study have trained and tested on 5 different architectures with either no initalised weights or initalised weights pre-trained from ImageNet or OCC building segmentation models. For each experiment setup, there were 2 sets of dataset input (KBY and KBY + DZK + DZKN), for details (\textit{see table \ref{table:setup}}). Producing 16 sets of trained CNN and associated class-based accuracy assessments (\textit{see figure \ref{fig:Cat_CAA}}), for full experimental results, (\textit{see Appendix \ref{fulldata}}). On the whole, there were both expected and unexpected results. A reduction in every metrics were observed in every single experiment setup when the more complex Dzaleka camps datasets were introduced (\textit{see table \ref{table:data-wise_change}}). This was expected as it is more difficult to train the CNNs on the highly heterogeneous rooftops with similar texture to the surrounding environments. The \textit{Precision} and \textit{Recall} metrics did not vary too much between the architectures when trained only on the Kalobeyei dataset, with the exception to the transfered-untrained \textit{EfficientNet B1 U-Net OCC} model. In contrast, the performance in differences is a lot more visible with the introduction of Dzaleka and Dzaleka North datasets.\\\par
+\section{Findings}\label{Findings}
 
-An interesting observation is that with the \textit{EfficientNet B1 U-Net} and the symmetrical \textit{4-layer \& 5-layer U-Net}, both \textit{Precision} and \textit{Recall} increased when initialised on pre-trained ImageNet weights (\textit{see table \ref{table:weight-wise_change}}), with the exception to \textit{EfficientNet B2 U-Net} where it a decrease in \textit{Precision} but a increase in \textit{Recall} when compared to the network with non-initalised weights. This suggests that the increase in depth does not necessarily correspond to either an increase or decrease in performance in any particular direction. For the non-weight initialised \textit{4-layer to 5-layer U-Net}, there is an consistent albeit slight improvement in \textit{Recall} but not \textit{Precision}. This contrast the changes in Depth-wise changes, where increase in depth shows improvement mostly in the \textit{Precision} but not \textit{Recall} \textit{see table \ref{table:depth-wise_change}}.\\\par
+A total of 5 different architectures with either no initalised weights or initalised weights pre-trained from ImageNet or OCC building segmentation models have been trained. For each experiment setup, there were 2 sets of dataset input (KBY and KBY + DZK + DZKN), for details (\textit{see table \ref{table:setup}}). Producing 16 sets of trained CNN and associated class-based accuracy assessments (\textit{see figure \ref{fig:Cat_CAA}}), for full experimental results, (\textit{see Appendix \ref{fulldata}}). On the whole, there were both expected and unexpected results. A reduction in every metric were observed in every single experiment setup when the more complex Dzaleka camps datasets were introduced (\textit{see table \ref{table:data-wise_change}}). This was expected as it is more difficult to train the CNNs on the highly heterogeneous rooftops with similar texture to the surrounding environments. The \textit{Precision} and \textit{Recall} metrics did not vary too much between the architectures when trained only on the Kalobeyei dataset, with the exception to the transfered-untrained \textit{EfficientNet B1 U-Net OCC} model. In contrast, the performance in differences is a lot more visible with the introduction of the Dzaleka and Dzaleka North datasets.\\\par
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale = 0.3]{256KBYEB1-UNet-OCCUNTRAINEDBASE.png}
-  \includegraphics[scale = 0.3]{256KBYFive-UnetBASE.png}
-  \includegraphics[scale = 0.3]{256ALLEB1-UNet-OCCBASE.png}
-  \includegraphics[scale = 0.3]{256ALLEB2-UNet-NoIMN.png}
+  \includegraphics[scale = 0.35]{256KBYEB1-UNet-OCCUNTRAINEDBASE.png}
+  \includegraphics[scale = 0.35]{256KBYFive-UnetBASE.png}
+  \includegraphics[scale = 0.35]{256ALLEB1-UNet-OCCBASE.png}
+  \includegraphics[scale = 0.35]{256ALLEB2-UNet-NoIMN.png}
   \caption{Sample of binary segmentation output of various combinations of tested architecture and experiment setup.}
   \label{fig:output}
 \end{figure}
 
+\newpage
+
+\begin{landscape}
 \begin{figure}[H]
   \centering
-  \includegraphics[scale = 0.25]{Cat_CAA.png}
+  \includegraphics[scale = 0.4]{Cat_CAA.png}
   \caption{Class-based Accuracy Assesment metrics for respective CNN architectures and experiment input dataset.}
   \label{fig:Cat_CAA}
 \end{figure}
+\end{landscape}
 
-The following sections compare the mean changes of \textit{Precision} and \textit{Recall} in the test dataset at paired CNNs' depth-wise, dataset-wise, and weight-wise change.\\\par
+\newpage
 
-\section{Depth-wise Precision and Recall change}
+When comparing the results trained on the Kalobeyei dataset (KBY), the differences between the unchanged architectures (\textit{4-layers \& 5-layers U-Net}) and the architectures with novel EfficientNet encoders (\textit{EfficientNet B1 \& B2}), the novel encoders achieve better performance on the metrics of \textit{Precision}, \textit{Dice Score}, and \textit{IoU}. With the exception to \textit{EfficientNet B1 U-Net} initialised on the OCC weights, the \textit{Efficient B1} encoder performs better in these metrics than the \textit{EfficientNet B2} encoder regardless of initialised weights. Meanwhile, there were negligible differences between the other metrics. This suggests that for \textit{RQ1 \& 2(a)}, with the introduction of the Dzaleka and Dzaleka North (DZK + DZKN) datasets, all EfficientNet encoders suffer from larger performance loss across all accuracy assessment metrics when compared against the unchanged U-Nets. A conclusion for \textit{RQ1} could be drawn that the novel U-Net architectures with encoders of EfficientNet of B1 and B2 could perform better, but only with accuratly labelled data and homogeneous roofs and urban morphology. While the unchanged U-Nets could be more robust when dealing with more complicated, older refugee camps. Further details will be addressed in the discussion sections of \ref{depth_change} \& \ref{data_change}.\\\par
+
+An interesting observation is that with the \textit{EfficientNet B1 U-Net} and the symmetrical \textit{4-layer \& 5-layer U-Net}, both \textit{Precision} and \textit{Recall} increased when initialised on pre-trained ImageNet weights (\textit{see table \ref{table:weight-wise_change}}), with the exception to \textit{EfficientNet B2 U-Net} where a decrease in \textit{Precision} but an increase in \textit{Recall} was observed when compared to the network with non-initalised weights. This suggests that the increase in depth does not necessarily correspond to either an increase or decrease in performance in any particular direction. For the non-weight initialised \textit{4-layer to 5-layer U-Net}, there is a consistent albeit slight improvements in \textit{Recall} but not \textit{Precision}. This contrast the changes in Depth-wise changes discussed in section \ref{depth_change}, where increase in depth shows improvement mostly in the \textit{Precision} but not \textit{Recall} \textit{see table \ref{table:depth-wise_change}}.\\\par
+
+\section{Discission}\label{Discussion}
+
+The following sections discuss in detail the mean changes of \textit{Precision} and \textit{Recall} in the test dataset at paired CNNs' depth-wise, dataset-wise, and weight-wise changes.\\\par
+
+\section{Depth-wise Precision and Recall change}\label{depth_change}
 
 \begin{table}[H]
   \centering
@@ -796,7 +791,7 @@ The following sections compare the mean changes of \textit{Precision} and \texti
     \end{tabular}
   \end{minipage}}
   \label{table:depth-wise_change}
-  \caption{Changes with architectures that had a depth-wise increased for each setup..}
+  \caption{Changes with architectures that had a depth-wise increased for each setup.}
 \end{table}
 
 \begin{figure}[H]
@@ -806,9 +801,9 @@ The following sections compare the mean changes of \textit{Precision} and \texti
   \label{fig:depth_regplot}
 \end{figure}
 
-There is a common misconception in the DL realm that deeper networks would always perform better. The comparison in \textit{table \ref{table:depth-wise_change}} in a limited scope tries to address this question, the result suggests that improvements in both \textit{Precision} and \textit{Recall} only happened in non-weight initialised depth-increase from \textit{EfficientNet B1 to B2 U-Net} trained on all datasets, achieving both the highest rate of increase in both metrics. In comparison to the same architecture change and datset input with initalised weights from ImageNet, both metrics experienced a decrease. Meanwhile in other experiment setup, no significant trends can be drawn and thus the assumption does not hold, although results might drastically differ with increase of dataset, increase in batch size, and when experimenting with much deeper architectures not available to this study due to computation constraint.\\\par
+There is a common misconception in the DL realm that deeper networks would always perform better. The comparison in \textit{table \ref{table:depth-wise_change}} in a limited scope tries to address this question, the result suggests that improvements in both \textit{Precision} and \textit{Recall} only happened in non-weight initialised depth increase from \textit{EfficientNet B1 to B2 U-Net} trained on all datasets, achieving both the highest rate of increase in both metrics. In comparison to the same architecture change and datset input with initalised weights from ImageNet, both metrics experienced a decrease. Meanwhile, in other experiment setup, no significant trends can be drawn and thus the assumption does not hold. Although results might differ drastically with increase of dataset, increase in batch size, and when experimenting with much deeper architectures which was unfortunately not available to this study due to computation constraints.\\\par
 
-\section{Dataset-wise Precision and Recall change}
+\section{Dataset-wise Precision and Recall change}\label{data_change}
 
 \begin{table}[H]
   \centering
@@ -842,9 +837,9 @@ There is a common misconception in the DL realm that deeper networks would alway
 \end{figure}
 
 
-With the Kalobeyei dataset as constant, the introduction of the Dzaleka and the Dzaleka North dataset have resulted in the reduction in \textit{Precision} and \textit{Recall} for all architectures with any or no initalised weights. Table \ref{table:data-wise_change} might suggest that the least reduction in \textit{Precision} came from the \textit{EfficientNet B1 U-Net} initalised on OCC building segmentation weights. However figures \ref{fig:output} and \ref{fig:Cat_CAA} informs that with such poor Dice and IoU score, it reflects that the OCC competition winning network being either very confident at the the segmentation or completing missing the other buildings. Thus the \textit{Precision} diverge from the \textit{Recall} results and the statistics (\textit{see figure \ref{fig:data_stripplot}}) suggests prediction results with high $False\ Negative$ and therefore does not reflect overall performance. The \textit{5-layer U-Net} had a much more corresponding between \textit{Precision} and \textit{Recall} which shows the metrics are least affected by the introduction of the Dzaleka camps dataset. However, it does not seem to be the case that deeper or shallower version of the architectures more or less reduction, therefore it is difficult to draw any conclusion here.\\\par
+With the Kalobeyei dataset as constant, the introduction of the Dzaleka and the Dzaleka North datasets have resulted in the reduction in \textit{Precision} and \textit{Recall} for all architectures with or without initalised weights. Table \ref{table:data-wise_change} might suggest that the least reduction in \textit{Precision} came from the \textit{EfficientNet B1 U-Net} initalised on OCC building segmentation weights. However, figures \ref{fig:output} and \ref{fig:Cat_CAA} informs that with such poor \textit{Dice Score} and \textit{IoU}, it reflects that the OCC competition winning network is being either very confident at the segmentation or completing missing the other buildings. Thus, the \textit{Precision} diverge from the \textit{Recall} results and the statistics (\textit{see figure \ref{fig:data_stripplot}}) suggests prediction results with high $False\ Negative$ and therefore does not reflect overall performance. The \textit{5-layer U-Net} had a much more corresponding result between the \textit{Precision} and \textit{Recall} which shows the metrics are least affected by the introduction of the Dzaleka camps datasets. However, it does not seem to be the case that deeper or shallower version of the architectures cause more or less reduction, therefore it is difficult to draw any conclusion regarding \textit{RQ2(a)}.\\\par
 
-\section{Initialised weight Precision and Recall change}
+\section{Initialised weight Precision and Recall change}\label{weight_change}
 
 \begin{table}[H]
   \centering
@@ -875,9 +870,9 @@ With the Kalobeyei dataset as constant, the introduction of the Dzaleka and the 
   \label{fig:weight_regplot}
 \end{figure}
 
-As mentioned perviously in section \ref{RQ} that CNNs trained on pre-initalised weights might have significant advantages in performance. Therefore, one might expect that although the OCC model suffers from low \textit{Recall} and high $False\ Negativity$ in it's segmentation output, perhaps further training on the weighted network would result in drastic improvement. Table \ref{table:weight-wise_change} indicates that this was indeed the result, with \textit{EfficientNet B1 U-Net OCC to OCC transfer-trained} achieving the highest \textit{Recall} change, it however also caused the highest decrease in \textit{Precision}, this trend is less sigificant in the version only trained in the Kalobeyei dataset, but the result reflects the assumption.. This suggest that transfer training from the OCC model compensated for the \textit{False Negative} issue, the improvement in \textit{True Positive} segmentation is not as significant. Meanwhile, the \textit{EfficientNet B1 U-Net} initalised from ImageNet weights saw both improvement in the metrics but not the \textit{EfficientNet B2 U-Net}.\\\par
+In section \ref{RQ}, we hypothesised that CNNs trained on pre-initalised weights might have significant advantages in performance. Therefore, one might expect that although the OCC model suffers from low \textit{Recall} and high $False\ Negativity$ in it's segmentation output, perhaps further training on the weighted network would result in drastic improvement. Table \ref{table:weight-wise_change} indicates that this was indeed the result, with \textit{EfficientNet B1 U-Net OCC to OCC transfer-trained} achieving the highest \textit{Recall} change, it however also caused the highest decrease in \textit{Precision}, this trend is less sigificant in the version only trained in the Kalobeyei dataset, but the result reflects the assumption. This suggest that transfer training from the OCC model compensated for the \textit{False Negative} issue, the improvement in \textit{True Positive} segmentation is not as significant. Meanwhile, the \textit{EfficientNet B1 U-Net} initalised from ImageNet weights saw both improvement in the metrics but not the \textit{EfficientNet B2 U-Net}. The result is inconclusive therefore to address the \textit{RQ3}\\\par
 
-Few assumptions could be drawn from the above results. Firstly, depth increase in architecture tend to favour improvement in \textit{Precision} meaning that deeper networks redyce the classification of $False\ Positive$, meanwhile, ImageNet initalised weights in most setting tend to favour imrpovement in \textit{Recall} which reduce $False\ Negative$. These are useful generalisation for future experiment and especially for when tuning any architectures. In general, introducion of the complex Dzaleka camps datasets cause all architectures to perform worst, but no significant conclusion can be drawn whether the introduction of deeper version of the architecture or initalised weights in tandem with dataset introduction would reduce the rate of \textit{Precision} or \textit{Recall} decrease. Finally a point of contention remains in the human error when labelling. Particularly for the Dzaleka dataset, there are many instances that could cause a contribution to a $False\ Positive$ in the prediction output, which in reality were $True\ Positive$ \textit{see figure \ref{fig:ambiguity}}. These ambiguity often arises at the courtyard of a particular building or when multiple buildings are interconnected, this might suggest that networks trained on all datasets (KBY + DZK + DZKN) might be achieving higher $Precision$ than displayed.\\\par
+Few assumptions could be drawn from the above results. Firstly, depth increase in architecture tend to favour improvement in \textit{Precision} meaning that deeper networks would reduce the classification of $False\ Positive$. Meanwhile, ImageNet initalised weights in most setting tend to favour imrpovements in \textit{Recall} which indicates a reduction in $False\ Negative$. These are useful generalisation for future experiment and especially for when tuning any architectures. In general, introducion of the complex Dzaleka camps datasets cause all architectures to perform worse, but no significant conclusion can be drawn whether the introduction of deeper version of the architecture or initalised weights in tandem with particular dataset introduced would reduce the rate of \textit{Precision} or \textit{Recall} decrease. Finally, a point of contention remains in the human error in labelling. Particularly for the Dzaleka dataset, there are many instances that could cause a contribution to a $False\ Positive$ in the prediction output, which in reality were $True\ Positive$ \textit{see figure \ref{fig:ambiguity}}. These ambiguitities often arises at the courtyard of a particular building or when multiple buildings are interconnected, which is especially rampant in the complex Dzaleka camp. This might suggest that networks trained on all datasets (KBY + DZK + DZKN) might be achieving higher $Precision$ than actually displayed.\\\par
 
 \begin{figure}[H]
   \centering
@@ -890,115 +885,19 @@ Few assumptions could be drawn from the above results. Firstly, depth increase i
 
 \chapter{Conclusion}\label{Conclude}
 
-The beginning of a DL project is a momentous task. Errors from the data pre-processing to architecture selection could be costly in both time and resources, especially in the setting of humanitarian NGOs (Private Communication, 2022). It is important for a pilot project to therefore uncover the possibilities and challenges with well-designed, small-scale yet rigourous experiments. This study presented a series of experiments which tested variations of the U-Nets on the shallow-end of the spectrum, it also explored the possibility of transfer-training from a previous competition winning neural network and how they compared against networks trained from scratch. Initially, there was an assumption that transfer-training from pre-trained networks and deeper architectures would perform better. However, results shows that  the overall picture is a lot more complicated, where they may experience drastic improvement in some metrics, but not others. Furthermore, focusing on the $True\ Positive$ centric class-based accuracy assessment metrics have shown that even performance in \textit{Precision \& Recall} does not necessarily corroborate with each other and that there's nuance relationship between their improvement, architectural depths, and pre-trained weights.\\\par
+The beginning of a DL project is a momentous task. Errors from the data pre-processing to architecture selection could be costly in both time and resources, especially in the setting of humanitarian NGOs (Private Communication, 2022). It is important for a pilot project to therefore uncover the possibilities and challenges with well-designed, small-scale yet rigourous experiments. This study presented a series of experiments which tested variations of the U-Nets on the shallow-end of the spectrum, it also explored the possibility of transfer-training from a previous competition winning neural network and how they compared against networks trained from scratch and/or pre-trained in large-scale CV dataset. Initially, there was an assumption that transfer-training from pre-trained networks and deeper architectures would perform better. However, results shows that the overall picture were a lot more complicated, where the models may experience drastic improvement in some metrics, but not others. Furthermore, focusing on the $True\ Positive$ centric class-based accuracy assessment metrics have shown that even performance in \textit{Precision \& Recall} does not necessarily corroborate with each other and that there's nuance relationship between their improvement, architectural depths, and pre-trained weights.\\\par
 
-Albeit many ambiguitiy and questions remain, there are several key takeaways that have surfaced as a result. First, transferring a competition winning network which scored very well in the IoU metrics does not necessarily guarantee easy transfer and good performance in new environments. This study hinted that the OCC model may have became too customised for its original dataset. Secondly, it is important to carefully and critically evaluate the segmentation output by examining more granular low-level metrics. Thirdly, rudimentary conclusion can be drawn from the depth-wise and weight-wise changes. Unfortunately, the results for how depth and weight change influence performance when complex Dzaleka camps datasets were introduced remained inconclusive. Thus, it is important that future studies could address this. However, It is speculated that this might scale differently and at a more predictable way when higher batch-size, much deeper network, and when significantly more data can be provided.\\\par
+Albeit many ambiguitiy and questions remain, there are several key takeaways that have surfaced as a result. First, transferring a competition winning network which scored very well in the \textit{IoU} metric does not necessarily guarantee easy transfer and good performance in new environments. This study hinted that the OCC model may have become too customised for its original dataset of mainly formal urban structures. Secondly, it is worthwhile to carefully and critically evaluate the segmentation output by examining more granular binary classification metrics. Thirdly, rudimentary conclusion can be drawn from the depth-wise and weight-wise changes. Unfortunately, the results for how depth and weight change influence performance when the complex Dzaleka camps datasets were introduced remained inconclusive. Thus, it is important for future studies to address this. However, the results indicate that this might scale differently and at a more predictable way when higher batch-size, much deeper network, and when significantly more data can be provided.\\\par
 
-To narrow down the choices, further investigation will be needed. Scaling from the experimental framework defined for this study could be a good strategy for succession. This will allow for a well-constrainted extension of this study. Additionally, baseline experiment at different hyperparameters, where the parameters of isolation are the initialised weights and architectures would  be very interesting. Nevertheless, scaling will only be possible with significantly more computational and data resources.\\\par
+To narrow down the choices, further investigations will be needed. Scaling from the experimental framework defined for this study could be a good strategy for succession. This will allow for a well-constrainted extension of this study. Additionally, baseline experiments with different hyperparameters, where the parameters of isolation are the initialised weights and architectures would  be very interesting. Nevertheless, scaling will only be possible with significantly more computational and data resources.\\\par
 
-In conclusion, this study provided a pilot baseline understanding of how HOT could begin their open-sourced AI-assisted mapping initiative. The study defined a rigourous experiment and assessment methods which is scalable. With increasing data availability from the OpenAerialMap initiative, this study hope to have made a foundational contribution to a beginning of a much larger study. Perhaps a prequel to which will culminate into an open-sourced AI-assited mapping tool that could help reduce the geospatial data-inequality in the HOT and OpenStreetMap ecosystem.\\\par
+In conclusion, this study provided a pilot diagnostic understanding of how HOT could begin their open-sourced AI-assisted mapping initiative. The study defined a rigourous experiment and assessment methods of which are scalable. With increasing data availability from the OpenAerialMap initiative, this study hope to have made a foundational contribution to a beginning of a much larger study. Future development should focus on expanding this study in a pedantic and controlled way, where hyperparameters and additional input datasets are studied in a structured fashion. This will allow for a data based approach to justify resources for scaling experiemnts and future AI based products.\\\par
 
 \newpage
 
 \chapter{Bibliography}\label{Bib}
 
-Ahmed, N., Mahbub, R.B., Rahman, R.M., 2020. Learning to extract buildings from ultra-high-resolution drone images and noisy labels. International Journal of Remote Sensing 41, 8216–8237. https://doi.org/10.1080/01431161.2020.1763496\\
-Alix-Garcia, J., Walker, S., Bartlett, A., Onder, H., Sanghi, A., 2018. Do refugee camps help or hurt hosts? The case of Kakuma, Kenya. Journal of Development Economics 130, 66–83. https://doi.org/10.1016/j.jdeveco.2017.09.005\\
-Anderson, J., Sarkar, D., Palen, L., 2019. Corporate Editors in the Evolving Landscape of OpenStreetMap. ISPRS International Journal of Geo-Information 8, 232. https://doi.org/10.3390/ijgi8050232\\
-Audebert, N., Boulch, A., Randrianarivo, H., Le Saux, B., Ferecatu, M., Lefèvre, S., Marlet, R., 2017. Deep learning for urban remote sensing, in: 2017 Joint Urban Remote Sensing Event (JURSE). Presented at the 2017 Joint Urban Remote Sensing Event (JURSE), pp. 1–4. https://doi.org/10.1109/JURSE.2017.7924536\\
-Azimi, S.M., Kiefl, R., Gstaiger, V., Bahmanyar, R., Merkle, N., Henry, C., Rosenbaum, D., Kurz, F., 2021. AUTOMATIC OBJECT SEGMENTATION TO SUPPORT CRISIS MANAGEMENT OF LARGE-SCALE EVENTS, in: The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences. Presented at the XXIV ISPRS Congress <q>Imaging today, foreseeing tomorrow</q>, Commission II - 2021 edition, 5&ndash;9 July 2021, Copernicus GmbH, pp. 433–440. https://doi.org/10.5194/isprs-archives-XLIII-B2-2021-433-2021\\
-Bengio, Y., 2012. Practical recommendations for gradient-based training of deep architectures. https://doi.org/10.48550/arXiv.1206.5533\\
-Bengio, Y., Goodfellow, I., Courville, A., 2017. Deep learning. MIT press Cambridge, MA, USA.\\
-Bischl, B., Binder, M., Lang, M., Pielok, T., Richter, J., Coors, S., Thomas, J., Ullmann, T., Becker, M., Boulesteix, A.-L., Deng, D., Lindauer, M., 2021. Hyperparameter Optimization: Foundations, Algorithms, Best Practices and Open Challenges. arXiv:2107.05847 [cs, stat].\\
-Blaschke, T., 2010. Object based image analysis for remote sensing. ISPRS Journal of Photogrammetry and Remote Sensing 65, 2–16. https://doi.org/10.1016/j.isprsjprs.2009.06.004\\
-Blaschke, T., Hay, G.J., Kelly, M., Lang, S., Hofmann, P., Addink, E., Queiroz Feitosa, R., van der Meer, F., van der Werff, H., van Coillie, F., Tiede, D., 2014. Geographic Object-Based Image Analysis – Towards a new paradigm. ISPRS Journal of Photogrammetry and Remote Sensing 87, 180–191. https://doi.org/10.1016/j.isprsjprs.2013.09.014\\
-Bolstad, P., 2019. GIS fundamentals: A first text on geographic information systems. Eider (PressMinnesota).\\
-Bruno, G., Antonelli, D., Stadnicka, D., 2021. Evaluating the effect of learning rate, batch size and assignment strategies on the production performance. Journal of Industrial and Production Engineering 38, 137–147. https://doi.org/10.1080/21681015.2021.1883133\\
-Carrivick, J.L., Smith, M.W., Quincey, D.J., 2016. Structure from Motion in the Geosciences. John Wiley & Sons.\\
-Chen, Z., Scott, T.R., Bearman, S., Anand, H., Keating, D., Scott, C., Arrowsmith, J.R., Das, J., 2020. Geomorphological Analysis Using Unpiloted Aircraft Systems, Structure from Motion, and Deep Learning, in: 2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS). Presented at the 2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 1276–1283. https://doi.org/10.1109/IROS45743.2020.9341354\\
-Cities Alliance, AfDB, 2022. Dynamics of Systems of Secondary Cities in Africa. Brussels.\\
-Congalton, R.G., Green, K., 2019. Assessing the accuracy of remotely sensed data: principles and practices, 3rd ed. CRC press.\\
-CS231n Convolutional Neural Networks for Visual Recognition [WWW Document], n.d. URL https://cs231n.github.io/convolutional-networks/ (accessed 7.4.22).\\
-DrivenData, n.d. Open Cities AI Challenge: Segmenting Buildings for Disaster Resilience [WWW Document]. DrivenData. URL https://www.drivendata.org/competitions/60/building-segmentation-disaster-resilience/page/218/ (accessed 5.11.22).\\
-Elsken, T., Metzen, J.H., Hutter, F., 2019. Neural architecture search: A survey. The Journal of Machine Learning Research 20, 1997–2017.\\
-Gevaert, C.M., Sliuzas, R., Persello, C., Vosselman, G., 2018. Evaluating the Societal Impact of Using Drones to Support Urban Upgrading Projects. ISPRS International Journal of Geo-Information 7, 91. https://doi.org/10.3390/ijgi7030091\\
-Gross, G., n.d. Dzaleka Refugee Camp Extension – Werner Schellenberg. URL http://werner-schellenberg.de/dzaleka-refugee-camp-extension (accessed 6.17.22).\\
-He, F., Liu, T., Tao, D., 2019. Control Batch Size and Learning Rate to Generalize Well: Theoretical and Empirical Evidence, in: Advances in Neural Information Processing Systems. Curran Associates, Inc.\\
-He, K., Gkioxari, G., Dollár, P., Girshick, R., 2018. Mask R-CNN. arXiv:1703.06870 [cs].\\
-Herfort, B., Lautenbach, S., de Albuquerque, J.P., Anderson, J., Zipf, A., 2021. The evolution of humanitarian mapping within the OpenStreetMap community. Scientific reports 11, 1–15.\\
-Herfort, B., Li, H., Fendrich, S., Lautenbach, S., Zipf, A., 2019. Mapping Human Settlements with Higher Accuracy and Less Volunteer Efforts by Combining Crowdsourcing and Deep Learning. Remote Sensing 11, 1799. https://doi.org/10.3390/rs11151799\\
-Hoeser, T., Bachofer, F., Kuenzer, C., 2020. Object detection and image segmentation with deep learning on Earth observation data: A review—Part II: Applications. Remote Sensing 12, 3053.\\
-Hoeser, T., Kuenzer, C., 2020. Object detection and image segmentation with deep learning on earth observation data: A review-part i: Evolution and recent trends. Remote Sensing 12, 1667.\\
-Hofmann, P., Taubenböck, H., Werthmann, C., 2015. Monitoring and modelling of informal settlements - A review on recent developments and challenges, in: 2015 Joint Urban Remote Sensing Event (JURSE). Presented at the 2015 Joint Urban Remote Sensing Event (JURSE), pp. 1–4. https://doi.org/10.1109/JURSE.2015.7120513\\
-Hopfield, J.J., 1982. Neural networks and physical systems with emergent collective computational abilities. PNAS 79, 2554–2558. https://doi.org/10.1073/pnas.79.8.2554\\
-HOTOSM, 2021. Annual Report. HOTOSM, Washington D. C.\\
-Hovil, L., Maple, N., 2022. Local Integration: A Durable Solution in need of Restoration? Refugee Survey Quarterly 41, 238–266. https://doi.org/10.1093/rsq/hdac008\\
-Howard, J., Gugger, S., 2020. Deep Learning for Coders with fastai and PyTorch. O’Reilly Media.\\
-IFC, 2018. Kakuma as a marketplace: a consumer and market study of a refugee camp and town in northwest Kenya (No. 125918). World Bank, Washington D. C.\\
-Jean, N., Burke, M., Xie, M., Davis, W.M., Lobell, D.B., Ermon, S., 2016. Combining satellite imagery and machine learning to predict poverty. Science 353, 790–794. https://doi.org/10.1126/science.aaf7894\\
-Kavalo, E.B., 2016. Environmental and socio-economic impact of hosting refugees : a case study of villages around the Dzaleka refugee camp in Dowa district, Malawi (Master of Science). University of South Africa, Pretoria.\\
-Kingma, D.P., Ba, J., 2017. Adam: A Method for Stochastic Optimization. arXiv:1412.6980 [cs].\\
-Kinsley, H., Kukieła, D., 2020. Neural Networks from Scratch in Python. Harrison Kinsley.\\
-Krizhevsky, A., Sutskever, I., Hinton, G.E., 2012. ImageNet Classification with Deep Convolutional Neural Networks, in: Advances in Neural Information Processing Systems. Curran Associates, Inc.\\
-Kuffer, M., Barros, J., Sliuzas, R.V., 2014. The development of a morphological unplanned settlement index using very-high-resolution (VHR) imagery. Computers, Environment and Urban Systems 48, 138–152. https://doi.org/10.1016/j.compenvurbsys.2014.07.012\\
-Kuffer, M., Grippa, T., Persello, C., Taubenböck, H., Pfeffer, K., Sliuzas, R., 2021. Mapping the Morphology of Urban Deprivation, in: Urban Remote Sensing. John Wiley & Sons, Ltd, pp. 305–323. https://doi.org/10.1002/9781119625865.ch14\\
-Kuffer, M., Pfeffer, K., Sliuzas, R., 2016a. Slums from Space—15 Years of Slum Mapping Using Remote Sensing. Remote Sensing 8, 455. https://doi.org/10.3390/rs8060455\\
-Kuffer, M., Pfeffer, K., Sliuzas, R., Baud, I., 2016b. Extraction of Slum Areas From VHR Imagery Using GLCM Variance. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing 9, 1830–1840. https://doi.org/10.1109/JSTARS.2016.2538563\\
-Kuhn, T.S., 1962. The Structure of Scientific Revolutions, 2nd ed, International International Encyclopedia of Unified Science. The University of Chicago Press, London.\\
-Lai, F., Sharma, A., Liu, X., Yang, X., 2021. Deep Learning for Urban and Landscape Mapping from Remotely Sensed Imagery, in: Urban Remote Sensing. John Wiley & Sons, Ltd, pp. 153–174. https://doi.org/10.1002/9781119625865.ch8\\
-Lang, S., Füreder, P., Riedler, B., Wendt, L., Braun, A., Tiede, D., Schoepfer, E., Zeil, P., Spröhnle, K., Kulessa, K., Rogenhofer, E., Bäuerl, M., Öze, A., Schwendemann, G., Hochschild, V., 2020. Earth observation tools and services to increase the effectiveness of humanitarian assistance. European Journal of Remote Sensing 53, 67–85. https://doi.org/10.1080/22797254.2019.1684208\\
-Lang, S., Hay, G.J., Baraldi, A., Tiede, D., Blaschke, T., 2019. GEOBIA Achievements and Spatial Opportunities in the Era of Big Earth Observation Data. ISPRS International Journal of Geo-Information 8, 474. https://doi.org/10.3390/ijgi8110474\\
-Lang, S., Wendt, L., Tiede, D., Gao, Y., Streifender, V., Zafar, H., Adebayo, A., Schwendemann, G., Jeremias, P., n.d. Multi-Feature Sample Database for Enhancing Deep Learning Tasks in Operational Humanitarian Applications. GI\_Forum 2021, 9, 209–219.\\
-LeCun, Y., Bengio, Y., Hinton, G., 2015. Deep learning. Nature 521, 436–444. https://doi.org/10.1038/nature14539\\
-Leonita, G., Kuffer, M., Sliuzas, R., Persello, C., 2018. Machine Learning-Based Slum Mapping in Support of Slum Upgrading Programs: The Case of Bandung City, Indonesia. Remote Sensing 10, 1522. https://doi.org/10.3390/rs10101522\\
-Ma, L., Liu, Y., Zhang, X., Ye, Y., Yin, G., Johnson, B.A., 2019. Deep learning in remote sensing applications: A meta-analysis and review. ISPRS journal of photogrammetry and remote sensing 152, 166–177.\\
-Marmanis, D., Datcu, M., Esch, T., Stilla, U., 2016. Deep Learning Earth Observation Classification Using ImageNet Pretrained Networks. IEEE Geoscience and Remote Sensing Letters 13, 105–109. https://doi.org/10.1109/LGRS.2015.2499239\\
-Minghini, M., Ludwig, C., Anderson, J., Mooney, P., Grinberger, A.Y., 2021. Proceedings of the Academic Track at State of the Map 2021. Zenodo, online. https://doi.org/10.5281/zenodo.5116434\\
-National Research Council, 1998. People and pixels: Linking remote sensing and social science. National Academies Press.\\
-Ng, A., 2018. Machine Learning Yearning.\\
-Nielsen, M.A., 2015. Neural Networks and Deep Learning. Determination Press.\\
-Pal, N.R., Pal, S.K., 1993. A review on image segmentation techniques. Pattern Recognition 26, 1277–1294. https://doi.org/10.1016/0031-3203(93)90135-J\\
-Perez, L., Wang, J., 2017. The Effectiveness of Data Augmentation in Image Classification using Deep Learning. arXiv:1712.04621 [cs].\\
-Quinn, J.A., Nyhan, M.M., Navarro, C., Coluccia, D., Bromley, L., Luengo-Oroz, M., 2018. Humanitarian applications of machine learning with remote-sensing data: review and case study in refugee settlement mapping. Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences 376, 20170363. https://doi.org/10.1098/rsta.2017.0363\\
-Ren, S., He, K., Girshick, R., Sun, J., 2016. Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks. arXiv:1506.01497 [cs].\\
-Ronneberger, O., Fischer, P., Brox, T., 2015. U-Net: Convolutional Networks for Biomedical Image Segmentation (No. arXiv:1505.04597). arXiv. https://doi.org/10.48550/arXiv.1505.04597\\
-Rosenblatt, F., 1958. The perceptron: A probabilistic model for information storage and organization in the brain. Psychological Review 65, 386–408. https://doi.org/10.1037/h0042519\\
-Rumelhart, D.E., Hinton, G.E., Williams, R.J., 1986. Learning representations by back-propagating errors. Nature 323, 533–536. https://doi.org/10.1038/323533a0\\
-Rummery, A., n.d. Why including refugees makes economic sense [WWW Document]. UNHCR. URL https://www.unhcr.org/news/stories/2019/4/5c9caee84/including-refugees-makes-economic-sense.html (accessed 6.4.22).\\
-Shorten, C., Khoshgoftaar, T.M., 2019. A survey on Image Data Augmentation for Deep Learning. J Big Data 6, 60. https://doi.org/10.1186/s40537-019-0197-0\\
-Simonyan, K., Vedaldi, A., Zisserman, A., 2014. Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps. arXiv:1312.6034 [cs].\\
-Sirko, W., Kashubin, S., Ritter, M., Annkah, A., Bouchareb, Y.S.E., Dauphin, Y., Keysers, D., Neumann, M., Cisse, M., Quinn, J., 2021. Continental-Scale Building Detection from High Resolution Satellite Imagery. arXiv:2107.12283 [cs].\\
-Sliuzas, R., Kuffer, M., Gevaert, C., Persello, C., Pfeffer, K., 2017. Slum mapping, in: 2017 Joint Urban Remote Sensing Event (JURSE). Presented at the 2017 Joint Urban Remote Sensing Event (JURSE), pp. 1–4. https://doi.org/10.1109/JURSE.2017.7924589\\
-Smith, L.N., 2018. A disciplined approach to neural network hyper-parameters: Part 1 -- learning rate, batch size, momentum, and weight decay. arXiv:1803.09820 [cs, stat].\\
-Smith, M.W., Carrivick, J.L., Quincey, D.J., 2016. Structure from motion photogrammetry in physical geography. Progress in Physical Geography: Earth and Environment 40, 247–275. https://doi.org/10.1177/0309133315615805\\
-Stevens, E., Antiga, L., Viehmann, T., 2020. Deep learning with PyTorch. Manning Publications.\\
-Tan, C., Sun, F., Kong, T., Zhang, W., Yang, C., Liu, C., 2018. A Survey on Deep Transfer Learning, in: Kůrková, V., Manolopoulos, Y., Hammer, B., Iliadis, L., Maglogiannis, I. (Eds.), Artificial Neural Networks and Machine Learning – ICANN 2018, Lecture Notes in Computer Science. Springer International Publishing, Cham, pp. 270–279. https://doi.org/10.1007/978-3-030-01424-7\_27\\
-Tan, M., Le, Q.V., 2020. EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks. arXiv:1905.11946 [cs, stat].\\
-Taubenböck, H., Kraff, N.J., Wurm, M., 2018. The morphology of the Arrival City - A global categorization based on literature surveys and remotely sensed data. Applied Geography 92, 150–167. https://doi.org/10.1016/j.apgeog.2018.02.002\\
-Taubenbock, H., Wurm, M., Setiadi, N., Gebert, N., Roth, A., Strunz, G., Birkmann, J., Dech, S., 2009. Integrating remote sensing and social science, in: 2009 Joint Urban Remote Sensing Event. Presented at the 2009 Joint Urban Remote Sensing Event, pp. 1–7. https://doi.org/10.1109/URS.2009.5137506\\
-Turner, S., 2016. What Is a Refugee Camp? Explorations of the Limits and Effects of the Camp. Journal of Refugee Studies 29, 139–148. https://doi.org/10.1093/jrs/fev024\\
-UN, 2015. Transforming Our World: THe 2030 Agenda for Sustainable Development (No. A/RES/70/1). United Nations.\\
-UN DESA, 2019. World Urbanization Prospect: The 2018 Revision (No. ST/ESA/SER.A/420). UN DESA, New York.\\
-UNDS, 2021. The Africa Regional UN Development System Report 2020. The Africa Regional United Nations Development System.\\
-UN-HABITAT, 2021. Kakuma and Kalobeyei Spatial Profile. UN-HABITAT, Nairobi.\\
-UNHCR, 2021. Global Compact on Refugees Indicator Report 2021.\\
-UNHCR, 2014. Malawi: Joint Assessment Mission Report. Dzaleka Refugee Camp (November 2014) (No. WFP/UNHCR/GOM/PRDO/JRS/PLAN). UNHCR, Lilongwe, Malawi.\\
-UNHCR, DANIDA, 2019. The Integrated Solutions Model in and Around Kalobeyei, Turkana, Kenya (No. 978-87-93760-22–6). UNHCR, DANIDA, Copenhagen.\\
-United Nations, 2018. Global Compact on Refugees.\\
-Vakalopoulou, M., Karantzalos, K., Komodakis, N., Paragios, N., 2015. Building detection in very high resolution multispectral data with deep learning features, in: 2015 IEEE International Geoscience and Remote Sensing Symposium (IGARSS). Presented at the 2015 IEEE International Geoscience and Remote Sensing Symposium (IGARSS), pp. 1873–1876. https://doi.org/10.1109/IGARSS.2015.7326158\\
-Venables, A.J., 2018. Urbanisation in Developing Economies: building cities that work. 1 5, 91–100. https://doi.org/10.18335/region.v5i1.245\\
-Wegmann, M., Leutner, B., Dech, S., 2016. Remote sensing and GIS for ecologists: using open source software. Pelagic Publishing Ltd.\\
-Wurm, M., Stark, T., Zhu, X.X., Weigand, M., Taubenböck, H., 2019. Semantic segmentation of slums in satellite images using transfer learning on fully convolutional neural networks. ISPRS Journal of Photogrammetry and Remote Sensing 150, 59–69. https://doi.org/10.1016/j.isprsjprs.2019.02.006\\
-Wurm, M., Weigand, M., Schmitt, A., Geiß, C., Taubenböck, H., 2017. Exploitation of textural and morphological image features in Sentinel-2A data for slum mapping, in: 2017 Joint Urban Remote Sensing Event (JURSE). Presented at the 2017 Joint Urban Remote Sensing Event (JURSE), pp. 1–4. https://doi.org/10.1109/JURSE.2017.7924586\\
-Xu, Y., Wu, L., Xie, Z., Chen, Z., 2018. Building Extraction in Very High Resolution Remote Sensing Imagery Using Deep Learning and Guided Filters. Remote Sensing 10, 144. https://doi.org/10.3390/rs10010144\\
-Yakubovyskiy, P., 2021. Welcome to Segmentation Models’s documentation! — Segmentation Models documentation [WWW Document]. URL https://segmentation-models-pytorch.readthedocs.io/en/latest/index.html (accessed 7.26.22).\\
-Yan-Chak Chan, C., Weigand, M., Alnajar, E.A., Taubenböck, H., 2022. Investigating the capability of UAV imagery for AI-assisted mapping of Refugee Camps in East Africa, in: Proceedings of the Academic Track at State of the Map 2022. Presented at the State of the Map 2022 (SotM 2022), Zenodo, Florence, Italy, p. 45. https://doi.org/10.5281/zenodo.7004576\\
-Yang, A., Fan, H., Jing, N., Sun, Y., Zipf, A., 2016. Temporal Analysis on Contribution Inequality in OpenStreetMap: A Comparative Study for Four Countries. ISPRS International Journal of Geo-Information 5, 5. https://doi.org/10.3390/ijgi5010005\\
-Yu, T., Zhu, H., 2020. Hyper-Parameter Optimization: A Review of Algorithms and Applications. arXiv:2003.05689 [cs, stat].\\
-Zhang, Liangpei, Zhang, Lefei, Du, B., 2016. Deep learning for remote sensing data: A technical tutorial on the state of the art. IEEE Geoscience and remote sensing magazine 4, 22–40.\\
-Zhao, W., Ivanov, I., Persello, C., Stein, A., 2020. Building Outline Delineation: From Very High Resolution Remote Sensing Imagery to Polygons with an Improved End-to-End Learning Framework. The International Archives of Photogrammetry, Remote Sensing and Spatial Information Sciences 43, 731–735.\\
-Zhu, X.X., Tuia, D., Mou, L., Xia, G.-S., Zhang, L., Xu, F., Fraundorfer, F., 2017. Deep Learning in Remote Sensing: A Comprehensive Review and List of Resources. IEEE Geoscience and Remote Sensing Magazine 5, 8–36. https://doi.org/10.1109/MGRS.2017.2762307\\
-Zoph, B., Cubuk, E.D., Ghiasi, G., Lin, T.-Y., Shlens, J., Le, Q.V., 2020. Learning Data Augmentation Strategies for Object Detection, in: Vedaldi, A., Bischof, H., Brox, T., Frahm, J.-M. (Eds.), Computer Vision – ECCV 2020, Lecture Notes in Computer Science. Springer International Publishing, Cham, pp. 566–583. https://doi.org/10.1007/978-3-030-58583-9\_34\\
+\printbibliography
 
 \newpage
 

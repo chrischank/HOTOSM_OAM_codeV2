@@ -1,0 +1,5 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'Thesis_draft0.2.tex.blg'
+[80] biber:340> INFO - === 二 9月 13, 2022, 15:18:05
+[166] Utils.pm:409> ERROR - Cannot find 'Thesis_draft0.2.tex.bcf'!
+[167] Biber.pm:135> INFO - ERRORS: 1
