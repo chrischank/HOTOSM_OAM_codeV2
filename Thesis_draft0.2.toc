@@ -37,7 +37,8 @@
 \contentsline {section}{\numberline {4.4}Dataset-wise Precision and Recall change}{51}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Initialised weight Precision and Recall change}{53}{section.4.5}%
 \contentsline {chapter}{\numberline {5}Conclusion}{56}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Appendix}{58}{chapter.6}%
-\contentsline {subsection}{\numberline {6.0.1}Adam optimiser}{58}{subsection.6.0.1}%
-\contentsline {subsection}{\numberline {6.0.2}EfficientNet}{59}{subsection.6.0.2}%
-\contentsline {subsection}{\numberline {6.0.3}Mean class-based accuracy assessments per experiment}{60}{subsection.6.0.3}%
+\contentsline {chapter}{Bibliography}{58}{chapter*.11}%
+\contentsline {chapter}{\numberline {6}Appendix}{73}{chapter.6}%
+\contentsline {subsection}{\numberline {6.0.1}Adam optimiser}{73}{subsection.6.0.1}%
+\contentsline {subsection}{\numberline {6.0.2}EfficientNet}{74}{subsection.6.0.2}%
+\contentsline {subsection}{\numberline {6.0.3}Mean class-based accuracy assessments per experiment}{75}{subsection.6.0.3}%

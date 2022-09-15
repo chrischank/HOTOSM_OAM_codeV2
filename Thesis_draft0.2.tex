@@ -22,6 +22,7 @@
 \usepackage{fancyhdr, ragged2e}
 \fancyhead{}
 \pagestyle{fancy}
+
 %in the preamble
 %--------------------------------
   \usepackage[
@@ -161,8 +162,12 @@ I confirm that all this work is my own, and that I have
 
 \begin{itemize}
   \item SDG: Sustainable Development Goals
+  \item MDG: Millenium Development Goals
+  \item OSM: OpenStreetMap
   \item HOT: Humanitarian OpenStreetMap Team
+  \item UAV: Unmanned Aerial Vehicle
   \item CV: Computer Vision
+  \item DL: Deep Learning
   \item CNN: Convolutional Neural Network
   \item SGD: Stochastic Gradient Descent
   \item OCC: Open-Cities-AI-Challenge
@@ -203,7 +208,7 @@ Having up-to-date map is therefore paramount for short and long term humanitaria
   \label{fig:data_inequality}
 \end{figure}
 
-Part of the reason for this could be traced to both the knowledge of volunteer contributors and commercial interest, for detailed discussion, see Anderson et al., 2019, Veselovsky et al., 2021 and Yang et al., 2016. As the topic and data provider of this project, the Humanitarian OpenStreetMap Team (herein HOT) have been at the forefront of using open and crowd sourced mapping data to support humanitarian causes from shorter term disaster response to longer epidemiology and microfinance campaigns (HOT, 2021). HOT would like to make use of the recent advancement of Deep Learning in the geospatial field (e.g. Herfort et al., 2019, Kuffer et al., 2016, Wurm et al., 2021, Quinn et al., 2018) to develop an open-sourced, open-data AI-assisted mapping solution to reduce the geospatial data inequality in the OSM ecosystem. The result of this work will form part of the pilot study to trial the use of Unmaned Aerial Vehicle (herein UAV) imagery and existing labelled data in the segmentation of two major refugee camps of East Africa.\\\par
+Part of the reason for this could be traced to both the knowledge of volunteer contributors and commercial interest, for detailed discussion, see Anderson et al., 2019, Veselovsky et al., 2021 and Yang et al., 2016. As the topic and data provider of this project, the Humanitarian OpenStreetMap Team (herein HOT) have been at the forefront of using open and crowd sourced mapping data to support humanitarian causes from shorter term disaster response to longer epidemiology and microfinance campaigns (HOT, 2021). HOT would like to make use of the recent advancement of Deep Learning (herein DL) in the geospatial field (e.g. Herfort et al., 2019, Kuffer et al., 2016, Wurm et al., 2021, Quinn et al., 2018) to develop an open-sourced, open-data AI-assisted mapping solution to reduce the geospatial data inequality in the OSM ecosystem. The result of this work will form part of the pilot study to trial the use of Unmaned Aerial Vehicle (herein UAV) imagery and existing labelled data in the segmentation of two major refugee camps of East Africa.\\\par
 
 \newpage
 
@@ -211,9 +216,9 @@ Part of the reason for this could be traced to both the knowledge of volunteer c
 
 \section{Remote Sensing of Informal Settlements}\label{RSofInformalSettlement}
 
-The complexity of human built environments often consist of using very different materials in conjunction to each other in a dense environment. From power-lines, factories, car-park, to leisure-parks, imaging of urban enviornments therefore requires imagery high in both spatial and temporal resolution. Urban remote sensing calls for techniques that extracts geometry, textural, and other physical features as opposed to the more common spectral based index approach used in ecological or enviornmental remote sensing (Jensen J., 2007, NRC., 1998). Higher granularity urban remote sensing have until very recently remained in the monopoly of defense and reconnaissance services.\\\par
+The complexity of human built environments often consist of using very different materials in conjunction to each other in a dense environment. From power-lines, factories, car-park, to leisure-parks, imaging of urban enviornments therefore requires imagery high in both spatial and temporal resolution. Urban remote sensing calls for techniques that extracts geometry, textural, and other physical features as opposed to the more common spectral based index approach used in ecological or enviornmental remote sensing (Jensen J., 2007, NRC., 1998).\\\par
 
-Informal settlement and slums mapping of developing countries require very high resolution (VHR) images which was unavailable until the turn of the century. The relatively new technology thus only began to gain traction within the last 2 decades. Particularly with the increase in the availability of civilian commercial VHR satellites. Increase in computational power had enabled novel techniques such as multi-layer machine learning, textural analysis, and novel geostatistical methods to emerge (Kuffer et al., 2016). The use of remote sensing derived data for socio-economic proxies have been able to compensate for traditional sources such as temporally infrequent census (e.g. Watmough et al., 2012, Watmough et al., 2015, Watmough et al., 2019) Census especially conducted in developing areas also falls short in capturing socio-spatial patterns, potentially overlooking others socio-economic determinants such as access to amenities and infrastrcture, adequate pro-poor policy development hinges on the availablity of up-to-date and good quality analysis (Kuffer et al., 2016, Sliuzas et al., 2017). Remote sensing of settlements largely falls under 2 categories, rural or urban. Due to the different make-up of socio-economic context and urban morphology, ssensing of rural and urban settlements require different parameters. Additionally, there’s no “one size fit all” way to generalise informal and formal settlement across the world, as physical geography, topography, cultural, and available resources often dictate the distribution, development, and settlement clusters pattern. These unique requirements have thus made deep learning techniques particularly useuful, and many applications of deep learning in remote sensing have therefore been in the urban domain (Ma et al., 2019).
+Informal settlement and slum mapping of developing countries require very high resolution (VHR) images which was unavailable until the turn of the century. The relatively new technology thus only began to gain traction within the last 2 decades. Particularly with the increase in the availability of civilian commercial VHR satellites. Increase in computational power had enabled novel techniques such as multi-layer machine learning, textural analysis, and novel geostatistical methods to emerge (Kuffer et al., 2016). The use of remote sensing derived data for socio-economic proxies have been able to compensate for traditional sources such as temporally infrequent census (e.g. Watmough et al., 2012, Watmough et al., 2015, Watmough et al., 2019) Census especially conducted in developing areas also falls short in capturing socio-spatial patterns, potentially overlooking others socio-economic determinants such as access to amenities and infrastrcture. Therefore, adequate pro-poor policy development hinges on the availablity of up-to-date and good quality analysis (Kuffer et al., 2016, Sliuzas et al., 2017). Remote sensing of settlements largely falls under 2 categories, rural or urban. Due to the different make-up of socio-economic context and urban morphology, ssensing of rural and urban settlements require different parameters. Additionally, there’s no “one size fit all” way to generalise informal and formal settlement across the world, as physical geography, topography, cultural, and available resources often dictate the distribution, development, and settlement clusters pattern. These unique requirements have thus made DL techniques particularly useful, and many applications of DL in remote sensing have therefore been in the urban domain (Ma et al., 2019).
 
 \section{Deep Learning in Urban Remote Sensing}\label{DLinRS}
 
@@ -238,7 +243,7 @@ The purpose of semantic segmentation is to assign a named (semantic) classificat
 
 \subsection{Deep Learning and Convolutional Neural Networks}
 
-The closest resemblance to modern methods first appeared around the 1960s, with the first CNNs appearing around 1980s. However, DL based methodologies went in and out of popularity driven partly by lack of computaional resources and partly the non-linearity of the field's progression (i.e. the parts did not come together at the right time.). Causing the "AI winter" between 1970s to 1990s (Schmidhuber J., 2014). Prior to the resurgence of popularity in DL, the set of methodology now associated with neural networks was known as a multi-layered perceptron. Initially inspired by a mathematical analogy to codify the function of a single neuron by the seminal Psychological review paper published by Rosenblatt F. (1958). Like a human neuron, The properties of a perceptron on the most fundamental level takes an information/numerical input, stores and apply transformation, and create an output (\textit{see equation \ref{weights&bias}}). Through stacking of basic perceptrons, a multi-layered perceptrons structure can be created. In order for such structure to be computationally useful, it must satisfy the following criteria:\\\par
+The closest resemblance to modern methods first appeared around the 1960s, with the first CNNs appearing around 1980s. However, Deep Learning based methodologies went in and out of popularity driven partly by lack of computaional resources and partly the non-linearity of the field's progression (i.e. the parts did not come together at the right time.). Causing the "AI winter" between 1970s to 1990s (Schmidhuber J., 2014). Prior to the resurgence of popularity in DL, the set of methodology now associated with neural networks was known as a multi-layered perceptron. Initially inspired by a mathematical analogy to codify the function of a single neuron by the seminal Psychological review paper published by Rosenblatt F. (1958). Like a human neuron, The properties of a perceptron on the most fundamental level takes an information/numerical input, stores and apply transformation, and create an output (\textit{see equation \ref{weights&bias}}). Through stacking of basic perceptrons, a multi-layered perceptrons structure can be created. In order for such structure to be computationally useful, it must satisfy the following criteria:\\\par
 
 \begin{figure}[H]
 \centering
@@ -900,6 +905,8 @@ Few assumptions could be drawn from the above results. Firstly, depth increase i
   \label{fig:ambiguity}
 \end{figure}
 
+A few shortcomings of this study should also be highlighted. While the standardisation of the batch-size should be in consistency of 32 image and label pairs, the computational constraint of an 8 GB GPU have dicatated that only 16 pairs per batch could be fitted for the \textit{EfficientNet B1 U-Net (OCC)} model. A standardisation of batch-size would have been ideal. However, the prolonged training time required for 16 pairs batch-size is around 3 complete days, thus, a compromise was made for 32 pairs. Another shortcoming was that none of the classical 4-layer and 5-layer U-Nets were tested on pre-trained weights from ImageNet, additional studies will be useful to compare and contrast such changes with the EfficientNet encoders U-Nets pre-trained on ImageNet weights.\\\par
+
 \newpage
 
 \chapter{Conclusion}\label{Conclude}
@@ -910,7 +917,7 @@ Albeit many ambiguitiy and questions remain, there are several key takeaways tha
 
 To narrow down the choices, further investigations will be needed. Scaling from the experimental framework defined for this study could be a good strategy for succession. This will allow for a well-constrainted extension of this study. Additionally, baseline experiments with different hyperparameters, where the parameters of isolation are the initialised weights and architectures would  be very interesting. Nevertheless, scaling will only be possible with significantly more computational and data resources.\\\par
 
-In conclusion, this study provided a pilot diagnostic understanding of how HOT could begin their open-sourced AI-assisted mapping initiative. The study defined a rigourous experiment and assessment methods of which are scalable. With increasing data availability from the OpenAerialMap initiative, this study hope to have made a foundational contribution to a beginning of a much larger study. Future development should focus on expanding this study in a pedantic and controlled way, where hyperparameters and additional input datasets are studied in a structured fashion. This will allow for a data based approach to justify resources for scaling experiemnts and future AI based products.\\\par
+In conclusion, this study provided a pilot diagnostic understanding of how HOT could begin their open-sourced AI-assisted mapping initiative. The study defined a rigourous experiment and assessment methods of which are scalable. With increasing data availability from the OpenAerialMap initiative, this study hope to have made a foundational contribution to a beginning of a much larger study. Future development should focus on expanding this study in a pedantic and controlled fashion. It will be interesting for further research to focus on the inconclusive RQ3 of this study, which concerns the initlaised weights and their influence on the performance on respective architectures, how does scaling of the network size change such influencs. This will allow for a data based approach to justify resources for scaling experiemnts and future AI based products.\\\par
 
 \newpage
 

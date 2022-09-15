@@ -32,5 +32,5 @@
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Ambiguity which arise from labelling could cause a $True\ Positive$ prediction to be classified as $False\ Positive$.}}{55}{figure.4.6}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces The algorithm of Adam (Kingma \& Ba., 2017).}}{58}{figure.6.1}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Compound scaling of the EfficientNet (Tan \& Le, 2020)}}{59}{figure.6.2}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces The algorithm of Adam (Kingma \& Ba., 2017).}}{73}{figure.6.1}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Compound scaling of the EfficientNet (Tan \& Le, 2020)}}{74}{figure.6.2}%
