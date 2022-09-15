@@ -14,19 +14,19 @@
 \contentsline {chapter}{\numberline {3}Data and Methodologies}{22}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Study Areas of Interest}{22}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Kalobeyei, Kakuma, Turkana, Kenya}{22}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}Dzaleka, Dowa, Malawi}{25}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Data}{27}{section.3.3}%
-\contentsline {subsubsection}{Vector pre-processing}{27}{subsubsection*.7}%
-\contentsline {subsection}{\numberline {3.3.1}Raster pre-processing}{29}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Data Augmentation}{30}{subsection.3.3.2}%
-\contentsline {subsubsection}{Pre-trained weights and transfer-learning}{32}{subsubsection*.8}%
-\contentsline {section}{\numberline {3.4}Research Questions and experiment design}{33}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Architecture and hyperparameter selection}{34}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}The U-Net and U-Net variants}{35}{subsection.3.5.1}%
-\contentsline {subsubsection}{Changing the encoder architecture and the EfficientNet family}{35}{subsubsection*.9}%
-\contentsline {section}{\numberline {3.6}Hyperparameters and baseline model perforamce}{37}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Accuracy Assessment}{40}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Binary classification metrics}{41}{subsection.3.7.1}%
+\contentsline {section}{\numberline {3.2}Dzaleka, Dowa, Malawi}{24}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Data}{26}{section.3.3}%
+\contentsline {subsubsection}{Vector pre-processing}{26}{subsubsection*.7}%
+\contentsline {subsection}{\numberline {3.3.1}Raster pre-processing}{28}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Data Augmentation}{29}{subsection.3.3.2}%
+\contentsline {subsubsection}{Pre-trained weights and transfer-learning}{31}{subsubsection*.8}%
+\contentsline {section}{\numberline {3.4}Research Questions and experiment design}{32}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Architecture and hyperparameter selection}{33}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}The U-Net and U-Net variants}{34}{subsection.3.5.1}%
+\contentsline {subsubsection}{Changing the encoder architecture and the EfficientNet family}{34}{subsubsection*.9}%
+\contentsline {section}{\numberline {3.6}Hyperparameters and baseline model perforamce}{36}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Accuracy Assessment}{39}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Binary classification metrics}{40}{subsection.3.7.1}%
 \contentsline {subsection}{\numberline {3.7.2}Statistical analysis metrics}{42}{subsection.3.7.2}%
 \contentsline {subsubsection}{Intersection-over-Union}{43}{subsubsection*.10}%
 \contentsline {subsection}{\numberline {3.7.3}Project workflow}{44}{subsection.3.7.3}%
@@ -37,23 +37,7 @@
 \contentsline {section}{\numberline {4.4}Dataset-wise Precision and Recall change}{51}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Initialised weight Precision and Recall change}{53}{section.4.5}%
 \contentsline {chapter}{\numberline {5}Conclusion}{56}{chapter.5}%
-\contentsline {chapter}{Bibliography}{58}{chapter*.11}%
-\contentsline {chapter}{\numberline {6}Appendix}{73}{chapter.6}%
-\contentsline {subsection}{\numberline {6.0.1}Adam optimiser}{73}{subsection.6.0.1}%
-\contentsline {subsection}{\numberline {6.0.2}EfficientNet}{74}{subsection.6.0.2}%
-\contentsline {subsection}{\numberline {6.0.3}Experiment data}{75}{subsection.6.0.3}%
-\contentsline {subsubsection}{[Kalobeyei] 4-layer U-Net}{75}{subsubsection*.12}%
-\contentsline {subsubsection}{[Kalobeyei] 5-layer U-Net}{80}{subsubsection*.13}%
-\contentsline {subsubsection}{[Kalobeyei] EfficientNet B1 U-Net (ImageNet)}{85}{subsubsection*.14}%
-\contentsline {subsubsection}{[Kalobeyei] EfficientNet B1 U-Net (No ImageNet)}{90}{subsubsection*.15}%
-\contentsline {subsubsection}{[Kalobeyei] EfficientNet B1 U-Net (OCC transfered-untrained)}{94}{subsubsection*.16}%
-\contentsline {subsubsection}{[Kalobeyei] EfficientNet B1 U-Net (OCC transfered-trained)}{100}{subsubsection*.17}%
-\contentsline {subsubsection}{[Kalobeyei] EfficientNet B2 U-Net (No ImageNet)}{110}{subsubsection*.18}%
-\contentsline {subsubsection}{[All dataset] 4-layer U-Net}{115}{subsubsection*.19}%
-\contentsline {subsubsection}{[All dataset] 5-layer U-Net}{131}{subsubsection*.20}%
-\contentsline {subsubsection}{[All dataset] EfficientNet B1 U-Net (ImageNet)}{147}{subsubsection*.21}%
-\contentsline {subsubsection}{[All dataset] EfficientNet B1 U-Net (No ImageNet)}{163}{subsubsection*.22}%
-\contentsline {subsubsection}{[All dataset] EfficientNet B1 U-Net (OCC transfered-untrained)}{179}{subsubsection*.23}%
-\contentsline {subsubsection}{[All dataset] EfficientNet B1 U-Net (OCC transfered-trained)}{195}{subsubsection*.24}%
-\contentsline {subsubsection}{[All dataset] EfficientNet U-Net B2 (ImageNet)}{211}{subsubsection*.25}%
-\contentsline {subsubsection}{[All dataset] EfficientNet B2 U-Net (No ImageNet)}{227}{subsubsection*.26}%
+\contentsline {chapter}{\numberline {6}Appendix}{58}{chapter.6}%
+\contentsline {subsection}{\numberline {6.0.1}Adam optimiser}{58}{subsection.6.0.1}%
+\contentsline {subsection}{\numberline {6.0.2}EfficientNet}{59}{subsection.6.0.2}%
+\contentsline {subsection}{\numberline {6.0.3}Mean class-based accuracy assessments per experiment}{60}{subsection.6.0.3}%
