@@ -1,6 +1,5 @@
 # Code produced for the academic abstract
-# "Investigating the capability of UAV imagery for AI-assisted mapping of Refugee Camps in East Africa"
-https://zenodo.org/record/7004576#.Yv4xNRVBzt8
+["Investigating the capability of UAV imagery for AI-assisted mapping of Refugee Camps in East Africa"](https://zenodo.org/record/7004576#.Yv4xNRVBzt8)
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/36608720/183308388-a041ceea-fdee-4895-8655-4853b3dbb9d8.png"/>
