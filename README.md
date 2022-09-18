@@ -5,7 +5,7 @@
   <img src="https://user-images.githubusercontent.com/36608720/183308388-a041ceea-fdee-4895-8655-4853b3dbb9d8.png"/>
 </p>
 
-This github repository is the code-base for the Master Thesis submitted for the Master der Naturwissenschaften in Applied Earth Observation and Geoanalysis of the Living Environment (EAGLE) at the Julius-Maximilians-Universität Würzburg.
+This github repository is the code-base for the Master Thesis submitted for the Master der Naturwissenschaften in Applied Earth Observation and Geoanalysis of the Living Environment (EAGLE) at the Julius-Maximilians-Universität Würzburg. For Full Master thesis draft, see [Thesis_draft0.2.pdf](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/Thesis_draft0.2.pdf)
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/36608720/166689718-e570c0f4-e09d-49da-80c3-58f062d04896.png"/>
@@ -44,7 +44,7 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 8. Clean the stacked and cropped raster for no labels and non conformity using [KBY_clean.ipynb](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/KBY_clean.ipynb)\
 *9. Change the tiff to png, and delete the tiff using [tiff2png.sh](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/tiff2png.sh)
 
-*.sh scripts are Unix instructed shell script. Run these scripts using ./<name of file>.sh on your Linux terminal. If you are using windows machine, you can run these scripts using [Cygwin](https://www.cygwin.com/) or [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)
+*.sh scripts are Unix instructed shell script. Run these scripts using ./NAME_OF_SHELL_SCRIPT.sh on your Linux terminal. If you are using windows machine, you can run these scripts using [Cygwin](https://www.cygwin.com/) or [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)
 
 **gdal is an open-source geospatial processing library. Which contains many shell and python scripts executing processes with good memory efficiency.
 
