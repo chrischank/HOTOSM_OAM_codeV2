@@ -1,4 +1,6 @@
-# HOTOSM_OAM_codeV2
+# Code produced for the academic abstract
+# "Investigating the capability of UAV imagery for AI-assisted mapping of Refugee Camps in East Africa"
+https://zenodo.org/record/7004576#.Yv4xNRVBzt8
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/36608720/183308388-a041ceea-fdee-4895-8655-4853b3dbb9d8.png"/>
@@ -31,27 +33,35 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 </p>
 
 ## Pre-processing pipeline
-1. Download, extract and reproject OpenAerialMap WMS raster using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/curl_warp.sh
-2. Rasterise available vector labels using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/rasterise_LBL.sh
-3. 2-step normalisation (z-score --> linear scale) using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/labelmaker.ipynb
-4. Split the RGB into separate tif using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/RGB_split.sh
-5. Create virtual raster with 4 bands (R, G, B, Labels) using https://gdal.org/programs/gdalbuildvrt.html
-6. From VRT make permenant raster tif using https://gdal.org/programs/gdal_translate.html
-7. Return to labelmaker.ipynb and crop the stacked raster using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/labelmaker.ipynb
-8. Clean the stacked and cropped raster for no labels and non conformity using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/KBY_clean.ipynb
-9. Change the tiff to png, and delete the tiff using https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/tiff2png.sh
+## Before any process are ran, please ensure you have the capability to run shell scripts and have [gdal](https://gdal.org/), and [PyTorch](https://pytorch.org/) installed.
+
+*1. Download, extract and reproject OpenAerialMap WMS raster using [curl_warp.sh](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/curl_warp.sh)\
+*2. Rasterise available vector labels using [rasterise_LBL.sh](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/rasterise_LBL.sh)\
+3. 2-step normalisation (z-score --> linear scale) using [labelmaker.ipynb](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/labelmaker.ipynb)\
+*4. Split the RGB into separate tif using [RGB_split.sh](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/RGB_split.sh)\
+**5. Create virtual raster with 4 bands (R, G, B, Labels) using [gdalbuildvrt](https://gdal.org/programs/gdalbuildvrt.html)\
+**6. From VRT make permenant raster tif using [gdal_translate](https://gdal.org/programs/gdal_translate.html)\
+7. Return to labelmaker.ipynb and crop the stacked raster using [labelmaker.ipynb](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/labelmaker.ipynb)\
+8. Clean the stacked and cropped raster for no labels and non conformity using [KBY_clean.ipynb](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/KBY_clean.ipynb)\
+*9. Change the tiff to png, and delete the tiff using [tiff2png.sh](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/tiff2png.sh)
+
+*.sh scripts are Unix instructed shell script. Run these scripts using ./<name of file>.sh on your Linux terminal. If you are using windows machine, you can run these scripts using [Cygwin](https://www.cygwin.com/) or [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)
+
+**gdal is an open-source geospatial processing library. Which contains many shell and python scripts executing processes with good memory efficiency.
 
 ## Training pipeline
-1. Dataloader https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/dataloader.py
-2. Training loop https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/Train_loop.ipynb
+1. Dataloader [dataloader.py](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/dataloader.py)
+2. Training loop [Train_loop.ipynb](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/Train_loop.ipynb)
+3. Some classical U-Nets are available as class objects through [Networks.py](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/Networks.py)
 
 ## Exploratory Data Analysis
-1. See example https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/EDA_BASEruns.ipynb
-2. https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/PR_delta.ipynb
+See example:
+1. [EDA_BASEruns.ipynb](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/EDA_BASEruns.ipynb)
+2. [PR_delta.ipynb](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/PR_delta.ipynb)
 
 ## Testing and Predicion
-1. For single image testing on various networks see https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/ALLtest_model.ipynb
-2. For custom function to parse each camp and predict using a trained network, see https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/dev/PredSeg_Camp.ipynb
+1. For single image testing on various networks see [ALLtest_model.ipynb](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/ALLtest_model.ipynb)
+2. For custom function to parse each camp and predict using a trained network, see [PredSeg_Camp.ipynb](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/PredSeg_Camp.ipynb)
   
 ## Baseline training results for Kalobeyei, Kakuma (perfect dataset)
 - Dataset: 256x256 px. 0.15 m/px.
