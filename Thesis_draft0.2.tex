@@ -228,7 +228,7 @@ The following section will be divided into 3 parts. The first part reviews the c
 
 Computer Vision is a practice of extracting information from digitised imagery, first applied in robotics, it has become an interdisciplinary field of study utilised by medicine, biologist, and remote sensing scientists alike (Rosenfeld A., 1988, Szeliski R., 2010).\\\par
 
-The field of CV traditionally used mathematical operations that are applied on the imagery represented as multi-dimensional arrays. These include point-and-local operations, statistical computation, geometric operations, transformations, and extraction of geometric entities, for detail discussion see Rosenfeld A. (1988). The following decades saw CV operations developed into more specialised applications. For example, edge detectors (e.g. Sobel, Prewitt, Marr-Hildreth) or Grey-Level Co-occurence Matrix kernel (e.g. Haralich Texture) (e.g. Kuffer et al., 2014, Kuffer et al., 2016, Wurm et al., 2017) (Pal \& Pal, 1993, Blaschke T., 2010, Blaschke et al., 2014). CV based segmentation experienced an akin to a Kuhnian paradigm shift (Kuhn T., 1962) when AlexNet, a Convolutional Neural Network trained on a GPU (Krizhevsky et al., 2012) won the preeminent large-scale ImageNet CV challenge (Deng et al., 2009), it reinvigorated the use of multi-layered neural network in CV tasks (LeCun et al., 2015, Bengio et al., 2017). The timing of the paradigm shift coincided with the increase in computation power provided by Graphical Processing Unit (GPU) have enabled CNNs to be successfully applicated across domains ranging from biomedical imaging to remote sensing (Ma et al., 2018, Zhu et al., 2017, Zhang et al., 2016, Wurm et al., 2019).\\\par
+The field of CV traditionally used mathematical operations that are applied on the imagery represented as multi-dimensional arrays. These include point-and-local operations, statistical computation, geometric operations, transformations, and extraction of geometric entities, for detail discussion see Rosenfeld A. (1988). The following decades saw CV operations developed into more specialised applications. For example, edge detectors (e.g. Sobel, Prewitt, Marr-Hildreth) or Grey-Level Co-occurence Matrix kernel (e.g. Haralick Texture) (e.g. Kuffer et al., 2014, Kuffer et al., 2016, Wurm et al., 2017) (Pal \& Pal, 1993, Blaschke T., 2010, Blaschke et al., 2014). CV based segmentation experienced an akin to a Kuhnian paradigm shift (Kuhn T., 1962) when AlexNet, a Convolutional Neural Network trained on a GPU (Krizhevsky et al., 2012) won the preeminent large-scale ImageNet CV challenge (Deng et al., 2009), it reinvigorated the use of multi-layered neural network in CV tasks (LeCun et al., 2015, Bengio et al., 2017). The timing of the paradigm shift coincided with the increase in computation power provided by Graphical Processing Unit (GPU) have enabled CNNs to be successfully applicated across domains ranging from biomedical imaging to remote sensing (Ma et al., 2018, Zhu et al., 2017, Zhang et al., 2016, Wurm et al., 2019).\\\par
 
 In the field of CV, there is generally 4 types of application: 1. Semantic segmentation, 2. Classification and localisation, 3. Object detection, and 4. Instance segmentation (\textit{see figure {\ref{fig:CV_tasks}}}) (Stevens et al., 2020). This study will conduct semantic segmentation of binary classification between built-up and no built-up.\\\par
 
@@ -273,7 +273,7 @@ The closest resemblance to modern methods first appeared around the 1960s, with 
   \item Through training, perceptrons will learn to apply positive or negative reinforcement to facilitate minimising error (e.g. assigning and changing "weights").
 \end{enumerate}
 
-The particular group of such perceptron structures used in CVs are known as Convolutional Neural Network (herein CNN) The most basics of CNN consist of 3 parts: 1. A hidden layer, 2. Multiple hidden convolution and pool layers, 3. An output layer which provides with the segmentation result and the associated confidence level (\textit{see figure \ref{fig:NeuronPerceptron} & \ref{fig:ConvNet}}). Therefore, a Deep-Learning Neural Network system is string together by a series of inter-connected layer of which its parameters are adjustable to adapt to the data provided. Through careful iterative training and adjustment, the system can generalise well not only to the training and validation data, but to future datasets as well.\\\par
+The particular group of such perceptron structures used in CVs are known as Convolutional Neural Network (herein CNN) The most basics of CNN consist of 3 parts: 1. An input layer, 2. Multiple hidden convolution and pool layers, 3. An output layer which provides with the segmentation result and the associated confidence level (\textit{see figure \ref{fig:NeuronPerceptron} & \ref{fig:ConvNet}}). Therefore, a Deep-Learning Neural Network system is string together by a series of inter-connected layer of which its parameters are adjustable to adapt to the data provided. Through careful iterative training and adjustment, the system can generalise well not only to the training and validation data, but to future datasets as well.\\\par
 
 \begin{figure}[H]
 \centering
@@ -378,6 +378,13 @@ Essentially, using CNN and DL methods to perform semantic segmentation through r
 \chapter{Data and Methodologies}\label{DataandMethods}
 
 \section{Study Areas of Interest}\label{AOI}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale = 0.3]{AOI.jpg}
+  \caption{The Kalobeyei and Dzaleka camps respective location in East Africa,}
+  \label{fig:AOI}
+\end{figure}
 
 \subsection{Kalobeyei, Kakuma, Turkana, Kenya}\label{Kalobeyei}
 
