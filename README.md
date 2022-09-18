@@ -25,6 +25,23 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
   <img src="https://user-images.githubusercontent.com/36608720/181209381-93c4d351-f530-4625-a497-246676a12848.png"/>
 </p>
 
+## Research Questions and Answers
+### RQ1. Do state-of-the-art models allow for accurate detection of buildings from UAV data in refugee camps?\
+### RQ2. What is the optimal mixture of accurate and less-accurate labels and how does that affect the segmentation output result?\
+#### RQ2(a). How does the introduction of complex environment such as heterogeneous urban morphologies, roofing materials, and UAV drone artefacts affect result?\
+
+Shallow EfficientNet encoders U-Nets performed slightly better in Precision, Dice Score, and IoU on less-complicated accurately labelled Kalobeyei dataset\
+
+BUT, they suffer larger performace loss than classical U-Nets when complex data were introduced\
+
+### RQ3. How do existing models pre-trained on classical CV datasets and/or building datasets response when applied to the setting of refugee camps?\
+
+Further training of the EfficientNet B1 U-Net (OCC initalised) have largest improvement in Recall\
+
+Architectures with ImageNet initialisation only saw improvement with EfficientNet B1 encoder but not B2\
+
+Inconclusive
+
 ## Experimental setup
 
 <p align="center">
@@ -32,7 +49,7 @@ HOTOSM would like to develop a solution for assisted mapping which can predict b
 </p>
 
 ## Pre-processing pipeline
-## Before any process are ran, please ensure you have the capability to run shell scripts and have [gdal](https://gdal.org/), and [PyTorch](https://pytorch.org/) installed.
+### Before any process are ran, please ensure you have the capability to run shell scripts and have [gdal](https://gdal.org/), and [PyTorch](https://pytorch.org/) installed.
 
 *1. Download, extract and reproject OpenAerialMap WMS raster using [curl_warp.sh](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/curl_warp.sh)\
 *2. Rasterise available vector labels using [rasterise_LBL.sh](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/rasterise_LBL.sh)\
@@ -142,3 +159,9 @@ See example:
   <img src="https://user-images.githubusercontent.com/36608720/189318135-dca2eb36-1fe3-497a-ab32-b7757b874950.png"/>
   <img src="https://user-images.githubusercontent.com/36608720/189318179-ea5819e6-2270-4cc4-9c75-feeebd880ed8.png"/>
 </p>
+
+## Key takeaways
+1. Deeper network tends to reduce the classification of False Positive
+2. Architectures trained with initialised weights from ImageNet tends to reduce the classification of False Negative
+3. Transferability of competition winning network is limited
+4. Models might have better precision than calculated due to Human labelling ambiguity
