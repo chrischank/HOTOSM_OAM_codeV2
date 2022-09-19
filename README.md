@@ -5,7 +5,7 @@
   <img src="https://user-images.githubusercontent.com/36608720/183308388-a041ceea-fdee-4895-8655-4853b3dbb9d8.png"/>
 </p>
 
-This github repository is the code-base for the Master Thesis submitted for the Master der Naturwissenschaften in Applied Earth Observation and Geoanalysis of the Living Environment (EAGLE) at the Julius-Maximilians-Universität Würzburg. For Full Master thesis draft, see [Thesis_draft0.2.pdf](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/Thesis_draft0.2.pdf)
+This github repository is the code-base for the Master Thesis submitted for the Master der Naturwissenschaften in Applied Earth Observation and Geoanalysis of the Living Environment (EAGLE) at the Julius-Maximilians-Universität Würzburg. For Full Master thesis draft, see [Thesis_draft0.2.pdf](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/Thesis_draft0.2.pdf) <-- This is still being formatted and have not been assessed, read with a grain of salt.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/36608720/166689718-e570c0f4-e09d-49da-80c3-58f062d04896.png"/>
