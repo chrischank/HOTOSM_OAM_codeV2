@@ -69,6 +69,7 @@ Inconclusive
 1. Dataloader [dataloader.py](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/dataloader.py)
 2. Training loop [Train_loop.ipynb](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/Train_loop.ipynb)
 3. Some classical U-Nets are available as class objects through [Networks.py](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/Networks.py)
+4. Otherwise, the rest of the CNNs are constructed using higher level API [segmentation-models-pytorch](https://segmentation-models-pytorch.readthedocs.io/en/latest/models.html)
 
 ## Exploratory Data Analysis
 See example:
@@ -87,7 +88,7 @@ See example:
 - Optimiser: Adam
 - Learning rate: 1e-3
 - Weight decay: 1e-5
-- Batch size: 32, 16(qubvel - 5 layer EB1-Unet)
+- Batch size: 32, 16(OCC - 5 layer EB1-Unet)
 - Scheduler: Reduce Learning Rate on Plateau(min 1e-8) [Patient: 20 epochs, factor: 0.1]
 
 ![256KBYFour-UnetBASE](https://user-images.githubusercontent.com/36608720/182344718-42d07704-9fbe-4f47-8bc4-985d87a5ad49.png)
@@ -105,7 +106,7 @@ See example:
 - Optimiser: Adam
 - Learning rate: 1e-3
 - Weight decay: 1e-5
-- Batch size: 32, 16(qubvel - 5 layer EB1-Unet)
+- Batch size: 32, 16(OCC - 5 layer EB1-Unet)
 - Scheduler: Reduce Learning Rate on Plateau(min 1e-8) [Patient: 20 epochs, factor: 0.1]
 
 ![256ALLFour-UnetBASE](https://user-images.githubusercontent.com/36608720/182214024-858a851c-7cd0-48cb-bcbd-44bacf714f7e.png)
