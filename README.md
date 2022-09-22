@@ -51,7 +51,7 @@ Inconclusive
 ## Pre-processing pipeline
 ### Before any process are ran, please ensure you have the capability to run shell scripts and have [gdal](https://gdal.org/), and [PyTorch](https://pytorch.org/) installed.
 
-*1. Download, extract and reproject OpenAerialMap WMS raster using [curl_warp.sh](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/curl_warp.sh)\
+*1. Download, extract, reproject, and resample OpenAerialMap WMS raster using [curl_warp.sh](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/curl_warp.sh)\
 *2. Rasterise available vector labels using [rasterise_LBL.sh](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/rasterise_LBL.sh)\
 3. 2-step normalisation (z-score --> linear scale) using [labelmaker.ipynb](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/labelmaker.ipynb)\
 *4. Split the RGB into separate tif using [RGB_split.sh](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/RGB_split.sh)\
