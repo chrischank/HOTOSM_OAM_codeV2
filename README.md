@@ -61,8 +61,8 @@ Inconclusive
 8. Clean the stacked and cropped raster for no labels and non conformity using [KBY_clean.ipynb](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/KBY_clean.ipynb)\
 *9. Change the tiff to png, and delete the tiff using [tiff2png.sh](https://github.com/chrischank/HOTOSM_OAM_codeV2/blob/master/tiff2png.sh)
 
-*.sh scripts are Unix instructed shell script. Run these scripts using ./NAME_OF_SHELL_SCRIPT.sh on your Linux terminal. If you are using windows machine, you can run these scripts using [Cygwin](https://www.cygwin.com/) or [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)
-*Take extra care that many shell scrip have targetted reprojection EPSG projection automatically set to map projection [EPSG:3857](https://epsg.io/3857). You might want to change that depending on your usage.
+*.sh scripts are Unix instructed shell script. Run these scripts using ./NAME_OF_SHELL_SCRIPT.sh on your Linux terminal. If you are using windows machine, you can run these scripts using [Cygwin](https://www.cygwin.com/) or [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)\
+*Take extra care that many shell scrip have targetted reprojection EPSG projection automatically set to map projection [EPSG:3857](https://epsg.io/3857). You might want to change that depending on your usage.\
 **gdal is an open-source geospatial processing library. Which contains many shell and python scripts executing processes with good memory efficiency.
 
 ## Training pipeline
