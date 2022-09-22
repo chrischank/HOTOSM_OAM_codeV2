@@ -21,10 +21,10 @@
 \contentsline {subsection}{\numberline {3.3.2}Data Augmentation}{30}{subsection.3.3.2}%
 \contentsline {subsubsection}{Pre-trained weights and transfer-learning}{32}{subsubsection*.8}%
 \contentsline {section}{\numberline {3.4}Research Questions and experiment design}{33}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Architecture and hyperparameter selection}{34}{section.3.5}%
+\contentsline {section}{\numberline {3.5}Architecture and hyperparameter selection}{35}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}The U-Net and U-Net variants}{35}{subsection.3.5.1}%
-\contentsline {subsubsection}{Changing the encoder architecture and the EfficientNet family}{35}{subsubsection*.9}%
-\contentsline {section}{\numberline {3.6}Hyperparameters and baseline model perforamce}{37}{section.3.6}%
+\contentsline {subsubsection}{Changing the encoder architecture and the EfficientNet family}{36}{subsubsection*.9}%
+\contentsline {section}{\numberline {3.6}Hyperparameters and baseline model perforamce}{38}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Accuracy Assessment}{40}{section.3.7}%
 \contentsline {subsection}{\numberline {3.7.1}Binary classification metrics}{41}{subsection.3.7.1}%
 \contentsline {subsection}{\numberline {3.7.2}Statistical analysis metrics}{43}{subsection.3.7.2}%

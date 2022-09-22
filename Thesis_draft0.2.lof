@@ -13,12 +13,12 @@
 \contentsline {figure}{\numberline {3.3}{\ignorespaces RGB UAV imagery of the Kalobeyei settlements in rural Turkana from OpenAerialMap}}{25}{figure.3.3}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces The main Dzaleka Refugee Camp and the Katubza extension plan (Dzaleka North) designed by Urban Design Advisor to the UNHCR Werner Schnellenberg (Gross G., 2021).}}{26}{figure.3.4}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Digitised rooftop of the Dzaleka and Dzaleka North camps by HOT volunteers}}{27}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Motion artefacts unique to UAV imagery}}{28}{figure.3.6}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Motion artefacts unique to UAV imagery}}{29}{figure.3.6}%
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Perhaps geometric augmentation of horizontal flipping shall not be applied on the MNIST number of 5}}{31}{figure.3.7}%
 \contentsline {figure}{\numberline {3.8}{\ignorespaces An example of Inverse RGB augmentation applied to the Train dataset.}}{32}{figure.3.8}%
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Collections of diverse and heterogeneous rooftops from the Kalobeyei, Dzaleka, and Dzaleka North datasets.}}{34}{figure.3.9}%
 \contentsline {figure}{\numberline {3.10}{\ignorespaces The Encoder-Decoder U-Net architecture (Ronneberger et al., 2015, Seale et al., 2022)}}{35}{figure.3.10}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces EfficientNet family Top 1\% Accuracy Assessment in ImageNet (Tan \& Le, 2020).}}{36}{figure.3.11}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces EfficientNet family Top 1\% Accuracy Assessment in ImageNet (Tan \& Le, 2020).}}{37}{figure.3.11}%
 \contentsline {figure}{\numberline {3.12}{\ignorespaces The Confusion Matrix}}{40}{figure.3.12}%
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Examples of theoretical binary building classification.}}{41}{figure.3.13}%
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Schematic diagram of Intersection-over-Union}}{44}{figure.3.14}%
