@@ -800,7 +800,7 @@ An interesting observation is that with the \textit{EfficientNet B1 U-Net} and t
 
 \section{Discission}\label{Discussion}
 
-\section{Depth-wise Precision and Recall change}\label{depth_change}
+\subsection{Depth-wise Precision and Recall change}\label{depth_change}
 
 \begin{table}[H]
   \centering
@@ -833,7 +833,7 @@ An interesting observation is that with the \textit{EfficientNet B1 U-Net} and t
 
 There is a common misconception in the DL realm that deeper networks would always perform better. The comparison in \textit{table \ref{table:depth-wise_change}} in a limited scope tries to address this question, the result suggests that improvements in both \textit{Precision} and \textit{Recall} only happened in non-weight initialised depth increase from \textit{EfficientNet B1 to B2 U-Net} trained on all datasets, achieving both the highest rate of increase in both metrics. In comparison to the same architecture change and datset input with initalised weights from ImageNet, both metrics experienced a decrease. Meanwhile, in other experiment setup, no significant trends can be drawn and thus the assumption does not hold. Although results might differ drastically with increase of dataset, increase in batch size, and when experimenting with much deeper architectures which was unfortunately not available to this study due to computation constraints.\\\par
 
-\section{Dataset-wise Precision and Recall change}\label{data_change}
+\subsection{Dataset-wise Precision and Recall change}\label{data_change}
 
 \begin{table}[H]
   \centering
@@ -869,7 +869,7 @@ There is a common misconception in the DL realm that deeper networks would alway
 
 With the Kalobeyei (KBY) dataset as constant, the introduction of the Dzaleka (DZK) and the Dzaleka North (DZKN) datasets have resulted in the reduction in \textit{Precision} and \textit{Recall} for all architectures with or without pre-trained weights. Table \ref{table:data-wise_change} might suggest that the least reduction in \textit{Precision} came from the \textit{EfficientNet B1 U-Net} initalised on OCC building segmentation weights. However, figures \ref{fig:output} and \ref{fig:Cat_CAA} informs that with such poor \textit{Dice Score} and \textit{IoU}, it reflects that the OCC competition winning network is being either very confident at the segmentation or completely missing the complex buildings. Thus, the \textit{Precision} diverge from the \textit{Recall} results and the statistics (\textit{see figure \ref{fig:data_stripplot}}) suggests prediction results with high $False\ Negative$ and therefore does not reflect overall performance. The \textit{5-layer U-Net} had a much more corresponding result between the \textit{Precision} and \textit{Recall} which shows the metrics are least affected by the introduction of the Dzaleka camps datasets. However, it does not seem to be the case that deeper or shallower version of the architectures cause more or less reduction. This means that for \textit{RQ2(a)}, conclusion can only be made for the shallow EfficientNet encoders, where they perform better than the classic U-Nets only in the simple Kalobeyei (KBY) dataset, however they suffer larger performance loss than the classic U-Nets when complex data (DZK + DZKN) were introduced.\\\par
 
-\section{Initialised weight Precision and Recall change}\label{weight_change}
+\subsection{Initialised weight Precision and Recall change}\label{weight_change}
 
 \begin{table}[H]
   \centering
