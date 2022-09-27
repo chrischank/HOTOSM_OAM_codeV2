@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'Thesis_draft0.2.blg'
-[80] biber:340> INFO - === 四 9月 15, 2022, 23:28:48
-[94] Biber.pm:418> INFO - Reading 'Thesis_draft0.2.bcf'
-[160] Biber.pm:969> INFO - Using all citekeys in bib section 0
-[173] Biber.pm:4383> INFO - Processing section 0
-[185] Biber.pm:4574> INFO - Looking for bibtex file 'HOTOSM.bib' for section 0
-[200] bibtex.pm:1713> INFO - LaTeX decoding ...
-[417] bibtex.pm:1518> INFO - Found BibTeX data source 'HOTOSM.bib'
-[1267] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1267] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1267] Biber.pm:4203> INFO - Sorting list 'anyvt/global//global/global' of type 'entry' with template 'anyvt' and locale 'en-GB'
-[1267] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-GB'
-[1379] bbl.pm:654> INFO - Writing 'Thesis_draft0.2.bbl' with encoding 'UTF-8'
-[1489] bbl.pm:757> INFO - Output to Thesis_draft0.2.bbl
+[90] biber:340> INFO - === 二 9月 27, 2022, 19:10:11
+[107] Biber.pm:418> INFO - Reading 'Thesis_draft0.2.bcf'
+[180] Biber.pm:969> INFO - Using all citekeys in bib section 0
+[195] Biber.pm:4383> INFO - Processing section 0
+[206] Biber.pm:4574> INFO - Looking for bibtex file 'HOTOSM.bib' for section 0
+[222] bibtex.pm:1713> INFO - LaTeX decoding ...
+[488] bibtex.pm:1518> INFO - Found BibTeX data source 'HOTOSM.bib'
+[1560] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1560] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1560] Biber.pm:4203> INFO - Sorting list 'anyvt/global//global/global' of type 'entry' with template 'anyvt' and locale 'en-GB'
+[1560] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-GB'
+[1694] bbl.pm:654> INFO - Writing 'Thesis_draft0.2.bbl' with encoding 'UTF-8'
+[1827] bbl.pm:757> INFO - Output to Thesis_draft0.2.bbl
