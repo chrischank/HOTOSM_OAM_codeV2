@@ -1,0 +1,44 @@
+\babel@toc {british}{}\relax 
+\contentsline {section}{\numberline {0.1}Forewords and Acknowledgements}{iii}{section.0.1}%
+\contentsline {section}{\numberline {0.2}Declaration of Independent Work}{iv}{section.0.2}%
+\contentsline {section}{\numberline {0.3}Abbreviations}{6}{section.0.3}%
+\contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Literature Review}{12}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Remote Sensing of Informal Settlements}{12}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Deep Learning in Urban Remote Sensing}{13}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Computer Vision and a brief review of Convolutional Neural Networks}{13}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Deep Learning and Convolutional Neural Networks}{15}{subsection.2.2.2}%
+\contentsline {subsubsection}{Convolution and Pooling}{17}{subsubsection*.4}%
+\contentsline {subsubsection}{Optimiser and the Binary Cross Entropy Loss function}{19}{subsubsection*.5}%
+\contentsline {subsubsection}{Backpropagation and the chain rule}{20}{subsubsection*.6}%
+\contentsline {chapter}{\numberline {3}Data and Methodologies}{22}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Study Areas of Interest}{22}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Kalobeyei, Kakuma, Turkana, Kenya}{22}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Dzaleka, Dowa, Malawi}{25}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Data}{27}{section.3.3}%
+\contentsline {subsubsection}{Vector pre-processing}{27}{subsubsection*.7}%
+\contentsline {subsection}{\numberline {3.3.1}Raster pre-processing}{29}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Data Augmentation}{30}{subsection.3.3.2}%
+\contentsline {subsubsection}{Pre-trained weights and transfer-learning}{32}{subsubsection*.8}%
+\contentsline {section}{\numberline {3.4}Research Questions and experiment design}{33}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Architecture and hyperparameter selection}{35}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}The U-Net and U-Net variants}{35}{subsection.3.5.1}%
+\contentsline {subsubsection}{Changing the encoder architecture and the EfficientNet family}{36}{subsubsection*.9}%
+\contentsline {section}{\numberline {3.6}Hyperparameters and baseline model perforamce}{38}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Accuracy Assessment}{40}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Binary classification metrics}{41}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Statistical analysis metrics}{43}{subsection.3.7.2}%
+\contentsline {subsubsection}{Intersection-over-Union}{44}{subsubsection*.10}%
+\contentsline {subsection}{\numberline {3.7.3}Project workflow}{45}{subsection.3.7.3}%
+\contentsline {chapter}{\numberline {4}Findings and Discussion}{47}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Findings}{47}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Discission}{51}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Depth-wise Precision and Recall change}{51}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Dataset-wise Precision and Recall change}{52}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Initialised weight Precision and Recall change}{54}{subsection.4.2.3}%
+\contentsline {chapter}{\numberline {5}Conclusion}{57}{chapter.5}%
+\contentsline {chapter}{Bibliography}{59}{chapter*.11}%
+\contentsline {chapter}{\numberline {6}Appendix}{74}{chapter.6}%
+\contentsline {subsection}{\numberline {6.0.1}Adam optimiser}{74}{subsection.6.0.1}%
+\contentsline {subsection}{\numberline {6.0.2}EfficientNet}{75}{subsection.6.0.2}%
+\contentsline {subsection}{\numberline {6.0.3}Mean class-based accuracy assessments per experiment}{76}{subsection.6.0.3}%
