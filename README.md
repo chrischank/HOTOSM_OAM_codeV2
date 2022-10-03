@@ -140,9 +140,10 @@ See example:
 ![256ALLEB2-UNet-NoIMN](https://user-images.githubusercontent.com/36608720/171693413-a62c39f0-24c7-4ece-9932-89b329ca50c6.png)
 ![256ALLEB2-UNet-IMN](https://user-images.githubusercontent.com/36608720/171693400-c64623e9-472c-48d6-8d5b-15039f855d1d.png)
 
-## Best run logs
+## Best run logs and weights .pth files
 The best run long for both the [KBY] & [KBY + DZK + DZKN] datasets for each architectures could be found in [this folder](https://github.com/chrischank/HOTOSM_OAM_codeV2/tree/master/iter_log)
 The best weights for inferences can be found [here](https://www.dropbox.com/sh/c9c6l1b5kmn74mu/AABMurFsfCSAbLXW4OxtGgl3a?dl=0)
+Testing dataset can be found [here](https://www.dropbox.com/sh/ak586udqivv1lvm/AACQxNiaizKyNvgDxEWLjyQfa?dl=0)
 
 Naming scheme are as followed:\
 
