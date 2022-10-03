@@ -144,8 +144,8 @@ See example:
 The best run long for both the [KBY] & [KBY + DZK + DZKN] datasets for each architectures could be found in [this folder](https://github.com/chrischank/HOTOSM_OAM_codeV2/tree/master/iter_log)
 
 Naming scheme are as followed:
-18242:3909_256oc_EB1-Unet-qubvel_lr1e-3_wd1e-5_b16_ep500_BCE_RLRonPlateau(min1e-8)_iter_548820.pth.csv
-<Train>:<Val>_<dimension>_<architecture>_<learningrate>_<weightdecay>_<batchsize>_<maxEpoque>_<lossfunction>_<lrScheduler>_<iter_bestiteration>.pth.csv
+18242:3909_256oc_EB1-Unet-qubvel_lr1e-3_wd1e-5_b16_ep500_BCE_RLRonPlateau(min1e-8)_iter_548820.pth.csv\
+"<Train>:<Val>_<dimension>_<architecture>_<learningrate>_<weightdecay>_<batchsize>_<maxEpoque>_<lossfunction>_<lrScheduler>_<iter_bestiteration>.pth.csv"
 
 ## Depth-wise Precision and Recall change
 
