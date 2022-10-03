@@ -145,7 +145,7 @@ The best run long for both the [KBY] & [KBY + DZK + DZKN] datasets for each arch
 
 Naming scheme are as followed:
 18242:3909_256oc_EB1-Unet-qubvel_lr1e-3_wd1e-5_b16_ep500_BCE_RLRonPlateau(min1e-8)_iter_548820.pth.csv\
-"<Train>:<Val>_<dimension>_<architecture>_<learningrate>_<weightdecay>_<batchsize>_<maxEpoque>_<lossfunction>_<lrScheduler>_<iter_bestiteration>.pth.csv"
+Train:Val_dimension_architecture_learningrate_weightdecay_batchsize_maxEpoque_lossfunction_lrScheduler_iter_bestiteration.pth.csv
 
 ## Depth-wise Precision and Recall change
 
