@@ -142,6 +142,7 @@ See example:
 
 ## Best run logs
 The best run long for both the [KBY] & [KBY + DZK + DZKN] datasets for each architectures could be found in [this folder](https://github.com/chrischank/HOTOSM_OAM_codeV2/tree/master/iter_log)
+The best weights for inferences can be found [here](https://www.dropbox.com/sh/c9c6l1b5kmn74mu/AABMurFsfCSAbLXW4OxtGgl3a?dl=0)
 
 Naming scheme are as followed:\
 
