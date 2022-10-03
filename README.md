@@ -140,6 +140,9 @@ See example:
 ![256ALLEB2-UNet-NoIMN](https://user-images.githubusercontent.com/36608720/171693413-a62c39f0-24c7-4ece-9932-89b329ca50c6.png)
 ![256ALLEB2-UNet-IMN](https://user-images.githubusercontent.com/36608720/171693400-c64623e9-472c-48d6-8d5b-15039f855d1d.png)
 
+## Best run logs
+The best run long for both the [KBY] & [KBY + DZK + DZKN] datasets for each architectures could be found in [this folder](https://github.com/chrischank/HOTOSM_OAM_codeV2/tree/master/iter_log)
+
 ## Depth-wise Precision and Recall change
 
 <p align="center">
